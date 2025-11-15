@@ -2,7 +2,7 @@
 # https://src.fedoraproject.org/rpms/Macaulay2/blob/rawhide/f/Macaulay2.spec
 
 Name:    Macaulay2
-Version: 1.25.06
+Version: 1.25.11
 
 # release convention: 0.x.m2 (so official fedora package will take precedence)
 # increment x as needed, reset to 1 with each new m2 release
@@ -125,13 +125,6 @@ cd M2
 %if 0%{?fedora} >= 41
 source /etc/profile.d/modules.sh
 module load lrslib-%{_arch}
-%else
-# trick build into thinking we've updated the submodules in rhel
-for SUBMODULE in fflas_ffpack flint frobby gc givaro gtest mathic mathicgb \
-		    memtailor
-do
-    touch libraries/$SUBMODULE/.submodule-updated
-done
 %endif
 
 ./configure %{config_args}
@@ -157,5 +150,8 @@ rm -fv %{buildroot}%{_infodir}/dir
 %{_mandir}/man1/*
 
 %changelog
+* Mon Nov 10 2025 Doug Torrance <dtorrance@piedmont.edu> - 1.25.11-0.1.m2
+- New release.
+
 * Fri Sep 12 2025 Doug Torrance <dtorrance@piedmont.edu> - 1.25.06-0.1.m2
 - First draft of Macaulay2 spec file.
