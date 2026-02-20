@@ -3,23 +3,8 @@
 needs "nets.m2"
 needs "methods.m2"
 
-processArgs := args -> concatenate (
-     args = sequence args;
-     apply(args, x -> 
-	  if class x === String then x
-	  else if class x === Symbol then ("'", toString x, "'")
-	  else silentRobustString(40,3,x)
-	  ),
-     apply(args, x -> if class x === Symbol then ("\n", toString locate x, ": here is the first use of '",toString x, "'") else "")
-     )
-olderror := error
-error = args -> (
-     -- this is the body of the "error" function, which prints out error messages
-     olderror processArgs args)
-protect symbol error
-
 warningMessage0 = (args,deb) -> (
-     args = processArgs args;
+     args = processErrorArgs args;
      h := hash args % 10000;
      if debugWarningHashcode === h
      then error args
@@ -236,12 +221,8 @@ FilePosition.synonym = "file position"
 -- TODO: add FilePosition(String, ZZ, ZZ) and FilePosition(String)
 toExternalString FilePosition :=
 toString FilePosition :=
-net FilePosition := p -> concatenate(
-    if match(" ", p#0) then format p#0 else p#0,
-    ":",toString p#1,":",toString p#2,
-    if #p==4 then (":(",toString p#3,")")
-    else if #p>=5 then ("-",toString p#3,":",toString p#4)
-    )
+net FilePosition := simpleToString -- tostringFilePosition in debugging.dd
+
 
 String | FilePosition := (s, p) -> s | toString p
 FilePosition | String := (p, s) -> toString p | s
@@ -252,13 +233,14 @@ currentPosition = () -> new FilePosition from { currentFileName, currentRowNumbe
 -- locate
 -----------------------------------------------------------------------------
 
-locate' = locate -- defined in d/actors4.d
+locate' = locate -- defined in d/debugging.dd
 locate = method(Dispatch => Thing, TypicalValue => FilePosition)
 locate Nothing     :=
 locate FunctionBody:=
 locate Function    :=
 locate Pseudocode  :=
 locate Sequence    :=
+locate Error       :=
 locate Symbol      := FilePosition => locate'
 locate Command     := FilePosition => C -> locate'(C#0)
 locate List        := List     => x -> apply(x, locate)

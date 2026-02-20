@@ -220,6 +220,7 @@ bumpPrecedence();
      thenW = token("then"); makeKeyword(thenW);
      doW = token("do"); makeKeyword(doW);
      listW = token("list"); makeKeyword(listW);
+     exceptW = token("except"); makeKeyword(exceptW);
 bumpPrecedence();
      export ColonEqualW := binaryright(":="); export ColonEqualS := makeKeyword(ColonEqualW);
      export EqualW := binaryright("="); export EqualS := makeKeyword(EqualW);
@@ -318,6 +319,7 @@ bumpPrecedence();
      export breakpointS    := special("breakpoint",    unaryop, precSpace, wide);
      export profileS       := special("profile",       unaryop, precSpace, wide);
      export shieldS        := special("shield",        unaryop, precSpace, wide);
+     export trapS          := special("trap",          unaryop, precSpace, wide);
      export throwS         := special("throw",        nunaryop, precSpace, wide);
      export returnS        := special("return",       nunaryop, precSpace, wide);
      export breakS         := special("break",        nunaryop, precSpace, wide);
@@ -402,8 +404,11 @@ export NewOfFromE := Expr(NewOfFromS);
 export InverseS := makeProtectedSymbolClosure("InverseMethod");
 export InverseE := Expr(InverseS);
 
-export RobustPrintS := makeProtectedSymbolClosure("RobustPrintMethod");
-export RobustPrintE := Expr(RobustPrintS);
+export RobustPrintNetS := makeProtectedSymbolClosure("RobustPrintNetMethod");
+export RobustPrintNetE := Expr(RobustPrintNetS);
+
+export RobustPrintStringS := makeProtectedSymbolClosure("RobustPrintStringMethod");
+export RobustPrintStringE := Expr(RobustPrintStringS);
 
 export StopIterationS := makeProtectedSymbolClosure("StopIteration");
 export StopIterationE := Expr(StopIterationS);
@@ -914,6 +919,21 @@ export bind(e:ParseTree,dictionary:Dictionary):void := (
 	  )
      is i:Try do (
 	  bind(i.primary,dictionary);
+	  )
+     is i:TryDo do (
+	  bind(i.primary,dictionary);
+	  newdict := newLocalDictionary(dictionary);
+	  bindSingleParm(i.variable,newdict);
+	  bind(i.doClause,newdict);
+	  i.dictionary = newdict;
+	  )
+     is i:TryThenDo do (
+	  bind(i.primary,dictionary);
+	  bind(i.sequel,dictionary);
+	  newdict := newLocalDictionary(dictionary);
+	  bindSingleParm(i.variable,newdict);
+	  bind(i.doClause,newdict);
+	  i.dictionary = newdict;
 	  )
      is i:Catch do (
 	  bind(i.primary,dictionary);
