@@ -1,4 +1,10 @@
+// Copyright 2026, The Macaulay2 Authors.
+
+#include "util.hpp"
 #include "util-polyring-creation.hpp"
+#include "weylalg.hpp"
+#include "interface/ring.h"
+#include "interface/aring.h"
 
 const Monoid* degreeMonoid(const std::vector<std::string>& names)
 {
@@ -61,7 +67,7 @@ const PolynomialRing* simplePolynomialRing(int p, const std::vector<std::string>
   // heft is 1.
   // monomial order is grevlex.
 
-  const Ring *kk = (p > 0 ? rawARingZZpFlint(p) : rawARingQQFlint());
+  const Ring *kk = (p > 0 ? rawARingZZpFlint(p) : IM2_Ring_QQ());
   if (kk == nullptr) return nullptr; // one of these routines would have made an error.
 
   MonomialOrdering* monorder = MonomialOrderings::join
@@ -71,6 +77,47 @@ const PolynomialRing* simplePolynomialRing(int p, const std::vector<std::string>
     });
 
   return simplePolynomialRing(kk, names, monorder);
+}
+
+const WeylAlgebra* simpleWeylAlgebra(long p,
+                                     const std::vector<std::string> names,
+                                     const std::vector<int> comms,
+                                     const std::vector<int> derivs)
+{
+  // if p is 0, use QQ.
+  // degrees are all set to 1. (degree ring has one variable)
+  // heft is 1.
+  // monomial order is grevlex.
+
+  const Ring *kk = (p > 0 ? rawARingZZpFlint(p) : IM2_Ring_QQ());
+  if (kk == nullptr) return nullptr; // one of these routines would have made an error.
+
+  MonomialOrdering* monorder = MonomialOrderings::join
+    ({
+      MonomialOrderings::GRevLex(names.size()),
+      MonomialOrderings::PositionUp()
+    });
+
+  int n = static_cast<int>(comms.size());
+  std::vector<int> degs(2*n, -1);
+  std::fill_n(degs.begin(), n, 1);
+
+  const Monoid* M = Monoid::create(
+                                   monorder,
+                                   degreeRing(1),
+                                   names,
+                                   degs,
+                                   {1});
+
+  M2_arrayint derivs1 = stdvector_to_M2_arrayint(derivs);
+  M2_arrayint comms1 = stdvector_to_M2_arrayint(comms);
+  auto W = WeylAlgebra::create(kk,
+                          M,
+                          derivs1,
+                          comms1,
+                          -1);
+  
+  return W;
 }
 
 

@@ -29,12 +29,11 @@ UNITTEST_CCFILES := \
     NewF4Test \
     MonoidTest \
     MatrixIOTest \
+    WeylAlgebraTest \
     RingRRRTest \
     RingCCCTest
 
-#    WeylAlgebraTest \ # TODO: add in this file
-
-#    ARingGFTest
+#    ARingGFTest \
 
 UNITTEST_TARGET := testMain
 

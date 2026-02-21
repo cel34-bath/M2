@@ -27,6 +27,13 @@ const PolynomialRing* simplePolynomialRing(const Ring* kk,
 // This create a polynomial ring with all degrees 1, and with GRevLex order
 const PolynomialRing* simplePolynomialRing(int p, const std::vector<std::string>& names);
 
+// Creates a Weyl algebra, with degree rank one, GRevLex monomial order.
+const WeylAlgebra* simpleWeylAlgebra(long p,
+                                     const std::vector<std::string> varnames,
+                                     const std::vector<int> comms,
+                                     const std::vector<int> derivs);
+
+
 // Local Variables:
 // indent-tabs-mode: nil
 // End:

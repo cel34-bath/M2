@@ -461,7 +461,7 @@ if(BUILD_TESTING)
     unit-tests/ARingRRiTest.cpp
     unit-tests/ARingCCCTest.cpp
     unit-tests/NCGroebnerTest.cpp
-#    unit-tests/WeylAlgebraTest.cpp # TODO: add this file
+    unit-tests/WeylAlgebraTest.cpp
 
     unit-tests/RingTest.hpp
     unit-tests/RingZZTest.cpp
