@@ -3,7 +3,8 @@ SHARED_UNITTEST_CCFILES := \
     M2-cpp-replacement \
     basics-test \
     fromStream \
-    util-polyring-creation
+    util-polyring-creation \
+    RingElem
 
 UNITTEST_CCFILES := \
     $(SHARED_UNITTEST_CCFILES) \

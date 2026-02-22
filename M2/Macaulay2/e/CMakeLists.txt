@@ -445,6 +445,8 @@ if(BUILD_TESTING)
 
     unit-tests/util-polyring-creation.hpp
     unit-tests/util-polyring-creation.cpp
+    unit-tests/RingElem.hpp
+    unit-tests/RingElem.cpp
     unit-tests/NewF4Test.cpp
     unit-tests/MonoidTest.cpp
     unit-tests/PolyRingTest.cpp

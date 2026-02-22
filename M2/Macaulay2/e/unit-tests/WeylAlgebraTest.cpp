@@ -5,6 +5,7 @@
 #include "util.hpp"
 #include "weylalg.hpp"
 #include "RingTest.hpp"
+#include "RingElem.hpp"
 #include "util-polyring-creation.hpp"
 
 class WeylAlgebraTestAccessor {
@@ -67,31 +68,21 @@ TEST_F(WeylAlgebraTest, create)
 
 TEST_F(WeylAlgebraTest, commutator)
 {
-  // Test Dx*x - x*Dx == 1 (the defining Weyl relation)
-  RingElement *x = new RingElement(W, W->var(0));
-  RingElement *Dx = new RingElement(W, W->var(2));
-  RingElement *one = new RingElement(W, W->from_long(1));
+  auto x  = RingElem::var(W, 0);
+  auto y  = RingElem::var(W, 1);
+  auto Dx = RingElem::var(W, 2);
+  auto Dy = RingElem::var(W, 3);
+  auto one  = RingElem::fromInt(W, 1);
+  auto zero = RingElem::fromInt(W, 0);
 
-  RingElement *DxTimesX = (*Dx) * (*x);
-  RingElement *xTimesDx = (*x) * (*Dx);
-  RingElement *commutator = (*DxTimesX) - (*xTimesDx);
-  EXPECT_TRUE(commutator->is_equal(*one));
+  // Test Dx*x - x*Dx == 1 (the defining Weyl relation)
+  EXPECT_EQ(Dx * x - x * Dx, one);
 
   // Test Dy*y - y*Dy == 1
-  RingElement *y = new RingElement(W, W->var(1));
-  RingElement *Dy = new RingElement(W, W->var(3));
-
-  RingElement *DyTimesY = (*Dy) * (*y);
-  RingElement *yTimesDy = (*y) * (*Dy);
-  RingElement *commutator2 = (*DyTimesY) - (*yTimesDy);
-  EXPECT_TRUE(commutator2->is_equal(*one));
+  EXPECT_EQ(Dy * y - y * Dy, one);
 
   // Test Dx*y - y*Dx == 0 (cross terms commute)
-  RingElement *zero = new RingElement(W, W->from_long(0));
-  RingElement *DxTimesY = (*Dx) * (*y);
-  RingElement *yTimesDx = (*y) * (*Dx);
-  RingElement *cross = (*DxTimesY) - (*yTimesDx);
-  EXPECT_TRUE(cross->is_equal(*zero));
+  EXPECT_EQ(Dx * y - y * Dx, zero);
 }
 
 TEST_F(WeylAlgebraTest, binomial)
@@ -152,4 +143,66 @@ TEST_F(WeylAlgebraTest, multinomial)
     int bottom[] = {2, 3};
     expectEqualLong(WeylAlgebraTestAccessor::multinomial(W, seven, top, bottom), 840);
   }
+}
+
+TEST_F(WeylAlgebraTest, fromString)
+{
+  // Single variable
+  auto x = RingElem::var(W, 0);
+  EXPECT_EQ(RingElem::fromString(W, "x"), x);
+
+  // Monomial with coefficient
+  auto Dx = RingElem::var(W, 2);
+  EXPECT_EQ(RingElem::fromString(W, "3*x^2*Dx"), x * x * Dx * 3);
+
+  // Polynomial with multiple terms
+  auto y = RingElem::var(W, 1);
+  auto expected = x * x + y * 3 - RingElem::fromInt(W, 1);
+  EXPECT_EQ(RingElem::fromString(W, "x^2+3*y-1"), expected);
+
+  // Constant
+  EXPECT_EQ(RingElem::fromString(W, "5"), RingElem::fromInt(W, 5));
+
+  // Zero
+  EXPECT_TRUE(RingElem::fromString(W, "0").is_zero());
+
+  // Negative coefficient
+  EXPECT_EQ(RingElem::fromString(W, "-x"), -x);
+}
+
+TEST(PolyRingFromString, basic)
+{
+  const PolynomialRing *R = simplePolynomialRing(101, {"x", "y", "z"});
+
+  auto x = RingElem::var(R, 0);
+  auto y = RingElem::var(R, 1);
+  auto z = RingElem::var(R, 2);
+  auto one = RingElem::fromInt(R, 1);
+
+  // Single variable
+  EXPECT_EQ(RingElem::fromString(R, "x"), x);
+  EXPECT_EQ(RingElem::fromString(R, "z"), z);
+
+  // Monomial with coefficient
+  EXPECT_EQ(RingElem::fromString(R, "3*x^2*y"), x * x * y * 3);
+
+  // Polynomial
+  auto f = x * x + y * 3 - one;
+  EXPECT_EQ(RingElem::fromString(R, "x^2+3*y-1"), f);
+
+  // Coefficient reduction mod 101
+  EXPECT_EQ(RingElem::fromString(R, "102*x"), x);
+
+  // Constant
+  EXPECT_EQ(RingElem::fromString(R, "7"), RingElem::fromInt(R, 7));
+
+  // Zero
+  EXPECT_TRUE(RingElem::fromString(R, "0").is_zero());
+
+  // Multi-term polynomial
+  // NOTE: can't round-trip via to_string() yet — it outputs "x3+2xyz-y2+z"
+  // (no ^ or *) which the parser doesn't accept. TODO: make these compatible.
+  auto g = RingElem::fromString(R, "x^3+2*x*y*z-y^2+z");
+  auto g_expected = x.power(3) + x * y * z * 2 - y * y + z;
+  EXPECT_EQ(g, g_expected);
 }

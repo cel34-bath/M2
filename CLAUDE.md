@@ -46,6 +46,7 @@ Tests are in `M2/Macaulay2/e/unit-tests/` using **GoogleTest** (gtest).
   subtract, multiply, divide, reciprocal, power, axioms, coercions)
 - `RingTest.hpp` - Test helpers for Ring interface
 - `DMatTest.hpp` - Test helpers for dense matrices
+- `RingElem.hpp/cpp` - Lightweight value-semantics wrapper for ring elements (see below)
 - `util-polyring-creation.hpp/cpp` - Helpers for creating rings in tests:
   - `simplePolynomialRing(p, names)` - polynomial ring over ZZ/p (or QQ if p=0)
   - `simpleWeylAlgebra(p, names, comms, derivs)` - Weyl algebra
@@ -74,7 +75,7 @@ Tests are in `M2/Macaulay2/e/unit-tests/` using **GoogleTest** (gtest).
 | `MonoidTest.cpp` | Monoid operations |
 | `PolyRingTest.cpp` | Polynomial ring operations |
 | `NCGroebnerTest.cpp` | Non-commutative Groebner bases |
-| `WeylAlgebraTest.cpp` | Weyl algebra creation, commutators, binomial, multinomial |
+| `WeylAlgebraTest.cpp` | Weyl algebra creation, commutators, binomial, multinomial, fromString |
 | `NewF4Test.cpp` | New F4 algorithm |
 | `ResTest.cpp` | Resolutions |
 | `MatrixIOTest.cpp` | Matrix I/O |
@@ -161,15 +162,43 @@ class FooTestAccessor {
 ```
 See `WeylAlgebraTest.cpp` and `weylalg.hpp` for a concrete example.
 
-### RingElement Arithmetic in Tests
+### RingElem — Lightweight Value Wrapper for Tests
+
+`RingElem` (in `unit-tests/RingElem.hpp`) wraps `const Ring*` + `ring_elem` with
+value semantics. Operators return values (not pointers), making test code concise:
+```cpp
+#include "RingElem.hpp"
+auto x  = RingElem::var(R, 0);
+auto y  = RingElem::var(R, 1);
+auto one = RingElem::fromInt(R, 1);
+EXPECT_EQ(x * y - y * x, one);     // value comparison, prints elements on failure
+
+// Parse from string (requires explicit ^ and * in polynomial syntax):
+auto f = RingElem::fromString(R, "x^2+3*x*y-1");
+
+// Scalar multiplication:
+auto g = x * 3;       // RingElem * long
+auto h = 3 * x;       // long * RingElem
+```
+
+Factories: `RingElem::var(R, i)`, `RingElem::fromInt(R, n)`, `RingElem::fromString(R, s)`.
+Arithmetic: `+`, `-`, `*`, `/`, unary `-`, `.power(n)`.
+Output: `to_string()`, `operator<<` for gtest diagnostics.
+
+**fromString format**: Uses `parseBasicPoly` from `BasicPoly.hpp`. Requires `*` between
+factors and `^` for exponents (e.g. `"3*x^2*y-1"`). Note: `to_string()` outputs a
+different format (`x2y-1` without `*` or `^`), so round-tripping is not yet supported.
+
+**Naming convention**: Member fields use `m` prefix (e.g., `mRing`, `mValue`).
+
+### RingElement (Legacy Interface)
 
 `RingElement` operators (`*`, `+`, `-`, `/`) return `RingElement*` (pointers), not values.
+Prefer `RingElem` for new test code. `RingElement` is still used in the interpreter interface.
 ```cpp
 RingElement *x = new RingElement(W, W->var(0));
-RingElement *y = new RingElement(W, W->var(1));
 RingElement *product = (*x) * (*y);   // dereference, then multiply
-RingElement *diff = (*product) - (*x); // returns RingElement*
-EXPECT_TRUE(diff->is_equal(*expected));
+EXPECT_TRUE(product->is_equal(*expected));
 ```
 `is_equal` checks ring pointer equality first — both elements must come from the same
 ring object. Use `IM2_Ring_QQ()` (QQGMP) consistently, not `rawARingQQFlint()`, when
@@ -243,7 +272,7 @@ The CMake and autotools builds maintain separate lists of test files:
 - CMake: `e/CMakeLists.txt` — the `add_executable(M2-unit-tests ...)` block
 - Autotools: `e/unit-tests/Makefile.files` — the `UNITTEST_CCFILES` variable
 
-Both should include the same set of test files. Currently 197 tests pass in both builds.
+Both should include the same set of test files. Currently 199 tests pass in both builds.
 
 ## Engine Dependencies
 
@@ -289,8 +318,9 @@ used by the interpreter (`d/`), not the engine.
 - Interface functions prefixed with `IM2_` (e.g., `IM2_initialize()`)
 - Source files generally come in `.cpp`/`.hpp` pairs
 - Use `IM2_Ring_QQ()` for the rationals (QQGMP) in tests, not `rawARingQQFlint()`
+- New classes should use `m` prefix for member fields (e.g., `mRing`, `mValue`)
 
 ## Branch Info
 
-- Current branch: `standalone-engine` (goal: make engine more self-contained)
+- Current branch: `unit-testing` (improving engine unit test infrastructure)
 - PR target: `stable`
