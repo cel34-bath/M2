@@ -47,18 +47,18 @@ class RingElem
   // For polynomial rings: parses "x^2+3*x*y-1" using variable names from the ring.
   // For base rings (ZZ, ZZ/p): parses an integer.
   // Throws parsing_error on failure.
-  // NOTE: fromString and to_string are not yet inverses of each other.
-  // to_string outputs e.g. "x3+2xyz" while fromString expects "x^3+2*x*y*z".
+  // NOTE: fromString and toString are not yet inverses of each other.
+  // toString outputs e.g. "x3+2xyz" while fromString expects "x^3+2*x*y*z".
   // TODO: make these round-trip compatible.
   static RingElem fromString(const Ring *R, const std::string &s);
 
   // Accessors
-  const Ring *get_ring() const { return mRing; }
-  ring_elem get_value() const { return mValue; }
+  const Ring *ring() const { return mRing; }
+  ring_elem value() const { return mValue; }
 
   // Predicates
-  bool is_zero() const { return mRing->is_zero(mValue); }
-  bool is_unit() const { return mRing->is_unit(mValue); }
+  bool isZero() const { return mRing->is_zero(mValue); }
+  bool isUnit() const { return mRing->is_unit(mValue); }
 
   // Comparison
   bool operator==(const RingElem &b) const
@@ -105,7 +105,7 @@ class RingElem
   RingElem power(int n) const { return RingElem(mRing, mRing->power(mValue, n)); }
 
   // String output (for gtest diagnostics)
-  std::string to_string() const
+  std::string toString() const
   {
     buffer o;
     mRing->elem_text_out(o, mValue);
@@ -114,6 +114,6 @@ class RingElem
 
   friend std::ostream &operator<<(std::ostream &os, const RingElem &f)
   {
-    return os << f.to_string();
+    return os << f.toString();
   }
 };

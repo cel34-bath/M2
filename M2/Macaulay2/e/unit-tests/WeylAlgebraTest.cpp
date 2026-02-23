@@ -164,7 +164,7 @@ TEST_F(WeylAlgebraTest, fromString)
   EXPECT_EQ(RingElem::fromString(W, "5"), RingElem::fromInt(W, 5));
 
   // Zero
-  EXPECT_TRUE(RingElem::fromString(W, "0").is_zero());
+  EXPECT_TRUE(RingElem::fromString(W, "0").isZero());
 
   // Negative coefficient
   EXPECT_EQ(RingElem::fromString(W, "-x"), -x);
@@ -197,10 +197,10 @@ TEST(PolyRingFromString, basic)
   EXPECT_EQ(RingElem::fromString(R, "7"), RingElem::fromInt(R, 7));
 
   // Zero
-  EXPECT_TRUE(RingElem::fromString(R, "0").is_zero());
+  EXPECT_TRUE(RingElem::fromString(R, "0").isZero());
 
   // Multi-term polynomial
-  // NOTE: can't round-trip via to_string() yet — it outputs "x3+2xyz-y2+z"
+  // NOTE: can't round-trip via toString() yet — it outputs "x3+2xyz-y2+z"
   // (no ^ or *) which the parser doesn't accept. TODO: make these compatible.
   auto g = RingElem::fromString(R, "x^3+2*x*y*z-y^2+z");
   auto g_expected = x.power(3) + x * y * z * 2 - y * y + z;
