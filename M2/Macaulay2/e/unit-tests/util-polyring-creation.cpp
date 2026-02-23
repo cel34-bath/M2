@@ -5,6 +5,12 @@
 #include "weylalg.hpp"
 #include "interface/ring.h"
 #include "interface/aring.h"
+#include "BasicPoly.hpp"
+#include "BasicPolyList.hpp"
+#include "monoid.hpp"
+#include "freemod.hpp"
+#include "interface/groebner.h"
+#include "comp-gb.hpp"
 
 const Monoid* degreeMonoid(const std::vector<std::string>& names)
 {
@@ -120,6 +126,43 @@ const WeylAlgebra* simpleWeylAlgebra(long p,
   return W;
 }
 
+
+const Matrix* idealFromStrings(const PolynomialRing* R,
+                               const std::vector<std::string>& polys)
+{
+  auto varnames = R->getMonoid()->variableNames();
+  BasicPolyList bpList;
+  for (const auto& s : polys)
+    bpList.push_back(parseBasicPoly(s, varnames));
+  return toMatrix(R->make_FreeModule(1), bpList);
+}
+
+const Matrix* computeGB(const Matrix* M)
+{
+  M2_arrayint weights = stdvector_to_M2_arrayint(std::vector<int>{});
+  Computation* C = IM2_GB_make(M,
+                               false,  // collect_syz
+                               0,      // n_rows_to_keep
+                               weights,
+                               false,  // use_max_degree
+                               0,      // max_degree
+                               0,      // algorithm (default)
+                               0,      // strategy (default)
+                               10);    // max_reduction_count (engine default)
+  if (C == nullptr) return nullptr;
+  rawStartComputation(C);
+  return rawGBGetMatrix(C);
+}
+
+const Ring* simpleQuotientRing(const PolynomialRing* R,
+                               const std::vector<std::string>& generators)
+{
+  const Matrix* I = idealFromStrings(R, generators);
+  if (I == nullptr) return nullptr;
+  const Matrix* gb = computeGB(I);
+  if (gb == nullptr) return nullptr;
+  return PolynomialRing::create_quotient(R, gb);
+}
 
 // Local Variables:
 // indent-tabs-mode: nil

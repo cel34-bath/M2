@@ -33,6 +33,21 @@ const WeylAlgebra* simpleWeylAlgebra(long p,
                                      const std::vector<int> comms,
                                      const std::vector<int> derivs);
 
+class Matrix;
+
+// Create a 1-row matrix (ideal generators) from polynomial strings.
+// Each string is a polynomial like "x^2+3*x*y-1".
+const Matrix* idealFromStrings(const PolynomialRing* R,
+                               const std::vector<std::string>& polys);
+
+// Compute a Groebner basis of the ideal given by the 1-row matrix M.
+// Returns a 1-row matrix whose columns are the GB elements.
+const Matrix* computeGB(const Matrix* M);
+
+// Create quotient ring R / (generators).
+// Computes the GB of the generators, then forms the quotient.
+const Ring* simpleQuotientRing(const PolynomialRing* R,
+                               const std::vector<std::string>& generators);
 
 // Local Variables:
 // indent-tabs-mode: nil

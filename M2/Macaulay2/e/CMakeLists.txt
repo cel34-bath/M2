@@ -464,6 +464,7 @@ if(BUILD_TESTING)
     unit-tests/ARingCCCTest.cpp
     unit-tests/NCGroebnerTest.cpp
     unit-tests/WeylAlgebraTest.cpp
+    unit-tests/QuotientRingTest.cpp
 
     unit-tests/RingTest.hpp
     unit-tests/RingZZTest.cpp
