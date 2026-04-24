@@ -21,6 +21,7 @@ Contributions to the code of Macaulay2 are welcome.
 The source code is available via our GitHub [repository](https://github.com/Macaulay2/M2),
 where you can also report bugs via the [issue tracker](https://github.com/Macaulay2/M2/issues).
 For brief instructions, see [here](https://github.com/Macaulay2/M2/wiki/Git-for-Macaulay2-Contributors).
+For the current documentation refresh workflow, see [DocumentationPlan.md](DocumentationPlan.md).
 
 To start working on an existing github "issue", volunteer to work on it, so
 you can get "assigned" to the issue, thereby preventing duplication of
