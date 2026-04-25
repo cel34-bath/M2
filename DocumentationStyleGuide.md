@@ -1,38 +1,34 @@
 # Documentation Style Guide
 
-This guide sets the documentation standards for the refresh on `doc-updates`.
-It is intentionally short and operational.
+Use this guide for documentation work on `doc-updates`.
 
-It is a repo-local companion to the upstream Macaulay2 documentation guidance:
+It follows the documentation-specific guidance in:
 
 - <https://github.com/Macaulay2/M2/wiki/Package-Writing-Style-Guide>
 - <https://macaulay2.com/doc/Macaulay2/share/doc/Macaulay2/Macaulay2Doc/html/_writing_spdocumentation.html>
 
-This file adopts the documentation-specific rules from those sources. Broader
-package-coding and naming rules still live in the upstream wiki.
+For broader package-coding rules, use the upstream wiki.
 
-## Priorities
+## What Good Documentation Must Do
 
-1. Optimize for a mathematically literate user trying to accomplish something.
-2. Make the next step obvious.
-3. Keep examples trustworthy.
+- Help a mathematically literate user do the next thing quickly.
+- Make the next useful page, package, or example easy to find.
+- Stay accurate for the current code.
+- Keep examples small, clear, and trustworthy.
 
-## General Rules
+## Required Standards
 
-- Write for the page's audience, not for someone already reading the source.
-- Prefer direct present-tense statements over historical notes or speculation.
 - Do not leave `TODO`, `FIXME`, `Section XX`, or references to missing follow-up
   tutorials in user-facing pages.
-- Avoid stale course framing, version-era notes, or performance caveats unless
-  they are still relevant.
-- If a symbol or page is important enough to export, it should normally be
-  documented rather than left behind `undocumented`.
-- Use Unicode where appropriate, such as in authors' names or mathematically
-  standard terminology.
+- Avoid stale course framing, old version-era notes, and obsolete performance
+  caveats unless they still matter.
+- If a symbol is exported, it should normally be documented rather than left
+  `undocumented`.
+- Every new page should be reachable from at least one parent page.
+- Preview the rendered page when practical, and check links and cross-references
+  before merge.
 
-## Page Types
-
-### Function And Method Pages
+## Function And Method Pages
 
 When the doc surface supports it, include:
 
@@ -40,21 +36,24 @@ When the doc surface supports it, include:
 - `Usage`
 - `Inputs`
 - `Outputs`
-- a short explanation of behavior and context
+- a short explanation of behavior
 - at least one example or a strong cross-reference
 - `SeeAlso`
 
-The `Headline` should be a brief phrase, not a complete sentence, and should
-avoid referring to variables by name when possible.
+Use these conventions:
 
-If an option materially changes behavior, document the option node too.
-For method functions, document the return type when possible so the
-documentation generator can place the method in the right type-level views.
-In `Outputs`, say not only the type but also what mathematical object or value
-is returned. Use multiple output entries only when the function actually
-returns a sequence with multiple components.
+- Keep titles and headlines lowercase unless a proper noun requires capitals.
+- Make the `Headline` a short phrase, not a full sentence.
+- Use `TO` for links to functions, options, variables, packages, and doc nodes.
+- Do not end `Inputs`, `Outputs`, or `Consequences` entries with periods.
+- In `Outputs`, say both the type and what mathematical object or value is
+  returned.
+- For method functions, document the return type when possible.
+- If an option materially changes behavior, document the option node too.
+- Prefer the existing page shapes already used in `PackageTemplate.m2`,
+  `Macaulay2Doc`, and `SimpleDoc`.
 
-### Package Landing Pages
+## Package Landing Pages
 
 A package landing page should answer these questions quickly:
 
@@ -64,75 +63,51 @@ A package landing page should answer these questions quickly:
 - Where should a new user start?
 - Where are the main examples or tutorials?
 
-### Tutorials
+## Tutorials
 
-- State the goal of the tutorial early.
+- State the goal near the top.
 - Say what packages need to be loaded.
 - Present examples in an order a reader can follow.
-- Separate tutorial guidance from raw test material.
-- If a tutorial assumes external software, say so near the top.
+- Keep explanatory text separate from raw test material.
+- If external software or setup is required, say so early.
 
-### Internal Or Generated Docs
+## Internal Or Generated Docs
 
 - Say whether the page is hand-maintained or generated.
-- Point readers toward the right source file or build context.
-- Do not pretend an internal page is a user-facing landing page.
+- Point readers to the right source file or build context.
+- Do not present an internal page as a user-facing landing page.
 
-## Conventions From Built-In Documentation
+## Writing Rules
 
-- Use lowercase for titles and headlines unless a proper noun requires
-  capitalization.
-- Use `TO` to reference Macaulay2 functions, options, variables, packages, and
-  related documentation nodes as hyperlinks.
-- `Inputs`, `Outputs`, and `Consequences` entries should not end with periods.
-- Prefer the existing documentation templates and page shapes already used in
-  `PackageTemplate.m2`, `Macaulay2Doc`, and `SimpleDoc`.
+- Write for the page's audience, not for someone already reading the source.
+- Prefer direct present-tense statements.
+- Explain package-specific or Macaulay2-specific terms when they are not
+  obvious.
+- Use Macaulay2 identifiers as code references, not as English words in prose.
+- Start sentences with English words, not identifiers or symbols.
+- Use lowercase common nouns like “list” or “hash table” unless you mean the
+  class `List` or `HashTable`.
+- Write real sentences with normal punctuation.
+- Use Unicode where appropriate.
+- Keep contributor lists off user landing pages unless they are actively
+  maintained and clearly belong there.
 
 ## Examples
 
+- Each documented exported data type, method, and function should normally have
+  at least one example.
 - Prefer one minimal example and one slightly richer example over a long dump.
-- Examples should be runnable when practical.
+- Choose examples that show real usage without consuming excessive CPU time or
+  memory.
 - If output is expensive, unstable, or externally dependent, say so explicitly.
-- Do not leave an example block in place if it has become misleading.
-- Each exported data type, method, and function should have a documentation
-  page, and each documentation page should normally include an example.
-- Choose examples that illustrate usage clearly without consuming excessive CPU
-  time or memory.
-- Do not place multiple large example blocks back-to-back without explanatory
-  text between them.
-- Do not reload the package being documented inside example code.
+- Do not place large example blocks back-to-back without explanation.
+- Do not reload the package being documented inside examples.
 - In `Usage` and `Outputs`, avoid assigning a single returned value to a
   variable unless that assignment is needed to explain a later step.
 
-## Navigation And Cross-References
+## Before Merge
 
-- Every new page should be reachable from at least one parent page.
-- `SeeAlso`, `Subnodes`, and top-level navigation should point somewhere useful.
-- Avoid orphan pages and commented-out navigation.
-- Surface high-value guides from landing pages instead of burying them deep in
-  the tree.
-
-## Tone And Terminology
-
-- Explain package-specific or Macaulay2-specific terms when they are not obvious
-  from context.
-- Prefer concrete nouns and verbs over vague phrases like “this stuff” or
-  “various things”.
-- Start sentences with English words, not identifiers or symbols.
-- Use Macaulay2 identifiers as code references, not as English words in prose.
-- Use lowercase common nouns like “list” or “hash table” unless you are naming
-  the class `List` or `HashTable`.
-- End prose sentences with periods or question marks, not with a colon used in
-  place of a sentence.
-- Make each sentence a real sentence with a subject and a verb.
-- Keep acknowledgements and contributor lists off user landing pages unless they
-  are actively maintained and clearly belong there.
-
-## Verification Standard
-
-Before merge, documentation changes should satisfy these expectations:
-
-- the page was previewed in rendered form when practical
-- links and cross-references were checked
-- examples were rerun when the change affects them
-- the PR states what was verified and what was not
+- the page renders correctly, or `viewHelp` shows the expected result
+- links, `SeeAlso`, `Subnodes`, and top-level navigation were checked
+- examples were rerun when the change affects them, or the PR explains why not
+- the PR says what was verified and what was not
