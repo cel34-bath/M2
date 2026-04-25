@@ -461,6 +461,53 @@ triage.
     Done when: at least five narrowly scoped doc issues are labeled and ready to
     assign.
 
+### Project Infrastructure And Discoverability
+
+46. Add fast CI checks for documentation pull requests to `doc-updates`.
+    Paths: `.github/workflows/`, `.github/actions/`, contributor docs as needed
+    Done when: documentation PRs get a lightweight automated check for obvious
+    failures such as broken scoped doc builds, broken links or cross-references
+    in changed documentation, and basic text-level regressions without forcing
+    every PR through a full package-example or full-site rebuild.
+
+47. Audit undocumented exported symbols across distributed packages.
+    Paths: `M2/Macaulay2/packages/`, package export lists, generated docs as
+    needed
+    Done when: exported symbols lacking documentation are summarized in a
+    tracked report or split into child issues by package or topic, and the
+    backlog clearly distinguishes between intentionally undocumented internals
+    and user-facing exports that still need documentation.
+
+48. Standardize external prerequisite documentation across packages.
+    Paths: package landing pages, READMEs, and doc nodes for packages that rely
+    on external software or services
+    Done when: packages with external prerequisites describe those dependencies
+    in a consistent place and format, including how to install or verify the
+    prerequisite and what functionality depends on it.
+
+49. Improve concept-to-command discoverability in the documentation.
+    Paths: `M2/Macaulay2/packages/Macaulay2Doc/`, package landing pages, and
+    related navigation pages
+    Done when: users who know a mathematical object or task but not the
+    relevant Macaulay2 command have a clearer path through topic pages,
+    cross-references, or index-style guides to the right reference entries and
+    examples.
+
+50. Document how repository changes become updates on `macaulay2.com`.
+    Paths: repo-local contributor docs, release/deployment docs if present, and
+    upstream process references as needed
+    Done when: contributors can tell what must happen after a documentation PR
+    lands for the live website to change, including which steps are local to
+    the repo, which depend on upstream maintainers, and where deployment or
+    publishing responsibility currently lives.
+
+51. Define reviewer routing for package, tutorial, and math-heavy documentation changes.
+    Paths: repo-local contributor docs, labels, and review workflow docs
+    Done when: contributors know when to request package-owner review,
+    `needs-math-review`, example reruns, or editorial review, and the review
+    expectations are documented in one repo-local place rather than spread
+    across issue comments.
+
 ## Notes For Leads
 
 1. Keep the integration branch stable enough that people can branch from it
