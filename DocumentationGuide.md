@@ -4,6 +4,15 @@ This guide is for contributors working on the documentation refresh in
 `aalmousa/M2`. Use it together with [DocumentationPlan.md](DocumentationPlan.md)
 and [DocumentationStyleGuide.md](DocumentationStyleGuide.md).
 
+The repo-local guides are aligned with these upstream documentation references:
+
+- <https://github.com/Macaulay2/M2/wiki/Package-Writing-Style-Guide>
+- <https://macaulay2.com/doc/Macaulay2/share/doc/Macaulay2/Macaulay2Doc/html/_writing_spdocumentation.html>
+
+Use the upstream pages for the full package-writing and documentation syntax
+details. Use this guide for the branch workflow, local preview, and review
+expectations for the documentation refresh.
+
 ## Scope
 
 The main documentation surfaces in this repository are:
@@ -15,6 +24,14 @@ The main documentation surfaces in this repository are:
   related README files
 
 Edit source documentation, not generated html.
+
+Macaulay2 documentation is written in one of two supported forms:
+
+- `document(List)` using the list-based hypertext format
+- `doc(String)` using the string-based `SimpleDoc` format
+
+Documentation entries belong to a package and should occur after that package's
+`beginDocumentation()` section.
 
 ## Workflow
 
@@ -69,6 +86,12 @@ make -C "$M2BUILDDIR/Macaulay2/packages" \
 
 For package docs, also use `viewHelp` or `installPackage` when that is the
 quickest way to confirm the rendered result.
+
+For a normal documentation-writing cycle, the built-in documentation recommends:
+
+1. edit the documentation source
+2. run `installPackage("YourPackage")`
+3. review the result with `viewHelp`
 
 Reserve the expensive flags for final verification:
 
