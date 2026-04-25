@@ -2,7 +2,7 @@ name: Documentation task
 description: File a scoped issue for documentation changes in Macaulay2.
 title: "docs: "
 labels:
-  - docs
+  - documentation
 body:
   - type: dropdown
     id: area

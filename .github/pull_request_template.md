@@ -16,3 +16,5 @@ html, or any verification you could not complete.
 - For the documentation refresh workflow in this fork, open PRs against
   `doc-updates`, not `master`.
 - Keep the scope focused. Split unrelated documentation work into separate PRs.
+- See `DocumentationGuide.md` and `DocumentationStyleGuide.md` for the current
+  workflow and documentation standards.
