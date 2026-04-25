@@ -20,8 +20,21 @@ See `CITATION.cff` for information about citing Macaulay2.
 Contributions to the code of Macaulay2 are welcome.
 The source code is available via our GitHub [repository](https://github.com/Macaulay2/M2),
 where you can also report bugs via the [issue tracker](https://github.com/Macaulay2/M2/issues).
-For brief instructions, see [here](https://github.com/Macaulay2/M2/wiki/Git-for-Macaulay2-Contributors).
-For the current documentation refresh workflow, see [DocumentationPlan.md](DocumentationPlan.md).
+For general background on the upstream git workflow, see the
+[Git for Macaulay2 Contributors](https://github.com/Macaulay2/M2/wiki/Git-for-Macaulay2-Contributors)
+wiki page.
+
+For the documentation refresh workflow on this fork:
+
+* Track work in the `aalmousa/M2` issues and the `M2 Documentation Refresh`
+  project.
+* Branch from `doc-updates`.
+* Open pull requests against `aalmousa/M2:doc-updates`, not `master`.
+* State what you verified locally, especially for examples, links, and
+  regenerated documentation pages.
+
+See [DocumentationPlan.md](DocumentationPlan.md) for the current documentation
+workflow, issue taxonomy, and local preview guidance.
 
 To start working on an existing github "issue", volunteer to work on it, so
 you can get "assigned" to the issue, thereby preventing duplication of
