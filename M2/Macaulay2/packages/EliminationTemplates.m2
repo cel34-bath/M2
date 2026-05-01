@@ -1005,7 +1005,7 @@ doc ///
         For a zero-dimensional polynomial ideal $I \subset R$, multiplication by a general linear form $f \in R$ induces a linear map $R/I \to R/I$, which can be represented using an action matrix.
 	For an ideal represented by a template matrix, the action matrix may from the template matrix by various triangularization schemes (RREF, LU Decomposition, etc.)
 	The eigeenvalues eigenvalues can be used to determine the (closed) points in the vanishing locus of $I$, as they give the values of $f$ on these points.
-	In this implementation, the action matrix is cached inside the template to facillitate quicker computation.
+	In this implementation, the action matrix is cached inside the template to facilitate quicker computation.
       Example
         R = QQ[x,y]
         I = ideal(x + y - 1, x^2 + y^2 - 1)
