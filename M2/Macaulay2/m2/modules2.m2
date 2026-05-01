@@ -59,6 +59,9 @@ tensor(Module, Module) := Module => {} >> opts -> (M, N) -> (
      T.cache.formation = FunctionApplication (tensor, (M,N));
      T)
 
+tensorAssociativity = method()
+tensorAssociativity(Module, Module, Module) := Matrix => (A, B, C) -> map((A ** B) ** C, A ** (B ** C), 1)
+
 -- TODO: this is undocumented and only works correctly in a specific case.
 -- can its goal be accomplished differently?
 Option ** Option := (x,y) -> (
@@ -120,6 +123,10 @@ presentation Module := Matrix => M -> M.cache.presentation ??= (
     else relations M)
 
 -----------------------------------------------------------------------------  
+
+-- whether a minimalPresentation is already cached
+-- TODO: simplify this caching system
+hasMinPres = M -> any(select(keys M.cache, Option), o -> o#0 === symbol minimalPresentation)
 
 minimalPresentation(Module) := prune(Module) := Module => opts -> (cacheValue (symbol minimalPresentation => opts)) (M -> (
 	  if isFreeModule M then (
@@ -286,7 +293,7 @@ Module _ ZZ := Vector => (M,i) -> (
      new target p from {p})
 -----------------------------------------------------------------------------
 -- TODO: is caching here wise? There are 2^(#comps) many possibilities
-Module ^ Array := Matrix => (M,w) -> if M.cache#?(symbol ^,w) then M.cache#(symbol ^,w) else M.cache#(symbol ^,w) = (
+Module ^ Array := Matrix => (M, w) -> M.cache#(symbol ^, w) ??= (
      -- we don't splice any more because natural indices include pairs (i,j).
      w = toList w;
      if not M.cache.?components then error "expected a direct sum module";

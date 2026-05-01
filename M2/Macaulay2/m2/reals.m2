@@ -103,7 +103,9 @@ promote(RawRingElement,RRi') := (x,R) -> new RRi from x
 promote(RawRingElement,CC') := (x,R) -> new CC from x
 promote(RawRingElement,Number) := (x,R) -> new R from x
 promote(RawRingElement,RingElement) := (x,R) -> new R from x
-promote(Number,InexactNumber) := (x,RR) -> promote(x,default RR)
+promote(QQ,RR) :=
+promote(ZZ,RR) := (x,RR) -> promote(x,default RR)
+promote(Number,CC) := (x,CC) -> promote(x,default CC)
 promote(ZZ,RR') := 
 promote(QQ,RR') := 
 promote(RR,RR') := (i,K) -> toRR(K.precision,i)
@@ -157,6 +159,10 @@ QQ _ ComplexField :=
 RR _ ComplexField :=
 CC _ ComplexField := (x,R) -> toCC(R.precision,x)
 
+internalRepresentation = z -> if z === 0. then 0/1 else if isFinite z then (
+     (prec,sgn,expt,m,numbits) := partsRR z;
+     sgn * m / 2^(numbits - expt)
+     )
 lift(RR,QQ) := opts -> (r,QQ) -> (
      if r == 0 then return 0/1;
      r' := r;
@@ -172,7 +178,7 @@ lift(RR,QQ) := opts -> (r,QQ) -> (
 	  d := m_(1,0);
 	  q := n / d;
 	  if r === numeric(p,q) then return q;
-	  if r' == 0 or abs(n*d) > p2 then return promote(r,QQ);
+	  if r' == 0 or abs(n*d) > p2 then return internalRepresentation r;
 	  r' = 1/r' ;
 	  ))
 lift(RR,ZZ) := opts -> (r,ZZ) -> (
@@ -183,10 +189,6 @@ lift(CC,QQ) := lift(CC,ZZ) := opts -> (z,R) -> (
      if imaginaryPart z == 0 then lift(realPart z, R) 
      else if opts.Verify then error "lift: complex number not real"
      )
-promote(RR,QQ) := (z,QQ) -> if z === 0. then 0/1 else if isFinite z then (
-     (prec,sgn,expt,m,numbits) := partsRR z;
-     sgn * m / 2^(numbits - expt)
-     ) else error "promote(RR,QQ): non-finite number encountered"
 liftable(RRi,QQ) := (z,RR) -> diameter(z) == 0
 liftable(RRi,ZZ) := (z,RR) -> diameter(z) == 0
 lift(RRi,QQ) := opts -> (r,QQ) -> (
@@ -241,23 +243,28 @@ conjugate Constant := conjugate @@ numeric
 
 isConstant Number := i -> true
 
-round RR := round CC := round0
-round Constant := round0 @@ numeric
+round Number := round0 @@ numeric
 round(ZZ,RR) := (n,x) -> (
      prec := precision x;
      p := (toRR(prec,10))^n;
      toRR(prec,round(x*p)/p))
+round(ZZ, CC) := (n, x) -> toCC(round(n, realPart x), round(n, imaginaryPart x))
+round(ZZ, RRi) := (n, x) -> toRRi(round(n, left x), round(n, right x))
+round(ZZ, Number) := (n, x) -> round(n, numeric x)
 
 truncate Number := {} >> o -> x -> (
     if x >= 0 then floor x
     else if x < 0 then ceiling x
     else 0) -- e.g., RRi's containing 0 as interior pt
 
-random RR := RR => opts -> x -> x * rawRandomRR precision x
+random RR := RR => opts -> x -> x * rawRandomRRUniform precision x
 random(RR,RR) := opts -> (x,y) -> x + random(y-x)
-RR'.random = opts -> R -> rawRandomRR R.precision
+RR'.random = opts -> R -> rawRandomRRUniform R.precision
 CC'.random = opts -> C -> rawRandomCC C.precision
 random RingFamily := opts -> R -> random(default R,opts)
+
+random QQ := QQ => opts -> x -> rawFareyApproximation(
+    random numeric x, opts.Height)
 
 -- algebraic operations and functions
 
@@ -402,14 +409,9 @@ expression RR := x -> (
 expression CC := z -> (
      x := realPart z;
      y := imaginaryPart z;
-     if y == 0 then expression x
-     else if x == 0 
-     then if y == 1 then hold ii
-     else if y == -1 then - hold ii
-     else y * hold ii
-     else if y == -1 then x - hold ii
-     else if y == 1 then x + hold ii
-     else x + y * hold ii)
+     if x == 0 then x=0;
+     if y == 0 or abs y < abs x * 2^(-precision z) then y=0;
+     x + y * hold ii)
 net InexactField := R -> net expression R
 net CC := z -> simpleToString z
 toExternalString RR := toExternalString0
@@ -418,12 +420,22 @@ texMath CC := x -> texMath expression x
 texMath RR := x -> (
     if not isANumber x then texMath toString x else
     if    isInfinite x then texMath(if x > 0 then infinity else -infinity)
-    else "{" | format(
-	printingPrecision,
-	printingAccuracy,
-	printingLeadLimit,
-	printingTrailLimit,
-	"}\\cdot 10^{", x ) | "}")
+    else (
+	s := simpleToString x;
+	r := regex("(-?\\d*)(?:\\.(\\d*)|)(?:"|regexQuote printingSeparator|"(-?\\d+)|)",s);
+	if r === null then return s; -- shouldn't happen
+	ss := substring(r#1,s);
+	if ss=="1" and r#2#1==0 and r#3#1>0 then "10^{"|substring(r#3,s)|"}"
+	else if ss=="-1" and r#2#1==0 and r#3#1>0 then "-10^{"|substring(r#3,s)|"}"
+	else concatenate (
+	    "{",
+	    (lookup(texMath,ZZ)) ss,
+	    if r#2#1>0 then "."|substring(r#2,s),
+	    "}",
+	    if r#3#1>0 then "\\cdot 10^{"|substring(r#3,s)|"}"
+	    )
+	)
+    )
 texMath RRi := x -> concatenate("\\big[",texMath left x,",",texMath right x,"\\big]",if isEmpty x then "\\text{ (an empty interval)}")
 withFullPrecision = f -> (
      prec := printingPrecision;
@@ -469,6 +481,10 @@ BesselY' = BesselY
 BesselY = method()
 BesselY(ZZ, Number) := (n, x) -> BesselY'(n, numeric x)
 BesselY(Number, Number) := (n, x) -> BesselY'(numeric n, numeric x)
+
+ring ComplexField := R -> CC
+ring RealField := R -> RR
+ring RealIntervalField := R -> RRi
 
 -- Local Variables:
 -- compile-command: "make -C $M2BUILDDIR/Macaulay2/m2 "

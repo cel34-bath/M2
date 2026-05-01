@@ -5,7 +5,9 @@ star := IMG { "src" => replace("PKG","Style",currentLayout#"package") | "GoldSta
 document {
      Key => "changes to Macaulay2, by version",
      Subnodes => {
-	  TO "changes made for the next release",
+	  -- TO "changes made for the next release",
+	  TO "changes, 1.25.11",
+	  TO "changes, 1.25.05",
 	  TO "changes, 1.24.11",
 	  TO "changes, 1.24.05",
 	  TO "changes, 1.23",
@@ -65,13 +67,158 @@ changesHelper List := opt -> pkgnames -> (
 	    << endl)))
 
 document {
-    Key => "changes made for the next release",
-    UL {
+    Key => "changes, 1.25.11",
+        UL {
+	LI { BOLD "upcoming breaking changes:",
+	    UL {
+		LI { "Beginning in the 1.26.05 release, current routines involving chain complexes and graded modules
+		    will be superseded by new functorial homological algebra routines in the ", TO "Complexes::Complexes",
+		    " package. Users and package developers are encouraged to preview the upcoming changes by adding ",
+		    TT "HomologicalAlgebraPackage = \"Complexes\"", " to their ", TO "initialization file", " and
+		    reporting any bugs via email or ", HREF{"https://github.com/Macaulay2/M2/issues/3778", "GitHub"}, "." },
+	    }
+	},
+	LI { "packages that have been published and certified:",
+	    UL {
+		LI { star, " ", TO "ExteriorExtensions::ExteriorExtensions", ", a package by Luke Oeding for building an algebra extending an exterior algebra, has been published." },
+		LI { star, " ", TO "MatrixSchubert::MatrixSchubert", ", a package by Ayah Almousa, Sean Grate, Daoji Huang, Patricia Klein, Adam LaClair, Yuyuan Luo, and Joseph McDonough for functions for investigating ASM and matrix Schubert varieties, has been published." },
+		LI { star, " ", TO "MultigradedBGG::MultigradedBGG", ", a package by Maya Banks, Michael K. Brown, Tara Gomes, Prashanth Sridhar, Eduardo Torres Davila, and Sasha Zotine for the multigraded BGG correspondence and differential modules, has been published." },
+		}
+	    },
+	LI { "new packages:",
+	    UL {
+		LI { TO "CpMackeyFunctors::CpMackeyFunctors", ", a package by Thomas Brazelton, David Chan, Benjamin Mudrak, Ben Spitz, Chase Vogeli, Chenglu Wang, Michael R. Zeng, and Sasha Zotine for homological algebra with Mackey functors for cyclic groups of prime order, has been added." },
+		LI { TO "ExteriorExtensions::ExteriorExtensions", ", a package by Luke Oeding for building an algebra extending an exterior algebra, has been added." },
+		LI { TO "JSONRPC::JSONRPC", ", a package by Doug Torrance for implementing JSON-RPC servers, has been added." },
+		LI { TO "MatrixFactorizations::MatrixFactorizations", ", a package by David Favero, Sasha Pevzner, Timothy Tribone, and Keller VandeBogert for computing with matrix factorizations of different lengths, has been added." },
+		LI { TO "NonPrincipalTestIdeals::NonPrincipalTestIdeals", ", a package by Trung Chau, Karl Schwede, and Hunter Simper for singularities of pairs with non-principal ideals, has been added." },
+		LI { TO "PathSignatures::PathSignatures", ", a package by Felix Lotter, Oriol Reig, Angelo El Saliby, and Carlos Amendola for working with algebraic path signatures, has been added." },
+		LI { TO "Tableaux::Tableaux", ", a package by John Graf for constructing skew tableaux, has been added." },
+		}
+	    },
+	LI { "improved packages:",
+	    UL {
+		LI { TO "A1BrouwerDegrees::A1BrouwerDegrees", " has been updated to version 2.0, with significant updates." },
+		LI { TO "CharacteristicClasses::CharacteristicClasses", " has been updated to version 2.1, with a new method to compute the Euler characteristic of a complex affine variety." },
+		LI { TO "ForeignFunctions::ForeignFunctions", " has been updated to version 0.6."},
+		LI { TO "GeometricDecomposability::GeometricDecomposability", " has been updated to version 1.4.3, adding aliases for methods with long names."},
+		LI { TO "JSON::JSON", " has been updated to version 0.5."},
+		LI { TO "LieAlgebraRepresentations::LieAlgebraRepresentations", " (formerly ", TT "LieTypes", ") has been updated to version 1.0 with a major expansion."},
+		LI { TO "Msolve::Msolve", " has been updated to version 1.24.06, fixing a bug in ", TO "Msolve::msolveRUR", "."},
+		LI { TO "MultigradedImplicitization::MultigradedImplicitization", " has been updated to version 1.1, with an option to use interpolation to compute polynomials in multigraded components and changes to speed up multidegree and basis computation." },
+		LI { TO "PolyominoIdeals::PolyominoIdeals", " has been updated to version 2.0, including some functions that help with computations for collection of cells."},
+		LI { TO "Probability::Probability", " has been updated to version 0.6."},
+		LI { TO "Python::Python", " has been updated to version 1.0 with significant updates, including the new ", TO "Python::PythonContext", " class and the method ", TO "Python::pythonRunScript", "."},
+		LI { TO "SCMAlgebras::SCMAlgebras", " has been updated to version 1.1, adding new methods.  It can now compute the unmixed layer of an ideal, check for unmixedness, and check for canonical Cohen-Macaulayness."},
+		LI { TO "SRdeformations::SRdeformations", " has been updated to version 0.53, using ", TO "Polyhedra::Polyhedra", " instead of ", TT "OldPolyhedra", "."},
+		LI { TO "TerraciniLoci::TerraciniLoci", " has been updated to version 0.4."},
+		LI { TO "ToricHigherDirectImages::ToricHigherDirectImages", " has been updated to version 1.1, fixing unexpected behavior from the output of ", TO "ToricHigherDirectImages::HDI", "."},
+		LI { TO "ToricTopology::ToricTopology", " has been updated to version 1.1, adding a new class ", TO "ToricTopology::MomentAngleComplex", " and associated methods to compute equivariant cohomology, Betti numbers, and Euler characteristic, as well as minor fixes to the rest of the package."}, 
+		LI { TO "VectorGraphics::VectorGraphics", " has been updated to version 1.1.1 with a bug fix and assorted minor changes." },
+		LI { TO "VersalDeformations::VersalDeformations", " has been updated to version 4.0, adding functionality for dealing with deformations of pairs of schemes or modules."},
+		LI { TO "Visualize::Visualize", " has been updated to version 1.8 with updates to the Javascript code."},
+		LI { TO "WhitneyStratifications::WhitneyStratifications", " has been updated to version 2.23, with several new methods to compute Whitney stratifications using polar varieties and to compute the Euler characteristic of the complex link and the local Euler obstruction using Whitney stratification." },
+		}
+	    },
+	LI { "functionality added or improved:",
+	    UL {
+		LI { "The method ", TO (set, HashTable), " has been added to create a set from the keys of a hash table."},
+		LI { "The method ", TO (toList, Tally), " has been added as a synonym for ", TO (elements, Tally), "."},
+		LI { "A new ", TO "Text::IFRAME", " class has been added for using ", CODE "<iframe>", " tags in html." },
+		LI { "Package authors may now add tests as individual files in the ", CODE "tests", " subdirectory of the package auxiliary directory without the need to use the ", TO symbol TEST, " keyword.  See ", TO check, "."},
+		LI { "A warning message is now displayed when reloading a package reminding users to recreate instances of any types from that package." },
+		LI { "Negative numbers may now be used when getting matrices entries, creating submatrices, and getting ring variables to count backwards from the end.  For example, ", CODE "A_{-1}", " will return the last column of the matrix ", CODE "A", "."},
+		LI { "The method ", TO (sqrt, ZZ, ZZ), " has been added for computing square roots in finite prime fields."},
+		LI { "The method ", TO pfaffian, " has been added for computing the pfaffian of a skew-symmetric matrix."},
+		LI { "A new binary operator, ", TO symbol @@?, ", has been added."},
+		}
+	    },
 	LI { "functionality changed in a way that could break code:",
 	    UL {
+		LI { "The package ", TT "LieTypes", " has been renamed as ", TO "LieAlgebraRepresentations::LieAlgebraRepresentations", "." },
+		LI { "An error is now raised if a function parameter list contains a duplicate symbol." },
+		LI { "Examples in package documentation are now generated using ", TO capture, ".  This speeds up installation considerably, but unexpected results may occur if, for example, one example sets a global variable that affects the behavior of another example.  To restore the old behavior of generating the example is a new M2 process, add the comment ", CODE "-* no-capture-flag *-", " to the example." },
+		}
+	    }
+	}
+    }
+
+document {
+    Key => "changes, 1.25.05",
+    UL {
+	LI { "packages that have been published and certified:",
+	    UL {
+		LI { star, " ", TO "AbstractSimplicialComplexes::AbstractSimplicialComplexes", ", a package by Nathan Grieve for abstract simplicial complexes, has been published." },
+		LI { star, " ", TO "ForeignFunctions::ForeignFunctions", ", a package by Doug Torrance providing a foreign function interface, has been published." },
+		LI { star, " ", TO "RealRoots::RealRoots", ", a package by Jordy Lopez Garcia, Kelly Maluccio, Frank Sottile, and Thomas Yahl for symbolically exploring, counting, and locating real solutions to general polynomial systems, has been published." }
+		}
+	    },
+	LI { "new packages:",
+	    UL {
+		LI { "The package ", TO "OldChainComplexes::OldChainComplexes", " has been added to preserve the existing
+		    functionality of chain complexes, graded modules, and resolutions for backwards compatibility." },
+		LI { TO "AllMarkovBases::AllMarkovBases", ", a package by Alexander Milner and Oliver Clarke for computing all minimal Markov bases of a configuration matrix, has been added." },
+		LI { TO "Brackets::Brackets", ", a package by Dalton Bidleman, Tim Duff, Jack Kendrick, and Michael Zeng for brackets, Grassmann-Cayley algebras, and projective geometry, has been added." },
+		LI { TO "ConnectionMatrices::ConnectionMatrices", ", a package by Paul Goerlach, Joris Koefler, Mahrud Sayrafi, Anna-Laura Sattelberger, Hendrik Schroeder, Nicolas Weiss, and Francesca Zaffalon for connection matrices and integrable systems from D-ideals, has been added." },
+		LI { TO "GameTheory::GameTheory", ", a package by Erin Connelly, Vincenzo Galgano, Zhuang He, Lars Kastner, Giacomo Maletto, Elke Neuhaus, Irem Portakal, Hannah Tillmann-Morris, and Chenyang Zhao for computing equilibria in game theory, has been added." },
+		LI { TO "IncidenceCorrespondenceCohomology::IncidenceCorrespondenceCohomology", ", a package by Annet Kyomuhangi, Emanuela Marangone, Claudiu Raicu, and Ethan Reed for cohomology on the incidence correspondence, bundles of principal parts, and Lefschetz properties, has been added." },
+		LI { TO "IntegerProgramming::IntegerProgramming", ", a package by Mike Cummings for solving integer programs with Gröbner bases, has been added." },
+		LI { TO "Oscillators::Oscillators", ", a package by John Cobb, Hal Schenck, and Michael E. Stillman for analyzing graph oscillators, has been added." },
+		LI { TO "ToricHigherDirectImages::ToricHigherDirectImages", ", a package by Sasha Zotine for computations involving pushforwards and higher direct images of toric maps, has been added." },
+		}
+	    },
+	LI { "improved packages:",
+	    UL {
+		LI { TO "AbstractSimplicialComplexes::AbstractSimplicialComplexes", " has been updated to version 1.1 with cosmetic updates."},
+		LI { TO "ForeignFunctions::ForeignFunctions", " has been updated to version 0.5."},
+		LI { TO "GeometricDecomposability::GeometricDecomposability", " has been updated to version 1.4.2 with minor updates."},
+		LI { TO "JSON::JSON", " has been updated to version 0.4."},
+		LI { TO2("LieAlgebraRepresentations::LieAlgebraRepresentations","LieTypes"), " has been updated to version 0.9 with various improvements."},
+		LI { TO "MatrixSchubert::MatrixSchubert", " has been updated to version 1.2 with a bug fix and documentation improvements."},
+		LI { TO "MultigradedBGG::MultigradedBGG", " has been updated to version 1.2 with documentation improvements."},
+		LI { TO "Permutations::Permutations", " has been updated to version 1.1, adding several new methods."},
+		LI { TO "RealRoots::RealRoots", " has been updated to version 1.1." },
+		LI { TO "Style::Style", " has been updated to version 1.1 and now exports a ", TO "Style::generateGrammar", " method for generating grammars for syntax highlighting."},
+		LI { TO "TerraciniLoci::TerraciniLoci", " has been updated to version 0.3."},
+		LI { TO "ThinSincereQuivers::ThinSincereQuivers", " has been updated to version 0.1 with expanded documentation, fixed typos, and functionality added."},
+		LI { TO "ToricVectorBundles::ToricVectorBundles", " has been updated to version 1.3 with a bug fix."},
+		LI { TO "Varieties::Varieties", " has been updated to version 0.3." },
+		LI { TO "Visualize::Visualize", " has been updated to version 1.7." },
+		}
+	    },
+	LI { "functionality added or improved:",
+	    UL {
+		LI { "The profiler has been updated significantly.  ", TO symbol profile, " is now a keyword that will accept any Macaulay2 code.  Run ",
+		    TO profileSummary, " or ", TO coverageSummary, " to view the profiling results."},
+		LI { "The ", TO (random, QQ), " method has been added." },
+		LI { TO gcd, " and ", TO lcm, " now accept a single argument." },
+		LI { TO Vector, " objects belonging to modules of rank 1 may now be added, subtracted, and tested for equality with elements from their underlying rings." },
+		LI { TO pairs, " will now accept any instance of class for which an ", TO iterator, " method is installed."},
+		LI { TO applyPairs, ", ", TO scanPairs, ", and ", TO selectPairs, " will now accept any object that works with ", TO pairs, "."},
+		LI { TO vector, " now accepts a ring as its first argument for constructing elements of free modules." },
+		LI { TO format, " now escapes all control characters in a string." },
+		LI { "It is now possible to write ", M2CODE "new ... from", " methods that accept 2 or 3 arguments.  See ", TO symbol new, "."},
+		LI { M2CODE "intersection", " is now a synonym for ", TO intersect, "."},
+		LI { TO directProduct, ", formerly exported by ", TO "Polyhedra::Polyhedra", ", has been moved to Core and now accepts any positive number of arguments."},
+		LI { "The ", TO sign, " method has been added."},
+		LI { "Package documentation pages now display BibTeX citation information, provided by ", TO "PackageCitations::cite", "."},
+		LI { "There now exists a ", TO Citation, " documentation keyword for overriding the default package citation information provided by ", TO "PackageCitations::cite", "."},
+		LI { "There are now several additional ", TO round, " methods."},
+		LI { TO needsPackage, " will now reload a package if its source has been modified since the last time it was loaded." },
+		LI { "Several new ", TO check, " methods have been added."},
+		LI {TO randomSubset, " has been added for generating random subsets of lists and sets."},
+		},
+	    },
+	LI { "functionality changed in a way that could break code:",
+	    UL {
+		LI { "The package ", TT "Divisor", " has been renamed as ", TO "WeilDivisors :: WeilDivisors", "." },
+		LI { "The method ", TO "Isomorphism :: isIsomorphic", " now only returns true or false. ",
+		    "To retrieved the computed isomorphism, use the method ", TO "Isomorphism :: isomorphism", "." },
 		LI { "The method ", TO (symbol\\, Matrix, Matrix), " is now a shortcut for ", TO (quotient', Matrix, Matrix), ". ",
 		    "The previous functionality is still available via ", TO (symbol//, Matrix, Matrix), ", which is a shortcut for ",
-		    TO (quotient, Matrix, Matrix), ". Additionally, both methods now work for maps of non-free modules."}
+		    TO (quotient, Matrix, Matrix), ". Additionally, both methods now work for maps of non-free modules."},
+		LI { TO (leadTerm, Ideal), " now returns an ideal instead of a matrix." },
+		LI { TO gcdCoefficients, " now returns a sequence instead of a list." },
 		}
 	    }
 	}
@@ -103,7 +250,7 @@ document {
 		LI { TO "AssociativeAlgebras::AssociativeAlgebras", " has been updated to version 0.9 with new functions related to derivation-quotient algebras, superpotentials, and Nakayama automorphisms of m-Koszul Artin-Schelter regular algebras."},
 		LI { TO "ForeignFunctions::ForeignFunctions", " has been updated to version 0.4 with improved documentation."},
 		LI { TO "Jets::Jets", " has been updated to version 1.2 with improvements and new methods for principal jets."},
-		LI { TO "LieTypes::LieTypes", " has been updated to version 0.82 with bug fixes, improved documentation, and a new method, ", TO "LieTypes::zeroModule", "."},
+		LI { TO2("LieAlgebraRepresentations::LieAlgebraRepresentations","LieTypes"), " has been updated to version 0.82 with bug fixes, improved documentation, and a new method, ", TO "LieAlgebraRepresentations::zeroModule", "."},
 		LI { TO "PositivityToricBundles::PositivityToricBundles", " has been updated to version 1.9 with bug fixes and a new method, ", TO "PositivityToricBundles::wellformedBundleFiltrations", "."},
 		LI { TO "Probability::Probability", " has been updated to version 0.5 with improved documentation." },
 		LI { TO "Seminormalization::Seminormalization", " has been updated to version 0.22 with several improvements."},
@@ -290,7 +437,7 @@ document {
                   "can now take advantage of multiple CPU cores, see ", TO "parallelism in engine computations", "."}
 		    }
 	       },
-	  LI { "emacs updates:",
+	  LI { "Emacs updates:",
 	       UL {
 	            LI { "Indentation in the Macaulay2 major mode is now more consistent with other Emacs majors modes.  For example, it now respects ",
 			 "the Electric Indent minor mode.  In particular, it is possible to toggle whether code is automatically indented after pressing ",
@@ -371,7 +518,7 @@ document {
 			 "slightly modified."}
 	       }
 	  },
-	  LI { "emacs updates:",
+	  LI { "Emacs updates:",
 	       UL {
 		    LI { "Several new functions have been added to for sending code to an M2 process, and the code that is sent is now highlighted briefly as a ",
 			 "visual indicator.  Refer to the \"Macaulay2\" dropdown menu in Emacs for more."},
@@ -799,7 +946,7 @@ document {
      UL {
 	 LI { "functionality added:",
 	      UL {
-		   LI { "The location of Macaulay2's emacs files has changed from ", TT "site-lisp", " to ", TT "site-lisp/Macaulay2", ", so
+		   LI { "The location of Macaulay2's Emacs files has changed from ", TT "site-lisp", " to ", TT "site-lisp/Macaulay2", ", so
 			users, after installing this version of Macaulay2, may once again need to run ", TO "setupEmacs", " (or ", TO "setup", ")."
 			}
 		   }
@@ -949,9 +1096,9 @@ document {
      	  LI { "packages that have been published and certified:",
      	       UL {
      	       	    -- LI { star, " ", TO "::", ", a package by ... for ..., has been published." },
-		    LI { star, " ", TO "LieTypes::LieTypes", " and ", TO "ConformalBlocks::ConformalBlocks", ", two packages by Dave Swinarski for computing ranks and first Chern classes of conformal block bundles
+		    LI { star, " ", TO2("LieAlgebraRepresentations::LieAlgebraRepresentations","LieTypes"), " and ", TO "ConformalBlocks::ConformalBlocks", ", two packages by Dave Swinarski for computing ranks and first Chern classes of conformal block bundles
 			 on the moduli space of n-pointed curves of genus 0, have been published." },
-		    LI { star, " ", TO "Divisor::Divisor", ", a package by Karl Schwede and Zhaoning Yang for working with Weil divisors, has been published." },
+		    LI { star, " ", TO "WeilDivisors::WeilDivisors", ", a package by Karl Schwede and Zhaoning Yang for working with Weil divisors, has been published." },
 		    LI { star, " ", TO "StronglyStableIdeals::StronglyStableIdeals", ", a package by Davide Alberelli and Paolo Lella for studying strongly stable ideals related to Hilbert polynomials, has been published." },
 		    LI { star, " ", TO "DiffAlg::DiffAlg", ", a package by Manuel Dubinsky, Cesar Massri, Ariel Molinuevo, and Federico Quallbrunn, for computations with differential forms, has been published." },
 		    LI { star, " ", TO "Matroids::Matroids", ", a package by Justin Chen for computations with matroids, has been published." },
@@ -1119,16 +1266,16 @@ document {
 			 See ", TO "Layout", "."
 			 },
 		    LI {
-			 "Functionality for fast nonminimal free resolutions, ", TO "FastNonminimal", " has a number of bug fixes and
+			 "Functionality for fast nonminimal free resolutions, ", TO "OldChainComplexes :: FastNonminimal", " has a number of bug fixes and
 			 improvements: (1) it now works for input modules, not just ideals (there was a monomial order mismatch which
 			     would often cause it to fail), (2) multigraded and inhomogeneous ideals/modules are allowed, 
 			 (3) this function works over the exterior algebra as well (it has always done so, but that was not
 			     always realized), (4) it is possible to have M2 use an already created Gröbner basis, instead of recomputing
-			 one.  Use Strategy=>5 in the ", TO "resolution", " command, to tell the command that the 
+			 one.  Use Strategy=>5 in the ", TO "OldChainComplexes :: resolution", " command, to tell the command that the
 			 provided ideal has generators which already form a Gröbner basis, not necessarily a reduced
 			 Gröbner basis, or a quotient module, whose presentation matrix forms a Gröbner basis.
 			 If the input is not, then this function can give incorrect answers or fail.  See ",
-			 TO "FastNonminimal", " for details and examples."
+			 TO "OldChainComplexes :: FastNonminimal", " for details and examples."
 			 },
 		    LI {
 			 "New types ", TO "MethodFunctionSingle", " and ", TO "MethodFunctionBinary", " were introduced to serve as classes of
@@ -1137,7 +1284,7 @@ document {
 			 },
 		    LI {
 			 "We have removed the feature where typing an extra empty line ends multiline 
-			 input in a terminal window or emacs buffer.
+			 input in a terminal window or Emacs buffer.
 			 This will make it easier to feed input from a file into the interpreter with
 			 F-11 and encounter the same behavior, since in files we have permit empty lines.
 			 This change was requested at our Leipzig workshop, with Q2 at ",
@@ -1254,7 +1401,7 @@ document {
 				package recognizes complete intersection, Gorenstein, and Golod rings of any
 				codepth via the functions isCI, isGorenstein, and isGolod." },
 		    LI {
-			 "The package ", TO "Divisor::Divisor", " has numerous changes to core methods to
+			 "The package ", TO "WeilDivisors::WeilDivisors", " has numerous changes to core methods to
 			 make them compatible with Macaulay2 standards and conventions (including renaming many methods).
 			 Documentation is also improved throughout.  Additional
 			 functionality has also been added (for example, checking if a divisor is very ample)."
@@ -1280,7 +1427,7 @@ document {
      	  LI { "functionality changed:",
      	       UL {
      	       	    LI {
-			 "The format for multi-line (un-nested) block comments has been changed from ", TT "{* ... *}", " to ", TT "-* ... *-", " so emacs can colorize 
+			 "The format for multi-line (un-nested) block comments has been changed from ", TT "{* ... *}", " to ", TT "-* ... *-", " so Emacs can colorize
 			 the comments correctly.  The (deprecated) old style will be recognized by M2 for a while."
 			 }
 		    }
@@ -1339,7 +1486,7 @@ document {
 		       	      "An important difference is that objects of these classes can no longer be used as keys into hash tables, since these objects
 		       	      are implemented as mutable hash tables. In particular ", TO symbol===, " no longer works on cones.  Instead, use
 		       	      a sorted list of e.g. vertices and lineality space.",
-		       	      PARA{"If you need the old behavior, load the package ", TO "OldPolyhedra::OldPolyhedra", ". 
+		       	      PARA{"If you need the old behavior, load the package ", TT "OldPolyhedra", ". 
 		       		   However, if possible, change your code to run with the new package."}
 		       		   }
 	       		      }
@@ -1432,8 +1579,8 @@ document {
 	  --     },
 	  LI { "functionality added or improved:",		    -- get this with : git diff version-1.8.2 ../../m2/exports.m2
 	       UL {
-		   LI { "The new function ", TO "minimalBetti", " finds minimal Betti numbers of an ideal or module
-		       using the new ", TO "FastNonminimal", " functionality, avoiding unneeded computation of matrices in the
+		   LI { "The new function ", TO minimalBetti, " finds minimal Betti numbers of an ideal or module
+		       using the new ", TO "OldChainComplexes :: FastNonminimal", " functionality, avoiding unneeded computation of matrices in the
 		       free resolution."},
 		   LI { "The new function ", TO "roots", ", provided by Guillem Blanco, finds roots of univariate polynomials numerically." },
 		   LI { "the new function ", TO "splitWWW", " takes an http response, e.g. from ", TO "getWWW", " and unpacks it into
@@ -1465,7 +1612,7 @@ document {
 	        UL {
                 LI { "Fast minimal betti number and non-minimal resolution code, for homogeneous ideals and modules over 
                     polynomial rings over finite prime fields.  Also is functional for ideals and
-                    modules over exterior algebras.  See ", TO "FastNonminimal", " and ", TO [betti,Minimize], ".  For 
+                    modules over exterior algebras.  See ", TO "OldChainComplexes :: FastNonminimal", " and ", TO "OldChainComplexes :: betti(...,Minimize=>...)", ".  For
                     computing minimal betti numbers, on larger examples, this code is often hundreds to thousands of times faster than 
                     standard use of ", TO "resolution", " and is also, in many cases, much faster than the 
                     similar code in Singular version 4.0.2 described in Erocal, Motsak, Schreyer, Steenpass, Refined Algorithms to
@@ -1621,7 +1768,7 @@ document {
 			 intersection. This structure allows one to ", EM "lift", " a resolution over a complete
 			 intersection to a resolution over the ambient ring -— a construction dual, in a sense,
 			 to the well known Eisenbud-Shamash construction, which is also implemented." },
-		    LI { TO "LieTypes::LieTypes", ", a package by Dave Swinarski for defining types used by the package ", TO "ConformalBlocks::ConformalBlocks", ", has been added." },
+		    LI { TO2("LieAlgebraRepresentations::LieAlgebraRepresentations","LieTypes"), ", a package by Dave Swinarski for defining types used by the package ", TO "ConformalBlocks::ConformalBlocks", ", has been added." },
 		    LI { TO "ConformalBlocks::ConformalBlocks", ", a package by Dave Swinarski for computing ranks and first Chern classes of conformal block bundles
 			 on the moduli space of n-pointed curves of genus 0, has been added." },
 		    LI { TO "M0nbar::M0nbar", ", a package by Han-Bom Moon and David Swinarski for calculations for divisors and F-curves on the moduli space of stable n-pointed genus zero curves, has been added." },
@@ -1728,7 +1875,7 @@ document {
 			 has been added."
 			 },
 		    LI { TO "EnumerationCurves::EnumerationCurves", ", a package by Hiep Dang for enumeration of rational curves via torus actions, has been added." },
-		    LI { TO "Divisor::Divisor", ", a package by Karl Schwede and Zhaoning Yang for working with Weil divisors, has been added." },
+		    LI { TO "WeilDivisors::WeilDivisors", ", a package by Karl Schwede and Zhaoning Yang for working with Weil divisors, has been added." },
 		    LI { TO "EllipticCurves::EllipticCurves", ", a package by Alessandro Oneto and Stefano Marseglia for addition on elliptic curves and point counting, has been added." },		
 		    LI { TO "HighestWeights::HighestWeights", ", a package by Federico Galetto for decomposing free resolutions and graded modules with a semisimple Lie group action, has been added." },		
 		    LI { "NumericalHilbert (absorbed by ", TO "NoetherianOperators::NoetherianOperators", "), a package by Robert Krone for numerically computing local dual spaces and Hilbert functions, has been added." },
@@ -2372,7 +2519,7 @@ document {
 			 after the handler set a flag.  This necessitated reworking the handling of interrupts
 			 by the top level interpreter, which will now respond to them immediately.
 			 When the readline library is active and reading user input (such as
-			 when the emacs interface to Macaulay2 is not used), interrupts are handled just by it."
+			 when the Emacs interface to Macaulay2 is not used), interrupts are handled just by it."
 			 },
 		    LI { TO "currentDirectory", " is now a function rather than a string constant, in order to postpone signalling 
 			 an error if a component of the path to the current working directory no longer exists."
@@ -2503,8 +2650,6 @@ document {
 		    TO (map,Module,Nothing,RingMap,Matrix),
 		    TO (map,Module,RingMap),
 		    TO (map,Module,ZZ,ZZ),
-		    TO (max,GradedModule),
-		    TO (min,GradedModule),
 		    TO (part,InfiniteNumber,InfiniteNumber,VisibleList,RingElement),
 		    TO (part,InfiniteNumber,InfiniteNumber,RingElement),
 		    TO (part,InfiniteNumber,ZZ,VisibleList,RingElement),
@@ -2527,7 +2672,6 @@ document {
 		    TO (support,Matrix),
 		    TO (symbol <-,Sequence),
 		    TO (symbol _,Number,Ring),
-		    TO (symbol |,GradedModuleMap,GradedModuleMap),
 		    TO (symmetricAlgebra,Matrix),
 		    TO (symmetricAlgebra,Nothing,Nothing,Matrix),
 		    TO (symmetricAlgebra,Nothing,Ring,Matrix),
@@ -2701,7 +2845,7 @@ document {
 			 },
 		    LI {
 			 "The cross reference hyperlinks in the info form of the documentation have been improved,
-			 but we recommend reading it in emacs with ", TT "M-x info", ", configuring the emacs
+			 but we recommend reading it in Emacs with ", KBD "M-x info", ", configuring the Emacs
 			 variable ", TT "Info-hide-note-references", " so its value is ", TT "hide", ".
 			 See ", TO "reading the documentation", "."
 			 },
@@ -2718,7 +2862,7 @@ document {
 			 },
 		    LI {
 			 "Unicode, encoded in ", TT "utf-8", " format, is supported in documentation pages, both in html form and in 
-			 emacs info form: 你好."
+			 Emacs info form: 你好."
 			 },
 		    LI {
 			 "When an error occurs within a string being evaluated with ", TO "value", ", the 
@@ -2748,14 +2892,15 @@ document {
 			 saving time.  See ", TO (quotientRemainder,RingElement,RingElement), "."
 			 },
 		    LI {
-			 "The binary representation of a real number is now available using ", TO (promote,RR,QQ), ".
+			 "The binary representation of a real number is now available using ", TT "promote(RR,QQ)", ".
+			 (note: this was reverted in a later version.)
 			 The code for ", TO (lift,RR,QQ), " has been tightened up so a rational number is provided
 			 that provides exactly the same real number when promoted."
 			 },
 		    LI {
-			 "The emacs commands ", TT "M-x M2", ", bound to ", TT "f12", ", and ", TT "M2-send-to-program", ", 
-			 bound to ", TT "f11", ", have some new capability.  
-     	       	    	 With prefix argument ", TT "C-u C-u", " to ", TT "M-x M2", ", the tag from which the buffer name is constructed (by
+			 "The Emacs commands ", KBD "M-x M2", ", bound to ", KBD "F12", ", and ", TT "M2-send-to-program",
+			 ", bound to ", KBD "F11", ", have some new capability.
+			 With prefix argument ", KBD "C-u C-u", " to ", KBD "M-x M2", ", the tag from which the buffer name is constructed (by
 			 prepending and appending asterisks) can be entered in the minibuffer.
 		         With a prefix argument to ", TT "M2-send-to-program", ", the name of
 			 the buffer to which this and future uses of the command (in this buffer) should

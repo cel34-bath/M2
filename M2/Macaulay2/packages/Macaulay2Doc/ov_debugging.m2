@@ -25,6 +25,7 @@ document {
 	-- TO "currentDirectory",
 	TO "pseudocode",
 	TO "disassemble",
+	TO "parse",
 	TO "frames",
 	TO functionBody,
 	TO dictionary,
@@ -80,7 +81,7 @@ document {
     "Let's peek at the code of the function ", TT "g", ".",
     EXAMPLE "code g",
     "We see that the function g calls a function ", TT "f", ", but ", TT "f", " is not visible to us
-    (because ", TT "f", " is a local variable).  In emacs' ", EM "Macaulay2 Interaction Mode", ", pressing
+    (because ", TT "f", " is a local variable).  In Emacs' ", EM "Macaulay2 Interaction Mode", ", pressing
     return (", TT "RET", " or ", TT "enter", ") after positioning the cursor on the output line displaying the file name and line number
     will bring up the source code in a new buffer.",
     PARA{"The first few times we use ", TT "g", ", it seems to work."},
@@ -327,6 +328,72 @@ document {
 	  }
      }
 
+doc ///
+  Key
+    Error
+    (NewFromMethod, Error, Thing)
+  Headline
+    error information
+  Description
+    Text
+      An instance of this class may be caught when an error occurs inside a
+      @TO symbol trap@ or @TO symbol try@ statement.  The error message may be
+      recovered using @TO toString@ and the location using @TO locate@.
+    Example
+      (val, err) = trap 1/0
+      toString err
+      locate err
+    Text
+      An @CODE "Error"@ object may be constructed from an error message.
+    Example
+      err = new Error from "foo"
+    Text
+      An error may be raised from an @CODE "Error"@ object using @TO error@.
+    Example
+      stopIfError = false
+      error err
+    Text
+      It is possible to create subclasses of @CODE "Error"@ for finer error
+      handling.
+    Example
+      MyError = new SelfInitializingType of Error
+      try error MyError "bar" except err do err
+  SeeAlso
+    symbol try
+    symbol trap
+    error
+///
+
+doc ///
+  Key
+    symbol trap
+  Headline
+    trap an error
+  Usage
+    trap c
+  Description
+    Text
+      The code @VAR "c"@ is evaluated and a sequence containing two elements
+      is returned.  If the evaluation completes successfully, then the first
+      element is the value and the second element is null.
+    Example
+      trap 5
+    Text
+      If an error occurs, then the first element is null and the second element
+      is an @TO Error@ object containing information about the error is
+      returned.
+    Example
+      trap 1/0
+    Text
+      Note that this is a @TO Keyword@, not a method, and so it is not
+      necessary to enclose @VAR "c"@ in parentheses.
+    Example
+      trap 5 == "foo"
+      {trap error "bar", 1/2}
+      trap 1/0; 1/2
+  SeeAlso
+    symbol try
+///
 
 document {
      Key => "recursionLimit",
@@ -358,7 +425,6 @@ document {
      SeeAlso => { "recursionLimit" }
      }
 
-
 document {
      Key => FilePosition,
      Headline => "the class of all file positions",
@@ -369,6 +435,10 @@ document {
      A single pair is a position, two form a range. The last pair is the central point of interest in that range."
      }
 
+undocumented {
+    (symbol |, FilePosition, String),
+    (symbol |, String, FilePosition),
+}
 
 document {
      Key => uncurry,
@@ -673,7 +743,7 @@ document {
      PARA{
 	  "The name of the user's preferred editor is take from the environment
 	  variable ", TT "EDITOR", ".  If X is running and the editor is not
-	  emacs, then the editor is started in a new ", TT "xterm", " window."
+	  Emacs, then the editor is started in a new ", TT "xterm", " window."
 	  },
      PARA{
 	  "For an interactive example, try ", TT "edit(dim,Module)", ".",

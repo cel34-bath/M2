@@ -18,6 +18,12 @@ doc ///
     Example
       importFrom(Core, "augmentedAssignmentOperators");
       augmentedAssignmentOperators
+    Text
+      Multiple augmented assignment is also supported.
+    Example
+     (x,y) = (3, 4)
+     (x,y) += (5, 6)
+     (x,y)
   SeeAlso
     "installing augmented assignment methods"
 ///
@@ -27,7 +33,7 @@ scan(core "augmentedAssignmentOperators", op -> (
 	document {
 	    Key => op,
 	    Headline => "augmented assignment for " | binop,
-	    Usage => "x " | toString op | "y",
+	    Usage => "x " | toString op | " y",
 	    "In most cases, ", SAMP ("x " | toString op | " y"),
 	    " is equivalent to ", SAMP("x = x " | binop | " y"),
 	    ", unless a method is installed for the class of ",

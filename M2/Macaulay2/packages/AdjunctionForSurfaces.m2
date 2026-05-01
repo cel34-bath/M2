@@ -24,6 +24,7 @@ newPackage(
 		  HomePage => "http://www.math.uni-sb.de/ag/schreyer/"}                 
 	         },
     	Headline => "Adjunction for Surfaces",
+        PackageImports => {"OldChainComplexes"},
 	Keywords => {"Projective Algebraic Geometry"}
     	)
 
@@ -752,7 +753,7 @@ doc ///
     
     	3) P2(9;3p_1,...,3p_8)
     
-    	4) Y=P(E) where E is a indecomposabe rank 2 vector bundle over an elliptic curve
+    	4) Y=P(E) where E is a indecomposable rank 2 vector bundle over an elliptic curve
     	    and H=3B, where B in Y is the section with B^2=1.
 
      Example   
@@ -794,7 +795,7 @@ doc ///
         Y=specialFamiliesOfSommeseVandeVen(kk,4);
 	betti(fY=res Y)
 	P5=ring Y, dim P5==6
-	betti(omegaY=Ext^2(module Y,P5^{-6}))
+	betti(omegaY=prune Ext^2(module Y,P5^{-6}))
 	betti(fib=trim ideal (random(kk^1,kk^3)*presentation omegaY))
 	dim fib, degree fib
      Text 

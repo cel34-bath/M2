@@ -928,7 +928,30 @@ assignNewFromFun(newclass:Code,newinitializer:Code,rhs:Code):Expr := (
 	  i := eval(newinitializer);
 	  when i is Error do i
 	  is ii:HashTable do installMethod(NewFromE,cc,ii,eval(rhs))
-     	  else printErrorMessageE(newinitializer,"expected a hash table"))
+	  is a:Sequence do (
+	      if length(a) == 2
+	      then (
+		  when a.0
+		  is T1:HashTable do
+		  when a.1
+		  is T2:HashTable do (
+		      installMethod(NewFromE, cc, T1, T2, eval(rhs)))
+		  else WrongArgHashTable(2)
+		  else WrongArgHashTable(1))
+	      else if length(a) == 3
+	      then (
+		  when a.0
+		  is T1:HashTable do
+		  when a.1
+		  is T2:HashTable do
+		  when a.2
+		  is T3:HashTable do (
+		      installMethod(NewFromE, cc, T1, T2, T3, eval(rhs)))
+		  else WrongArgHashTable(3)
+		  else WrongArgHashTable(2)
+		  else WrongArgHashTable(1))
+	      else WrongNumArgs(1, 3))
+     	  else printErrorMessageE(newinitializer,"expected 1 to 3 hash tables"))
      else printErrorMessageE(newclass,"expected a hash table as prospective class"));
 AssignNewFromFun = assignNewFromFun;
 setup(NewFromS,AssignNewFromFun);
@@ -969,7 +992,8 @@ installFun2(a:Expr,args:CodeSequence):Expr := (
 	       when b
 	       is Error do b
 	       is bcd:Sequence do (
-		    if length(bcd) == 2 then (
+		    if length(bcd) == 0 then installMethod(a, eval(args.3))
+		    else if length(bcd) == 2 then (
 			 when bcd.0
 			 is bb:HashTable do
 			 when bcd.1
@@ -995,7 +1019,7 @@ installFun2(a:Expr,args:CodeSequence):Expr := (
 			 else buildErrorPacket("expected second parameter to be a hash table")
 			 else buildErrorPacket("expected first parameter to be a hash table")
 			 )
-		    else buildErrorPacket("expected 1, 2, 3, or 4 parameter types"))
+		    else buildErrorPacket("expected between 0 and 4 parameter types"))
 	       is bb:HashTable do installMethod(a,bb,eval(args.3))
 	       else buildErrorPacket("expected right hand parameter to be a hash table or sequence"))
 	  else buildErrorPacket("expected adjacency operator ' ' on left"))

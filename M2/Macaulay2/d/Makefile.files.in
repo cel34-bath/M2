@@ -25,7 +25,6 @@ M2_DFILES += system.d
 M2_DFILES += strings.d
 M2_DFILES += varstrin.d
 M2_DFILES += strings1.d
-M2_DFILES += errio.d
 M2_DFILES += vararray.d
 M2_DFILES += ctype.d
 M2_DFILES += nets.d
@@ -43,6 +42,7 @@ else
 M2_SRCFILES += xml.d xml-c.c
 endif
 M2_DFILES += stdio0.d
+M2_DFILES += errio.d
 M2_DFILES += parse.d
 M2_DFILES += expr.d
 M2_DFILES += stdio.d
@@ -103,6 +103,9 @@ M2_DFILES += monoid.dd
 M2_DFILES += monomial_ordering.dd
 M2_DFILES += boostmath.dd
 M2_DFILES += atomic2.d
+ifeq (@JANSSON@,yes)
+M2_DFILES += json.d
+endif
 ifneq (@LIBFFI@,no)
 M2_DFILES += ffi.d
 else

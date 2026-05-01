@@ -164,6 +164,13 @@ init():void := (
 	       stdIO.readline = false; -- don't go thru readline
 	       stdIO.inisatty = true; -- otherwise hangs after first syntax error
 	       stdIO.outisatty = true; -- not so important?
+	       STDERR = 1;
+	       stdError = newFile(
+	         "stderr", 0,
+     	         false, "",
+     	         false,NOFD,NOFD,0,
+     	         false,NOFD  ,false,          "",        0,0,false,false,noprompt,noprompt,false,true,false,0,
+     	         true, STDERR,0!=isatty(2), newbuffer(), 0,0,false,dummyNetList,0,-1,false,1);
 	  )
 	  else
 	  if arg === "--read-only-files" then (
@@ -686,6 +693,8 @@ export present(x:string):string := (
 		    if c == '\"' || c == '\\' then provide '\\';
 		    provide c)))
      else x);
+
+export format(s:string):string := "\"" + present(s) + "\"";
 
 export filbuf(o:file):int := (
 --      if o.fulllines then (

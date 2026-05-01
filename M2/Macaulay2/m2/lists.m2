@@ -237,6 +237,25 @@ random List := opts -> s -> (
 	  t := s#i ; s#i = s#j ; s#j = t;
 	  );
      new List from s)
+
+randomSubset = method()
+-- Knuth Algorithm S, Art of Computer Programming, Section 3.4.2
+randomSubset(ZZ, ZZ) := (N, n) -> (
+    if n < 0 or n > N then error("expected an integer between 0 and ", N);
+    t := 0;
+    apply(n, m -> (
+	    while (N - t) * rawRandomRRUniform defaultPrecision >= n - m
+	    do t += 1;
+	    first (t, t += 1))))
+randomSubset ZZ := N -> (
+    if N < 0 then error "expected a nonnegative integer";
+    r := random 2^N;
+    for i to N - 1 list if r & 2^i != 0 then i else continue)
+randomSubset(VisibleList, ZZ) := (x, n) -> x_(randomSubset(#x, n))
+randomSubset VisibleList := x -> x_(randomSubset(#x))
+randomSubset(Set, ZZ) := (x, n) -> set randomSubset(toList x, n)
+randomSubset Set := x -> set randomSubset toList x
+
 -----------------------------------------------------------------------------
 -- sublists
 -----------------------------------------------------------------------------
@@ -319,25 +338,6 @@ pack(ZZ, BasicList) := List => pack'
 -- TODO: deprecate these versions
 pack(String,    ZZ) :=
 pack(BasicList, ZZ) := List => (L, n) -> pack'(n, L)
-
------------------------------------------------------------------------------
-
-parallelApplyRaw = (L, f) ->
-     -- 'reverse's to minimize thread switching in 'taskResult's:
-     reverse (taskResult \ reverse apply(L, e -> schedule(f, e)));
-parallelApply = method(Options => {Strategy => null})
-parallelApply(BasicList, Function) := o -> (L, f) -> (
-     if o.Strategy === "raw" then return parallelApplyRaw(L, f);
-     n := #L;
-     numThreads := min(n + 1, maxAllowableThreads);
-     oldAllowableThreads := allowableThreads;
-     if allowableThreads < numThreads then allowableThreads = numThreads;
-     numChunks := 3 * numThreads;
-     res := if n <= numChunks then toList parallelApplyRaw(L, f) else
-	  flatten parallelApplyRaw(pack(L, ceiling(n / numChunks)), chunk -> apply(chunk, f));
-     allowableThreads = oldAllowableThreads;
-     res);
-
 
 -- Local Variables:
 -- compile-command: "make -C $M2BUILDDIR/Macaulay2/m2 "

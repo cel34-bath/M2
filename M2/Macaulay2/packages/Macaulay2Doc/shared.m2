@@ -9,7 +9,15 @@ document { Key => depth,  Headline => "depth of an object",  methodstr,
 document { Key => width,  Headline => "width of an object",  methodstr }
 document { Key => length, Headline => "length of an object", methodstr,
     SeeAlso => { "Complexes::length(Complex)", "Permutations::length(Permutation)" } }
+document { Key => extend, Headline => "extend an object",    methodstr,
+    SeeAlso => {
+	"Permutations :: extend(Permutation,ZZ)",
+	"Complexes :: extend(Complex,Complex,Matrix)",
+	"OldChainComplexes :: extend(ChainComplex,ChainComplex,Matrix)",
+    },
+}
 
+document { Key => complete,     methodstr, SeeAlso => { "OldChainComplexes::complete(ChainComplex)" } }
 document { Key => minimize,     methodstr, SeeAlso => { "Complexes::minimize(Complex)" } }
 document { Key => decompose,    methodstr, SeeAlso => { "MinimalPrimes::MinimalPrimes" } }
 document { Key => truncate,     methodstr, SeeAlso => { "Truncations::Truncations" } }
@@ -22,13 +30,16 @@ document { Key => euler,        methodstr, SeeAlso => {
 document { Key => eulers,       methodstr }
 document { Key => genera,       methodstr }
 document { Key => genus,        methodstr }
+document { Key => isExact,      methodstr, SeeAlso => {
+	"ChainComplexExtras :: isExact(ChainComplex)",
+	"Complexes :: isExact(Complex)" } }
 document { Key => isSmooth,     methodstr, SeeAlso => {
-	"Divisor::isSmooth(Ideal)", "LatticePolytopes::isSmooth(Polyhedron)",
+	"WeilDivisors::isSmooth(Ideal)", "LatticePolytopes::isSmooth(Polyhedron)",
 	"Varieties::isSmooth(Variety)", "SpaceCurves::isSmooth(Curve)",
 	"Polyhedra::isSmooth(Cone)", "NormalToricVarieties::isSmooth(NormalToricVariety)",
 	"SpecialFanoFourfolds::isSmooth(EmbeddedProjectiveVariety)" } }
 document { Key => isVeryAmple,  methodstr, SeeAlso => {
-	"Divisor::isVeryAmple(WeilDivisor)", "Polyhedra::isVeryAmple(Polyhedron)",
+	"WeilDivisors::isVeryAmple(WeilDivisor)", "Polyhedra::isVeryAmple(Polyhedron)",
 	"PositivityToricBundles::isVeryAmple(ToricVectorBundleKlyachko)",
 	"NormalToricVarieties::isVeryAmple(ToricDivisor)" } }
 document { Key => isNormal,     methodstr, SeeAlso => {
@@ -59,7 +70,6 @@ document { Key => { isIsomorphism, (isIsomorphism, Matrix) },
 document { Key => cone,
     Headline => "mapping cone or polyhedral cone",
     SeeAlso => {
-	(cone, ChainComplexMap),
 	"Complexes::cone(ComplexMap)",
 	"Polyhedra::cone(Polyhedron)",
 	}
@@ -92,26 +102,21 @@ document {
     PARA {     
 	"This function calculates the intersection of a list or sequence of compatible objects."
 	},
-    SeeAlso => {
-	-- add references to intersect methods installed in packages _other than Core_ here
-        intersection,
-	"M0nbar::M0nbar",
-	"NAGtypes::NAGtypes",
-	"Polyhedra::Polyhedra"
-	}
-    }
-
-document {
-     Key => intersection,
-     Headline => "compute an intersection",
     PARA{
 	"When a more efficient algorithm is available for computing the intersection of all inputs
 	simultaneously rather than iteratively, for instance for intersecting ", TO Module, "s,
 	a specialized function that takes a list or sequence may be installed on ", TT "(symbol intersect, Type)", "."
 	},
     EXAMPLE ///code lookup(symbol intersect, Module)///,
-     SeeAlso => { intersect }
-     }
+    PARA {
+	"This function may also be called using the synonym ", M2CODE "intersection", "."},
+    SeeAlso => {
+	-- add references to intersect methods installed in packages _other than Core_ here
+	"M0nbar::intersect",
+	"NAGtypes::intersect(PolySpace,PolySpace)",
+	"Polyhedra::intersect"
+	}
+    }
 
 undocumented { 1:union }
 document {
@@ -142,3 +147,39 @@ document {
 	-- add references to tensor methods installed in packages _other than Core_ here
 	}
     }
+
+doc ///
+  Key
+     directProduct
+    (directProduct, List)
+    (directProduct, Sequence)
+  Headline
+    direct product
+  Description
+    Text
+      This function calculates the direct product of a list or sequence of
+      compatible objects.
+
+      This is a binary method, meaning it is defined for two inputs but can
+      accept more. When three or more arguments are given, the direct product is
+      evaluated from left to right: the direct product of the first two inputs
+      is computed, then the result is used to compute the direct product with
+      the third input, and so on.
+  SeeAlso
+    "Polyhedra::directProduct(Cone,Cone)"
+    "Polyhedra::directProduct(Fan,Fan)"
+    "Graphs::directProduct(Graph,Graph)"
+///
+
+document {
+    Key => status,
+    Headline => "get the status of a computation",
+    SeeAlso => {
+	(status, GroebnerBasis),
+	"OldChainComplexes :: status(ChainComplex)",
+	"SubalgebraBases :: status(SAGBIBasis)",
+	"SumsOfSquares :: status(SDPResult)",
+	-- this one is used in a different sense
+	-- "NAGtypes :: status(AbstractPoint)",
+    },
+}

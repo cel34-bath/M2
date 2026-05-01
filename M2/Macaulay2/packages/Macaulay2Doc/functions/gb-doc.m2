@@ -3,7 +3,7 @@
 --- author(s): 
 --- notes: 
 
-undocumented (NewFromMethod, GroebnerBasis, Sequence)
+undocumented (NewFromMethod, GroebnerBasis, Matrix, GroebnerBasisOptions, OptionTable)
 
 document { 
      Key => {gb,
@@ -26,6 +26,7 @@ document {
 	  [gb,SyzygyLimit],
 	[gb, SyzygyRows],
 	[gb, MaxReductionCount],
+	(status, GroebnerBasis),
 	  },
      Headline => "compute a Gröbner basis",
      Usage => "gb I",
