@@ -165,8 +165,7 @@ randomNonstandardBases(Ideal, ZZ) := (J, n) -> (
     attempts := 0;
     while #out < n and attempts < 20 * n do (
         attempts = attempts + 1;
-        shuffled := random pool;
-        cand := take(shuffled, nB);
+        cand := randomSubset(pool, nB);
         if not isValidBasis(cand, J) then continue;
         key := set cand;
         if seen#?key then continue;
@@ -187,14 +186,14 @@ parseMartyushevBases = method()
 parseMartyushevBases(String, Ring) := (path, R) -> (
     content := get path;
     use R;
-    out := {};
-    for line in lines content do (
+    out := for line in lines content list (
         if #line == 0 or first line != "[" then continue;
         listStr := replace("\\[", "{", replace("\\]", "}", line));
         ok := true;
         local mons;
         try ( mons = value listStr; ) else ( ok = false; );
-        if ok and instance(mons, List) then out = append(out, mons);
+        if ok and instance(mons, List) then continue;
+	mons
     );
     out
 );
@@ -282,7 +281,7 @@ buildHSymbolic(List, List) := o -> (F, gapPolys) -> (
 	local nParams;
         while d - dMinMet <= 0 do (
             em = apply(nF, j -> flatten entries basis(0, max(0, dG - degF#j) + d, R));
-            nParams = sum apply(em, m -> #m);
+            nParams = sum(em, m -> #m);
             targetMons := unique flatten (
                 flatten apply(nF, j -> flatten apply(em#j, mk -> flatten entries monomials(mk * F#j)))
                 | flatten entries monomials(gapPolys#i)
@@ -310,14 +309,14 @@ buildHSymbolic(List, List) := o -> (F, gapPolys) -> (
         nParams = chosenNParams;
         rref := chosenRref;
         -- Identify pivots
-        pivotCols := {};
-        curR := 0;
-        for col from 0 to nParams - 1 do (
-            if curR >= numRows rref then break;
-            if rref_(curR, col) == 1_FF then (
-                pivotCols = append(pivotCols, col);
-                curR = curR + 1;
-            );
+        (curR, col) := (0, 0);
+        pivotCols := while (curR < numrows rref and col < nParams) list (
+	    oldCol := col;
+	    col = col + 1;
+	    if rref_(curR, oldCol) != 1_FF then continue else (
+	    curR = curR + 1;
+	    oldCol
+	    )
         );
         pivotSet := set pivotCols;
         freeCols := toList select(0..nParams-1, c -> not pivotSet#?c);
@@ -332,7 +331,7 @@ buildHSymbolic(List, List) := o -> (F, gapPolys) -> (
     ));
 
     -- Total free params across all rows
-    totalFree := sum apply(rowResults, r -> #(r#3));
+    totalFree := sum(rowResults, r -> #(r#3));
     if o.Verbose then << "buildHSymbolic: totalFree=" << totalFree << endl;
 
     -- Build flat extended ring
@@ -377,8 +376,8 @@ buildHSymbolic(List, List) := o -> (F, gapPolys) -> (
 
         -- Build the row: for each gen j, sum (alphaExpr#p * entMon) over monomials of entMons#j
         rowPolys := apply(nF, j -> (
-            pStart := sum apply(j, jj -> #(em#jj));
-            sum apply(#(em#j), k -> alphaExpr#(pStart + k) * toRext(em#j#k))
+            pStart := sum(j, jj -> #(em#jj));
+            sum(#(em#j), k -> alphaExpr#(pStart + k) * toRext(em#j#k))
         ));
 
         perRowData#i = (em, toList alphaExpr, rowAlphas);
