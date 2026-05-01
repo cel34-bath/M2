@@ -314,8 +314,8 @@ buildHSymbolic(List, List) := o -> (F, gapPolys) -> (
 	    oldCol := col;
 	    col = col + 1;
 	    if rref_(curR, oldCol) != 1_FF then continue else (
-	    curR = curR + 1;
-	    oldCol
+		curR = curR + 1;
+		oldCol
 	    )
         );
         pivotSet := set pivotCols;

@@ -206,14 +206,13 @@ recoverSolutionsFromEigenvectors(Matrix, List, Ring) := (Ma, Blist, R) -> (
     if oneIdx === null then
         error("recoverSolutionsFromEigenvectors: 1 not found in basis Blist");
     varPos := apply(numgens R, i -> position(Blist, b -> b == (gens R)#i));
-    sols := {};
-    for k from 0 to numColumns P - 1 do (
+    sols := for k from 0 to numColumns P - 1 list (
         v := P_{k};
         sc := v_(oneIdx, 0);
         if abs sc < 1e-12 then continue;
         v = (1/sc) * v;
         coords := apply(varPos, p -> if p =!= null then v_(p,0) else 0_CC);
-        sols = append(sols, coords);
+	coords
     );
     sols
 )
@@ -735,11 +734,10 @@ recoverSolutions(Matrix, Matrix, EliminationTemplate, Matrix) := (Bmat, M, E, te
         -- Basis-monomial values as a vector aligned with monsB.
         bVals := apply(numB, j -> monomialValues#(toRnew(monsB#j)));
 
-        root := {};
-        for v in varsList do (
+        root := for v in varsList list (
             if monomialValues#?v then (
                 -- v is a basis monomial; read directly.
-                root = append(root, monomialValues#v);
+		monomialValues#v
             )
             else (
                 -- v lives in E or R block; reduce via RREF pivot row.
@@ -765,7 +763,7 @@ recoverSolutions(Matrix, Matrix, EliminationTemplate, Matrix) := (Bmat, M, E, te
                             if monomialValues#?(basisMonsRnew#j) then
                                 val = val + sub(coeffs_(j,0), CC) * monomialValues#(basisMonsRnew#j);
                     );
-                    root = append(root, val);
+                    val
                 )
                 else (
                     -- Failsafe: v is neither in B nor in E nor in R.
@@ -775,7 +773,7 @@ recoverSolutions(Matrix, Matrix, EliminationTemplate, Matrix) := (Bmat, M, E, te
                     for j from 0 to numB - 1 do
                         if monomialValues#?(basisMonsRnew#j) then
                             val = val + sub(coeffs_(j,0), CC) * monomialValues#(basisMonsRnew#j);
-                    root = append(root, val);
+                    val
                 );
             );
         );
