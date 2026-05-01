@@ -24,11 +24,10 @@ newPackage(
     HomePage => ""},
     {Name => "Aolong Li", 
     Email => "lial0921.miu@gmail.com",
-    HomePage => ""}}	
-    },
-    Headline => "elimination templates",
+    HomePage => ""}},
+    Headline => "Elimination Templates",
     PackageImports => {"EigenSolver", "NumericalAlgebraicGeometry"},
-    Keywords => {"Documentation"},
+    Keywords => {"Applied Algebraic Geometry", "NumericalAlgebraicGeometry"},
     HomePage => "",
     DebuggingMode => false,
     AuxiliaryFiles => true
@@ -1932,9 +1931,6 @@ toString l
 print i
 
 
-restart
-path = prepend("./", path)
-needsPackage "EliminationTemplates";
 R = QQ[x, y, z];
 Es = apply(4, i -> random(QQ^3, QQ^3));
 E = x * Es#0 + y * Es#1 + z * Es#2 + Es#3;
@@ -1969,3 +1965,16 @@ getTemplateMatrix(ET, Strategy => "Larsson")   -- Larsson  :  53 x  73
 getTemplateMatrix(ET, Strategy => "Greedy", AdjustParams => false)
                                                -- alpha:=0 :  93 x  99
 getTemplateMatrix(ET, Strategy => "Greedy")    -- Greedy   :  31 x  50
+
+
+restart
+path = prepend("./", path)
+needsPackage "EliminationTemplates";
+check "EliminationTemplates"
+  R = QQ[x,y,z]
+  Es = apply(4, i -> random(QQ^3, QQ^3));
+  Ee = x * Es#0 + y * Es#1 + z * Es#2 + Es#3;
+  I = ideal(Ee*transpose Ee * Ee - (1/2) * trace(Ee * transpose Ee) * Ee) + ideal(det Ee);
+  ET = eliminationTemplate(y, I);
+errorDepth = 2
+  M = getTemplateMatrix(ET, Strategy => "Greedy", AdjustParams => false);
