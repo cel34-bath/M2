@@ -1084,6 +1084,12 @@ doc ///
 doc ///
   Key
     (basis, EliminationTemplate)
+    [basis, Degree]
+    [basis, Limit]
+    [basis, SourceRing]
+    [basis, Strategy]
+    [basis, Truncate]
+    [basis, Variables]
   Headline
     access the quotient basis of an EliminationTemplate
   Usage
