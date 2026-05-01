@@ -27,7 +27,7 @@ newPackage(
     HomePage => ""}},
     Headline => "Elimination Templates",
     PackageImports => {"EigenSolver", "NumericalAlgebraicGeometry"},
-    Keywords => {"Applied Algebraic Geometry", "NumericalAlgebraicGeometry"},
+    Keywords => {"Applied Algebraic Geometry", "Numerical Algebraic Geometry"},
     HomePage => "",
     DebuggingMode => false,
     AuxiliaryFiles => true
@@ -45,18 +45,12 @@ newPackage(
 load "./EliminationTemplates/Martyushev.m2"
 
 export {
-    "getH0",
-    "shiftPolynomials",
     "getTemplate",
     "getTemplateMatrix",
     "getActionMatrix",
-    "getEigenMatrix",
     "templateSolve",
     "EliminationTemplate",
     "eliminationTemplate",
-    "shifts",
-    "monomialPartition",
-    "templateMatrix",
     "actionVariable",
     "copyTemplate",
     -- Option on pipeline methods. `AdjustParams => false` runs the Greedy
@@ -801,10 +795,11 @@ doc ///
 
     In the online stage, prior knowledge of the template matrix can be used to construct a multiplication matrix for the quotient ring $R/I.$
     From this multiplication matrix, solutions can be extracted using eigenvector methods, such as the ones implemented in the package @TO EigenSolver@.
+    The zeros of ideals of a similar structure may subsequently found in an offline stage, requiring only linear algebra and the old template as input.
   References
     @UL {
-	{"Optimizing Elimination Templates by Greedy Parameter Search, Martyushev-Vrablikova-Pajdla", EM "CVPR 2022"},
-	{"Efficient solvers for minimal problems by syzygy-based reduction, Larsson-Oskarsson-Astrom", EM "CVPR 2017"}
+	{"Optimizing Elimination Templates by Greedy Parameter Search, Martyushev-Vrablikova-Pajdla", EM " CVPR 2022"},
+	{"Efficient solvers for minimal problems by syzygy-based reduction, Larsson-Oskarsson-Astrom", EM " CVPR 2017"}
 	}@
 ///
 
@@ -824,6 +819,54 @@ doc ///
           J = ideal(x^2+y^2-1, x^2+x*y+y^2-1)
           E = eliminationTemplate(x, J)
           E
+///
+
+doc ///
+  Key
+    getTemplate
+    (getTemplate, EliminationTemplate)
+    [getTemplate, Strategy]
+    [getTemplate, AdjustParams]
+    [getTemplate, MonomialOrder]
+  Headline
+    construct the shifts and monomial partition for an elimination template
+  Usage
+    (sh, mp) = getTemplate E
+  Inputs
+    E:EliminationTemplate
+    Strategy => String
+      the algorithm used to compute the template: "Greedy" (default), "Larsson", or null (standard GB)
+    AdjustParams => Boolean
+      whether to run the greedy parameter-commit step (α-commit) for Martyushev's strategy
+    MonomialOrder => Symbol
+      override the default monomial order of the ring
+  Outputs
+    sh:ShiftSet
+      a list of shift monomials applied to the generators of the ideal
+    mp:MonomialPartition
+      a list of three sets of monomials: {excess, residual, basis}
+  Description
+    Text
+      This method is the core of the @TO EliminationTemplates@ pipeline. It identifies 
+      the necessary polynomial shifts and partitions the resulting monomial support 
+      into three blocks:
+      
+      *   {\bf Excess}: Monomials eliminated during the construction.
+      *   {\bf Residual}: Monomials of the form $a \cdot b_i$ that are not in the basis.
+      *   {\bf Basis}: The monomials spanning the quotient ring $R/I$.
+
+      If the action variable is a polynomial rather than a single variable, 
+      the method automatically performs a lift to the graph ring $R[s] / \langle s - a \rangle$.
+    Example
+      R = QQ[x,y];
+      I = ideal(x^2-y, y^2-x);
+      E = eliminationTemplate(x, I);
+      (sh, mp) = getTemplate(E, Strategy => "Greedy");
+      -- View the partitioned support
+      mp
+  SeeAlso
+    getTemplateMatrix
+    getActionMatrix
 ///
 
 doc ///
@@ -945,6 +988,39 @@ doc ///
 doc ///
  Node
     Key
+      getActionMatrix
+      (getActionMatrix, EliminationTemplate)
+    Headline
+      computes or retrieves a template's action matrix
+    Usage
+      A = getActionMatrix E
+    Inputs
+      E:EliminationTemplate
+        an elimination template
+    Outputs
+      A:Matrix
+        the action matrix
+    Description
+      Text
+        For a zero-dimensional polynomial ideal $I \subset R$, multiplication by a general linear form $f \in R$ induces a linear map $R/I \to R/I$, which can be represented using an action matrix.
+	For an ideal represented by a template matrix, the action matrix may from the template matrix by various triangularization schemes (RREF, LU Decomposition, etc.)
+	The eigeenvalues eigenvalues can be used to determine the (closed) points in the vanishing locus of $I$, as they give the values of $f$ on these points.
+	In this implementation, the action matrix is cached inside the template to facillitate quicker computation.
+      Example
+        R = QQ[x,y]
+        I = ideal(x + y - 1, x^2 + y^2 - 1)
+	E = eliminationTemplate(x,I)
+	A = getActionMatrix E
+	eigenvalues A
+    SeeAlso
+      EliminationTemplate
+      getTemplateMatrix
+///
+
+
+doc ///
+ Node
+    Key
       getTemplateMatrix
       (getTemplateMatrix, RingElement, Matrix, Ideal)
       (getTemplateMatrix, ShiftSet, MonomialPartition, Ideal)
@@ -983,9 +1059,79 @@ doc ///
 ///
 
 doc ///
+  Key
+    (ideal, EliminationTemplate)
+  Headline
+    access the ideal of an EliminationTemplate
+  Usage
+    ideal E
+  Inputs
+    E:EliminationTemplate
+  Outputs
+    :Ideal
+      the ideal J from which the template was constructed
+  Description
+    Text
+      This method retrieves the original ideal J associated with the 
+      @TO EliminationTemplate@. 
+    Example
+      R = QQ[x,y];
+      I = ideal(x^2-1, y^2-1);
+      E = eliminationTemplate(x, I);
+      ideal E === I
+///
+
+doc ///
+  Key
+    (basis, EliminationTemplate)
+  Headline
+    access the quotient basis of an EliminationTemplate
+  Usage
+    basis E
+  Inputs
+    E:EliminationTemplate
+  Outputs
+    :Matrix
+      the standard monomials of an elimination template
+  Description
+    Text
+      This method returns a basis of standard mononomials for the ideal represented by an elimination template.
+    Example
+      R = QQ[x,y];
+      I = ideal(x^2-1, y^2-1);
+      E = eliminationTemplate(x, I);
+      getTemplate E;
+      basis E
+///
+
+doc ///
+  Key
+    (net, EliminationTemplate)
+  Headline
+    display an EliminationTemplate
+  Usage
+    net E
+  Inputs
+    E:EliminationTemplate
+  Outputs
+    :Net
+  Description
+    Text
+      This method formats an @TO EliminationTemplate@ for printing. It lists the 
+      action variable and, if they have been computed and cached, the 
+      template matrix and the action matrix.
+    Example
+      R = QQ[x,y];
+      I = ideal(x^2-1, y^2-1);
+      E = eliminationTemplate(x, I);
+      net E
+///
+
+doc ///
  Node
     Key
       actionVariable
+      (actionVariable, EliminationTemplate)
     Headline
       returns the action variable associated to the elimination template
     Usage
@@ -1856,13 +2002,6 @@ getTemplateMatrix(ET, Strategy => "Larsson"); -- 256 x 339
 getTemplateMatrix(ET, Strategy => "Greedy"); -- will exceed runtime limit
 
 
-restart
-path = prepend("./", path)
-needsPackage "EliminationTemplates"
-check "EliminationTemplates"
-installPackage("EliminationTemplates", RemakeAllDocumentation => true)
-viewHelp EliminationTemplates
-
 -- generate a template over finite field
 FF = ZZ/3
 R = FF[x,y,z]
@@ -1965,14 +2104,10 @@ getTemplateMatrix(ET, Strategy => "Greedy", AdjustParams => false)
 getTemplateMatrix(ET, Strategy => "Greedy")    -- Greedy   :  31 x  50
 
 
+uninstallAllPackages()
 restart
 path = prepend("./", path)
-needsPackage "EliminationTemplates";
+needsPackage "EliminationTemplates"
+installPackage("EliminationTemplates", RemakeAllDocumentation => true)
+viewHelp EliminationTemplates
 check "EliminationTemplates"
-  R = QQ[x,y,z]
-  Es = apply(4, i -> random(QQ^3, QQ^3));
-  Ee = x * Es#0 + y * Es#1 + z * Es#2 + Es#3;
-  I = ideal(Ee*transpose Ee * Ee - (1/2) * trace(Ee * transpose Ee) * Ee) + ideal(det Ee);
-  ET = eliminationTemplate(y, I);
-errorDepth = 2
-  M = getTemplateMatrix(ET, Strategy => "Greedy", AdjustParams => false);
