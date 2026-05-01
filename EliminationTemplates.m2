@@ -794,8 +794,7 @@ doc ///
     In the offline stage, the structure of a "template matrix" for $I$ is determined using Groebner basis computations.
 
     In the online stage, prior knowledge of the template matrix can be used to construct a multiplication matrix for the quotient ring $R/I.$
-    From this multiplication matrix, solutions can be extracted using eigenvector methods, such as the ones implemented in the package @TO EigenSolver@.
-    The zeros of ideals of a similar structure may subsequently found in an offline stage, requiring only linear algebra and the old template as input.
+    From this multiplication matrix, solutions can be extracted using only linear algebra.
   References
     @UL {
 	{"Optimizing Elimination Templates by Greedy Parameter Search, Martyushev-Vrablikova-Pajdla", EM " CVPR 2022"},
@@ -828,6 +827,7 @@ doc ///
     [getTemplate, Strategy]
     [getTemplate, AdjustParams]
     [getTemplate, MonomialOrder]
+    AdjustParams
   Headline
     construct the shifts and monomial partition for an elimination template
   Usage
