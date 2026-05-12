@@ -110,7 +110,7 @@ export makeEntry(word:Word,position:Position,dictionary:Dictionary,thread:bool,l
 	       word, 
 	       word.hash + 9898989, 
 	       position,
-	       dummyUnaryFun,dummyPostfixFun,dummyBinaryFun,
+	       dummyUnaryFun,dummyBinaryFun,
 	       dictionary.frameID, 
 	       frameindex,
 	       1,				-- first lookup is now
@@ -268,6 +268,7 @@ bumpPrecedence();
      export QuestionS := makeKeyword(unarybinaryright("?"));
      export NotEqualEqualEqualS := makeKeyword(binaryright("=!="));
      export NotEqualS := makeKeyword(binaryright("!="));
+     export TildeS := makeKeyword(unarybinaryright("~"));
 -- operations on terms that yield terms:
 bumpPrecedence();
      export BarBarS := makeKeyword(binaryleft("||"));
@@ -337,7 +338,6 @@ bumpPrecedence();
      export AtAtS := makeKeyword(binaryleft("@@"));
      export AtAtQuestionS := makeKeyword(binaryleft("@@?"));
 bumpPrecedence();
-     export TildeS := makeKeyword(postfix("~"));
      export PowerTildeS := makeKeyword(postfix("^~"));
      export UnderscoreTildeS := makeKeyword(postfix("_~"));
      export UnderscoreStarS := makeKeyword(postfix("_*"));
@@ -505,7 +505,7 @@ export opsWithBinaryMethod := array(SymbolClosure)(
      LongDoubleRightArrowS, LongLongDoubleRightArrowS,
      LongDoubleLeftArrowS, LongLongDoubleLeftArrowS,
      ColonS, BarS, HatHatS, AmpersandS, DotDotS, DotDotLessS, MinusS, PlusS, PlusPlusS, StarStarS, StarS, BackslashBackslashS, DivideS, LeftDivideS, PercentS, SlashSlashS, AtS, 
-     AdjacentS, AtAtS, AtAtQuestionS, orS, andS, xorS,
+     AdjacentS, AtAtS, AtAtQuestionS, orS, andS, xorS, TildeS,
      -- TODO: why are these four not listed here?
      -- GreaterS, GreaterEqualS, LessS, LessEqualS,
      BarUnderscoreS,
@@ -521,13 +521,13 @@ export opsWithBinaryMethod := array(SymbolClosure)(
      );
 export opsWithUnaryMethod := array(SymbolClosure)(
      StarS, MinusS, PlusS, LessLessS, QuestionQuestionS,
-     LongDoubleLeftArrowS, LongLongDoubleLeftArrowS, 
+     LongDoubleLeftArrowS, LongLongDoubleLeftArrowS, TildeS,
      notS, DeductionS, QuestionS,LessS,GreaterS,LessEqualS,GreaterEqualS);
 export opsWithPostfixMethod := array(SymbolClosure)(
     ExclamationS,    PowerExclamationS, UnderscoreExclamationS,
     -- FIXME:        PowerSharpS,       UnderscoreSharpS,
     ParenStarParenS, PowerStarS,        UnderscoreStarS,
-    TildeS,          PowerTildeS,       UnderscoreTildeS
+    PowerTildeS,     UnderscoreTildeS
     );
 
 -- ":=" "=" "<-" "->"  "=>" "===" "=!=" "!=" "#" "#?" "." ".?" ";" "," "<" ">" "<=" ">="
@@ -683,9 +683,15 @@ bindParallelAssignmentItem(e:ParseTree,dictionary:Dictionary,colon:bool):void :=
 	  if token.word.typecode != TCid then makeErrorTree(token,"syntax error: parallel assignment expected symbol")
 	  else bindToken(token,dictionary,colon);
 	  )
-     else makeErrorTree(e,"syntax error: parallel assignment expected symbol"));
+     else bind(e, dictionary));
 bindParallelAssignmentList(e:ParseTree,dictionary:Dictionary,colon:bool):void := (
      when e
+     is unary:Unary do (
+	 if unary.Operator.word == CommaW
+	 then (
+	     bindop(unary.Operator, dictionary);
+	     bindParallelAssignmentItem(unary.rhs, dictionary, colon))
+	 else bind(e, dictionary))
      is binary:Binary do (
 	  if binary.Operator.word == CommaW
 	  then (
@@ -693,7 +699,7 @@ bindParallelAssignmentList(e:ParseTree,dictionary:Dictionary,colon:bool):void :=
 	       bindop(binary.Operator,dictionary);
 	       bindParallelAssignmentItem(binary.rhs,dictionary,colon);
 	       )
-     	  else makeErrorTree(e,"syntax error: parallel assignment expected symbol list")
+     	  else bind(e, dictionary)
 	  )
      else bindParallelAssignmentItem(e,dictionary,colon));
 bindassignment(assn:Binary,dictionary:Dictionary,colon:bool):void := (
@@ -704,6 +710,7 @@ bindassignment(assn:Binary,dictionary:Dictionary,colon:bool):void := (
 	  bindParallelAssignmentList(p.contents,dictionary,colon);
 	  bind(body,dictionary);
 	  )
+     is p:EmptyParentheses do bind(body,dictionary)
      is token:Token do (
 	  if token.word.typecode != TCid then (
 	       makeErrorTree(assn.Operator, "expected a symbol to left of '"+assn.Operator.entry.word.name+"'");

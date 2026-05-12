@@ -148,6 +148,7 @@ documentableMethods = key -> select(methods key, isDocumentableMethod)
 
 subclasses = T -> keys fold(ancestors  T, showStructure(),      lookup)
 subobjects = T -> keys fold(ancestors' T, showClassStructure(), lookup)
+subobjects' = T -> if T === Package then { Core, User } else subobjects T
 descendants  = T -> flatten prepend(L := subclasses T, apply(L, descendants))
 descendants' = T -> flatten prepend(L := subobjects T, apply(L, descendants'))
 
@@ -165,7 +166,7 @@ documentationValue(Symbol, Type)  := (S, T) -> (
     -- functions on T
     c := smenu select(documentableMethods T, key -> not typicalValues#?key or typicalValues#key =!= T);
     -- objects of type T
-    e := smenu(toString \ subobjects T);
+    e := smenu(toString \ subobjects' T);
     DIV nonnull splice ( "class" => "waystouse",
 	if #b > 0 then ( SUBSECTION {"Types of ", if T.?synonym then T.synonym else TT toString T, ":"}, b),
 	if #a > 0 then ( SUBSECTION {"Functions and methods returning ",     indefinite synonym T, ":"}, a),
@@ -335,6 +336,8 @@ getOperator := key -> if operator#?key then (
 		"The user may install ", TO "Macaulay2Doc :: binary methods", " for handling such expressions with code such as"},
 	    PRE if key === symbol SPACE
 	    then "         X Y := (x,y) -> ..."
+	    else if (getParsing key)#0 <= (getParsing symbol :=)#0
+	    then "        (X "|op|" Y) := (x,y) -> ..."
 	    else "         X "|op|" Y := (x,y) -> ...",
 	    PARA {"where ", TT "X", " is the class of ", TT "x", " and ", TT "Y", " is the class of ", TT "y", "."}},
 	if key === symbol ?? then { -- can't install binary methods
@@ -398,8 +401,13 @@ getLocation := tag -> if tag =!= null then (
 getOption := (rawdoc, tag) -> if rawdoc =!= null and rawdoc#?tag then rawdoc#tag
 
 headline = method(Dispatch => Thing)
-headline Thing := key -> getOption(fetchRawDocumentationNoLoad makeDocumentTag key, Headline)
-headline DocumentTag := tag -> getOption(fetchRawDocumentation getPrimaryTag tag, Headline)
+headline Thing := key -> getOption(
+    fetchRawDocumentation(makeDocumentTag key,
+	LoadDocumentation => false), Headline)
+headline DocumentTag := tag -> (
+    -- TODO: how can we make sure readPackage loads the correct package?
+    if isPackageNode tag then (readPackage tag.Package).Headline
+    else getOption(fetchRawDocumentation getPrimaryTag tag, Headline))
 
 headlines = method()
 headlines List := L -> (

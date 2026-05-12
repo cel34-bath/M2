@@ -4,10 +4,10 @@
 #include <M2/gc-include.h>
 
 #include "interp-exports.h"
+#include <interface/m2-types.h>
 
 #include "M2mem.h"
 #include "types.h"
-#include "debug.h"
 
 #include <engine.h> /* to get IM2_initialize() : */
 #include "supervisorinterface.h"
@@ -271,6 +271,7 @@ void interrupt_handler(int sig) {
 	      fprintf(stderr,"returning to top level\n");
 	      fflush(stderr);
 
+	      interp_setInterpreterDepth(0);
 	      interrupts_clearAlarmedFlag();
 	      interrupts_clearInterruptFlag();
 

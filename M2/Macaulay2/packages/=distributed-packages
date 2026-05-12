@@ -38,7 +38,6 @@ Varieties
 Schubert2
 PushForward
 LocalRings
-PruneComplex
 BoijSoederberg
 BGG
 Bruns
@@ -146,8 +145,6 @@ RandomPoints
 SwitchingFields
 SpectralSequences
 SectionRing
-OldPolyhedra
-OldToricVectorBundles
 K3Carpets
 ChainComplexOperations
 NumericalCertification
@@ -182,7 +179,6 @@ GroebnerWalk
 RandomMonomialIdeals
 Matroids
 NumericalImplicitization
-NonminimalComplexes
 CoincidentRootLoci
 RelativeCanonicalResolution
 RandomCurvesOverVerySmallFiniteFields
@@ -251,6 +247,7 @@ OnlineLookup
 MergeTeX
 Probability
 Isomorphism
+DirectSummands
 CodingTheory
 WhitneyStratifications
 JSON
@@ -290,5 +287,11 @@ AllMarkovBases
 Tableaux
 CpMackeyFunctors
 JSONRPC
+SimplicialModules
 MatrixFactorizations
 PathSignatures
+MacaulayPosets
+MRDI
+EliminationTemplates
+WittVectors
+Padic

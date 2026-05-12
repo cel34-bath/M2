@@ -258,7 +258,7 @@ readeval4(file:TokenFile,printout:bool,dictionary:Dictionary,returnLastvalue:boo
 					else buildErrorPacket("error occurred in parsing")))))))));
 
 interpreterDepthS := setupvar("interpreterDepth",zeroE);
-setInterpreterDepth(n:int):void := (
+export setInterpreterDepth(n:int):void := (
      interpreterDepth = n;
      setGlobalVariable(interpreterDepthS, toExpr(interpreterDepth)));
 incrementInterpreterDepth():void := setInterpreterDepth(interpreterDepth + 1);
@@ -668,6 +668,7 @@ export process():void := (
      setMaxAllowableThreads();
      -- setLoadDepth(loadDepth);				    -- loaddata() in M2lib.c increments it, so we have to reflect that at top level
      everytimeRun();
+     setStdError(stdError);
      -- we don't know the right directory; calls commandInterpreter and eventually returns:
      ret := readeval(stringTokenFile(startupFile.filename,startupFile.contents),false,false);
      when ret is err:Error do (

@@ -485,8 +485,8 @@ endif()
 
 # https://github.com/algebraic-solving/msolve
 ExternalProject_Add(build-msolve
-  URL               https://github.com/algebraic-solving/msolve/archive/refs/tags/v0.9.4.tar.gz
-  URL_HASH          SHA256=02572df81596ff1d06b5d841e3fa7652f7d7976ef021c80728bcf0b08824e30c
+  URL               https://github.com/algebraic-solving/msolve/archive/refs/tags/v0.9.5.tar.gz
+  URL_HASH          SHA256=92b94775cd5a046de307e2ad0fc576d2631e43fbd0eb7749517a033d7e77ddf4
   PREFIX            libraries/msolve
   SOURCE_DIR        libraries/msolve/build
   DOWNLOAD_DIR      ${CMAKE_SOURCE_DIR}/BUILD/tarfiles
@@ -771,8 +771,8 @@ set(4ti2_PROGRAMS
   qsolve rays walk zbasis zsolve hilbert graver ppi genmodel gensymm output)
 list(TRANSFORM 4ti2_PROGRAMS PREPEND ${M2_HOST_PREFIX}/bin/ OUTPUT_VARIABLE 4ti2_PROGRAMS)
 ExternalProject_Add(build-4ti2
-  URL               https://github.com/4ti2/4ti2/releases/download/Release_1_6_14/4ti2-1.6.14.tar.gz
-  URL_HASH          SHA256=1bc340173f93ca4abd30ea962118bd5057fdedf7e79c71d2a0c4cc9569f8b0b1
+  URL               https://github.com/4ti2/4ti2/releases/download/Release_1_6_15/4ti2-1.6.15.tar.gz
+  URL_HASH          SHA256=070e639398fda1a4665b3291e5ea80f2ba280d9bffd50656ad8482d471b96965
   PREFIX            libraries/4ti2
   SOURCE_DIR        libraries/4ti2/build
   DOWNLOAD_DIR      ${CMAKE_SOURCE_DIR}/BUILD/tarfiles
@@ -935,8 +935,8 @@ set(nauty_BINARIES
   genspecialg gentourng gentreeg hamheuristic labelg linegraphg listg multig newedgeg pickg
   planarg ranlabg shortg showg subdivideg twohamg vcolg watercluster2)
 ExternalProject_Add(build-nauty
-  URL               https://pallini.di.uniroma1.it/nauty2_9_1.tar.gz
-  URL_HASH          SHA256=488fa906d10a372c72d2364c5dee48e0f7307004fbe52c2bce50c52de8cd873e
+  URL               https://pallini.di.uniroma1.it/nauty2_9_3.tar.gz
+  URL_HASH          SHA256=9fc4edae04f88a0f5883985be3b39cf7f898fd6cc96e96b9ee25452743cc1b5b
   PREFIX            libraries/nauty
   SOURCE_DIR        libraries/nauty/build
   DOWNLOAD_DIR      ${CMAKE_SOURCE_DIR}/BUILD/tarfiles
@@ -1252,7 +1252,7 @@ message("\n## Library information
      GMP Arithmetic    = ${GMP_LIBRARIES}")
 
 execute_process(COMMAND ${CMAKE_COMMAND} -E echo_append "     Optional libs     =")
-foreach(_opt IN ITEMS OMP TBB FFI MPI XML PYTHON MYSQL)
+foreach(_opt IN ITEMS OMP TBB FFI MPI XML PYTHON MYSQL JANSSON)
   if(WITH_${_opt})
     execute_process(COMMAND ${CMAKE_COMMAND} -E echo_append " ${_opt}")
   endif()

@@ -18,7 +18,6 @@ set(CLIST
   M2types.c M2lib.c M2mem.c types.h
   scclib.c ../c/scc-core.h
   memdebug.c memdebug.h
-  debug.c debug.h
   getpagesize.h M2mem.h
   gmp_aux.c gmp_aux.h
   gdbm_interface.c
@@ -93,6 +92,7 @@ set(DLIST
   texmacs.d
   boostmath.dd
   atomic2.d
+  json.d
   ffi.d		# removed unless WITH_FFI
   interp.dd	# this one is last, because it contains the top level interpreter
   version.dd
@@ -112,6 +112,9 @@ if(NOT WITH_PYTHON)
 endif()
 if(NOT WITH_FFI)
   list(REMOVE_ITEM DLIST ffi.d)
+endif()
+if(NOT WITH_JANSSON)
+  list(REMOVE_ITEM DLIST json.d)
 endif()
 
 ###############################################################################
