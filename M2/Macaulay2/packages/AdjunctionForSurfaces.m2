@@ -24,7 +24,7 @@ newPackage(
 		  HomePage => "http://www.math.uni-sb.de/ag/schreyer/"}                 
 	         },
     	Headline => "Adjunction for Surfaces",
-        PackageImports => {"OldChainComplexes"},
+        PackageImports => {"Complexes"},
 	Keywords => {"Projective Algebraic Geometry"}
     	)
 
@@ -174,7 +174,7 @@ adjunctionProcess(Ideal):= J -> (
     a:=symbol a; b:=symbol b;
     ab:={symbol a,symbol b};
     Pn:=ring J;n:= dim Pn-1; deg := degree I; sectGenus:=genus(I+ideal(Pn_0));
-    betti(fI:=res(I,FastNonminimal=>true));
+    betti(fI:=res(I,Strategy=>Nonminimal));
     c:=codim I;
 	betti (G:=((dual fI[-c])**Pn^{-n-1}));
 	betti(omega:=prune HH_0 G);
@@ -207,7 +207,7 @@ adjunctionProcess(Ideal):= J -> (
 	    n=dim Pn-1;
 	    deg=degree I; 
 	    sectGenus=genus(I+ideal (Pn_0));
-	    betti(fI=res(I,FastNonminimal=>true));
+	    betti(fI=res(I,Strategy=>Nonminimal));
 	    betti (G=((dual fI[-c])**Pn^{-n-1}));
 	    betti(omega=prune HH_0 G);
             betti(D=transpose presentation omega);
@@ -231,7 +231,7 @@ adjunctionProcess(Ideal,ZZ):= (J,k) -> (
     N:=0;
     ab:={symbol a,symbol b};
     Pn:=ring J;n:= dim Pn-1; deg := degree I; sectGenus:=genus(I+ideal(Pn_0));
-    betti(fI:=res(I,FastNonminimal=>true));
+    betti(fI:=res(I,Strategy=>Nonminimal));
     c:= codim I;
 	betti (G:=((dual fI[-c])**Pn^{-n-1}));
 	betti(omega:=prune HH_0 G);
@@ -266,7 +266,7 @@ adjunctionProcess(Ideal,ZZ):= (J,k) -> (
 	    n=dim Pn-1;
 	    deg=degree I; 
   	    sectGenus=genus(I+ideal (Pn_0));
-  	    betti(fI=res(I,FastNonminimal=>true));
+  	    betti(fI=res(I,Strategy=>Nonminimal));
 	    betti (G=((dual fI[-c])**Pn^{-n-1}));
 	    betti(omega=prune HH_0 G);
             betti(D=transpose presentation omega);
@@ -753,7 +753,7 @@ doc ///
     
     	3) P2(9;3p_1,...,3p_8)
     
-    	4) Y=P(E) where E is a indecomposabe rank 2 vector bundle over an elliptic curve
+    	4) Y=P(E) where E is a indecomposable rank 2 vector bundle over an elliptic curve
     	    and H=3B, where B in Y is the section with B^2=1.
 
      Example   
