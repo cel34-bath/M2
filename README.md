@@ -32,10 +32,9 @@ For the documentation refresh workflow on this fork:
 * State what you verified locally, especially for examples, links, and
   regenerated documentation pages.
 
-See [DocumentationPlan.md](DocumentationPlan.md),
-[DocumentationGuide.md](DocumentationGuide.md), and
-[DocumentationStyleGuide.md](DocumentationStyleGuide.md) for the current
-documentation workflow, contributor guidance, and documentation standards.
+See [DocumentationPlan.md](DocumentationPlan.md) and
+[DocumentationGuide.md](DocumentationGuide.md) for the current documentation
+workflow, contributor guidance, and documentation standards.
 
 To start working on an existing github "issue", volunteer to work on it, so
 you can get "assigned" to the issue, thereby preventing duplication of

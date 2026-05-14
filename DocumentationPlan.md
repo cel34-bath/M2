@@ -24,8 +24,8 @@ workflow, and the first backlog to turn into issues.
 5. Land focused pull requests into `doc-updates`, not one large omnibus PR.
 6. Close the issue only after review and any needed follow-up verification.
 
-Contributor-facing guidance lives in [DocumentationGuide.md](DocumentationGuide.md)
-and [DocumentationStyleGuide.md](DocumentationStyleGuide.md).
+Contributor-facing guidance lives in
+[DocumentationGuide.md](DocumentationGuide.md).
 
 ## Suggested Labels
 
