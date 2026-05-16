@@ -18,14 +18,14 @@
 
 newPackage(
 	"Visualize",
-	Version => "1.6",
-	Date => "October 28, 2024",
+	Version => "1.9",
+	Date => "January 2, 2026",
     	Authors => {       
      	     {Name => "Brett Barwick", Email => "bbarwick@uscupstate.edu", HomePage => "http://faculty.uscupstate.edu/bbarwick/"},	     
 	     {Name => "Thomas Enkosky", Email => "tomenk@bu.edu", HomePage => "http://math.bu.edu/people/tomenk/"},	     
 	     {Name => "Branden Stone", Email => "bstone@adelphi.edu", HomePage => "http://math.adelpi.edu/~bstone/"},
 	     {Name => "Jim Vallandingham", Email => "vlandham@gmail.com", HomePage => "http://vallandingham.me/"},
-	     {Name => "Doug Torrance", Email => "dtorrance@piedmont.edu", HomePage => "https://webwork.piedmont.edu/~dtorrance"}
+	     {Name => "Doug Torrance", Email => "dtorrance9@gatech.edu", HomePage => "https://d-torrance.github.io"}
 -- Contributing Author	     {Name => "Ata Firat Pir", Email => "atafirat@math.tamu.edu"},	     
 -- Contributing Author	     {Name => "Elliot Korte", Email => "ek2872@bard.edu"},	     
 -- Contributing Author	     {Name => "Will Smith", Email => "smithw12321@gmail.com"},		
@@ -62,6 +62,25 @@ export {
      "closePort"
 }
 
+---------------
+-- ChangeLog --
+---------------
+
+-*
+
+1.9 (2026-01-02, M2 1.26.05)
+* bump three.js to 0.182.0 and update 3d ideal code
+* bump bootsidemenu to 2.2.0 (new M2 fork that supports bootstrap 5 and can be
+  used as a module)
+
+1.8 (2025-10-27, M2 1.25.11)
+* use webpack to bundle most of the javascript libraries
+* bootstrap 3 -> bootstrap 5
+
+1.7 (2025-05-03, M2 1.25.05)
+* update for leadTerm changes
+
+*-
 
 ------------------------------------------------------------
 -- Global Variables
@@ -241,7 +260,7 @@ visualize(Ideal) := commonVisOpts|{VisTemplate => basePath |"Visualize/templates
 	
 	-- changed gens to leadTerm so if there's a non monomial ideal
 	-- it will return the initial ideal
-	arrayList = apply( flatten entries leadTerm J, m -> flatten exponents m);	
+	arrayList = apply((leadTerm J)_*, m -> flatten exponents m);
 	arrayList = toArray arrayList;
 	arrayString = toString arrayList;
 	
@@ -264,7 +283,7 @@ visualize(Ideal) := commonVisOpts|{VisTemplate => basePath |"Visualize/templates
 	    
     	arrayList = apply(flatten entries basis(0,infinity, R/J), m -> flatten exponents m );
     	arrayList = toArray arrayList;
-	newArrayList = apply(flatten entries leadTerm J, m -> flatten exponents m );
+	newArrayList = apply((leadTerm J)_*, m -> flatten exponents m );
     	newArrayList = toArray newArrayList;
     	arrayString = toString arrayList;
      	newArrayString = toString newArrayList;
@@ -529,7 +548,7 @@ copyJS(String) := opts -> dst -> (
     if not match("/$", dst) then dst = dst | "/";
     if not fileExists dst then makeDirectory dst;
 
-    dirs := {"js", "css", "fonts", "images"};
+    dirs := {"js", "css", "fonts"};
     existingDirs := select(dirs, dir -> fileExists concatenate(dst, dir));
 
     if #existingDirs > 0 and opts.Warning == true then (
