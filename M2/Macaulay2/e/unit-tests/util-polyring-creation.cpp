@@ -12,6 +12,17 @@
 #include "interface/groebner.h"
 #include "comp-gb.hpp"
 
+// Creation of ring type objects
+// coefficient rings
+// degree ring (not degree monoid)
+// monoid
+// polynomialRing
+// weylAlgebra
+// exteriorAlgebra
+// associativeAlgebra
+// groebnerAlgebra
+
+
 const Monoid* degreeMonoid(const std::vector<std::string>& names)
 {
   std::vector<int> wts;
@@ -43,6 +54,29 @@ const PolynomialRing* degreeRing(int ndegrees)
   return degreeRing({"T"});
 }
 
+// Monoids and monomial orderings
+
+const Monoid* simpleMonoid(const std::vector<std::string>& names,
+                           MonomialOrdering* monorder,
+                           const PolynomialRing* degRing,
+                           const std::vector<int>& degs,
+                           const std::vector<int>& heft)
+{
+  // a few checks:
+  // (#vars of degrees ring) * #vars == #degs
+  // #heft == #gens degreesRing.
+  // heft of each degree vector for each vector should be > 0, if heft is non-empty.
+
+  const Monoid* M = Monoid::create(
+                             monorder,
+                             degRing,
+                             names,
+                             degs,
+                             heft
+                             );
+}
+
+                           
 const PolynomialRing* simplePolynomialRing(const Ring* kk,
                                            const std::vector<std::string>& names,
                                            MonomialOrdering* monorder)
