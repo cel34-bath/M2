@@ -1,7 +1,3 @@
---- status: TODO
---- author(s): 
---- notes: 
-
 doc ///
 Key
      (wedgeProduct, ZZ, ZZ, Module)
