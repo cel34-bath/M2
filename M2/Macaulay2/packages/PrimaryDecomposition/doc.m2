@@ -132,12 +132,16 @@ Node
       @UL {
         {TT "Hybrid{primaryDecompisition.Stategy, localize.Strategy}"}
       }@
-
+    Example
+      kk = ZZ/3
+      R = kk[a,b]
+      I = ideal {a^2, a*b}
+      primaryDecomposition(I, Strategy => Hybrid{Res, 1})
+    Text
       While the default (and typically fastest) strategy is @TT "Sat"@, it is recommended to try different
       @TT "Strategy"@ values if the computation of a particular embedded component is taking too long.
       One can start the computation with one strategy, and interrupt and resume with a different strategy
       (even multiple times) if desired.
-
     Text
       Recall that @TO "Macaulay2Doc :: List / Function"@ applies a function to each element of a
       list, returning the results as a list. This is often useful with lists of ideals,
@@ -151,9 +155,14 @@ Node
       and can be obtained by using @TO (associatedPrimes, Ideal)@.
     Example
       associatedPrimes I / print;
-  Caveat
-    Some strategies require the ground ring to be a prime field but results can
-    be obtained in some cases even for more general ground rings.
+    Text
+      Some strategies require the ground ring to be a prime field but results can
+      be obtained in some cases even for more general ground rings.
+    Example
+      kk = GF(9)
+      R = kk[a,b]
+      I = ideal {a^2, a*b}
+      primaryDecomposition(I)
   SeeAlso
     (primaryDecomposition, Module)
     (associatedPrimes, Ideal)
