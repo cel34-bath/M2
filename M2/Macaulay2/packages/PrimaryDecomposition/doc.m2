@@ -130,7 +130,7 @@ Node
       this can be specified by passing a @TT "Hybrid"@ Strategy in the form
 
       @UL {
-        {TT "Hybrid{primaryDecompisition.Stategy, localize.Strategy}"}
+        {TT "Hybrid{primaryDecompisition.Strategy, localize.Strategy}"}
       }@
     Example
       kk = ZZ/3
