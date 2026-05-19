@@ -9,9 +9,9 @@
 #include <mpfr.h>
 
 #include "reader.hpp"
-#include "rings/ZZp.hpp"
-#include "coefficientrings/aring-zzp-ffpack.hpp"
-#include "coefficientrings/aring-zzp.hpp"
+#include "ZZp.hpp"
+#include "aring-zzp-ffpack.hpp"
+#include "aring-zzp.hpp"
 #include "ARingTest.hpp"
 
 static bool maxH_initialized = false;
@@ -276,7 +276,7 @@ TEST(ARingZZp, read)
 ////////////////////////////
 // Flint ZZ/p arithmetic ///
 ////////////////////////////
-#include "../coefficientrings/aring-zzp-flint.hpp"
+#include "../aring-zzp-flint.hpp"
 template <>
 void getElement<M2::ARingZZpFlint>(const M2::ARingZZpFlint& R,
                                    int index,

@@ -8,7 +8,7 @@
 #include <vector>                     // for vector
 
 #include "schreyer-resolution/res-monomial-types.hpp"
-#include "rings/skew.hpp"  // for SkewMultiplication
+#include "skew.hpp"  // for SkewMultiplication
 
 class ResMonoidDense
 {

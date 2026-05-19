@@ -4,16 +4,16 @@
 #include <stdio.h>
 
 #include "ExponentVector.hpp"
-#include "rings/ZZ.hpp"
-#include "rings/ZZp.hpp"
-#include "coefficientrings/aring-glue.hpp"
+#include "ZZ.hpp"
+#include "ZZp.hpp"
+#include "aring-glue.hpp"
 #include "coeffrings.hpp"
 #include "freemod.hpp"
 #include "mem.hpp"
-#include "rings/ring.hpp"
+#include "ring.hpp"
 #include "schorder.hpp"
 #include "text-io.hpp"
-#include "rings/weylalg.hpp"
+#include "weylalg.hpp"
 
 #define sizeofgbvector(s, len) \
   (sizeof(*s) - sizeof(s->monom) + (len) * sizeof(s->monom[0]))

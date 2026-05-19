@@ -8,8 +8,8 @@
 #include "matrix-con.hpp"
 #include "matrix.hpp"
 #include "monoid.hpp"
-#include "rings/poly.hpp"
-#include "rings/ring.hpp"
+#include "poly.hpp"
+#include "ring.hpp"
 #include "style.hpp"
 
 void ChineseRemainder::CRA0(mpz_srcptr a,

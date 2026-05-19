@@ -2,8 +2,8 @@
 
 #include "RingTest.hpp"
 
-#include "rings/ZZp.hpp"
-#include "coefficientrings/aring-glue.hpp"
+#include "ZZp.hpp"
+#include "aring-glue.hpp"
 
 typedef M2::ConcreteRing<M2::ARingCCC> RingCCC;
 

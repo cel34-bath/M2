@@ -11,23 +11,23 @@
 #include "matrix-con.hpp"
 #include "matrix.hpp"
 
-#include "coefficientrings/aring-RRR.hpp"
-#include "coefficientrings/aring-RR.hpp"
-#include "coefficientrings/aring-CCC.hpp"
-#include "coefficientrings/aring-zz-gmp.hpp"
-#include "coefficientrings/aring-zz-flint.hpp"
-#include "coefficientrings/aring-zzp.hpp"
-#include "coefficientrings/aring-zzp-ffpack.hpp"
-#include "coefficientrings/aring-zzp-flint.hpp"
-#include "coefficientrings/aring-m2-gf.hpp"
-#include "coefficientrings/aring-glue.hpp"
-#include "coefficientrings/aring-tower.hpp"
-#include "coefficientrings/aring-qq.hpp"
+#include "aring-RRR.hpp"
+#include "aring-RR.hpp"
+#include "aring-CCC.hpp"
+#include "aring-zz-gmp.hpp"
+#include "aring-zz-flint.hpp"
+#include "aring-zzp.hpp"
+#include "aring-zzp-ffpack.hpp"
+#include "aring-zzp-flint.hpp"
+#include "aring-m2-gf.hpp"
+#include "aring-glue.hpp"
+#include "aring-tower.hpp"
+#include "aring-qq.hpp"
 
 #include "lapack.hpp"
 
 #include "mutablemat.hpp"
-#include "rings/ZZp.hpp"
+#include "ZZp.hpp"
 
 MutableMatrix *RingZZ::makeMutableMatrix(size_t nrows,
                                          size_t ncols,

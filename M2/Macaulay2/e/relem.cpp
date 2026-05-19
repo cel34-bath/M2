@@ -3,12 +3,12 @@
 #include "relem.hpp"
 #include "monoid.hpp"
 #include "monomial.hpp"
-#include "rings/frac.hpp"
-#include "rings/localring.hpp"
-#include "rings/polyring.hpp"
+#include "frac.hpp"
+#include "localring.hpp"
+#include "polyring.hpp"
 #include "M2FreeAlgebra.hpp"
 
-#include "coefficientrings/aring-glue.hpp"
+#include "aring-glue.hpp"
 
 RingZZ *globalZZ;
 

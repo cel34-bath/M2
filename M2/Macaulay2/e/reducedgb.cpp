@@ -1,7 +1,7 @@
 #include "reducedgb.hpp"
 
 #include "matrix-con.hpp"
-#include "rings/polyring.hpp"
+#include "polyring.hpp"
 #include "matrix.hpp"
 
 #include "reducedgb-field.hpp"

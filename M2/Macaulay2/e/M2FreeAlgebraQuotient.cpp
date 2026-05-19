@@ -7,7 +7,7 @@
 
 #include "NCAlgebras/FreeAlgebra.hpp"
 #include "matrix.hpp"
-#include "rings/ring.hpp"
+#include "ring.hpp"
 
 ConstPolyList copyMatrixToVector(const M2FreeAlgebra& F,
                              const Matrix* input)

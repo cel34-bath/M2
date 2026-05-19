@@ -20,7 +20,7 @@
 #include "lapack.hpp"
 #include "matrix-con.hpp"
 #include "matrix.hpp"
-#include "rings/poly.hpp"
+#include "poly.hpp"
 #include "relem.hpp"
 
 class FreeModule;

@@ -22,15 +22,15 @@
 #include "interface/NAG.h"
 #include "matrix.hpp"
 #include "SLP.hpp"
-#include "coefficientrings/aring-CC.hpp"
-#include "coefficientrings/aring-glue.hpp"
-#include "coefficientrings/aring.hpp"
+#include "aring-CC.hpp"
+#include "aring-glue.hpp"
+#include "aring.hpp"
 #include "buffer.hpp"
 #include "error.h"
 #include "hash.hpp"
 #include "newdelete.hpp"
-#include "rings/ring.hpp"
-#include "rings/ringelem.hpp"
+#include "ring.hpp"
+#include "ringelem.hpp"
 
 class Matrix;
 class PointArray;

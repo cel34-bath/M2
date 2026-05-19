@@ -1,7 +1,7 @@
 #ifndef _reader_hpp_
 #define _reader_hpp_
 
-#include "coefficientrings/aring-zzp.hpp"
+#include "aring-zzp.hpp"
 #include <cstddef>
 
 namespace M2 {

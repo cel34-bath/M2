@@ -12,9 +12,9 @@
 #include "matrix.hpp"              // for Matrix
 #include "mem.hpp"                 // for stash
 #include "monoid.hpp"              // for Monoid
-#include "rings/polyring.hpp"            // for PolynomialRing
-#include "rings/ring.hpp"                // for Ring
-#include "rings/ringelem.hpp"            // for vec
+#include "polyring.hpp"            // for PolynomialRing
+#include "ring.hpp"                // for Ring
+#include "ringelem.hpp"            // for vec
 #include "text-io.hpp"             // for emit
 #include "util.hpp"                // for M2_arrayint_to_stdvector
 #include "VectorArithmetic.hpp"    // for VectorArithmetic, ElementArray

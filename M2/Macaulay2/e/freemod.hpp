@@ -3,7 +3,7 @@
 #ifndef _FreeModule_hh_
 #define _FreeModule_hh_
 
-#include "rings/ring.hpp"
+#include "ring.hpp"
 #include "schorder.hpp"
 
 class Matrix;

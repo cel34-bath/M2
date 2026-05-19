@@ -5,8 +5,8 @@
 static bool maxH_initialized = false;
 static mpz_t maxH;
 
-#include "coefficientrings/aring-glue.hpp"
-#include "rings/ZZp.hpp"
+#include "aring-glue.hpp"
+#include "ZZp.hpp"
 
 template <>
 ring_elem getElement<RingQQ>(const RingQQ &R, int index)

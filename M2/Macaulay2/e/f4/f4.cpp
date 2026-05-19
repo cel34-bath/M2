@@ -16,8 +16,8 @@
 #include "f4/varpower-monomial.hpp"    // for varpower_word, varpower_monomial
 #include "interface/mutable-matrix.h"  // for IM2_MutableMatrix_make
 #include "interrupted.hpp"             // for system_interrupted
-#include "rings/ring.hpp"                    // for Ring
-#include "rings/ringelem.hpp"                // for ring_elem, vec
+#include "ring.hpp"                    // for Ring
+#include "ringelem.hpp"                // for ring_elem, vec
 #include "style.hpp"                   // for INTSIZE
 
 #include <gc/gc_allocator.h>           // for gc_allocator

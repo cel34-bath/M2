@@ -7,7 +7,7 @@
 #include <vector>
 
 #include "interface/random.h"
-#include "rings/ZZ.hpp"
+#include "ZZ.hpp"
 
 #define DEBUGGCDno
 

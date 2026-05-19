@@ -5,7 +5,7 @@
 
 #include "matrix.hpp"
 #include "matrix-con.hpp"
-#include "rings/polyring.hpp"
+#include "polyring.hpp"
 #include "newdelete.hpp"
 #include "relem.hpp"
 #include "hilb.hpp"

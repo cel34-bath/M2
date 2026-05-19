@@ -1,7 +1,7 @@
 #include "NCAlgebras/FreeAlgebraQuotient.hpp"
 
 #include "monoid.hpp"  // for Monoid
-#include "rings/ring.hpp"    // for Ring, SumCollector
+#include "ring.hpp"    // for Ring, SumCollector
 
 SumCollector* FreeAlgebraQuotient::make_SumCollector() const
 {

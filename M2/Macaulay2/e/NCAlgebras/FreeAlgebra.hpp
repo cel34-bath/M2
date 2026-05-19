@@ -5,8 +5,8 @@
 #include "NCAlgebras/FreeMonoid.hpp"  // for FreeMonoid
 #include "NCAlgebras/Word.hpp"        // for Word
 #include "newdelete.hpp"              // for our_new_delete
-#include "rings/ring.hpp"                   // for Ring (ptr only), SumCollector
-#include "rings/ringelem.hpp"               // for ring_elem
+#include "ring.hpp"                   // for Ring (ptr only), SumCollector
+#include "ringelem.hpp"               // for ring_elem
 #include "style.hpp"                  // for GEOHEAP_SIZE
 
 #include <iosfwd>                     // for ostream, string

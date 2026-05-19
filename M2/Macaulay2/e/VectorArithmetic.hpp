@@ -37,8 +37,8 @@
 #include "NCAlgebras/Range.hpp"  // for Range
 #include "newdelete.hpp"         // for VECTOR
 #include "MemoryBlock.hpp"       // for MemoryBlock
-#include "rings/ringelem.hpp"
-#include "coefficientrings/aring-glue.hpp"
+#include "ringelem.hpp"
+#include "aring-glue.hpp"
 #include <variant>
 #include <type_traits>
 

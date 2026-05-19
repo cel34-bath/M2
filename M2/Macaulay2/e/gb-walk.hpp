@@ -6,7 +6,7 @@
 #include "comp-gb.hpp"
 #include "engine-includes.hpp"
 #include "interface/monomial-ordering.h"  // for MonomialOrdering
-#include "rings/polyring.hpp"
+#include "polyring.hpp"
 
 class Computation;
 class FreeModule;

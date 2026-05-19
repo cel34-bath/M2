@@ -8,7 +8,7 @@
 #include "freemod.hpp"
 #include "monoid.hpp"
 #include "newdelete.hpp"
-#include "rings/ring.hpp"
+#include "ring.hpp"
 
 class Matrix;
 

@@ -4,7 +4,7 @@
 #define _res_f4_computation_hpp_
 
 #include "res-poly-ring.hpp"
-#include "rings/polyring.hpp"
+#include "polyring.hpp"
 #include "comp-res.hpp"
 
 #include <memory>  // For std::unique_ptr

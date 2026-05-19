@@ -6,7 +6,7 @@
 #include "style.hpp"
 #include "matrix.hpp"
 #include "monideal.hpp"
-#include "rings/polyring.hpp"
+#include "polyring.hpp"
 #include "comp-res.hpp"
 
 #include "res-a1-poly.hpp"

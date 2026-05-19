@@ -3,7 +3,7 @@
 #define _spair_hh_
 
 #include "freemod.hpp"
-#include "rings/polyring.hpp"
+#include "polyring.hpp"
 #include "gbring.hpp"
 
 struct s_pair;

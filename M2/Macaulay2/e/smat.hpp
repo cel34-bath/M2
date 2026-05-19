@@ -4,7 +4,7 @@
 #define _smat_hpp_
 
 union ring_elem;
-#include "rings/ZZp.hpp"
+#include "ZZp.hpp"
 
 class MutableMatrix;
 

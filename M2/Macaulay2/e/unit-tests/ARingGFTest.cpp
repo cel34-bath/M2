@@ -9,7 +9,7 @@
 #include <mpfr.h>
 
 #include "debug.hpp"
-#include "coefficientrings/aring-gf-flint.hpp"
+#include "aring-gf-flint.hpp"
 #include "ARingTest.hpp"
 
 static const int nelements = 200;

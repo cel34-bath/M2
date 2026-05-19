@@ -8,7 +8,7 @@
 #include "hash.hpp"       // for MutableEngineObject
 #include "monoid.hpp"     // for Monoid, monomial
 #include "newdelete.hpp"  // for gc_vector, our_new_delete
-#include "rings/ringelem.hpp"   // for ring_elem
+#include "ringelem.hpp"   // for ring_elem
 
 class FreeModule;
 class Matrix;

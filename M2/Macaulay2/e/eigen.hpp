@@ -2,10 +2,10 @@
 #define __eigen_hpp_
 
 #include "dmat.hpp"
-#include "coefficientrings/aring-RR.hpp"
-#include "coefficientrings/aring-CC.hpp"
-#include "coefficientrings/aring-RRR.hpp"
-#include "coefficientrings/aring-CCC.hpp"
+#include "aring-RR.hpp"
+#include "aring-CC.hpp"
+#include "aring-RRR.hpp"
+#include "aring-CCC.hpp"
 using LMatrixRR = DMat<M2::ARingRR>;
 using LMatrixCC = DMat<M2::ARingCC>;
 using LMatrixRRR = DMat<M2::ARingRRR>;

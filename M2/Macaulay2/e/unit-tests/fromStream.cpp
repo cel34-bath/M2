@@ -4,8 +4,8 @@
 // an exception is raised on bad input?
 
 #include "RingTest.hpp"
-#include "coefficientrings/aring-zzp.hpp"
-#include "rings/ZZp.hpp"
+#include "aring-zzp.hpp"
+#include "ZZp.hpp"
 
 template <typename T>
 std::istream &fromStream(std::istream &i,

@@ -1,8 +1,8 @@
 // Copyright 2013 Michael E. Stillman
 
 #include "RingTest.hpp"
-#include "coefficientrings/aring-glue.hpp"
-#include "coefficientrings/aring-RRR.hpp"
+#include "aring-glue.hpp"
+#include "aring-RRR.hpp"
 
 typedef M2::ConcreteRing<M2::ARingRRR> RingRRR;
 

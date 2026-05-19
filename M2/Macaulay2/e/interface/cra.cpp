@@ -6,10 +6,10 @@
 #include "matrix-con.hpp"
 #include "matrix.hpp"
 #include "monoid.hpp"
-#include "rings/poly.hpp"
+#include "poly.hpp"
 #include "relem.hpp"
-#include "rings/ring.hpp"
-#include "rings/ringelem.hpp"
+#include "ring.hpp"
+#include "ringelem.hpp"
 
 const RingElement *rawRingElementCRA(const RingElement *f,
                                      const RingElement *g,

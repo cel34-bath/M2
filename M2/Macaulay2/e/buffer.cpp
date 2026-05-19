@@ -1,5 +1,5 @@
 #include "buffer.hpp"
-#include "rings/ringelem.hpp"
+#include "ringelem.hpp"
 #include <cstdio>
 #include <cstring>
 #include <cassert>

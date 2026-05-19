@@ -2,7 +2,7 @@
 #ifndef _Eschreyer_hpp_
 #define _Eschreyer_hpp_
 
-#include "rings/polyring.hpp"
+#include "polyring.hpp"
 #include "gbring.hpp"
 #include "schorder.hpp"
 #include "matrix.hpp"

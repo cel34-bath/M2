@@ -12,25 +12,25 @@
 #include "exceptions.hpp"
 #include "dmat.hpp"
 
-#include "coefficientrings/aring-RR.hpp"
-#include "coefficientrings/aring-CC.hpp"
-#include "coefficientrings/aring-RRR.hpp"
-#include "coefficientrings/aring-CCC.hpp"
-#include "coefficientrings/aring-zzp.hpp"
-#include "coefficientrings/aring-m2-gf.hpp"
+#include "aring-RR.hpp"
+#include "aring-CC.hpp"
+#include "aring-RRR.hpp"
+#include "aring-CCC.hpp"
+#include "aring-zzp.hpp"
+#include "aring-m2-gf.hpp"
 typedef DMat<M2::ARingZZp> DMatZZp;
 typedef DMat<M2::ARingGFM2> DMatGFM2;
 
-#include "coefficientrings/aring-zzp-ffpack.hpp"
+#include "aring-zzp-ffpack.hpp"
 typedef M2::ARingZZpFFPACK ZZpFFPACK;
 #define DMatZZpFFPACK DMat<ZZpFFPACK>
 
-#include "coefficientrings/aring-zz-gmp.hpp"
-#include "coefficientrings/aring-qq.hpp"
-#include "coefficientrings/aring-zz-flint.hpp"
-#include "coefficientrings/aring-zzp-flint.hpp"
-#include "coefficientrings/aring-gf-flint-big.hpp"
-#include "coefficientrings/aring-gf-flint.hpp"
+#include "aring-zz-gmp.hpp"
+#include "aring-qq.hpp"
+#include "aring-zz-flint.hpp"
+#include "aring-zzp-flint.hpp"
+#include "aring-gf-flint-big.hpp"
+#include "aring-gf-flint.hpp"
 
 typedef DMat<M2::ARingZZGMP> DMatZZGMP;
 typedef DMat<M2::ARingZZ> DMatZZ;  // flint

@@ -4,7 +4,7 @@
 #define _dmat_gf_flint_big_hpp_
 
 #include <utility>                 // for swap
-#include "coefficientrings/aring-gf-flint-big.hpp"  // for ARingGFFlintBig
+#include "aring-gf-flint-big.hpp"  // for ARingGFFlintBig
 
 // The following needs to be included before any flint files are included.
 #include <M2/gc-include.h>

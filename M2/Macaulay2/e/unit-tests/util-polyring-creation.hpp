@@ -10,8 +10,8 @@
 #include "interface/ring.h"
 #include "interface/aring.h"
 #include "monoid.hpp"
-#include "rings/poly.hpp"
-#include "rings/polyring.hpp"
+#include "poly.hpp"
+#include "polyring.hpp"
 
 const Monoid* degreeMonoid(const std::vector<std::string>& names);
 

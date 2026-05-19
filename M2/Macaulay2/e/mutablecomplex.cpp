@@ -4,8 +4,8 @@
 #include "mutablecomplex.hpp"
 #include "engine-includes.hpp"
 #include "debug.hpp"
-#include "rings/ring.hpp"
-#include "rings/polyring.hpp"
+#include "ring.hpp"
+#include "polyring.hpp"
 #include <utility>
 #include <iostream>
 #include <algorithm>

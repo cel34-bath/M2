@@ -13,7 +13,7 @@
 #include <vector>
 
 #include "ExponentVector.hpp"
-#include "rings/ringelem.hpp"
+#include "ringelem.hpp"
 #include "buffer.hpp"
 
 class Tower;
