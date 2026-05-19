@@ -50,6 +50,7 @@ class RingElem
   // NOTE: fromString and toString are not yet inverses of each other.
   // toString outputs e.g. "x3+2xyz" while fromString expects "x^3+2*x*y*z".
   // TODO: make these round-trip compatible.
+  // TODO: fromDouble
   static RingElem fromString(const Ring *R, const std::string &s);
 
   // Accessors

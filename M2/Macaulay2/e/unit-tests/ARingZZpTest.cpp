@@ -276,7 +276,7 @@ TEST(ARingZZp, read)
 ////////////////////////////
 // Flint ZZ/p arithmetic ///
 ////////////////////////////
-#include "../aring-zzp-flint.hpp"
+#include "aring-zzp-flint.hpp"
 template <>
 void getElement<M2::ARingZZpFlint>(const M2::ARingZZpFlint& R,
                                    int index,

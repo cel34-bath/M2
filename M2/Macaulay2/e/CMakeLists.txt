@@ -59,9 +59,6 @@ set(HPPONLYFILES
   timing.hpp
   SLP-defs.hpp
   SLP-imp.hpp
-  aring-glue.hpp
-  aring-qq.hpp
-  aring-translate.hpp
   dmat-gf-flint-big.hpp
   dmat-gf-flint.hpp
   dmat-lu-inplace.hpp
@@ -89,7 +86,6 @@ set(HPPONLYFILES
   newdelete.hpp
   ExponentVector.hpp
   res-a0-pair.hpp
-  schur-poly-heap.hpp
   smat.hpp
   util.hpp
   style.hpp
@@ -115,7 +111,6 @@ set(CPPONLYFILES
   ntl-debugio.cpp
   ntl-internal.cpp
   res-a2-gb.cpp
-  ring-vecs.cpp
   interface/aring.cpp
   interface/aring.h
   interface/computation.h # no .cpp yet
@@ -180,30 +175,9 @@ set(SRCLIST
   Polynomial
   monomial-collection
   Eschreyer
-  GF
   LLL
   NAG # TODO: move raw* functions to e/interface
   SLP
-  ZZ
-  ZZp
-  aring-CC
-  aring-CCC
-  aring-RR
-  aring-RRR
-  aring-RRi
-  aring-CCi
-  aring-gf-flint-big
-  aring-gf-flint
-  aring-m2-gf
-  aring-qq-flint
-  aring-qq-gmp
-  aring-tower
-  aring-zz-flint
-  aring-zz-gmp
-  aring-zzp-ffpack
-  aring-zzp-flint
-  aring-zzp
-  aring
   assprime
   betti
   buffer
@@ -222,7 +196,6 @@ set(SRCLIST
   eigen
   finalize
   fplll-interface
-  frac
   fractionfreeLU
   franzi-brp
   freemod
@@ -241,7 +214,6 @@ set(SRCLIST
   interreduce
   interrupted
   lapack
-  localring
   mat
   matrix-con
   matrix-stream
@@ -260,10 +232,6 @@ set(SRCLIST
   ntl-interface
   overflow
   pfaff
-  poly
-  polyquotient
-  polyring
-  qring
   reader
   reducedgb-ZZ
   reducedgb-field-local
@@ -276,22 +244,12 @@ set(SRCLIST
   res-a1-poly
   res-a1
   res-a2
-  ring
-  ringelem
   ringmap
   sagbi
   schorder
-  schur
-  schur2
-  schurSn
-  skew
-  skewpoly
-  solvable
   spair
   text-io
-  tower # TODO: move rawTowerTranslatePoly to e/interface
   ExponentList
-  weylalg
   # Faugère's F4 Algorithm
   gb-f4/Basis
   gb-f4/GBF4Computation
@@ -333,13 +291,81 @@ set(SRCLIST
   bibasis/settings-manager
   )
 
+set(COEFFRING_SRCLIST
+  aring-CC
+  aring-CCC
+  aring-RR
+  aring-RRR
+  aring-RRi
+  aring-CCi
+  aring-gf-flint-big
+  aring-gf-flint
+  aring-m2-gf
+  aring-qq-flint
+  aring-qq-gmp
+  aring-tower
+  aring-zz-flint
+  aring-zz-gmp
+  aring-zzp-ffpack
+  aring-zzp-flint
+  aring-zzp
+  aring
+)
+set(COEFFRING_HPPONLY
+  aring-glue.hpp
+  aring-qq.hpp
+  aring-translate.hpp
+)
+set(RING_SRCLIST
+  frac
+  GF
+  localring
+  poly
+  polyquotient
+  polyring
+  qring
+  ring
+  ringelem
+  schur
+  schur2
+  schurSn
+  skew
+  skewpoly
+  solvable
+  tower
+  weylalg
+  ZZ
+  ZZp
+)
+set(RING_CPPONLY
+  ring-vecs.cpp
+)
+set(RING_HPPONLY
+  schur-poly-heap.hpp
+  )
+
+# prepend subdirectory names
+list(TRANSFORM COEFFRING_SRCLIST PREPEND CoefficientRings/)
+list(TRANSFORM COEFFRING_HPPONLY PREPEND CoefficientRings/)
+list(TRANSFORM RING_SRCLIST      PREPEND Rings/)
+list(TRANSFORM RING_CPPONLY      PREPEND Rings/)
+list(TRANSFORM RING_HPPONLY      PREPEND Rings/)
+
+# merge the bare-name sub-lists into SRCLIST BEFORE the .cpp/.hpp transform
+list(APPEND SRCLIST ${COEFFRING_SRCLIST})
+list(APPEND SRCLIST ${RING_SRCLIST})
+
 list(TRANSFORM SRCLIST APPEND .cpp OUTPUT_VARIABLE CPPFILES)
 list(TRANSFORM SRCLIST APPEND .hpp OUTPUT_VARIABLE HPPFILES)
 
+# pre-suffixed extras go in AFTER the transform
+list(APPEND CPPFILES ${RING_CPPONLY})
+list(APPEND HPPFILES ${COEFFRING_HPPONLY})
+list(APPEND HPPFILES ${RING_HPPONLY})
+
 set(SOURCES ${CPPONLYFILES} ${CPPFILES} ${CFILES})
 set(HEADERS ${HPPONLYFILES} ${HPPFILES} ${HFILES})
-list(APPEND HEADERS ${CMAKE_BINARY_DIR}/include/M2/config.h)
-
+  
 ###############################################################################
 ## Generate TAGS file
 # TODO: the order is somewhat different, is it a problem?
@@ -366,6 +392,8 @@ set_target_properties(M2-engine PROPERTIES PUBLIC_HEADER "${HEADERS}")
 
 target_include_directories(M2-engine PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/CoefficientRings>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/Rings>
   $<INSTALL_INTERFACE:include/Macaulay2>)
 
 # TODO: make engine independent of interpreter headers

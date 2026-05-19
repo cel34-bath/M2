@@ -12,6 +12,7 @@
 
 TEST(PointArray, constructor)
 {
+  std::srand(0);
   PointArray p(0.001, {0.3, 0.7});
   PointArray q(0.001, 10);
 }

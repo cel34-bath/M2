@@ -5,7 +5,7 @@
 #include <vector>
 #include <memory>
 
-#include "aring-glue.hpp"
+#include "CoefficientRings/aring-glue.hpp"
 #include "aring-m2-gf.hpp"
 #include "aring-qq.hpp"
 #include "aring-tower.hpp"
