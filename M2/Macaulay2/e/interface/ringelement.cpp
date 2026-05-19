@@ -31,9 +31,9 @@
 #include "relem.hpp"
 #include "ring.hpp"
 #include "ringelem.hpp"
-#include "schur.hpp"
-#include "schur2.hpp"
-#include "schurSn.hpp"
+#include "Schur/schur.hpp"
+#include "Schur/schur2.hpp"
+#include "Schur/schurSn.hpp"
 #include "tower.hpp"
 #include "util.hpp"
 

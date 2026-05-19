@@ -89,7 +89,7 @@ set(HPPONLYFILES
   newdelete.hpp
   ExponentVector.hpp
   res-a0-pair.hpp
-  schur-poly-heap.hpp
+  Schur/schur-poly-heap.hpp
   smat.hpp
   util.hpp
   style.hpp
@@ -281,9 +281,9 @@ set(SRCLIST
   ringmap
   sagbi
   schorder
-  schur
-  schur2
-  schurSn
+  Schur/schur
+  Schur/schur2
+  Schur/schurSn
   skew
   skewpoly
   solvable
