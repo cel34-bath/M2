@@ -27,7 +27,7 @@ set(UNDETERMINED
   franzi-brp-test.cpp
   overflow-test.cpp
   test.dd
-  aring-wrap # both cpp and hpp
+  coefficientrings/aring-wrap # both cpp and hpp
   points # both cpp and hpp
   )
 
@@ -59,9 +59,9 @@ set(HPPONLYFILES
   timing.hpp
   SLP-defs.hpp
   SLP-imp.hpp
-  aring-glue.hpp
-  aring-qq.hpp
-  aring-translate.hpp
+  coefficientrings/aring-glue.hpp
+  coefficientrings/aring-qq.hpp
+  coefficientrings/aring-translate.hpp
   dmat-gf-flint-big.hpp
   dmat-gf-flint.hpp
   dmat-lu-inplace.hpp
@@ -89,7 +89,7 @@ set(HPPONLYFILES
   newdelete.hpp
   ExponentVector.hpp
   res-a0-pair.hpp
-  schur-poly-heap.hpp
+  schur-rings/schur-poly-heap.hpp
   smat.hpp
   util.hpp
   style.hpp
@@ -115,7 +115,7 @@ set(CPPONLYFILES
   ntl-debugio.cpp
   ntl-internal.cpp
   res-a2-gb.cpp
-  ring-vecs.cpp
+  rings/ring-vecs.cpp
   interface/aring.cpp
   interface/aring.h
   interface/computation.h # no .cpp yet
@@ -180,30 +180,30 @@ set(SRCLIST
   Polynomial
   monomial-collection
   Eschreyer
-  GF
+  rings/GF
   LLL
   NAG # TODO: move raw* functions to e/interface
   SLP
-  ZZ
-  ZZp
-  aring-CC
-  aring-CCC
-  aring-RR
-  aring-RRR
-  aring-RRi
-  aring-CCi
-  aring-gf-flint-big
-  aring-gf-flint
-  aring-m2-gf
-  aring-qq-flint
-  aring-qq-gmp
-  aring-tower
-  aring-zz-flint
-  aring-zz-gmp
-  aring-zzp-ffpack
-  aring-zzp-flint
-  aring-zzp
-  aring
+  rings/ZZ
+  rings/ZZp
+  coefficientrings/aring-CC
+  coefficientrings/aring-CCC
+  coefficientrings/aring-RR
+  coefficientrings/aring-RRR
+  coefficientrings/aring-RRi
+  coefficientrings/aring-CCi
+  coefficientrings/aring-gf-flint-big
+  coefficientrings/aring-gf-flint
+  coefficientrings/aring-m2-gf
+  coefficientrings/aring-qq-flint
+  coefficientrings/aring-qq-gmp
+  coefficientrings/aring-tower
+  coefficientrings/aring-zz-flint
+  coefficientrings/aring-zz-gmp
+  coefficientrings/aring-zzp-ffpack
+  coefficientrings/aring-zzp-flint
+  coefficientrings/aring-zzp
+  coefficientrings/aring
   assprime
   betti
   buffer
@@ -222,7 +222,7 @@ set(SRCLIST
   eigen
   finalize
   fplll-interface
-  frac
+  rings/frac
   fractionfreeLU
   franzi-brp
   freemod
@@ -241,7 +241,7 @@ set(SRCLIST
   interreduce
   interrupted
   lapack
-  localring
+  rings/localring
   mat
   matrix-con
   matrix-stream
@@ -260,10 +260,10 @@ set(SRCLIST
   ntl-interface
   overflow
   pfaff
-  poly
-  polyquotient
-  polyring
-  qring
+  rings/poly
+  rings/polyquotient
+  rings/polyring
+  rings/qring
   reader
   reducedgb-ZZ
   reducedgb-field-local
@@ -276,22 +276,22 @@ set(SRCLIST
   res-a1-poly
   res-a1
   res-a2
-  ring
-  ringelem
+  rings/ring
+  rings/ringelem
   ringmap
   sagbi
   schorder
-  schur
-  schur2
-  schurSn
-  skew
-  skewpoly
-  solvable
+  schur-rings/schur
+  schur-rings/schur2
+  schur-rings/schurSn
+  rings/skew
+  rings/skewpoly
+  rings/solvable
   spair
   text-io
-  tower # TODO: move rawTowerTranslatePoly to e/interface
+  rings/tower # TODO: move rawTowerTranslatePoly to e/interface
   ExponentList
-  weylalg
+  rings/weylalg
   # Faugère's F4 Algorithm
   gb-f4/Basis
   gb-f4/GBF4Computation

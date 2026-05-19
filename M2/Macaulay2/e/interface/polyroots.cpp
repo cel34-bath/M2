@@ -8,14 +8,14 @@
 #undef register
 #include <stdlib.h>
 
-#include "aring-CCC.hpp"
-#include "aring.hpp"
+#include "coefficientrings/aring-CCC.hpp"
+#include "coefficientrings/aring.hpp"
 #include "error.h"
 #include "monoid.hpp"
-#include "polyring.hpp"
+#include "rings/polyring.hpp"
 #include "relem.hpp"
-#include "ring.hpp"
-#include "ringelem.hpp"
+#include "rings/ring.hpp"
+#include "rings/ringelem.hpp"
 
 #define abs(x) (((x) < 0) ? -(x) : (x))
 #define max(a, b) (((a) > (b)) ? (a) : (b))

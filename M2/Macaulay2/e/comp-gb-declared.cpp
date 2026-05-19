@@ -2,7 +2,7 @@
 #include "reducedgb-marked.hpp"
 #include "matrix.hpp"
 #include "reducedgb.hpp"
-#include "polyring.hpp"
+#include "rings/polyring.hpp"
 
 GBDeclared::GBDeclared(const Matrix *m0,
                        const Matrix *gb,

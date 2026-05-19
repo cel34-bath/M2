@@ -5,10 +5,10 @@
 #include "mat.hpp"
 #include "matrix-con.hpp"
 #include "dmat.hpp"
-#include "polyring.hpp"
+#include "rings/polyring.hpp"
 #include "monideal.hpp"
 
-#include "aring-zzp.hpp"
+#include "coefficientrings/aring-zzp.hpp"
 
 M2_bool rawIdealOfPoints(const Ring *R,
                          const MutableMatrix *Pts,

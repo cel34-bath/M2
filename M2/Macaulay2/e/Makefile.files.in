@@ -32,7 +32,7 @@ INTERFACE = \
 	eigen \
 	monomial-sets \
 	mutablecomplex \
-	localring \
+	rings/localring \
 	bibasis/bibasis \
 	bibasis/allocator \
 	bibasis/launcher \
@@ -71,34 +71,34 @@ INTERFACE = \
 	monsort \
 	f4/moninfo \
 	betti \
-	GF \
-	ZZ \
-	ZZp \
+	rings/GF \
+	rings/ZZ \
+	rings/ZZp \
 	reader \
 	matrix-stream \
 	cra \
-	aring-zz-gmp \
-	aring-qq-gmp \
-	aring-zz-flint \
-	aring-qq-flint \
-	aring-zzp-flint \
-	aring-RR \
-	aring-CC \
-	aring-RRR \
-	aring-CCC \
-	aring-RRi \
-	aring-CCi \
-	aring-tower \
-	aring-gf-flint-big \
-	aring-gf-flint \
-	aring-m2-gf \
-	aring-zzp \
-	aring-zzp-ffpack \
-	aring \
-	schurSn \
-	schur2 \
+	coefficientrings/aring-zz-gmp \
+	coefficientrings/aring-qq-gmp \
+	coefficientrings/aring-zz-flint \
+	coefficientrings/aring-qq-flint \
+	coefficientrings/aring-zzp-flint \
+	coefficientrings/aring-RR \
+	coefficientrings/aring-CC \
+	coefficientrings/aring-RRR \
+	coefficientrings/aring-CCC \
+	coefficientrings/aring-RRi \
+	coefficientrings/aring-CCi \
+	coefficientrings/aring-tower \
+	coefficientrings/aring-gf-flint-big \
+	coefficientrings/aring-gf-flint \
+	coefficientrings/aring-m2-gf \
+	coefficientrings/aring-zzp \
+	coefficientrings/aring-zzp-ffpack \
+	coefficientrings/aring \
+	schur-rings/schurSn \
+	schur-rings/schur2 \
 	dpoly \
-	tower \
+	rings/tower \
 	interreduce \
 	finalize \
 	NAG \
@@ -118,9 +118,9 @@ INTERFACE = \
 	coeffrings \
 	Eschreyer \
 	gbweight \
-	qring \
-	polyquotient \
-	poly \
+	rings/qring \
+	rings/polyquotient \
+	rings/poly \
 	debug \
 	comp \
 	comp-gb \
@@ -144,7 +144,7 @@ INTERFACE = \
 	buffer \
 	comb \
 	det \
-	frac \
+	rings/frac \
 	franzi-brp \
 	freemod \
 	gb-default \
@@ -163,20 +163,20 @@ INTERFACE = \
 	monideal \
 	monoid \
 	monomial \
-	polyring \
+	rings/polyring \
 	pfaff \
 	relem \
-	ring \
-	ringelem \
+	rings/ring \
+	rings/ringelem \
 	ringmap \
-	schur \
-	skew \
-	skewpoly \
-	solvable \
+	schur-rings/schur \
+	rings/skew \
+	rings/skewpoly \
+	rings/solvable \
 	spair \
 	text-io \
 	ExponentList \
-	weylalg
+	rings/weylalg
 
 COMMANDS = \
 	interface/m2-types \
@@ -186,7 +186,7 @@ COMMANDS = \
 	matrix-kbasis \
 	matrix-symm \
 	matrix-sort \
-	ring-vecs \
+	rings/ring-vecs \
 	res-a2-gb \
 	engine \
 	interface/aring \

@@ -5,7 +5,7 @@
 
 #include <assert.h>            // for assert
 #include <utility>             // for swap
-#include "aring-qq-flint.hpp"  // for ARingQQFlint
+#include "coefficientrings/aring-qq-flint.hpp"  // for ARingQQFlint
 
 // The following needs to be included before any flint files are included.
 #include <M2/gc-include.h>

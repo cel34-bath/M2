@@ -4,9 +4,9 @@
 #define _coeffrings_hpp_
 
 class Z_mod;
-#include "aring.hpp"
-#include "ringelem.hpp"
-#include "ZZ.hpp"
+#include "coefficientrings/aring.hpp"
+#include "rings/ringelem.hpp"
+#include "rings/ZZ.hpp"
 
 /**
  * \ingroup coeffrings

@@ -8,7 +8,7 @@
 #include <gtest/gtest.h>
 #include <mpfr.h>
 
-#include "aring-RRR.hpp"
+#include "coefficientrings/aring-RRR.hpp"
 #include "ARingTest.hpp"
 
 bool almostEqual(const M2::ARingRRR& R,

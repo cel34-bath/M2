@@ -2,7 +2,7 @@
 #define matrixcon_hpp_
 
 #include <vector>
-#include "ring.hpp"
+#include "rings/ring.hpp"
 #include <utility>
 
 class MatrixGenerator;

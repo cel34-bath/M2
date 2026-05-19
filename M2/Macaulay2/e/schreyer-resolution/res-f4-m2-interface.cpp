@@ -2,12 +2,12 @@
 
 #include "m2tbb.hpp" // Needs to occur earlier than ffpack.
 #include "schreyer-resolution/res-f4-m2-interface.hpp"
-#include "ZZ.hpp"                                         // for RingZZ
-#include "aring-RRR.hpp"                                  // for ARingRRR
-#include "aring-zz-gmp.hpp"                               // for ARingZZGMP
-#include "aring-zzp-ffpack.hpp"                           // for ARingZZpFFPACK
-#include "aring-zzp-flint.hpp"                            // for ARingZZpFlint
-#include "aring.hpp"                                      // for ring_RR
+#include "rings/ZZ.hpp"                                         // for RingZZ
+#include "coefficientrings/aring-RRR.hpp"                                  // for ARingRRR
+#include "coefficientrings/aring-zz-gmp.hpp"                               // for ARingZZGMP
+#include "coefficientrings/aring-zzp-ffpack.hpp"                           // for ARingZZpFFPACK
+#include "coefficientrings/aring-zzp-flint.hpp"                            // for ARingZZpFlint
+#include "coefficientrings/aring.hpp"                                      // for ring_RR
 #include "coeffrings.hpp"                                 // for Coefficient...
 #include "comp.hpp"                                       // for Computation
 #include "mat-linalg.hpp"                                 // for DMatLinAlg
@@ -24,8 +24,8 @@
 #include "matrix.hpp"                                     // for Matrix
 #include "monoid.hpp"                                     // for Monoid
 #include "newdelete.hpp"                                  // for newarray
-#include "polyring.hpp"                                   // for PolynomialRing
-#include "ring.hpp"                                       // for Ring, globalZZ
+#include "rings/polyring.hpp"                                   // for PolynomialRing
+#include "rings/ring.hpp"                                       // for Ring, globalZZ
 #include "schreyer-resolution/res-f4-computation.hpp"     // for F4ResComput...
 #include "schreyer-resolution/res-moninfo.hpp"            // for ResMonoid
 #include "schreyer-resolution/res-monomial-types.hpp"     // for res_monomia...

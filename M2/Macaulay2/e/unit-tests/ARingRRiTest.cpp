@@ -6,9 +6,9 @@
 #include <gtest/gtest.h>
 #include <mpfr.h>
 
-#include "aring-RRi.hpp"
-#include "aring-RRR.hpp"
-#include "aring-glue.hpp"
+#include "coefficientrings/aring-RRi.hpp"
+#include "coefficientrings/aring-RRR.hpp"
+#include "coefficientrings/aring-glue.hpp"
 #include "ARingTest.hpp"
 
 // For debugging purposes, use

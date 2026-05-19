@@ -5,8 +5,8 @@
 #include "MemoryBlock.hpp"
 #include "interface/ring.h"
 
-#include "poly.hpp"
-#include "aring-glue.hpp"
+#include "rings/poly.hpp"
+#include "coefficientrings/aring-glue.hpp"
 #include "NCAlgebras/FreeAlgebra.hpp"
 #include "NCAlgebras/FreeAlgebraQuotient.hpp"
 #include "NCAlgebras/WordTable.hpp"

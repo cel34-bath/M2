@@ -7,9 +7,9 @@
 #include "hilb.hpp"           // for hilb_comp
 #include "matrix-con.hpp"     // for MatrixConstructor
 #include "monoid.hpp"         // for Monoid, monomial
-#include "polyring.hpp"       // for PolynomialRing
+#include "rings/polyring.hpp"       // for PolynomialRing
 #include "relem.hpp"          // for RingElement
-#include "ring.hpp"           // for Ring
+#include "rings/ring.hpp"           // for Ring
 #include "style.hpp"          // for INTSIZE
 
 #include <cstdio>             // for fprintf, stderr
