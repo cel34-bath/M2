@@ -1,6 +1,6 @@
 // Copyright 2011 Michael E. Stillman
 
-#include "basic-rings/aring-zzp.hpp"
+#include "basic-rings/aring-ZZp.hpp"
 #include "ringmap.hpp"
 
 namespace M2 {

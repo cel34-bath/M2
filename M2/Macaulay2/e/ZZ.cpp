@@ -7,7 +7,7 @@
 #include "ringmap.hpp"
 #include "gbring.hpp"
 
-#include "basic-rings/aring-zz-gmp.hpp"
+#include "basic-rings/aring-ZZ-gmp.hpp"
 #include <utility>
 #include "exceptions.hpp"
 

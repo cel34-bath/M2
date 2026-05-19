@@ -6,7 +6,7 @@
 #include "interface/random.h"
 #include "relem.hpp"
 #include "polyring.hpp"
-#include "basic-rings/aring-m2-gf.hpp"
+#include "basic-rings/aring-m2-GF.hpp"
 #include "ringmap.hpp"
 #include "monoid.hpp"
 #include "interrupted.hpp"

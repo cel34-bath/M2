@@ -7,7 +7,7 @@
 #include <vector>
 
 #include "LLL.hpp"
-#include "basic-rings/aring-zzp-ffpack.hpp"
+#include "basic-rings/aring-ZZp-ffpack.hpp"
 #include "buffer.hpp"
 #include "error.h"
 #include "exceptions.hpp"

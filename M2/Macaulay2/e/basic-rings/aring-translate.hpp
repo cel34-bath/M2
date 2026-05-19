@@ -13,18 +13,18 @@
 #include "basic-rings/aring-CCC.hpp"
 #include "basic-rings/aring-RRi.hpp"
 #include "basic-rings/aring-CCi.hpp"
-#include "basic-rings/aring-zz-gmp.hpp"
-#include "basic-rings/aring-zzp.hpp"
-#include "basic-rings/aring-zzp-ffpack.hpp"
-#include "basic-rings/aring-qq.hpp"
-#include "basic-rings/aring-m2-gf.hpp"
+#include "basic-rings/aring-ZZ-gmp.hpp"
+#include "basic-rings/aring-ZZp.hpp"
+#include "basic-rings/aring-ZZp-ffpack.hpp"
+#include "basic-rings/aring-QQ.hpp"
+#include "basic-rings/aring-m2-GF.hpp"
 #include "basic-rings/aring-tower.hpp"
 
 // include flint headers last to avoid #1674
-#include "basic-rings/aring-zz-flint.hpp"
-#include "basic-rings/aring-zzp-flint.hpp"
-#include "basic-rings/aring-gf-flint-big.hpp"
-#include "basic-rings/aring-gf-flint.hpp"
+#include "basic-rings/aring-ZZ-flint.hpp"
+#include "basic-rings/aring-ZZp-flint.hpp"
+#include "basic-rings/aring-GF-flint-big.hpp"
+#include "basic-rings/aring-GF-flint.hpp"
 
 namespace M2 {
 template <typename RT>

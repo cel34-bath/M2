@@ -3,8 +3,8 @@
 #ifndef _aring_qq_hpp_
 #define _aring_qq_hpp_
 
-#include "basic-rings/aring-qq-flint.hpp"
-#include "basic-rings/aring-qq-gmp.hpp"
+#include "basic-rings/aring-QQ-flint.hpp"
+#include "basic-rings/aring-QQ-gmp.hpp"
 
 namespace M2 {
 class ARingQQFlint;

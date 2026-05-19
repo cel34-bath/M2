@@ -16,21 +16,21 @@
 #include "basic-rings/aring-CC.hpp"
 #include "basic-rings/aring-RRR.hpp"
 #include "basic-rings/aring-CCC.hpp"
-#include "basic-rings/aring-zzp.hpp"
-#include "basic-rings/aring-m2-gf.hpp"
+#include "basic-rings/aring-ZZp.hpp"
+#include "basic-rings/aring-m2-GF.hpp"
 typedef DMat<M2::ARingZZp> DMatZZp;
 typedef DMat<M2::ARingGFM2> DMatGFM2;
 
-#include "basic-rings/aring-zzp-ffpack.hpp"
+#include "basic-rings/aring-ZZp-ffpack.hpp"
 typedef M2::ARingZZpFFPACK ZZpFFPACK;
 #define DMatZZpFFPACK DMat<ZZpFFPACK>
 
-#include "basic-rings/aring-zz-gmp.hpp"
-#include "basic-rings/aring-qq.hpp"
-#include "basic-rings/aring-zz-flint.hpp"
-#include "basic-rings/aring-zzp-flint.hpp"
-#include "basic-rings/aring-gf-flint-big.hpp"
-#include "basic-rings/aring-gf-flint.hpp"
+#include "basic-rings/aring-ZZ-gmp.hpp"
+#include "basic-rings/aring-QQ.hpp"
+#include "basic-rings/aring-ZZ-flint.hpp"
+#include "basic-rings/aring-ZZp-flint.hpp"
+#include "basic-rings/aring-GF-flint-big.hpp"
+#include "basic-rings/aring-GF-flint.hpp"
 
 typedef DMat<M2::ARingZZGMP> DMatZZGMP;
 typedef DMat<M2::ARingZZ> DMatZZ;  // flint

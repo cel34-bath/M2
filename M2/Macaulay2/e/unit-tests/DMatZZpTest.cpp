@@ -2,7 +2,7 @@
 #include <gtest/gtest.h>
 
 #include "DMatTest.hpp"
-#include "basic-rings/aring-zzp.hpp"
+#include "basic-rings/aring-ZZp.hpp"
 #include "basic-rings/aring-glue.hpp"
 
 TEST(DMatZZp, create)

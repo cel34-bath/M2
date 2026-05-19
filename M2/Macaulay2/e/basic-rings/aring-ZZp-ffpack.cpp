@@ -1,6 +1,6 @@
 // Copyright 2011 Michael E. Stillman
 
-#include "basic-rings/aring-zzp-ffpack.hpp"
+#include "basic-rings/aring-ZZp-ffpack.hpp"
 #include "exceptions.hpp"
 #include "ringmap.hpp"
 

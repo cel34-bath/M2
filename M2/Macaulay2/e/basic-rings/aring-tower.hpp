@@ -6,7 +6,7 @@
 #include <string>
 
 #include "ExponentVector.hpp"
-#include "basic-rings/aring-zzp-ffpack.hpp"
+#include "basic-rings/aring-ZZp-ffpack.hpp"
 #include "style.hpp"
 #include "basic-rings/aring.hpp"
 #include "ringelem.hpp"

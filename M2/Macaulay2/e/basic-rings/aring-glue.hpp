@@ -1296,7 +1296,7 @@ inline long ConcreteRing<ARingZZpFlint>::discreteLog(const ring_elem &a1) const
 
 };  // namespace M2
 
-#include "basic-rings/aring-qq.hpp"
+#include "basic-rings/aring-QQ.hpp"
 typedef M2::RingQQ RingQQ;
 extern void initializeRationalRing();
 extern const RingQQ *globalQQ;

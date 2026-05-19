@@ -8,7 +8,7 @@
 #include <gtest/gtest.h>
 #include <mpfr.h>
 
-#include "basic-rings/aring-qq-flint.hpp"
+#include "basic-rings/aring-QQ-flint.hpp"
 
 #include "ARingTest.hpp"
 

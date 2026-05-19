@@ -4,7 +4,7 @@
 // an exception is raised on bad input?
 
 #include "RingTest.hpp"
-#include "basic-rings/aring-zzp.hpp"
+#include "basic-rings/aring-ZZp.hpp"
 #include "ZZp.hpp"
 
 template <typename T>

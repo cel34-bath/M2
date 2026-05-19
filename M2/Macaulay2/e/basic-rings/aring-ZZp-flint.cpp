@@ -1,9 +1,9 @@
 // Copyright 2013 Michael E. Stillman
 
-#include "basic-rings/aring-zzp.hpp"
+#include "basic-rings/aring-ZZp.hpp"
 #include "ringmap.hpp"
 
-#include "basic-rings/aring-zzp-flint.hpp"
+#include "basic-rings/aring-ZZp-flint.hpp"
 
 namespace M2 {
 

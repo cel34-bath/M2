@@ -1,6 +1,6 @@
 // Copyright 2013 Michael E. Stillman
 
-#include "basic-rings/aring-qq-gmp.hpp"
+#include "basic-rings/aring-QQ-gmp.hpp"
 
 #include "interface/random.h"
 #include "ringmap.hpp"

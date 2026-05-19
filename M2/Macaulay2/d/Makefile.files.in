@@ -165,20 +165,20 @@ interface.o :						\
 	@srcdir@/../e/basic-rings/aring-CC.hpp			\
 	@srcdir@/../e/basic-rings/aring-RRR.hpp			\
 	@srcdir@/../e/basic-rings/aring-CCC.hpp			\
-	@srcdir@/../e/basic-rings/aring-zz-gmp.hpp			\
-	@srcdir@/../e/basic-rings/aring-zz-flint.hpp		\
-	@srcdir@/../e/basic-rings/aring-zzp.hpp			\
-	@srcdir@/../e/basic-rings/aring-zzp-flint.hpp		\
-	@srcdir@/../e/basic-rings/aring-zzp-ffpack.hpp		\
-	@srcdir@/../e/basic-rings/aring-qq.hpp			\
-	@srcdir@/../e/basic-rings/aring-qq-flint.hpp		\
-	@srcdir@/../e/basic-rings/aring-qq-gmp.hpp			\
-	@srcdir@/../e/basic-rings/aring-m2-gf.hpp			\
+	@srcdir@/../e/basic-rings/aring-ZZ-gmp.hpp			\
+	@srcdir@/../e/basic-rings/aring-ZZ-flint.hpp		\
+	@srcdir@/../e/basic-rings/aring-ZZp.hpp			\
+	@srcdir@/../e/basic-rings/aring-ZZp-flint.hpp		\
+	@srcdir@/../e/basic-rings/aring-ZZp-ffpack.hpp		\
+	@srcdir@/../e/basic-rings/aring-QQ.hpp			\
+	@srcdir@/../e/basic-rings/aring-QQ-flint.hpp		\
+	@srcdir@/../e/basic-rings/aring-QQ-gmp.hpp			\
+	@srcdir@/../e/basic-rings/aring-m2-GF.hpp			\
 	@srcdir@/../e/polyring.hpp			\
 	@srcdir@/../e/skew.hpp				\
 	@srcdir@/../e/qring.hpp				\
-	@srcdir@/../e/basic-rings/aring-gf-flint-big.hpp		\
-	@srcdir@/../e/basic-rings/aring-gf-flint.hpp		\
+	@srcdir@/../e/basic-rings/aring-GF-flint-big.hpp		\
+	@srcdir@/../e/basic-rings/aring-GF-flint.hpp		\
 	@srcdir@/../e/basic-rings/aring-tower.hpp			\
 	@srcdir@/../e/mutablemat.hpp			\
 	@srcdir@/../e/mutablemat-defs.hpp		\
@@ -211,7 +211,7 @@ interface.o :						\
 	@srcdir@/../e/mutablemat-imp.hpp		\
 	@srcdir@/../e/SLP-imp.hpp			\
 	@srcdir@/../e/timing.hpp			\
-	@srcdir@/../e/basic-rings/aring-zzp.hpp			\
+	@srcdir@/../e/basic-rings/aring-ZZp.hpp			\
 	@srcdir@/../e/memory-status.hpp
 
 engine.o :						\

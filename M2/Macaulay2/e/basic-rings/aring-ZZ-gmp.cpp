@@ -1,6 +1,6 @@
 // Copyright 2013 Michael E. Stillman
 
-#include "basic-rings/aring-zz-gmp.hpp"
+#include "basic-rings/aring-ZZ-gmp.hpp"
 #include "ringmap.hpp"
 
 namespace M2 {

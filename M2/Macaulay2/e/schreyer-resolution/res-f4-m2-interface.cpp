@@ -4,9 +4,9 @@
 #include "schreyer-resolution/res-f4-m2-interface.hpp"
 #include "ZZ.hpp"                                         // for RingZZ
 #include "basic-rings/aring-RRR.hpp"                                  // for ARingRRR
-#include "basic-rings/aring-zz-gmp.hpp"                               // for ARingZZGMP
-#include "basic-rings/aring-zzp-ffpack.hpp"                           // for ARingZZpFFPACK
-#include "basic-rings/aring-zzp-flint.hpp"                            // for ARingZZpFlint
+#include "basic-rings/aring-ZZ-gmp.hpp"                               // for ARingZZGMP
+#include "basic-rings/aring-ZZp-ffpack.hpp"                           // for ARingZZpFFPACK
+#include "basic-rings/aring-ZZp-flint.hpp"                            // for ARingZZpFlint
 #include "basic-rings/aring.hpp"                                      // for ring_RR
 #include "coeffrings.hpp"                                 // for Coefficient...
 #include "comp.hpp"                                       // for Computation

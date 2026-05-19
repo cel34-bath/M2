@@ -1,6 +1,6 @@
 // Copyright 2013 Michael E. Stillman
 
-#include "basic-rings/aring-qq-flint.hpp"
+#include "basic-rings/aring-QQ-flint.hpp"
 #include "ringmap.hpp"
 
 #include <iostream>

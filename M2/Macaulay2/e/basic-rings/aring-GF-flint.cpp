@@ -1,6 +1,6 @@
 // Copyright 2014 Michael E. Stillman
 
-#include "basic-rings/aring-gf-flint.hpp"
+#include "basic-rings/aring-GF-flint.hpp"
 #include "relem.hpp"
 #include "poly.hpp"
 #include "ringmap.hpp"
