@@ -8,7 +8,7 @@
 #include "polyring.hpp"
 #include "M2FreeAlgebra.hpp"
 
-#include "aring-glue.hpp"
+#include "basic-rings/aring-glue.hpp"
 
 RingZZ *globalZZ;
 

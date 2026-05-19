@@ -3,11 +3,11 @@
 #include "m2tbb.hpp" // Needs to occur earlier than ffpack.
 #include "schreyer-resolution/res-f4-m2-interface.hpp"
 #include "ZZ.hpp"                                         // for RingZZ
-#include "aring-RRR.hpp"                                  // for ARingRRR
-#include "aring-zz-gmp.hpp"                               // for ARingZZGMP
-#include "aring-zzp-ffpack.hpp"                           // for ARingZZpFFPACK
-#include "aring-zzp-flint.hpp"                            // for ARingZZpFlint
-#include "aring.hpp"                                      // for ring_RR
+#include "basic-rings/aring-RRR.hpp"                                  // for ARingRRR
+#include "basic-rings/aring-zz-gmp.hpp"                               // for ARingZZGMP
+#include "basic-rings/aring-zzp-ffpack.hpp"                           // for ARingZZpFFPACK
+#include "basic-rings/aring-zzp-flint.hpp"                            // for ARingZZpFlint
+#include "basic-rings/aring.hpp"                                      // for ring_RR
 #include "coeffrings.hpp"                                 // for Coefficient...
 #include "comp.hpp"                                       // for Computation
 #include "mat-linalg.hpp"                                 // for DMatLinAlg

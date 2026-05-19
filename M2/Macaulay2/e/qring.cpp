@@ -7,7 +7,7 @@
 #include "gbring.hpp"
 #include "poly.hpp"
 
-#include "aring-glue.hpp"  // for globalQQ??
+#include "basic-rings/aring-glue.hpp"  // for globalQQ??
 
 void QRingInfo::appendQuotientElement(Nterm *f, gbvector *g)
 {

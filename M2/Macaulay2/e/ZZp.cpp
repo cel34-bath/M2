@@ -7,7 +7,7 @@
 #include "ZZ.hpp"
 #include "gbring.hpp"
 
-#include "aring-zzp.hpp"
+#include "basic-rings/aring-zzp.hpp"
 #include "error.h"
 
 extern RingZZ *globalZZ;

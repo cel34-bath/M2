@@ -13,8 +13,8 @@
 // #include "ARingElem.hpp"            // for ARingElem
 // #include "NCAlgebras/Range.hpp"     // for Range
 // #include "ZZp.hpp"                  // for Z_mod
-// #include "aring-glue.hpp"           // for ConcreteRing
-// #include "aring.hpp"                // for DummyRing, ring_GFFlintBig, ring_...
+// #include "basic-rings/aring-glue.hpp"           // for ConcreteRing
+// #include "basic-rings/aring.hpp"                // for DummyRing, ring_GFFlintBig, ring_...
 // #include "buffer.hpp"               // for buffer
 // #include "ring.hpp"                 // for Ring
 // #include "ringelem.hpp"             // for ring_elem
@@ -38,7 +38,7 @@
 #include "newdelete.hpp"         // for VECTOR
 #include "MemoryBlock.hpp"       // for MemoryBlock
 #include "ringelem.hpp"
-#include "aring-glue.hpp"
+#include "basic-rings/aring-glue.hpp"
 #include <variant>
 #include <type_traits>
 

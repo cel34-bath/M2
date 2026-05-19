@@ -4,7 +4,7 @@
 #define _dmat_gf_flint__hpp_
 
 #include <utility>                // for swap
-#include "aring-gf-flint.hpp"     // for ARingGFFlint
+#include "basic-rings/aring-gf-flint.hpp"     // for ARingGFFlint
 
 // The following needs to be included before any flint files are included.
 #include <M2/gc-include.h>

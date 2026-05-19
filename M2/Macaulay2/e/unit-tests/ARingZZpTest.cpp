@@ -10,8 +10,8 @@
 
 #include "reader.hpp"
 #include "ZZp.hpp"
-#include "aring-zzp-ffpack.hpp"
-#include "aring-zzp.hpp"
+#include "basic-rings/aring-zzp-ffpack.hpp"
+#include "basic-rings/aring-zzp.hpp"
 #include "ARingTest.hpp"
 
 static bool maxH_initialized = false;

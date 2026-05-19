@@ -5,7 +5,7 @@
 
 #  include <utility>  // for pair
 
-#  include "aring.hpp"       // for RingID, ring_old
+#  include "basic-rings/aring.hpp"       // for RingID, ring_old
 #  include "error.h"         // for ERROR
 #  include "exceptions.hpp"  // for engine_error
 #  include "hash.hpp"        // for MutableEngineObject

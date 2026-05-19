@@ -27,7 +27,7 @@ set(UNDETERMINED
   franzi-brp-test.cpp
   overflow-test.cpp
   test.dd
-  aring-wrap # both cpp and hpp
+  basic-rings/aring-wrap # both cpp and hpp
   points # both cpp and hpp
   )
 
@@ -59,9 +59,9 @@ set(HPPONLYFILES
   timing.hpp
   SLP-defs.hpp
   SLP-imp.hpp
-  aring-glue.hpp
-  aring-qq.hpp
-  aring-translate.hpp
+  basic-rings/aring-glue.hpp
+  basic-rings/aring-qq.hpp
+  basic-rings/aring-translate.hpp
   dmat-gf-flint-big.hpp
   dmat-gf-flint.hpp
   dmat-lu-inplace.hpp
@@ -186,24 +186,24 @@ set(SRCLIST
   SLP
   ZZ
   ZZp
-  aring-CC
-  aring-CCC
-  aring-RR
-  aring-RRR
-  aring-RRi
-  aring-CCi
-  aring-gf-flint-big
-  aring-gf-flint
-  aring-m2-gf
-  aring-qq-flint
-  aring-qq-gmp
-  aring-tower
-  aring-zz-flint
-  aring-zz-gmp
-  aring-zzp-ffpack
-  aring-zzp-flint
-  aring-zzp
-  aring
+  basic-rings/aring-CC
+  basic-rings/aring-CCC
+  basic-rings/aring-RR
+  basic-rings/aring-RRR
+  basic-rings/aring-RRi
+  basic-rings/aring-CCi
+  basic-rings/aring-gf-flint-big
+  basic-rings/aring-gf-flint
+  basic-rings/aring-m2-gf
+  basic-rings/aring-qq-flint
+  basic-rings/aring-qq-gmp
+  basic-rings/aring-tower
+  basic-rings/aring-zz-flint
+  basic-rings/aring-zz-gmp
+  basic-rings/aring-zzp-ffpack
+  basic-rings/aring-zzp-flint
+  basic-rings/aring-zzp
+  basic-rings/aring
   assprime
   betti
   buffer

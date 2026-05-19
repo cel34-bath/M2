@@ -77,24 +77,24 @@ INTERFACE = \
 	reader \
 	matrix-stream \
 	cra \
-	aring-zz-gmp \
-	aring-qq-gmp \
-	aring-zz-flint \
-	aring-qq-flint \
-	aring-zzp-flint \
-	aring-RR \
-	aring-CC \
-	aring-RRR \
-	aring-CCC \
-	aring-RRi \
-	aring-CCi \
-	aring-tower \
-	aring-gf-flint-big \
-	aring-gf-flint \
-	aring-m2-gf \
-	aring-zzp \
-	aring-zzp-ffpack \
-	aring \
+	basic-rings/aring-zz-gmp \
+	basic-rings/aring-qq-gmp \
+	basic-rings/aring-zz-flint \
+	basic-rings/aring-qq-flint \
+	basic-rings/aring-zzp-flint \
+	basic-rings/aring-RR \
+	basic-rings/aring-CC \
+	basic-rings/aring-RRR \
+	basic-rings/aring-CCC \
+	basic-rings/aring-RRi \
+	basic-rings/aring-CCi \
+	basic-rings/aring-tower \
+	basic-rings/aring-gf-flint-big \
+	basic-rings/aring-gf-flint \
+	basic-rings/aring-m2-gf \
+	basic-rings/aring-zzp \
+	basic-rings/aring-zzp-ffpack \
+	basic-rings/aring \
 	schurSn \
 	schur2 \
 	dpoly \

@@ -8,7 +8,7 @@
 #include "polyring.hpp"
 #include "monideal.hpp"
 
-#include "aring-zzp.hpp"
+#include "basic-rings/aring-zzp.hpp"
 
 M2_bool rawIdealOfPoints(const Ring *R,
                          const MutableMatrix *Pts,

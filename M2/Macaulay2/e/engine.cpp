@@ -1,7 +1,7 @@
 // Copyright 1994-2020 by Michael E. Stillman
 
 #include "interface/random.h"
-#include "aring-glue.hpp"    // for initializeRationalRing
+#include "basic-rings/aring-glue.hpp"    // for initializeRationalRing
 #include "interface/m2-types.h"
 //#include "engine-exports.h"  // for M2_tostring, M2_string
 #include "error.h"           // for error_message
