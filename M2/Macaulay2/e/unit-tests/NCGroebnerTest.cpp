@@ -6,7 +6,7 @@
 #include "interface/ring.h"
 
 #include "poly.hpp"
-#include "aring-glue.hpp"
+#include "basic-rings/aring-glue.hpp"
 #include "NCAlgebras/FreeAlgebra.hpp"
 #include "NCAlgebras/FreeAlgebraQuotient.hpp"
 #include "NCAlgebras/WordTable.hpp"

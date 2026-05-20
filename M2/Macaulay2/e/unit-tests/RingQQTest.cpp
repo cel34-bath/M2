@@ -5,7 +5,7 @@
 static bool maxH_initialized = false;
 static mpz_t maxH;
 
-#include "aring-glue.hpp"
+#include "basic-rings/aring-glue.hpp"
 #include "ZZp.hpp"
 
 template <>

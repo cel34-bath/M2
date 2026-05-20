@@ -2,8 +2,8 @@
 #include <gtest/gtest.h>
 
 #include "DMatTest.hpp"
-#include "aring-zzp.hpp"
-#include "aring-glue.hpp"
+#include "basic-rings/aring-ZZp.hpp"
+#include "basic-rings/aring-glue.hpp"
 
 TEST(DMatZZp, create)
 {

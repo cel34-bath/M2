@@ -6,15 +6,15 @@
 #include <memory>
 #include <gtest/gtest.h>
 
-#include "../error.h"
-#include "../buffer.hpp"
-#include "../util.hpp"
-#include "../ring.hpp"
-#include "../polyring.hpp"
-#include "../interface/monomial-ordering.h"
-#include "../interface/monoid.h"
-#include "../interface/ring.h"
-#include "../interface/aring.h"
+#include "error.h"
+#include "buffer.hpp"
+#include "util.hpp"
+#include "ring.hpp"
+#include "polyring.hpp"
+#include "interface/monomial-ordering.h"
+#include "interface/monoid.h"
+#include "interface/ring.h"
+#include "interface/aring.h"
 
 #include "util-polyring-creation.hpp"
 

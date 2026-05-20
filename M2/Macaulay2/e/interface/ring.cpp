@@ -27,14 +27,14 @@
 #include "M2FreeAlgebraQuotient.hpp"
 #include "polyquotient.hpp"
 
-#include "aring.hpp"
-#include "aring-glue.hpp"
-#include "aring-RRi.hpp"
-#include "aring-CCi.hpp"
-#include "aring-RR.hpp"
-#include "aring-CC.hpp"
-#include "aring-RRR.hpp"
-#include "aring-CCC.hpp"
+#include "basic-rings/aring.hpp"
+#include "basic-rings/aring-glue.hpp"
+#include "basic-rings/aring-RRi.hpp"
+#include "basic-rings/aring-CCi.hpp"
+#include "basic-rings/aring-RR.hpp"
+#include "basic-rings/aring-CC.hpp"
+#include "basic-rings/aring-RRR.hpp"
+#include "basic-rings/aring-CCC.hpp"
 
 // The following needs to be included before any flint files are included.
 #include <M2/gc-include.h>

@@ -8,7 +8,7 @@
 #include <gtest/gtest.h>
 #include <mpfr.h>
 
-#include "aring-qq-gmp.hpp"
+#include "basic-rings/aring-QQ-gmp.hpp"
 
 #include "ARingTest.hpp"
 
