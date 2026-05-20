@@ -485,6 +485,7 @@ if(BUILD_TESTING)
     unit-tests/testMain.cpp # not needed, except for GC_INIT
 
     unit-tests/OverflowTest.cpp
+    unit-tests/BasicPolyListParserTest.cpp
     )
 
   if(BDWGC_FOUND)
