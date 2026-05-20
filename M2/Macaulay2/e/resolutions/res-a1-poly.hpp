@@ -3,7 +3,7 @@
 #ifndef _respoly_hh_
 #define _respoly_hh_
 
-#include "monideal.hpp"
+#include "monomial/monideal.hpp"
 
 struct resterm;
 

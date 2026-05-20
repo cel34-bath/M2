@@ -20,7 +20,7 @@
 #include "interrupted.hpp"     // for system_interrupted
 #include "matrix.hpp"          // for Matrix
 #include "mem.hpp"             // for stash
-#include "monideal.hpp"        // for MonomialIdeal, operator!=, Nmi_node
+#include "monomial/monideal.hpp"        // for MonomialIdeal, operator!=, Nmi_node
 #include "monoid.hpp"          // for Monoid
 #include "rings/polyring.hpp"        // for PolynomialRing
 #include "relem.hpp"           // for RingElement

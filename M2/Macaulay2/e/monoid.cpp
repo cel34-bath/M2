@@ -10,7 +10,7 @@
 #include "buffer.hpp"
 #include "error.h"
 #include "exceptions.hpp"
-#include "overflow.hpp"
+#include "monomial/overflow.hpp"
 #include "rings/polyring.hpp"
 #include "util.hpp"
 

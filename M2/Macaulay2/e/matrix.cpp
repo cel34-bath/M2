@@ -16,7 +16,7 @@
 #include "comb.hpp"
 #include "rings/polyring.hpp"
 #include "assprime.hpp"
-#include "monideal.hpp"
+#include "monomial/monideal.hpp"
 #include "relem.hpp"
 #include "freemod.hpp"
 #include "util.hpp"
@@ -25,7 +25,7 @@
 
 #include "matrices/matrix-con.hpp"
 
-#include "monomial-collection.hpp"
+#include "monomial/monomial-collection.hpp"
 #include "M2FreeAlgebra.hpp"
 
 

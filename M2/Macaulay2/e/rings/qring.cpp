@@ -1,9 +1,9 @@
 // Copyright 2005, Michael E. Stillman
 
 #include "rings/qring.hpp"
-#include "monideal.hpp"
-#include "montable.hpp"
-#include "montableZZ.hpp"
+#include "monomial/monideal.hpp"
+#include "monomial/montable.hpp"
+#include "monomial/montableZZ.hpp"
 #include "gbring.hpp"
 #include "rings/poly.hpp"
 

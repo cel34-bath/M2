@@ -13,9 +13,9 @@
 #include "hilb.hpp"
 #include "int-bag.hpp"
 #include "matrix.hpp"
-#include "monideal-minprimes.hpp"
-#include "monideal.hpp"
-#include "monomial.hpp"
+#include "monomial/monideal-minprimes.hpp"
+#include "monomial/monideal.hpp"
+#include "monomial/monomial.hpp"
 #include "newdelete.hpp"
 #include "text-io.hpp"
 
