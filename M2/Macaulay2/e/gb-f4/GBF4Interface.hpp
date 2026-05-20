@@ -3,7 +3,7 @@
 #include "BasicPolyList.hpp"
 #include "GBF4Computation.hpp"
 #include "PolynomialList.hpp"
-#include "../e/comp-gb.hpp"
+#include "../e/groebner-computations/comp-gb.hpp"
 #include "../matrix-stream.hpp"
 
 class Matrix;
