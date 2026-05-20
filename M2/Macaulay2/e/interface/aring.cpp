@@ -5,6 +5,7 @@
 #include <vector>
 #include <memory>
 
+
 #include "basic-rings/aring-glue.hpp"
 #include "basic-rings/aring-m2-GF.hpp"
 #include "basic-rings/aring-QQ.hpp"
