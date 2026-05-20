@@ -12,7 +12,7 @@
 
 #include "buffer.hpp"
 #include "matrix.hpp"
-#include "aring-glue.hpp"
+#include "basic-rings/aring-glue.hpp"
 
 #endif
 

@@ -4,7 +4,7 @@
 #define _coeffrings_hpp_
 
 class Z_mod;
-#include "aring.hpp"
+#include "basic-rings/aring.hpp"
 #include "ringelem.hpp"
 #include "ZZ.hpp"
 

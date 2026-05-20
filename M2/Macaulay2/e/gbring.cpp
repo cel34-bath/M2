@@ -6,7 +6,7 @@
 #include "ExponentVector.hpp"
 #include "ZZ.hpp"
 #include "ZZp.hpp"
-#include "aring-glue.hpp"
+#include "basic-rings/aring-glue.hpp"
 #include "coeffrings.hpp"
 #include "freemod.hpp"
 #include "mem.hpp"

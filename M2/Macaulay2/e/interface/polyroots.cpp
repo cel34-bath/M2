@@ -8,8 +8,8 @@
 #undef register
 #include <stdlib.h>
 
-#include "aring-CCC.hpp"
-#include "aring.hpp"
+#include "basic-rings/aring-CCC.hpp"
+#include "basic-rings/aring.hpp"
 #include "error.h"
 #include "monoid.hpp"
 #include "polyring.hpp"

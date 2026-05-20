@@ -16,7 +16,7 @@
 #include "monomial.hpp"
 #include "relem.hpp"
 
-#include "aring-glue.hpp"  // for globalQQ
+#include "basic-rings/aring-glue.hpp"  // for globalQQ
 
 #include "debug.hpp"
 

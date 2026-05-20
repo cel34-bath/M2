@@ -8,8 +8,8 @@
 #include <gtest/gtest.h>
 #include <mpfr.h>
 
-#include "aring-RR.hpp"
-#include "aring-CC.hpp"
+#include "basic-rings/aring-RR.hpp"
+#include "basic-rings/aring-CC.hpp"
 #include "ARingTest.hpp"
 
 bool almostEqual(const M2::ARingCC& C,
