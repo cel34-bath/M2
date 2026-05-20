@@ -27,7 +27,6 @@ set(UNDETERMINED
   franzi-brp-test.cpp
   overflow-test.cpp
   unused/test.dd
-  points # both cpp and hpp
   )
 
 # c files
