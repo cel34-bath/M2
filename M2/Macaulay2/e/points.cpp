@@ -5,7 +5,7 @@
 #include "mat.hpp"
 #include "matrix-con.hpp"
 #include "dmat.hpp"
-#include "polyring.hpp"
+#include "rings/polyring.hpp"
 #include "monideal.hpp"
 
 #include "basic-rings/aring-ZZp.hpp"

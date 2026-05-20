@@ -83,7 +83,6 @@ set(HPPONLYFILES
   newdelete.hpp
   ExponentVector.hpp
   res-a0-pair.hpp
-  Schur/schur-poly-heap.hpp
   smat.hpp
   util.hpp
   style.hpp
@@ -96,6 +95,11 @@ set(HPPONLYFILES
   schreyer-resolution/res-memblock.hpp
   schreyer-resolution/res-monomial-types.hpp
   schreyer-resolution/res-schreyer-order.hpp
+  basic-rings/aring-glue.hpp
+  basic-rings/aring-qq.hpp
+  basic-rings/aring-translate.hpp
+  schur-rings/schur-poly-heap.hpp
+  schur-rings/schur-poly-heap.hpp
   )
 
 # these files have .cpp file, but NOT .hpp file
@@ -147,6 +151,7 @@ set(CPPONLYFILES
   interface/ringelement.h
   interface/ringmap.cpp
   interface/ringmap.h
+  rings/ring-vecs.cpp
   )
 
 # these files all have .hpp and .cpp files
@@ -245,12 +250,6 @@ set(SRCLIST
   ringmap
   sagbi
   schorder
-  Schur/schur
-  Schur/schur2
-  Schur/schurSn
-  skew
-  skewpoly
-  solvable
   spair
   text-io
   ExponentList
@@ -293,79 +292,47 @@ set(SRCLIST
   bibasis/monomDRL
   bibasis/monomLex
   bibasis/settings-manager
-  )
-
-set(BASICRING_SRCLIST
-  aring-CC
-  aring-CCC
-  aring-RR
-  aring-RRR
-  aring-RRi
-  aring-CCi
-  aring-gf-flint-big
-  aring-gf-flint
-  aring-m2-gf
-  aring-qq-flint
-  aring-qq-gmp
-  aring-tower
-  aring-zz-flint
-  aring-zz-gmp
-  aring-zzp-ffpack
-  aring-zzp-flint
-  aring-zzp
-  aring
+  basic-rings/aring-CC
+  basic-rings/aring-CCC
+  basic-rings/aring-RR
+  basic-rings/aring-RRR
+  basic-rings/aring-RRi
+  basic-rings/aring-CCi
+  basic-rings/aring-gf-flint-big
+  basic-rings/aring-gf-flint
+  basic-rings/aring-m2-gf
+  basic-rings/aring-qq-flint
+  basic-rings/aring-qq-gmp
+  basic-rings/aring-tower
+  basic-rings/aring-zz-flint
+  basic-rings/aring-zz-gmp
+  basic-rings/aring-zzp-ffpack
+  basic-rings/aring-zzp-flint
+  basic-rings/aring-zzp
+  basic-rings/aring
+  rings/frac
+  rings/GF
+  rings/localring
+  rings/poly
+  rings/polyquotient
+  rings/polyring
+  rings/qring
+  rings/ring
+  rings/ringelem
+  rings/skew
+  rings/skewpoly
+  rings/solvable
+  rings/tower
+  rings/weylalg
+  rings/ZZ
+  rings/ZZp
+  schur-rings/schur
+  schur-rings/schur2
+  schur-rings/schurSn
 )
-set(BASICRING_HPPONLY
-  aring-glue.hpp
-  aring-qq.hpp
-  aring-translate.hpp
-)
-set(RING_SRCLIST
-  frac
-  GF
-  localring
-  poly
-  polyquotient
-  polyring
-  qring
-  ring
-  ringelem
-  schur
-  schur2
-  schurSn
-  skew
-  skewpoly
-  solvable
-  tower
-  weylalg
-  ZZ
-  ZZp
-)
-set(RING_CPPONLY
-  ring-vecs.cpp
-)
-set(RING_HPPONLY
-  schur-poly-heap.hpp
-  )
-
-# prepend subdirectory names
-list(TRANSFORM BASICRING_SRCLIST PREPEND basic-rings/)
-list(TRANSFORM BASICRING_HPPONLY PREPEND basic-rings/)
-list(TRANSFORM RING_SRCLIST      PREPEND rings/)
-list(TRANSFORM RING_CPPONLY      PREPEND rings/)
-list(TRANSFORM RING_HPPONLY      PREPEND rings/)
-
-# merge the bare-name sub-lists into SRCLIST BEFORE the .cpp/.hpp transform
-list(APPEND SRCLIST ${BASICRING_SRCLIST})
-list(APPEND SRCLIST ${RING_SRCLIST})
 
 list(TRANSFORM SRCLIST APPEND .cpp OUTPUT_VARIABLE CPPFILES)
 list(TRANSFORM SRCLIST APPEND .hpp OUTPUT_VARIABLE HPPFILES)
-
-# pre-suffixed extras go in AFTER the transform
-list(APPEND CPPFILES ${RING_CPPONLY})
-list(APPEND HPPFILES ${BASICRING_HPPONLY})
-list(APPEND HPPFILES ${RING_HPPONLY})
 
 set(SOURCES ${CPPONLYFILES} ${CPPFILES} ${CFILES})
 set(HEADERS ${HPPONLYFILES} ${HPPFILES} ${HFILES})
@@ -396,8 +363,6 @@ set_target_properties(M2-engine PROPERTIES PUBLIC_HEADER "${HEADERS}")
 
 target_include_directories(M2-engine PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/CoefficientRings>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/Rings>
   $<INSTALL_INTERFACE:include/Macaulay2>)
 
 # TODO: make engine independent of interpreter headers

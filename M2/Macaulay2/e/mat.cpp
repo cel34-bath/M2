@@ -27,7 +27,7 @@
 #include "lapack.hpp"
 
 #include "mutablemat.hpp"
-#include "ZZp.hpp"
+#include "rings/ZZp.hpp"
 
 MutableMatrix *RingZZ::makeMutableMatrix(size_t nrows,
                                          size_t ncols,
