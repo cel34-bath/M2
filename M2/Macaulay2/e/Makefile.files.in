@@ -139,14 +139,14 @@ INTERFACE = \
 	reducedgb-ZZ \
 	montable \
 	montableZZ \
-	schorder \
+	free-modules/schreyer-orders \
 	assprime \
 	buffer \
 	comb \
 	det \
 	rings/frac \
 	franzi-brp \
-	freemod \
+	free-modules/freemod \
 	gb-default \
 	gb-homog2 \
 	gb-sugarless \

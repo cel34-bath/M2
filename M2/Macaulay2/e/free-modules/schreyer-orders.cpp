@@ -1,10 +1,10 @@
 #include <algorithm>
 #include <iostream>
 
-#include "schorder.hpp"
+#include "free-modules/schreyer-orders.hpp"
 #include "matrix.hpp"
 #include "comb.hpp"
-#include "rings/polyring.hpp"
+#include "polyring.hpp"
 #include "Eschreyer.hpp"
 #include "finalize.hpp"
 

@@ -4,8 +4,8 @@
 #include <stddef.h>
 
 #include "error.h"
-#include "freemod.hpp"
 #include "matrices/matrix-con.hpp"
+#include "free-modules/freemod.hpp"
 #include "matrix.hpp"
 #include "monoid.hpp"
 #include "rings/poly.hpp"
