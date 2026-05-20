@@ -96,7 +96,7 @@ set(HPPONLYFILES
   schreyer-resolution/res-monomial-types.hpp
   schreyer-resolution/res-schreyer-order.hpp
   basic-rings/aring-glue.hpp
-  basic-rings/aring-qq.hpp
+  basic-rings/aring-QQ.hpp
   basic-rings/aring-translate.hpp
   schur-rings/schur-poly-heap.hpp
   schur-rings/schur-poly-heap.hpp
@@ -302,7 +302,7 @@ set(SRCLIST
   basic-rings/aring-CCi
   basic-rings/aring-GF-flint-big
   basic-rings/aring-GF-flint
-  basic-rings/aring-M2-gf
+  basic-rings/aring-m2-GF
   basic-rings/aring-QQ-flint
   basic-rings/aring-QQ-gmp
   basic-rings/aring-tower
