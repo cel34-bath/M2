@@ -3,7 +3,7 @@
 #include "style.hpp"
 #include "groebner-computations/gb-sugarless.hpp"
 #include "text-io.hpp"
-#include "matrix-con.hpp"
+#include "matrices/matrix-con.hpp"
 #include "groebner-computations/gbweight.hpp"
 #include "interrupted.hpp"
 

@@ -1,6 +1,6 @@
 #include "groebner-computations/reducedgb.hpp"
 
-#include "matrix-con.hpp"
+#include "matrices/matrix-con.hpp"
 #include "rings/polyring.hpp"
 #include "matrix.hpp"
 

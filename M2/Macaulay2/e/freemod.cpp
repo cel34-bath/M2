@@ -5,7 +5,7 @@
 #include "comb.hpp"
 #include "rings/polyring.hpp"
 #include "matrix.hpp"
-#include "matrix-con.hpp"
+#include "matrices/matrix-con.hpp"
 #include "Eschreyer.hpp"
 #include "groebner-computations/gbring.hpp"
 

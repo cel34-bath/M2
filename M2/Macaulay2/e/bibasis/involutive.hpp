@@ -16,7 +16,7 @@
 #include "qset.hpp"
 #include "tset.hpp"
 #include "matrix.hpp"
-#include "matrix-con.hpp"
+#include "matrices/matrix-con.hpp"
 
 namespace BIBasis
 {

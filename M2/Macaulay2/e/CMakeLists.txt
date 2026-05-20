@@ -23,11 +23,10 @@ endif()
 
 # TODO: determine the fate of these files
 set(UNDETERMINED
-  dmat-ffpack.cpp
+  basic-mutable-matrices/dmat-ffpack.cpp
   franzi-brp-test.cpp
   overflow-test.cpp
-  test.dd
-  points # both cpp and hpp
+  unused/test.dd
   )
 
 # c files
@@ -56,34 +55,34 @@ set(HPPONLYFILES
   timing.hpp
   SLP-defs.hpp
   SLP-imp.hpp
-  dmat-gf-flint-big.hpp
-  dmat-gf-flint.hpp
-  dmat-lu-inplace.hpp
-  dmat-lu-qq.hpp
-  dmat-lu-zzp-ffpack.hpp
-  dmat-lu-zzp-flint.hpp
-  dmat-lu.hpp
-  dmat-qq-flint.hpp
-  dmat-qq-interface-flint.hpp
-  dmat-zz-flint.hpp
-  dmat-zzp-flint.hpp
+  basic-mutable-matrices/dmat-gf-flint-big.hpp
+  basic-mutable-matrices/dmat-gf-flint.hpp
+  basic-mutable-matrices/dmat-lu-inplace.hpp
+  basic-mutable-matrices/dmat-lu-qq.hpp
+  basic-mutable-matrices/dmat-lu-zzp-ffpack.hpp
+  basic-mutable-matrices/dmat-lu-zzp-flint.hpp
+  basic-mutable-matrices/dmat-lu.hpp
+  basic-mutable-matrices/dmat-qq-flint.hpp
+  basic-mutable-matrices/dmat-qq-interface-flint.hpp
+  basic-mutable-matrices/dmat-zz-flint.hpp
+  basic-mutable-matrices/dmat-zzp-flint.hpp
   engine-includes.hpp
   exceptions.hpp
   geobucket.hpp
   geopoly.hpp
   geovec.hpp
   hash.hpp
-  mat-arith.hpp
-  mat-elem-ops.hpp
-  mat-linalg.hpp
-  mat-util.hpp
-  mutablemat-defs.hpp
-  mutablemat-imp.hpp
-  mutablemat.hpp
+  basic-mutable-matrices/mat-arith.hpp
+  basic-mutable-matrices/mat-elem-ops.hpp
+  basic-mutable-matrices/mat-linalg.hpp
+  basic-mutable-matrices/mat-util.hpp
+  mutable-matrices/mutablemat-defs.hpp
+  mutable-matrices/mutablemat-imp.hpp
+  mutable-matrices/mutablemat.hpp
   newdelete.hpp
   ExponentVector.hpp
   res-a0-pair.hpp
-  smat.hpp
+  basic-mutable-matrices/smat.hpp
   util.hpp
   style.hpp
   f4/f4-types.hpp
@@ -96,9 +95,8 @@ set(HPPONLYFILES
   schreyer-resolution/res-monomial-types.hpp
   schreyer-resolution/res-schreyer-order.hpp
   basic-rings/aring-glue.hpp
-  basic-rings/aring-qq.hpp
+  basic-rings/aring-QQ.hpp
   basic-rings/aring-translate.hpp
-  schur-rings/schur-poly-heap.hpp
   schur-rings/schur-poly-heap.hpp
   )
 
@@ -107,9 +105,9 @@ set(CPPONLYFILES
   engine.cpp # TODO: find a new home for the contents
   franzi-gb.cpp
   franzi-interface.cpp
-  matrix-kbasis.cpp
-  matrix-sort.cpp
-  matrix-symm.cpp
+  matrices/matrix-kbasis.cpp
+  matrices/matrix-sort.cpp
+  matrices/matrix-symm.cpp
   ntl-debugio.cpp
   ntl-internal.cpp
   res-a2-gb.cpp
@@ -161,7 +159,7 @@ set(SRCLIST
   BasicPolyList
   BasicPolyListParser
   myalloc
-  matrix-ncbasis
+  matrices/matrix-ncbasis
   M2FreeAlgebraQuotient
   M2FreeAlgebra
   NCAlgebras/Word
@@ -194,7 +192,6 @@ set(SRCLIST
   cra
   debug
   det
-  dmat
   dpoly
   eigen
   finalize
@@ -216,10 +213,11 @@ set(SRCLIST
   int-bag
   interreduce
   interrupted
-  lapack
-  mat
-  matrix-con
-  matrix-stream
+  basic-mutable-matrices/lapack
+  basic-mutable-matrices/mat
+  basic-mutable-matrices/dmat
+  matrices/matrix-con
+  matrices/matrix-stream
   matrix
   mem
   memory-status
@@ -298,17 +296,17 @@ set(SRCLIST
   basic-rings/aring-RRR
   basic-rings/aring-RRi
   basic-rings/aring-CCi
-  basic-rings/aring-gf-flint-big
-  basic-rings/aring-gf-flint
-  basic-rings/aring-m2-gf
-  basic-rings/aring-qq-flint
-  basic-rings/aring-qq-gmp
+  basic-rings/aring-GF-flint-big
+  basic-rings/aring-GF-flint
+  basic-rings/aring-m2-GF
+  basic-rings/aring-QQ-flint
+  basic-rings/aring-QQ-gmp
   basic-rings/aring-tower
-  basic-rings/aring-zz-flint
-  basic-rings/aring-zz-gmp
-  basic-rings/aring-zzp-ffpack
-  basic-rings/aring-zzp-flint
-  basic-rings/aring-zzp
+  basic-rings/aring-ZZ-flint
+  basic-rings/aring-ZZ-gmp
+  basic-rings/aring-ZZp-ffpack
+  basic-rings/aring-ZZp-flint
+  basic-rings/aring-ZZp
   basic-rings/aring
   rings/frac
   rings/GF
@@ -483,6 +481,8 @@ if(BUILD_TESTING)
     unit-tests/MatrixIOTest.cpp
     unit-tests/fromStream.cpp
     unit-tests/testMain.cpp # not needed, except for GC_INIT
+
+    unit-tests/OverflowTest.cpp
     )
 
   if(BDWGC_FOUND)

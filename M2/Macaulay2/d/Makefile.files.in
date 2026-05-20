@@ -180,35 +180,35 @@ interface.o :						\
 	@srcdir@/../e/basic-rings/aring-GF-flint-big.hpp		\
 	@srcdir@/../e/basic-rings/aring-GF-flint.hpp		\
 	@srcdir@/../e/basic-rings/aring-tower.hpp			\
-	@srcdir@/../e/mutablemat.hpp			\
-	@srcdir@/../e/mutablemat-defs.hpp		\
-	@srcdir@/../e/mat.hpp				\
+	@srcdir@/../e/mutable-matrices/mutablemat.hpp			\
+	@srcdir@/../e/mutable-matrices/mutablemat-defs.hpp		\
+	@srcdir@/../e/basic-mutable-matrices/mat.hpp				\
 	@srcdir@/../e/relem.hpp				\
-	@srcdir@/../e/matrix-con.hpp			\
-	@srcdir@/../e/dmat.hpp				\
-	@srcdir@/../e/mat-util.hpp			\
+	@srcdir@/../e/matrices/matrix-con.hpp			\
+	@srcdir@/../e/basic-mutable-matrices/dmat.hpp				\
+	@srcdir@/../e/basic-mutable-matrices/mat-util.hpp			\
 	@srcdir@/../e/text-io.hpp			\
-	@srcdir@/../e/dmat-zz-flint.hpp			\
-	@srcdir@/../e/dmat-qq-flint.hpp			\
-	@srcdir@/../e/dmat-zzp-flint.hpp		\
-	@srcdir@/../e/dmat-gf-flint-big.hpp		\
-	@srcdir@/../e/dmat-gf-flint.hpp			\
-	@srcdir@/../e/smat.hpp				\
+	@srcdir@/../e/basic-mutable-matrices/dmat-zz-flint.hpp			\
+	@srcdir@/../e/basic-mutable-matrices/dmat-qq-flint.hpp			\
+	@srcdir@/../e/basic-mutable-matrices/dmat-zzp-flint.hpp		\
+	@srcdir@/../e/basic-mutable-matrices/dmat-gf-flint-big.hpp		\
+	@srcdir@/../e/basic-mutable-matrices/dmat-gf-flint.hpp			\
+	@srcdir@/../e/basic-mutable-matrices/smat.hpp				\
 	@srcdir@/../e/rings/ZZp.hpp				\
-	@srcdir@/../e/mat-elem-ops.hpp			\
-	@srcdir@/../e/mat-arith.hpp			\
-	@srcdir@/../e/mat-linalg.hpp			\
+	@srcdir@/../e/basic-mutable-matrices/mat-elem-ops.hpp			\
+	@srcdir@/../e/basic-mutable-matrices/mat-arith.hpp			\
+	@srcdir@/../e/basic-mutable-matrices/mat-linalg.hpp			\
 	@srcdir@/../e/util.hpp				\
-	@srcdir@/../e/lapack.hpp			\
-	@srcdir@/../e/dmat-lu.hpp			\
-	@srcdir@/../e/dmat-lu-inplace.hpp		\
-	@srcdir@/../e/dmat-lu-zzp-ffpack.hpp		\
-	@srcdir@/../e/dmat-lu-zzp-flint.hpp		\
-	@srcdir@/../e/dmat-lu-qq.hpp			\
-	@srcdir@/../e/dmat-qq-interface-flint.hpp	\
+	@srcdir@/../e/basic-mutable-matrices/lapack.hpp			\
+	@srcdir@/../e/basic-mutable-matrices/dmat-lu.hpp			\
+	@srcdir@/../e/basic-mutable-matrices/dmat-lu-inplace.hpp		\
+	@srcdir@/../e/basic-mutable-matrices/dmat-lu-zzp-ffpack.hpp		\
+	@srcdir@/../e/basic-mutable-matrices/dmat-lu-zzp-flint.hpp		\
+	@srcdir@/../e/basic-mutable-matrices/dmat-lu-qq.hpp			\
+	@srcdir@/../e/basic-mutable-matrices/dmat-qq-interface-flint.hpp	\
 	@srcdir@/../e/eigen.hpp				\
 	@srcdir@/../e/SLP-defs.hpp			\
-	@srcdir@/../e/mutablemat-imp.hpp		\
+	@srcdir@/../e/mutable-matrices/mutablemat-imp.hpp		\
 	@srcdir@/../e/SLP-imp.hpp			\
 	@srcdir@/../e/timing.hpp			\
 	@srcdir@/../e/basic-rings/aring-ZZp.hpp			\
@@ -251,7 +251,11 @@ engine.o :						\
 	@srcdir@/../e/interface/computation.h		\
 	@srcdir@/../e/rings/skew.hpp				\
 	@srcdir@/../e/rings/qring.hpp				\
+<<<<<<< HEAD
 	@srcdir@/../e/mat.hpp				
+=======
+	@srcdir@/../e/basic-mutable-matrices/mat.hpp				
+>>>>>>> burr/Subdirectories
 
 # now assemble the files into various categories:
 M2_DNAMES := $(patsubst %.d, %, $(patsubst %.dd, %, $(M2_DFILES)))

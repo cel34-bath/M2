@@ -9,7 +9,7 @@
 #include "groebner-computations/reducedgb.hpp"
 
 #include "groebner-computations/spair.hpp"
-#include "matrix-con.hpp"
+#include "matrices/matrix-con.hpp"
 class GBWeight;
 
 /**
