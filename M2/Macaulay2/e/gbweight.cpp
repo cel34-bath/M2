@@ -1,5 +1,5 @@
 #include "gbweight.hpp"
-#include "freemod.hpp"
+#include "free-modules/freemod.hpp"
 #include "gbring.hpp"
 #include "rings/polyring.hpp"
 

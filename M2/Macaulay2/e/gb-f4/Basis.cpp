@@ -1,7 +1,7 @@
 #include "Basis.hpp"
 
 #include "../basic-mutable-matrices/mat.hpp"
-#include "../freemod.hpp"
+#include "../free-modules/freemod.hpp"
 #include "../mutable-matrices/mutablemat.hpp"
 
 #if 0

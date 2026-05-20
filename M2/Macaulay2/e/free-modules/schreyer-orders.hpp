@@ -1,7 +1,7 @@
 // Copyright 2002  Michael E. Stillman
 
-#ifndef _schorder_hpp_
-#define _schorder_hpp_
+#ifndef _schreyer_orders_hpp_
+#define _schreyer_orders_hpp_
 
 #include "buffer.hpp"
 #include "monoid.hpp"
