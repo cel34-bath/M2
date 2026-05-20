@@ -166,8 +166,8 @@ INTERFACE = \
 	rings/polyring \
 	pfaff \
 	relem \
-	ring \
-	ringelem \
+	rings/ring \
+	rings/ringelem \
 	ringmap \
 	schur-rings/schur \
 	rings/skew \
