@@ -41,20 +41,6 @@ TAGS tags: @srcdir@/TAGS
 # overflows
 LDLIBS = -lgc
 
-check:: run-overflow-test
-run-overflow-test : overflow-test Makefile
-	@ echo "#warning: the following 6 tests are intended to throw uncaught overflow exceptions"
-	./overflow-test throw || if [ $$? = 1 ] ; then exit 1 ; else echo OVERFLOW TEST SUCCEEDED ; fi
-	./overflow-test sub   || if [ $$? = 1 ] ; then exit 1 ; else echo OVERFLOW TEST SUCCEEDED ; fi
-	./overflow-test minus || if [ $$? = 1 ] ; then exit 1 ; else echo OVERFLOW TEST SUCCEEDED ; fi
-	./overflow-test mult  || if [ $$? = 1 ] ; then exit 1 ; else echo OVERFLOW TEST SUCCEEDED ; fi
-	./overflow-test div   || if [ $$? = 1 ] ; then exit 1 ; else echo OVERFLOW TEST SUCCEEDED ; fi
-	./overflow-test add   || if [ $$? = 1 ] ; then exit 1 ; else echo OVERFLOW TEST SUCCEEDED ; fi
-	touch $@
-clean :: ; rm -f run-overflow-test
-overflow-test : overflow.o #../d/debug.o ../d/M2mem.o ../d/memdebug.o
-clean :: ; rm -f overflow-test
-
 #all:; $(MAKE) -C f4
 
 all: $(LIBENGINE)
