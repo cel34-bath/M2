@@ -5,7 +5,7 @@
 
 #include <atomic>
 
-#include "monideal.hpp"
+#include "monomial/monideal.hpp"
 #include "groebner-computations/comp-gb.hpp"
 #include "comp-res.hpp"
 #include "schorder.hpp"

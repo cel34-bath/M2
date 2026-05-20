@@ -6,8 +6,8 @@
 #include "groebner-computations/comp-gb.hpp"
 #include <vector>
 #include "groebner-computations/gbring.hpp"
-#include "montable.hpp"
-#include "montableZZ.hpp"
+#include "monomial/montable.hpp"
+#include "monomial/montableZZ.hpp"
 #include "groebner-computations/gbweight.hpp"
 #include "rings/polyring.hpp"
 

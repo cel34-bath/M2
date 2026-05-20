@@ -7,7 +7,7 @@
 #include "res-a0-poly.hpp"
 #include "hermite.hpp"
 #include "basic-mutable-matrices/mat.hpp"
-#include "monideal.hpp"
+#include "monomial/monideal.hpp"
 
 void showint(mpz_srcptr a)
 {

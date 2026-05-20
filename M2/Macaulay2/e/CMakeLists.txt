@@ -174,7 +174,7 @@ set(SRCLIST
   NCAlgebras/OverlapTable
   NCResolutions/nc-res-computation
   Polynomial
-  monomial-collection
+  monomial/monomial-collection
   Eschreyer
   LLL
   NAG # TODO: move raw* functions to e/interface
@@ -221,17 +221,17 @@ set(SRCLIST
   matrix
   mem
   memory-status
-  monideal-minprimes
-  monideal
+  monomial/monideal-minprimes
+  monomial/monideal
   monoid
-  monomial-sets
-  monomial
-  monsort
-  montable
-  montableZZ
+  monomial/monomial-sets
+  monomial/monomial
+  monomial/monsort
+  monomial/montable
+  monomial/montableZZ
   mutablecomplex
   ntl-interface
-  overflow
+  monomial/overflow
   pfaff
   reader
   groebner-computations/reducedgb-ZZ
@@ -334,7 +334,7 @@ list(TRANSFORM SRCLIST APPEND .hpp OUTPUT_VARIABLE HPPFILES)
 
 set(SOURCES ${CPPONLYFILES} ${CPPFILES} ${CFILES})
 set(HEADERS ${HPPONLYFILES} ${HPPFILES} ${HFILES})
-  
+
 ###############################################################################
 ## Generate TAGS file
 # TODO: the order is somewhat different, is it a problem?

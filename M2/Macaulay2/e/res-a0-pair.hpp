@@ -4,7 +4,7 @@
 #define _respair_hh_
 
 #include <newdelete.hpp>
-#include <monideal.hpp>
+#include <monomial/monideal.hpp>
 
 struct res2term;
 

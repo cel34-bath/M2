@@ -1,8 +1,8 @@
 // Copyright 2005, Michael E. Stillman
 
 #include "groebner-computations/reducedgb-field-local.hpp"
-#include "monideal.hpp"
-#include "montable.hpp"
+#include "monomial/monideal.hpp"
+#include "monomial/montable.hpp"
 #include "groebner-computations/gbweight.hpp"
 #include "rings/polyring.hpp"
 #include <functional>

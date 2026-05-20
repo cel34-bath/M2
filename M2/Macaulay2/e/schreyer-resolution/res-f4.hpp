@@ -7,7 +7,7 @@
 #include "f4/monhashtable.hpp"
 #include "schreyer-resolution/res-memblock.hpp"
 #include "schreyer-resolution/res-poly-ring.hpp"
-#include "monomial-sets.hpp"
+#include "monomial/monomial-sets.hpp"
 
 #include <cassert>
 

@@ -13,7 +13,7 @@
 #include "groebner-computations/gbweight.hpp"
 #include "groebner-computations/reducedgb.hpp"
 
-#include "monsort.hpp"
+#include "monomial/monsort.hpp"
 
 #include "interrupted.hpp"
 
