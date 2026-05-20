@@ -9,7 +9,7 @@
 #include "ringmap.hpp"
 #include "matrix.hpp"
 #include "ZZ.hpp"
-#include "gbring.hpp"
+#include "groebner-computations/gbring.hpp"
 #include "frac.hpp"
 #include "geopoly.hpp"
 #include "ZZ.hpp"

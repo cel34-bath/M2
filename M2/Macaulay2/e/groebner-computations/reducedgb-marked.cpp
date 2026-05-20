@@ -1,7 +1,7 @@
 // Copyright 2005, Michael E. Stillman
 
 #include <functional>
-#include "reducedgb-marked.hpp"
+#include "groebner-computations/reducedgb-marked.hpp"
 #include "monideal.hpp"
 #include "matrix-con.hpp"
 

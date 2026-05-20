@@ -6,7 +6,7 @@
 #include <atomic>
 
 #include "monideal.hpp"
-#include "comp-gb.hpp"
+#include "groebner-computations/comp-gb.hpp"
 #include "comp-res.hpp"
 #include "schorder.hpp"
 #include "mat.hpp"

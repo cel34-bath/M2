@@ -4,7 +4,7 @@
 #include "res-a2.hpp"
 #include "hilb.hpp"
 #include "text-io.hpp"
-#include "comp-gb.hpp"
+#include "groebner-computations/comp-gb.hpp"
 #include "matrix-con.hpp"
 #include "interrupted.hpp"
 

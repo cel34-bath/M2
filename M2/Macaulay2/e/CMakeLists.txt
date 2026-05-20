@@ -183,9 +183,9 @@ set(SRCLIST
   buffer
   coeffrings
   comb
-  comp-gb-declared
-  comp-gb-proxy
-  comp-gb
+  groebner-computations/comp-gb-declared
+  groebner-computations/comp-gb-proxy
+  groebner-computations/comp-gb
   comp-res
   comp
   cra
@@ -200,13 +200,13 @@ set(SRCLIST
   franzi-brp
   freemod
   gauss
-  gb-default
-  gb-homog2
-  gb-sugarless
-  gb-toric
-  gb-walk
-  gbring
-  gbweight
+  groebner-computations/gb-default
+  groebner-computations/gb-homog2
+  groebner-computations/gb-sugarless
+  groebner-computations/gb-toric
+  groebner-computations/gb-walk
+  groebner-computations/gbring
+  groebner-computations/gbweight
   hermite
   hilb
   imonorder
@@ -233,11 +233,11 @@ set(SRCLIST
   overflow
   pfaff
   reader
-  reducedgb-ZZ
-  reducedgb-field-local
-  reducedgb-field
-  reducedgb-marked
-  reducedgb
+  groebner-computations/reducedgb-ZZ
+  groebner-computations/reducedgb-field-local
+  groebner-computations/reducedgb-field
+  groebner-computations/reducedgb-marked
+  groebner-computations/reducedgb
   relem
   res-a0-poly
   res-a0
@@ -245,7 +245,7 @@ set(SRCLIST
   res-a1
   res-a2
   ringmap
-  sagbi
+  groebner-computations/sagbi
   schorder
   Schur/schur
   Schur/schur2
@@ -253,7 +253,7 @@ set(SRCLIST
   skew
   skewpoly
   solvable
-  spair
+  groebner-computations/spair
   text-io
   ExponentList
   # Faugère's F4 Algorithm

@@ -3,7 +3,7 @@
 #ifndef _reducedgb_ZZ_hpp_
 #define _reducedgb_ZZ_hpp_
 
-#include "reducedgb.hpp"
+#include "groebner-computations/reducedgb.hpp"
 
 /**
     @ingroup reducedgb

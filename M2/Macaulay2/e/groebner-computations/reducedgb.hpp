@@ -3,12 +3,12 @@
 #ifndef _reducedgb_hpp_
 #define _reducedgb_hpp_
 
-#include "comp-gb.hpp"
+#include "groebner-computations/comp-gb.hpp"
 #include <vector>
-#include "gbring.hpp"
+#include "groebner-computations/gbring.hpp"
 #include "montable.hpp"
 #include "montableZZ.hpp"
-#include "gbweight.hpp"
+#include "groebner-computations/gbweight.hpp"
 #include "polyring.hpp"
 
 /**

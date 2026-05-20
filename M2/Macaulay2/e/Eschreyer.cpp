@@ -4,7 +4,7 @@
 #include "matrix.hpp"
 #include "monoid.hpp"
 #include "text-io.hpp"
-#include "gbring.hpp"
+#include "groebner-computations/gbring.hpp"
 #include "matrix-con.hpp"
 
 GBMatrix::GBMatrix(const FreeModule *F0) : F(F0) {}
@@ -354,8 +354,8 @@ void GBKernelComputation::reduce(gbvector *&f, gbvector *&fsyz)
   exponents_t REDUCE_exp = ALLOCATE_EXPONENTS(exp_size);
   monomial REDUCE_mon = ALLOCATE_MONOMIAL(monom_size);
 
-  const Ring *gbringK = GR->get_flattened_coefficients();
-  ring_elem one = gbringK->from_long(1);
+  const Ring *groebner-computations/gbringK = GR->get_flattened_coefficients();
+  ring_elem one = groebner-computations/gbringK->from_long(1);
   gbvector *lastterm = fsyz;  // fsyz has only ONE term.
   const gbvector *r;
   int q;
@@ -381,15 +381,15 @@ void GBKernelComputation::reduce(gbvector *&f, gbvector *&fsyz)
           ring_elem u, v;
           // Subtract off f, leave fsyz alone
           M->divide(f->monom, r->monom, REDUCE_mon);
-          gbringK->syzygy(f->coeff, r->coeff, u, v);
+          groebner-computations/gbringK->syzygy(f->coeff, r->coeff, u, v);
           gbvector *h = GR->mult_by_term(F, r, v, REDUCE_mon, f->comp);
           GR->gbvector_add_to(F, f, h);
-          if (!gbringK->is_equal(u, one))
+          if (!groebner-computations/gbringK->is_equal(u, one))
             {
               GR->gbvector_mult_by_coeff_to(fsyz, u);
               GR->gbvector_mult_by_coeff_to(f, u);
-              gbringK->remove(u);
-              gbringK->remove(v);
+              groebner-computations/gbringK->remove(u);
+              groebner-computations/gbringK->remove(v);
             }
           total_reduce_count++;
           count++;
@@ -397,10 +397,10 @@ void GBKernelComputation::reduce(gbvector *&f, gbvector *&fsyz)
       else if (find_divisor(mi[f->comp - 1], REDUCE_exp, q))
         {
           ring_elem u, v;
-          gbringK->syzygy(f->coeff, gb[q]->coeff, u, v);
+          groebner-computations/gbringK->syzygy(f->coeff, gb[q]->coeff, u, v);
           M->divide(f->monom, gb[q]->monom, REDUCE_mon);
           gbvector *h = GR->mult_by_term(F, gb[q], v, REDUCE_mon, 0);
-          if (!gbringK->is_equal(u, one))
+          if (!groebner-computations/gbringK->is_equal(u, one))
             {
               GR->gbvector_mult_by_coeff_to(fsyz, u);
               GR->gbvector_mult_by_coeff_to(f, u);
@@ -411,8 +411,8 @@ void GBKernelComputation::reduce(gbvector *&f, gbvector *&fsyz)
           nremoved += (n1 - n2);
           lastterm->next = make_syz_term(v, f->monom, q + 1);  // grabs v.
           lastterm = lastterm->next;
-          gbringK->remove(u);
-          gbringK->remove(v);
+          groebner-computations/gbringK->remove(u);
+          groebner-computations/gbringK->remove(v);
           int n3 = GR->gbvector_n_terms(f);
           GR->gbvector_add_to(F, f, h);
           int n4 = GR->gbvector_n_terms(f);
@@ -446,8 +446,8 @@ void GBKernelComputation::geo_reduce(gbvector *&f, gbvector *&fsyz)
   exponents_t REDUCE_exp = ALLOCATE_EXPONENTS(exp_size);
   monomial REDUCE_mon = ALLOCATE_MONOMIAL(monom_size);
 
-  const Ring *gbringK = GR->get_flattened_coefficients();
-  ring_elem one = gbringK->from_long(1);
+  const Ring *groebner-computations/gbringK = GR->get_flattened_coefficients();
+  ring_elem one = groebner-computations/gbringK->from_long(1);
   gbvector *lastterm = fsyz;  // fsyz has only ONE term.
   const gbvector *r;
   gbvectorHeap fb(GR, F);
@@ -474,15 +474,15 @@ void GBKernelComputation::geo_reduce(gbvector *&f, gbvector *&fsyz)
           // Subtract off f, leave fsyz alone
           M->divide(lead->monom, r->monom, REDUCE_mon);
 
-          gbringK->syzygy(f->coeff, r->coeff, u, v);
+          groebner-computations/gbringK->syzygy(f->coeff, r->coeff, u, v);
           gbvector *h = GR->mult_by_term(F, r, v, REDUCE_mon, f->comp);
           fb.add(h);
-          if (!gbringK->is_equal(u, one))
+          if (!groebner-computations/gbringK->is_equal(u, one))
             {
               GR->gbvector_mult_by_coeff_to(fsyz, u);
               GR->gbvector_mult_by_coeff_to(f, u);
-              gbringK->remove(u);
-              gbringK->remove(v);
+              groebner-computations/gbringK->remove(u);
+              groebner-computations/gbringK->remove(v);
             }
 
           fb.add(h);
@@ -492,10 +492,10 @@ void GBKernelComputation::geo_reduce(gbvector *&f, gbvector *&fsyz)
       else if (find_divisor(mi[lead->comp - 1], REDUCE_exp, q))
         {
           ring_elem u, v;
-          gbringK->syzygy(f->coeff, gb[q]->coeff, u, v);
+          groebner-computations/gbringK->syzygy(f->coeff, gb[q]->coeff, u, v);
           M->divide(lead->monom, gb[q]->monom, REDUCE_mon);
           gbvector *h = GR->mult_by_term(F, gb[q], v, REDUCE_mon, 0);
-          if (!gbringK->is_equal(u, one))
+          if (!groebner-computations/gbringK->is_equal(u, one))
             {
               GR->gbvector_mult_by_coeff_to(fsyz, u);
               GR->gbvector_mult_by_coeff_to(f, u);

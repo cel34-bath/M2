@@ -5,7 +5,7 @@
 #include "relem.hpp"
 #include "matrix.hpp"
 #include "polyring.hpp"
-#include "comp-gb.hpp"
+#include "groebner-computations/comp-gb.hpp"
 #include "ZZ.hpp"
 #include <vector>
 

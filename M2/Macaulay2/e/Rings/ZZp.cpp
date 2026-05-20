@@ -5,7 +5,7 @@
 #include "monoid.hpp"
 #include "ringmap.hpp"
 #include "ZZ.hpp"
-#include "gbring.hpp"
+#include "groebner-computations/gbring.hpp"
 
 #include "basic-rings/aring-ZZp.hpp"
 #include "error.h"

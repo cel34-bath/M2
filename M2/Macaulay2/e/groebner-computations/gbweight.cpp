@@ -1,6 +1,6 @@
-#include "gbweight.hpp"
+#include "groebner-computations/gbweight.hpp"
 #include "freemod.hpp"
-#include "gbring.hpp"
+#include "groebner-computations/gbring.hpp"
 #include "polyring.hpp"
 
 

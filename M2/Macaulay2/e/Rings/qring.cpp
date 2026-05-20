@@ -4,7 +4,7 @@
 #include "monideal.hpp"
 #include "montable.hpp"
 #include "montableZZ.hpp"
-#include "gbring.hpp"
+#include "groebner-computations/gbring.hpp"
 #include "poly.hpp"
 
 #include "basic-rings/aring-glue.hpp"  // for globalQQ??
@@ -23,8 +23,8 @@ QRingInfo::QRingInfo(const PolyRing *ambientR) : R(ambientR)
 
 void QRingInfo::destroy(GBRing *GR)
 {
-  // remove the gbvector's as they are stashed in gbrings.
-  // WARNING: these need to be deleted only if the gbring is non-NULL.
+  // remove the gbvector's as they are stashed in groebner-computations/gbrings.
+  // WARNING: these need to be deleted only if the groebner-computations/gbring is non-NULL.
 
   if (GR == nullptr) return;
   for (int i = 0; i < quotient_gbvectors.size(); i++)

@@ -6,10 +6,10 @@
 #include "matrix.hpp"
 #include "polyring.hpp"
 
-#include "comp-gb.hpp"
+#include "groebner-computations/comp-gb.hpp"
 
-#include "spair.hpp"
-#include "gbweight.hpp"
+#include "groebner-computations/spair.hpp"
+#include "groebner-computations/gbweight.hpp"
 
 class hilb_comp;
 

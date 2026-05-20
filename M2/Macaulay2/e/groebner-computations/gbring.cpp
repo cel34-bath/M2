@@ -1,4 +1,4 @@
-#include "gbring.hpp"
+#include "groebner-computations/gbring.hpp"
 
 #include <assert.h>
 #include <stdio.h>

@@ -1,6 +1,6 @@
 // Copyright 2005, Michael E. Stillman
 
-#include "reducedgb-ZZ.hpp"
+#include "groebner-computations/reducedgb-ZZ.hpp"
 #include "monideal.hpp"
 #include <functional>
 #include <algorithm>

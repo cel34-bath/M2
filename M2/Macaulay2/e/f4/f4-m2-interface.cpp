@@ -4,7 +4,7 @@
 #include "f4/moninfo.hpp"              // for monomial_word, MonomialInfo
 #include "f4/ntuple-monomial.hpp"      // for ntuple_word
 #include "freemod.hpp"                 // for FreeModule
-#include "gbring.hpp"                  // for gbvector, GBRing
+#include "groebner-computations/gbring.hpp"                  // for gbvector, GBRing
 #include "interface/mutable-matrix.h"  // for IM2_MutableMatrix_make
 #include "mat.hpp"                     // for MutableMatrix
 #include "matrix-con.hpp"              // for MatrixConstructor

@@ -1,9 +1,9 @@
 // Copyright 2005, Michael E. Stillman
 
-#include "reducedgb-field-local.hpp"
+#include "groebner-computations/reducedgb-field-local.hpp"
 #include "monideal.hpp"
 #include "montable.hpp"
-#include "gbweight.hpp"
+#include "groebner-computations/gbweight.hpp"
 #include "polyring.hpp"
 #include <functional>
 #include <algorithm>

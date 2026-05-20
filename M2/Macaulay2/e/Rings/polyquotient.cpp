@@ -3,7 +3,7 @@
 #include "polyquotient.hpp"
 
 #include "buffer.hpp"
-#include "comp-gb.hpp"
+#include "groebner-computations/comp-gb.hpp"
 #include "error.h"
 #include "interface/factory.h"
 #include "matrix-con.hpp"

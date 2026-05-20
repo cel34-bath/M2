@@ -1,6 +1,6 @@
 /* Copyright 2003-2009, Michael E. Stillman */
 
-#include "gb-default.hpp"
+#include "groebner-computations/gb-default.hpp"
 #include "text-io.hpp"
 
 #include "matrix.hpp"
@@ -10,8 +10,8 @@
 #include "relem.hpp"
 #include "hilb.hpp"
 
-#include "gbweight.hpp"
-#include "reducedgb.hpp"
+#include "groebner-computations/gbweight.hpp"
+#include "groebner-computations/reducedgb.hpp"
 
 #include "monsort.hpp"
 

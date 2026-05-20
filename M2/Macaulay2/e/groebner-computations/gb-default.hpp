@@ -3,12 +3,12 @@
 #ifndef _gbA_h_
 #define _gbA_h_
 
-#include "comp-gb.hpp"
+#include "groebner-computations/comp-gb.hpp"
 
-#include "gbring.hpp"
+#include "groebner-computations/gbring.hpp"
 #include "montable.hpp"
 #include "montableZZ.hpp"
-#include "reducedgb.hpp"
+#include "groebner-computations/reducedgb.hpp"
 
 class GBWeight;
 

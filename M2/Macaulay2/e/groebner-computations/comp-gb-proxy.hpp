@@ -1,74 +1,78 @@
 // Copyright 2004 Michael E. Stillman.
 
-#ifndef _comp_gb_declared_hpp_
-#define _comp_gb_declared_hpp_
+#ifndef _comp_gb_proxy_hpp_
+#define _comp_gb_proxy_hpp_
 
-#include "comp-gb.hpp"
-#include "reducedgb.hpp"
+#include "groebner-computations/comp-gb.hpp"
 
 /**
     @ingroup gb
 
-    @brief declared Groebner bases.
+    @brief handle to a GB.  Should be expunged, as full functionality isn't
+   used.
 */
-class GBDeclared : public GBComputation
+class GBProxy : public GBComputation
 // This contains a GBComputation, which can be changed.
 // For example, we can start with a computation, and then
 // after it is done, we can jettison it, and consider only
 // the GB object itself.
 {
-  ReducedGB *G;
-  const Matrix *trimmed_gens;
-  const Matrix *syz;
+  GBComputation *G;
 
  protected:
-  virtual bool stop_conditions_ok() { return true; }
+  virtual bool stop_conditions_ok()
+  {
+    G->stop_ = stop_;
+    return G->stop_conditions_ok();
+  }
   // If the stop conditions in _Stop are inappropriate,
   // return false, and use ERROR(...) to provide an error message.
 
  public:
-  GBDeclared(const Matrix *m0,
-             const Matrix *gb,
-             const Matrix *change,
-             const Matrix *syz0);
+  GBProxy(GBComputation *G0) : G(G0) {}
+  virtual ~GBProxy();
 
-  GBDeclared(const Matrix *leadterms,
-             const Matrix *m0,
-             const Matrix *gb,
-             const Matrix *change,
-             const Matrix *syz0);
-
-  static GBComputation *create(const Matrix *m,
-                               const Matrix *gb,
-                               const Matrix *change,
-                               const Matrix *syz);
-  // Possibly returns NULL, if an error message is reported
-
-  static GBComputation *create(const Matrix *leadterms,
-                               const Matrix *m,
-                               const Matrix *gb,
-                               const Matrix *change,
-                               const Matrix *syz);
-  // Possibly returns NULL, if an error message is reported
-
-  virtual ~GBDeclared() {}
   virtual void remove_gb() {}
+  GBComputation *replace_GB(GBComputation *G0)
+  {
+    GBComputation *result = G;
+    set_status(G->status());
+    G = G0;
+    return result;
+  }
+
   virtual GBComputation *cast_to_GBComputation() { return this; }
-  virtual void start_computation() {}
+  virtual const Ring *get_ring() const { return G->get_ring(); }
+  virtual Computation /* or null */ *set_hilbert_function(const RingElement *h)
+  {
+    return G->set_hilbert_function(h);
+  }
+  // The default version returns an error saying that Hilbert functions cannot
+  // be used.
+
+  virtual void start_computation()
+  {
+    G->start_computation();
+    set_status(G->status());
+  }
+
   virtual int complete_thru_degree() const { return G->complete_thru_degree(); }
   // The computation is complete up through this degree.
 
   // Recall that the status of the computation is maintained by the Computation
   // class,
 
-  virtual const Ring *get_ring() const { return G->get_ring(); }
   ////////////////////////////////
   // Results of the computation //
   ////////////////////////////////
   virtual const Matrix /* or null */ *get_gb() { return G->get_gb(); }
-  virtual const Matrix /* or null */ *get_mingens() { return trimmed_gens; }
+  virtual const Matrix /* or null */ *get_mingens() { return G->get_mingens(); }
   virtual const Matrix /* or null */ *get_change() { return G->get_change(); }
-  virtual const Matrix /* or null */ *get_syzygies() { return syz; }
+  virtual const Matrix /* or null */ *get_syzygies()
+  {
+    return G->get_syzygies();
+  }
+
   virtual const Matrix /* or null */ *get_initial(int nparts)
   {
     return G->get_initial(nparts);
@@ -100,9 +104,11 @@ class GBDeclared : public GBComputation
   // Statistics and spair information //
   //////////////////////////////////////
 
-  virtual void text_out(buffer &o) const { o << "declared GB"; }
+  virtual void text_out(buffer &o) const { G->text_out(o); }
   // This displays statistical information, and depends on the
   // M2_gbTrace value.
+
+  virtual void show() const { G->show(); }
 };
 
 #endif

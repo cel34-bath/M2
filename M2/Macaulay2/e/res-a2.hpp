@@ -7,7 +7,7 @@
 #include "polyring.hpp"
 #include "comp-res.hpp"
 #include "hilb.hpp"
-#include "spair.hpp"
+#include "groebner-computations/spair.hpp"
 
 #define STATE_DONE 0
 #define STATE_NEW_DEGREE 1
