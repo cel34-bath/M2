@@ -186,7 +186,7 @@ COMMANDS = \
 	matrices/matrix-kbasis \
 	matrices/matrix-symm \
 	matrices/matrix-sort \
-	ring-vecs \
+	rings/ring-vecs \
 	res-a2-gb \
 	engine \
 	interface/aring \
