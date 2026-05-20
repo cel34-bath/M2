@@ -108,13 +108,13 @@ INTERFACE = \
 	imonorder \
 	sagbi \
 	monideal-minprimes \
-	lapack \
+	basic-mutable-matrices/lapack \
 	LLL \
 	fractionfreeLU \
 	ntl-interface \
 	fplll-interface \
-	mat \
-	dmat \
+	basic-mutable-matrices/mat \
+	basic-mutable-matrices/dmat \
 	coeffrings \
 	Eschreyer \
 	gbweight \

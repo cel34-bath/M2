@@ -4,7 +4,7 @@
 #include "dmat.hpp"
 #include "smat.hpp"
 #include "mat.hpp"
-#include "mutablemat.hpp"
+#include "mutable-matrices/mutablemat.hpp"
 
 #include "coeffrings.hpp"
 
@@ -26,7 +26,7 @@
 
 #include "lapack.hpp"
 
-#include "mutablemat.hpp"
+#include "mutable-matrices/mutablemat.hpp"
 #include "ZZp.hpp"
 
 MutableMatrix *RingZZ::makeMutableMatrix(size_t nrows,

@@ -2,9 +2,9 @@
 
 #include "points.hpp"
 #include "error.h"
-#include "mat.hpp"
+#include "basic-mutable-matrices/mat.hpp"
 #include "matrix-con.hpp"
-#include "dmat.hpp"
+#include "basic-mutable-matrices/dmat.hpp"
 #include "polyring.hpp"
 #include "monideal.hpp"
 

@@ -23,7 +23,7 @@ endif()
 
 # TODO: determine the fate of these files
 set(UNDETERMINED
-  dmat-ffpack.cpp
+  basic-mutable-matrices/dmat-ffpack.cpp
   franzi-brp-test.cpp
   overflow-test.cpp
   test.dd
@@ -58,35 +58,35 @@ set(HPPONLYFILES
   timing.hpp
   SLP-defs.hpp
   SLP-imp.hpp
-  dmat-gf-flint-big.hpp
-  dmat-gf-flint.hpp
-  dmat-lu-inplace.hpp
-  dmat-lu-qq.hpp
-  dmat-lu-zzp-ffpack.hpp
-  dmat-lu-zzp-flint.hpp
-  dmat-lu.hpp
-  dmat-qq-flint.hpp
-  dmat-qq-interface-flint.hpp
-  dmat-zz-flint.hpp
-  dmat-zzp-flint.hpp
+  basic-mutable-matrices/dmat-gf-flint-big.hpp
+  basic-mutable-matrices/dmat-gf-flint.hpp
+  basic-mutable-matrices/dmat-lu-inplace.hpp
+  basic-mutable-matrices/dmat-lu-qq.hpp
+  basic-mutable-matrices/dmat-lu-zzp-ffpack.hpp
+  basic-mutable-matrices/dmat-lu-zzp-flint.hpp
+  basic-mutable-matrices/dmat-lu.hpp
+  basic-mutable-matrices/dmat-qq-flint.hpp
+  basic-mutable-matrices/dmat-qq-interface-flint.hpp
+  basic-mutable-matrices/dmat-zz-flint.hpp
+  basic-mutable-matrices/dmat-zzp-flint.hpp
   engine-includes.hpp
   exceptions.hpp
   geobucket.hpp
   geopoly.hpp
   geovec.hpp
   hash.hpp
-  mat-arith.hpp
-  mat-elem-ops.hpp
-  mat-linalg.hpp
-  mat-util.hpp
-  mutablemat-defs.hpp
-  mutablemat-imp.hpp
-  mutablemat.hpp
+  basic-mutable-matrices/mat-arith.hpp
+  basic-mutable-matrices/mat-elem-ops.hpp
+  basic-mutable-matrices/mat-linalg.hpp
+  basic-mutable-matrices/mat-util.hpp
+  mutable-matrices/mutablemat-defs.hpp
+  mutable-matrices/mutablemat-imp.hpp
+  mutable-matrices/mutablemat.hpp
   newdelete.hpp
   ExponentVector.hpp
   res-a0-pair.hpp
   Schur/schur-poly-heap.hpp
-  smat.hpp
+  basic-mutable-matrices/smat.hpp
   util.hpp
   style.hpp
   f4/f4-types.hpp
@@ -191,7 +191,6 @@ set(SRCLIST
   cra
   debug
   det
-  dmat
   dpoly
   eigen
   finalize
@@ -213,8 +212,6 @@ set(SRCLIST
   int-bag
   interreduce
   interrupted
-  lapack
-  mat
   matrix-con
   matrix-stream
   matrix
@@ -247,12 +244,6 @@ set(SRCLIST
   ringmap
   sagbi
   schorder
-  Schur/schur
-  Schur/schur2
-  Schur/schurSn
-  skew
-  skewpoly
-  solvable
   spair
   text-io
   ExponentList
@@ -350,16 +341,24 @@ set(RING_HPPONLY
   schur-poly-heap.hpp
   )
 
+set(BASIC_MUTABLE_MATRIX_SRCLIST
+  dmat
+  lapack
+  mat
+)
+
 # prepend subdirectory names
-list(TRANSFORM BASICRING_SRCLIST PREPEND basic-rings/)
-list(TRANSFORM BASICRING_HPPONLY PREPEND basic-rings/)
-list(TRANSFORM RING_SRCLIST      PREPEND rings/)
-list(TRANSFORM RING_CPPONLY      PREPEND rings/)
-list(TRANSFORM RING_HPPONLY      PREPEND rings/)
+list(TRANSFORM BASICRING_SRCLIST            PREPEND basic-rings/)
+list(TRANSFORM BASICRING_HPPONLY            PREPEND basic-rings/)
+list(TRANSFORM RING_SRCLIST                 PREPEND rings/)
+list(TRANSFORM RING_CPPONLY                 PREPEND rings/)
+list(TRANSFORM RING_HPPONLY                 PREPEND rings/)
+list(TRANSFORM BASIC_MUTABLE_MATRIX_SRCLIST PREPEND basic-mutable-matrices/)
 
 # merge the bare-name sub-lists into SRCLIST BEFORE the .cpp/.hpp transform
 list(APPEND SRCLIST ${BASICRING_SRCLIST})
 list(APPEND SRCLIST ${RING_SRCLIST})
+list(APPEND SRCLIST ${BASIC_MUTABLE_MATRIX_SRCLIST})
 
 list(TRANSFORM SRCLIST APPEND .cpp OUTPUT_VARIABLE CPPFILES)
 list(TRANSFORM SRCLIST APPEND .hpp OUTPUT_VARIABLE HPPFILES)
