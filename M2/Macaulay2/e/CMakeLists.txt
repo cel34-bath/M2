@@ -82,7 +82,7 @@ set(HPPONLYFILES
   newdelete.hpp
   ExponentVector.hpp
   res-a0-pair.hpp
-  schur/schur-poly-heap.hpp
+  schur-rings/schur-poly-heap.hpp
   basic-mutable-matrices/smat.hpp
   util.hpp
   style.hpp
@@ -98,8 +98,6 @@ set(HPPONLYFILES
   basic-rings/aring-glue.hpp
   basic-rings/aring-QQ.hpp
   basic-rings/aring-translate.hpp
-  schur-rings/schur-poly-heap.hpp
-  schur-rings/schur-poly-heap.hpp
   )
 
 # these files have .cpp file, but NOT .hpp file
@@ -200,7 +198,7 @@ set(SRCLIST
   fplll-interface
   fractionfreeLU
   franzi-brp
-  freemod
+  free-modules/freemod
   gauss
   gb-default
   gb-homog2
@@ -215,8 +213,8 @@ set(SRCLIST
   int-bag
   interreduce
   interrupted
-  lapack
-  mat
+  basic-mutable-matrices/lapack
+  basic-mutable-matrices/mat
   matrices/matrix-con
   matrices/matrix-stream
   matrix
@@ -248,10 +246,10 @@ set(SRCLIST
   res-a2
   ringmap
   sagbi
-  schorder
-  schur/schur
-  schur/schur2
-  schur/schurSn
+  free-modules/schreyer-orders
+  schur-rings/schur
+  schur-rings/schur2
+  schur-rings/schurSn
   spair
   text-io
   ExponentList
@@ -365,6 +363,13 @@ set_target_properties(M2-engine PROPERTIES PUBLIC_HEADER "${HEADERS}")
 
 target_include_directories(M2-engine PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/basic-mutable-matrices>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/basic-rings>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/free-modules>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/matrices>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/mutable-matrices>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/rings>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/schur-rings>
   $<INSTALL_INTERFACE:include/Macaulay2>)
 
 # TODO: make engine independent of interpreter headers

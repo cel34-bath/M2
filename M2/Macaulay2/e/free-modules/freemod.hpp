@@ -4,7 +4,7 @@
 #define _FreeModule_hh_
 
 #include "rings/ring.hpp"
-#include "schorder.hpp"
+#include "free-modules/schreyer-orders.hpp"
 
 class Matrix;
 class GBMatrix;
