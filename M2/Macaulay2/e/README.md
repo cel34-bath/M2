@@ -138,7 +138,7 @@ these files depends on overflow.hpp
     reducedgb.o
     res-a2-gb.o
     res-a2.o
-    free-modules/schorder.o
+    free-modules/schreyer-orders.o
     skewpoly.o
     solvable.o
     spair.o
