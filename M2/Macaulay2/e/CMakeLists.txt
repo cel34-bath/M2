@@ -26,7 +26,7 @@ set(UNDETERMINED
   dmat-ffpack.cpp
   franzi-brp-test.cpp
   overflow-test.cpp
-  test.dd
+  unused/test.dd
   points # both cpp and hpp
   )
 
