@@ -298,17 +298,17 @@ set(SRCLIST
   basic-rings/aring-RRR
   basic-rings/aring-RRi
   basic-rings/aring-CCi
-  basic-rings/aring-gf-flint-big
-  basic-rings/aring-gf-flint
-  basic-rings/aring-m2-gf
-  basic-rings/aring-qq-flint
-  basic-rings/aring-qq-gmp
+  basic-rings/aring-GF-flint-big
+  basic-rings/aring-GF-flint
+  basic-rings/aring-M2-gf
+  basic-rings/aring-QQ-flint
+  basic-rings/aring-QQ-gmp
   basic-rings/aring-tower
-  basic-rings/aring-zz-flint
-  basic-rings/aring-zz-gmp
-  basic-rings/aring-zzp-ffpack
-  basic-rings/aring-zzp-flint
-  basic-rings/aring-zzp
+  basic-rings/aring-ZZ-flint
+  basic-rings/aring-ZZ-gmp
+  basic-rings/aring-ZZp-ffpack
+  basic-rings/aring-ZZp-flint
+  basic-rings/aring-ZZp
   basic-rings/aring
   rings/frac
   rings/GF
