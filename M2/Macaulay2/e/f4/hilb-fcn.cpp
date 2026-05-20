@@ -3,7 +3,7 @@
 #include "hilb-fcn.hpp"
 
 #include "error.h"            // for error
-#include "freemod.hpp"        // for FreeModule
+#include "free-modules/freemod.hpp"        // for FreeModule
 #include "hilb.hpp"           // for hilb_comp
 #include "matrix-con.hpp"     // for MatrixConstructor
 #include "monoid.hpp"         // for Monoid, monomial

@@ -15,7 +15,7 @@
 #include "interface/m2-mem.h"             // for freemem
 #include "buffer.hpp"          // for buffer
 #include "error.h"             // for ERROR
-#include "freemod.hpp"         // for FreeModule
+#include "free-modules/freemod.hpp"         // for FreeModule
 #include "int-bag.hpp"         // for Bag, int_bag
 #include "interrupted.hpp"     // for system_interrupted
 #include "matrix.hpp"          // for Matrix

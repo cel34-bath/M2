@@ -4,7 +4,7 @@
 
 #include "rings/polyring.hpp"
 #include "gbring.hpp"
-#include "schorder.hpp"
+#include "free-modules/schorder.hpp"
 #include "matrix.hpp"
 #include "monoid.hpp"
 #include "comp.hpp"

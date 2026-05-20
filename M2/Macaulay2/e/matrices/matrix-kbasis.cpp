@@ -5,7 +5,7 @@
 #include "interface/m2-mem.h"              // for freemem
 #include "engine-includes.hpp"  // for M2_arrayint, M2_arrayint_struct
 #include "error.h"              // for ERROR
-#include "freemod.hpp"          // for FreeModule
+#include "free-modules/freemod.hpp"          // for FreeModule
 #include "int-bag.hpp"          // for Bag
 #include "interrupted.hpp"      // for system_interrupted
 #include "matrix-con.hpp"       // for MatrixConstructor

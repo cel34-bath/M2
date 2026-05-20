@@ -5,7 +5,7 @@
 #include "rings/ZZ.hpp"          // for RingZZ
 #include "coeffrings.hpp"  // for CoefficientRingR
 #include "exceptions.hpp"  // for exc::engine_error
-#include "freemod.hpp"     // for FreeModule
+#include "free-modules/freemod.hpp"     // for FreeModule
 #include "monoid.hpp"      // for Monoid
 #include "rings/poly.hpp"        // for PolyRing
 #include "rings/polyring.hpp"    // for PolynomialRing

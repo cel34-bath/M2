@@ -4,7 +4,7 @@
 #define _matrix_hh_
 
 #include "monoid.hpp"
-#include "freemod.hpp"
+#include "free-modules/freemod.hpp"
 #include "monideal.hpp"
 
 #include <vector>

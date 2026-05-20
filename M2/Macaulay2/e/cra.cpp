@@ -4,7 +4,7 @@
 #include <stddef.h>
 
 #include "error.h"
-#include "freemod.hpp"
+#include "free-modules/freemod.hpp"
 #include "matrix-con.hpp"
 #include "matrix.hpp"
 #include "monoid.hpp"

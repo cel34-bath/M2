@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <iostream>
 
-#include "schorder.hpp"
+#include "free-modules/schorder.hpp"
 #include "matrix.hpp"
 #include "comb.hpp"
 #include "rings/polyring.hpp"

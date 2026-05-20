@@ -15,7 +15,7 @@
 #include "interface/m2-types.h"                           // for M2_arrayint
 #include "error.h"                                        // for ERROR
 #include "exceptions.hpp"                                 // for engine_error
-#include "freemod.hpp"                                    // for FreeModule
+#include "free-modules/freemod.hpp"                                    // for FreeModule
 #include "gauss.hpp"                                      // for GaussElimCo...
 #include "gbring.hpp"                                     // for gbvector
 #include "interface/groebner.h"                           // for rawMinimalB...
