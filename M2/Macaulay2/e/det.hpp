@@ -4,7 +4,7 @@
 #  define _det_hh_
 
 #  include "matrix.hpp"
-#  include "matrix-con.hpp"
+#  include "matrices/matrix-con.hpp"
 #  include <utility>
 #  include <vector>
 #  include <map>

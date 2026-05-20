@@ -5,7 +5,7 @@
 #include "rings/qring.hpp"
 #include "rings/polyquotient.hpp"
 #include "matrix.hpp"
-#include "matrix-con.hpp"
+#include "matrices/matrix-con.hpp"
 #include "geopoly.hpp"
 
 PolynomialRing::~PolynomialRing() {}

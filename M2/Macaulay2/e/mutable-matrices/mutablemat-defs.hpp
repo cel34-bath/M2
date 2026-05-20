@@ -79,7 +79,7 @@ struct EigenTypes<M2::ARingCCC>
 };
 
 // The following include file is for creating a Matrix, in "toMatrix"
-#include "matrix-con.hpp"
+#include "matrices/matrix-con.hpp"
 
 #include "basic-mutable-matrices/dmat.hpp"
 #include "basic-mutable-matrices/smat.hpp"

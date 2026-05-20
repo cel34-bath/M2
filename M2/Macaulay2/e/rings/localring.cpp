@@ -11,7 +11,7 @@
 #include "relem.hpp"
 #include "debug.hpp"
 #include "matrix.hpp"
-#include "matrix-con.hpp"
+#include "matrices/matrix-con.hpp"
 #include "mutablecomplex.hpp"
 #include "exceptions.hpp"
 

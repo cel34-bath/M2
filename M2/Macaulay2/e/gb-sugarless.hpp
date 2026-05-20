@@ -9,7 +9,7 @@
 #include "reducedgb.hpp"
 
 #include "spair.hpp"
-#include "matrix-con.hpp"
+#include "matrices/matrix-con.hpp"
 class GBWeight;
 
 /**

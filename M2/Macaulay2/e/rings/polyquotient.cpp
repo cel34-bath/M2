@@ -6,7 +6,7 @@
 #include "comp-gb.hpp"
 #include "error.h"
 #include "interface/factory.h"
-#include "matrix-con.hpp"
+#include "matrices/matrix-con.hpp"
 #include "matrix.hpp"
 #include "monoid.hpp"
 #include "rings/polyring.hpp"

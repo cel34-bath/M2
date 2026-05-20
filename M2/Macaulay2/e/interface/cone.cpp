@@ -7,7 +7,7 @@
 #include "debug.hpp"
 #include "interface/gmp-util.h"
 #include "interface/matrix.h"
-#include "matrix-con.hpp"
+#include "matrices/matrix-con.hpp"
 #include "matrix.hpp"
 #include "relem.hpp"
 
