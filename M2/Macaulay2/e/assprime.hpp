@@ -8,7 +8,7 @@
 #ifndef _assprime_hh
 #define _assprime_hh
 
-#include "monideal.hpp"
+#include "monomial/monideal.hpp"
 
 class AssociatedPrimes
 // A class which enables one to compute the codimension and

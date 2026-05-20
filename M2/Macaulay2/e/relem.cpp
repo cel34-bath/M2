@@ -2,7 +2,7 @@
 
 #include "relem.hpp"
 #include "monoid.hpp"
-#include "monomial.hpp"
+#include "monomial/monomial.hpp"
 #include "rings/frac.hpp"
 #include "rings/localring.hpp"
 #include "rings/polyring.hpp"

@@ -1,7 +1,7 @@
 // Copyright 2005, Michael E. Stillman
 
 #include "reducedgb-ZZ.hpp"
-#include "monideal.hpp"
+#include "monomial/monideal.hpp"
 #include <functional>
 #include <algorithm>
 #include "text-io.hpp"

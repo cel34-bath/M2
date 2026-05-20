@@ -5,7 +5,7 @@
 
 #include "style.hpp"
 #include "matrix.hpp"
-#include "monideal.hpp"
+#include "monomial/monideal.hpp"
 #include "rings/poly.hpp"
 #include "comp-res.hpp"
 

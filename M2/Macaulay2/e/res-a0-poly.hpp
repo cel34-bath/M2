@@ -3,7 +3,7 @@
 #ifndef _respoly2_hh_
 #define _respoly2_hh_
 
-#include "monideal.hpp"
+#include "monomial/monideal.hpp"
 #include "res-a0-pair.hpp"
 struct res2term;
 

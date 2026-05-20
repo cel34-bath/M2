@@ -6,8 +6,8 @@
 #include "comp-gb.hpp"
 #include <vector>
 #include "gbring.hpp"
-#include "montable.hpp"
-#include "montableZZ.hpp"
+#include "monomial/montable.hpp"
+#include "monomial/montableZZ.hpp"
 #include "gbweight.hpp"
 #include "rings/polyring.hpp"
 
