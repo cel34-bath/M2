@@ -18,7 +18,7 @@
 #include "assprime.hpp"
 #include "monomial/monideal.hpp"
 #include "relem.hpp"
-#include "freemod.hpp"
+#include "free-modules/freemod.hpp"
 #include "util.hpp"
 
 #include "exptable.h"

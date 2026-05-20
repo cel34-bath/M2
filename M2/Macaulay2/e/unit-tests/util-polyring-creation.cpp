@@ -8,7 +8,7 @@
 #include "BasicPoly.hpp"
 #include "BasicPolyList.hpp"
 #include "monoid.hpp"
-#include "freemod.hpp"
+#include "free-modules/freemod.hpp"
 #include "interface/groebner.h"
 #include "groebner-computations/comp-gb.hpp"
 

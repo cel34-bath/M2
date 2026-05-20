@@ -10,7 +10,7 @@
 #include "basic-mutable-matrices/dmat.hpp"
 #include "error.h"
 #include "exceptions.hpp"
-#include "freemod.hpp"
+#include "free-modules/freemod.hpp"
 #include "interface/NAG.h"
 #include "interface/gmp-util.h"
 #include "interface/monoid.h"
