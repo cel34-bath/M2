@@ -28,9 +28,9 @@ INTERFACE = \
 	NCAlgebras/OverlapTable \
 	NCResolutions/nc-res-computation \
 	Polynomial \
-	monomial-collection \
+	monomial/monomial-collection \
 	eigen \
-	monomial-sets \
+	monomial/monomial-sets \
 	mutablecomplex \
 	rings/localring \
 	bibasis/bibasis \
@@ -68,7 +68,7 @@ INTERFACE = \
 	f4/f4-m2-interface \
 	f4/hilb-fcn \
 	f4/monhashtable \
-	monsort \
+	monomial/monsort \
 	f4/moninfo \
 	betti \
 	rings/GF \
@@ -107,7 +107,7 @@ INTERFACE = \
 	memory-status \
 	imonorder \
 	sagbi \
-	monideal-minprimes \
+	monomial/monideal-minprimes \
 	basic-mutable-matrices/lapack \
 	LLL \
 	fractionfreeLU \
@@ -137,8 +137,8 @@ INTERFACE = \
 	reducedgb-marked \
 	reducedgb-field-local \
 	reducedgb-ZZ \
-	montable \
-	montableZZ \
+	monomial/montable \
+	monomial/montableZZ \
 	free-modules/schreyer-orders \
 	assprime \
 	buffer \
@@ -160,9 +160,9 @@ INTERFACE = \
 	matrix \
 	matrices/matrix-con \
 	mem \
-	monideal \
+	monomial/monideal \
 	monoid \
-	monomial \
+	monomial/monomial \
 	rings/polyring \
 	pfaff \
 	relem \
@@ -226,7 +226,7 @@ NAMES_H = \
 
 C_FILES = error table exptable # interface/m2-types interface/m2-mem
 
-D_FILES = 
+D_FILES =
 DD_FILES = #test
 
 ##############################
@@ -251,4 +251,4 @@ LIBENGINE = @pre_librariesdir@/libengine.a
 endif
 
 HHFILES := $(addsuffix .hpp, $(NAMES_H) $(NAMES) $(INTERFACE) $(INTERFACE2)) $(E_H)
-ENGINE_SRCFILES := $(ENGINE_CCFILES) $(ENGINE_CFILES) $(HHFILES) $(ENGINE_DDFILES) $(ENGINE_DFILES) 
+ENGINE_SRCFILES := $(ENGINE_CCFILES) $(ENGINE_CFILES) $(HHFILES) $(ENGINE_DDFILES) $(ENGINE_DFILES)
