@@ -1,3 +1,7 @@
+/**
+* Functions for detecting arithmetic overflows.
+* Functions throw `exc:overflow_exception` in the event of an overflow.
+*/
 #ifndef _overflow_h_
 #define _overflow_h_
 
@@ -7,7 +11,6 @@
 
 // methods for detecting arithmetic overflows
 
-#include "exceptions.hpp"
 #include <cassert>
 #include <M2/config.h>
 
@@ -72,14 +75,14 @@ static inline int32_t fits_31(int32_t x)
   return fits_31(x, "monomial exponent overflow: fits_31");
 }
 
-static inline int32_t over_1(int32_t x) { return x < 0; }
-static inline int32_t over_2(int32_t x)
+static inline bool over_1(int32_t x) { return x < 0; }
+static inline bool over_2(int32_t x) 
 {
-  return (0x80008000u & (uint32_t)x) != 0;
+  return (0x80008000U & (uint32_t)x) != 0;
 }
-static inline int32_t over_4(int32_t x)
+static inline bool over_4(int32_t x)
 {
-  return (0x80808080u & (uint32_t)x) != 0;
+  return (0x80808080U & (uint32_t)x) != 0;
 }
 
 static inline int32_t add(int32_t x, int32_t y, const char *msg)

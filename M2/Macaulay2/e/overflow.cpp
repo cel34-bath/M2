@@ -1,4 +1,5 @@
 #include "overflow.hpp"
+#include "exceptions.hpp"
 #include <string>
 
 namespace safe {
