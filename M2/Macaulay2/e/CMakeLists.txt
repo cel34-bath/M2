@@ -85,6 +85,7 @@ set(HPPONLYFILES
   newdelete.hpp
   ExponentVector.hpp
   res-a0-pair.hpp
+  Schur/schur-poly-heap.hpp
   smat.hpp
   util.hpp
   style.hpp
@@ -246,6 +247,12 @@ set(SRCLIST
   ringmap
   sagbi
   schorder
+  Schur/schur
+  Schur/schur2
+  Schur/schurSn
+  skew
+  skewpoly
+  solvable
   spair
   text-io
   ExponentList
