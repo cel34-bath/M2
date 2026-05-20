@@ -117,7 +117,7 @@ INTERFACE = \
 	dmat \
 	coeffrings \
 	Eschreyer \
-	gbweight \
+	groebner-computations/gbweight \
 	rings/qring \
 	rings/polyquotient \
 	rings/poly \
