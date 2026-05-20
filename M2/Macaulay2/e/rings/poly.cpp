@@ -13,7 +13,7 @@
 #include "rings/frac.hpp"
 #include "geopoly.hpp"
 #include "rings/ZZ.hpp"
-#include "monomial.hpp"
+#include "monomial/monomial.hpp"
 #include "relem.hpp"
 
 #include "basic-rings/aring-glue.hpp"  // for globalQQ

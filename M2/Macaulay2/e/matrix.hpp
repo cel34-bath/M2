@@ -5,7 +5,7 @@
 
 #include "monoid.hpp"
 #include "freemod.hpp"
-#include "monideal.hpp"
+#include "monomial/monideal.hpp"
 
 #include <vector>
 

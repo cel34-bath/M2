@@ -2,7 +2,7 @@
 
 #include <functional>
 #include "reducedgb-marked.hpp"
-#include "monideal.hpp"
+#include "monomial/monideal.hpp"
 #include "matrix-con.hpp"
 
 MarkedGB *MarkedGB::create(const PolynomialRing *originalR0,

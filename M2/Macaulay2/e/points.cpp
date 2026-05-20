@@ -6,7 +6,7 @@
 #include "matrix-con.hpp"
 #include "dmat.hpp"
 #include "rings/polyring.hpp"
-#include "monideal.hpp"
+#include "monomial/monideal.hpp"
 
 #include "basic-rings/aring-ZZp.hpp"
 

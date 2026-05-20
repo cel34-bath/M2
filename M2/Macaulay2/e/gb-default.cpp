@@ -13,7 +13,7 @@
 #include "gbweight.hpp"
 #include "reducedgb.hpp"
 
-#include "monsort.hpp"
+#include "monomial/monsort.hpp"
 
 #include "interrupted.hpp"
 
