@@ -1,11 +1,11 @@
 // Copyright 1996  Michael E. Stillman
 
 #include "util.hpp"
-#include "freemod.hpp"
+#include "free-modules/freemod.hpp"
 #include "comb.hpp"
 #include "rings/polyring.hpp"
 #include "matrix.hpp"
-#include "matrix-con.hpp"
+#include "matrices/matrix-con.hpp"
 #include "Eschreyer.hpp"
 #include "gbring.hpp"
 

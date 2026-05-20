@@ -11,7 +11,7 @@
 #include "freemod.hpp"
 #include "mem.hpp"
 #include "rings/ring.hpp"
-#include "schorder.hpp"
+#include "free-modules/schreyer-orders.hpp"
 #include "text-io.hpp"
 #include "rings/weylalg.hpp"
 

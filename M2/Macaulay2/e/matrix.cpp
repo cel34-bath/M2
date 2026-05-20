@@ -18,12 +18,12 @@
 #include "assprime.hpp"
 #include "monomial/monideal.hpp"
 #include "relem.hpp"
-#include "freemod.hpp"
+#include "free-modules/freemod.hpp"
 #include "util.hpp"
 
 #include "exptable.h"
 
-#include "matrix-con.hpp"
+#include "matrices/matrix-con.hpp"
 
 #include "monomial/monomial-collection.hpp"
 #include "M2FreeAlgebra.hpp"

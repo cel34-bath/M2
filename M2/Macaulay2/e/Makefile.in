@@ -8,7 +8,7 @@ PRE.cc   = $(COMPILE.cc) -E
 
 include Makefile.files
 include Makefile.common
-CPPFLAGS := -I@srcdir@ $(CPPFLAGS) \
+CPPFLAGS := -I@srcdir@ -I@srcdir@/matrices $(CPPFLAGS) \
   -Wno-fatal-errors -Wno-unused-variable
 
 #  -I../d -I@srcdir@/../c -I@srcdir@/../d \
@@ -30,6 +30,7 @@ TAGS tags: @srcdir@/TAGS
 @srcdir@/TAGS: Makefile.in @srcdir@/*.hpp @srcdir@/*.h @srcdir@/*.cpp @srcdir@/*.c \
 	@srcdir@/NCAlgebras/*.hpp @srcdir@/NCAlgebras/*.cpp \
 	@srcdir@/interface/*.h @srcdir@/interface/*.cpp \
+	@srcdir@/free-modules/*.hpp @srcdir@/free-modules/*.cpp \
 	@srcdir@/schreyer-resolution/*.hpp @srcdir@/schreyer-resolution/*.cpp \
 	@srcdir@/f4/*.hpp @srcdir@/f4/*.cpp \
 	@srcdir@/bibasis/*.hpp @srcdir@/bibasis/*.cpp \
@@ -97,7 +98,7 @@ distclean: clean; rm -f Makefile @srcdir@/TAGS
 # we like using "struct" and "class" interchangeably
 CXXFLAGS += -Wno-mismatched-tags
 
-# a stand-alone program made from test.dd
+# a stand-alone program made from unused/test.dd
 # test : ../c/scc-core.o
 test : complex.o
 test : LDFLAGS += -L../d -lmpfr -lgmp -lfac -lcf -lcfmem
@@ -163,4 +164,3 @@ help:
 # Local Variables:
 # compile-command: "make -C $M2BUILDDIR/Macaulay2/e DEPENDS=no initialize && make -C $M2BUILDDIR/Macaulay2/e "
 # End:
-
