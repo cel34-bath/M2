@@ -244,7 +244,7 @@ engine.o :						\
 	@srcdir@/../e/imonorder.hpp			\
 	@srcdir@/../e/interface/monomial-ordering.h	\
 	@srcdir@/../e/free-modules/freemod.hpp		\
-	@srcdir@/../e/free-modules/schorder.hpp		\
+	@srcdir@/../e/free-modules/schreyer-orders.hpp		\
 	@srcdir@/../e/monideal.hpp			\
 	@srcdir@/../e/int-bag.hpp			\
 	@srcdir@/../e/rings/polyring.hpp			\

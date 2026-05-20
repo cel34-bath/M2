@@ -139,7 +139,7 @@ INTERFACE = \
 	reducedgb-ZZ \
 	montable \
 	montableZZ \
-	free-modules/schorder \
+	free-modules/schreyer-orders \
 	assprime \
 	buffer \
 	comb \
