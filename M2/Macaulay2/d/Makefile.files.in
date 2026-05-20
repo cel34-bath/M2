@@ -184,7 +184,7 @@ interface.o :						\
 	@srcdir@/../e/mutablemat-defs.hpp		\
 	@srcdir@/../e/mat.hpp				\
 	@srcdir@/../e/relem.hpp				\
-	@srcdir@/../e/matrix-con.hpp			\
+	@srcdir@/../e/matrices/matrix-con.hpp			\
 	@srcdir@/../e/dmat.hpp				\
 	@srcdir@/../e/mat-util.hpp			\
 	@srcdir@/../e/text-io.hpp			\

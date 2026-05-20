@@ -26,8 +26,7 @@ set(UNDETERMINED
   dmat-ffpack.cpp
   franzi-brp-test.cpp
   overflow-test.cpp
-  test.dd
-  points # both cpp and hpp
+  unused/test.dd
   )
 
 # c files
@@ -107,9 +106,9 @@ set(CPPONLYFILES
   engine.cpp # TODO: find a new home for the contents
   franzi-gb.cpp
   franzi-interface.cpp
-  matrix-kbasis.cpp
-  matrix-sort.cpp
-  matrix-symm.cpp
+  matrices/matrix-kbasis.cpp
+  matrices/matrix-sort.cpp
+  matrices/matrix-symm.cpp
   ntl-debugio.cpp
   ntl-internal.cpp
   res-a2-gb.cpp
@@ -161,7 +160,7 @@ set(SRCLIST
   BasicPolyList
   BasicPolyListParser
   myalloc
-  matrix-ncbasis
+  matrices/matrix-ncbasis
   M2FreeAlgebraQuotient
   M2FreeAlgebra
   NCAlgebras/Word
@@ -218,8 +217,8 @@ set(SRCLIST
   interrupted
   lapack
   mat
-  matrix-con
-  matrix-stream
+  matrices/matrix-con
+  matrices/matrix-stream
   matrix
   mem
   memory-status
@@ -250,6 +249,9 @@ set(SRCLIST
   ringmap
   sagbi
   schorder
+  schur/schur
+  schur/schur2
+  schur/schurSn
   spair
   text-io
   ExponentList
