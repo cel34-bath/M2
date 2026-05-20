@@ -18,7 +18,7 @@
 
 #include "interface/NAG.h"
 #include "basic-mutable-matrices/lapack.hpp"
-#include "matrix-con.hpp"
+#include "matrices/matrix-con.hpp"
 #include "matrix.hpp"
 #include "rings/poly.hpp"
 #include "relem.hpp"

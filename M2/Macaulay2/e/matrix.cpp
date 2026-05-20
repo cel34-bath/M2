@@ -23,7 +23,7 @@
 
 #include "exptable.h"
 
-#include "matrix-con.hpp"
+#include "matrices/matrix-con.hpp"
 
 #include "monomial-collection.hpp"
 #include "M2FreeAlgebra.hpp"

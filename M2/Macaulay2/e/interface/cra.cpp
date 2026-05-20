@@ -3,7 +3,7 @@
 #include "cra.hpp"
 #include "error.h"
 #include "freemod.hpp"
-#include "matrix-con.hpp"
+#include "matrices/matrix-con.hpp"
 #include "matrix.hpp"
 #include "monoid.hpp"
 #include "rings/poly.hpp"

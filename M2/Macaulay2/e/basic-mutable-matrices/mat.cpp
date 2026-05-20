@@ -8,7 +8,7 @@
 
 #include "coeffrings.hpp"
 
-#include "matrix-con.hpp"
+#include "matrices/matrix-con.hpp"
 #include "matrix.hpp"
 
 #include "basic-rings/aring-RRR.hpp"

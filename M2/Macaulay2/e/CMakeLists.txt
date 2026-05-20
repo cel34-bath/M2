@@ -82,7 +82,6 @@ set(HPPONLYFILES
   newdelete.hpp
   ExponentVector.hpp
   res-a0-pair.hpp
-  schur/schur-poly-heap.hpp
   basic-mutable-matrices/smat.hpp
   util.hpp
   style.hpp
@@ -98,7 +97,6 @@ set(HPPONLYFILES
   basic-rings/aring-glue.hpp
   basic-rings/aring-QQ.hpp
   basic-rings/aring-translate.hpp
-  schur-rings/schur-poly-heap.hpp
   schur-rings/schur-poly-heap.hpp
   )
 
@@ -215,8 +213,9 @@ set(SRCLIST
   int-bag
   interreduce
   interrupted
-  lapack
-  mat
+  basic-mutable-matrices/lapack
+  basic-mutable-matrices/mat
+  basic-mutable-matrices/dmat
   matrices/matrix-con
   matrices/matrix-stream
   matrix
@@ -249,9 +248,6 @@ set(SRCLIST
   ringmap
   sagbi
   schorder
-  schur/schur
-  schur/schur2
-  schur/schurSn
   spair
   text-io
   ExponentList

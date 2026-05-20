@@ -15,7 +15,7 @@
 #include "interface/gmp-util.h"
 #include "interface/monoid.h"
 #include "basic-mutable-matrices/mat.hpp"
-#include "matrix-con.hpp"
+#include "matrices/matrix-con.hpp"
 #include "matrix.hpp"
 #include "mutable-matrices/mutablemat-defs.hpp"
 #include "relem.hpp"
