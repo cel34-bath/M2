@@ -251,11 +251,7 @@ engine.o :						\
 	@srcdir@/../e/interface/computation.h		\
 	@srcdir@/../e/rings/skew.hpp				\
 	@srcdir@/../e/rings/qring.hpp				\
-<<<<<<< HEAD
-	@srcdir@/../e/mat.hpp				
-=======
 	@srcdir@/../e/basic-mutable-matrices/mat.hpp				
->>>>>>> burr/Subdirectories
 
 # now assemble the files into various categories:
 M2_DNAMES := $(patsubst %.d, %, $(patsubst %.dd, %, $(M2_DFILES)))
