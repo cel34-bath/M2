@@ -8,7 +8,7 @@
 
 #include "basic-rings/aring.hpp"
 #include "buffer.hpp"
-#include "ringelem.hpp"
+#include "rings/ringelem.hpp"
 #include "ringmap.hpp"
 
 #include "basic-rings/aring-RRR.hpp"

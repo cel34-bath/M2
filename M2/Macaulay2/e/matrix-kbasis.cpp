@@ -13,9 +13,9 @@
 #include "monideal.hpp"         // for MonomialIdeal
 #include "monoid.hpp"           // for Monoid, ALLOCATE_EXPONENTS, EXPONENT_...
 #include "newdelete.hpp"        // for newarray_atomic, newarray_atomic_clear
-#include "polyring.hpp"         // for PolynomialRing
-#include "ring.hpp"             // for Ring
-#include "ringelem.hpp"         // for ring_elem, vec
+#include "rings/polyring.hpp"         // for PolynomialRing
+#include "rings/ring.hpp"             // for Ring
+#include "rings/ringelem.hpp"         // for ring_elem, vec
 #include "style.hpp"            // for EQ
 #include "util.hpp"             // for M2_arrayint_to_stdvector
 

@@ -6,8 +6,8 @@
 #include "ExponentVector.hpp"
 #include "ExponentList.hpp"
 #include "int-bag.hpp"
-#include "ring.hpp"
-#include "polyring.hpp"
+#include "rings/ring.hpp"
+#include "rings/polyring.hpp"
 #include "mem.hpp"
 
 #if 0

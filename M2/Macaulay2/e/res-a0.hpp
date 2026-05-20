@@ -6,7 +6,7 @@
 #include "style.hpp"
 #include "matrix.hpp"
 #include "monideal.hpp"
-#include "poly.hpp"
+#include "rings/poly.hpp"
 #include "comp-res.hpp"
 
 struct res2_pair;

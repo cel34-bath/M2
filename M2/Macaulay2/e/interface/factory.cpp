@@ -25,13 +25,13 @@
 #include "exceptions.hpp"
 #include "matrix.hpp"
 #include "monoid.hpp"
-#include "poly.hpp"
-#include "polyring.hpp"
+#include "rings/poly.hpp"
+#include "rings/polyring.hpp"
 #include "relem.hpp"
-#include "ring.hpp"
-#include "ringelem.hpp"
+#include "rings/ring.hpp"
+#include "rings/ringelem.hpp"
 #include "text-io.hpp"
-#include "tower.hpp"
+#include "rings/tower.hpp"
 #include "util.hpp"
 
 const bool notInExtension = false;

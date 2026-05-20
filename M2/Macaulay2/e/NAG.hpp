@@ -29,8 +29,8 @@
 #include "error.h"
 #include "hash.hpp"
 #include "newdelete.hpp"
-#include "ring.hpp"
-#include "ringelem.hpp"
+#include "rings/ring.hpp"
+#include "rings/ringelem.hpp"
 
 class Matrix;
 class PointArray;

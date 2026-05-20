@@ -2,7 +2,7 @@
 
 #include "RingElem.hpp"
 #include "BasicPoly.hpp"
-#include "polyring.hpp"
+#include "rings/polyring.hpp"
 #include "monoid.hpp"
 
 // Convert a BasicPoly (parsed polynomial with mpz_class coefficients and

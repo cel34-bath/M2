@@ -4,7 +4,7 @@
 #ifndef _mutablecomplex_hpp_
 #define _mutablecomplex_hpp_
 
-#include "localring.hpp"
+#include "rings/localring.hpp"
 #include "style.hpp"
 #include "hash.hpp"
 #include "mat.hpp"

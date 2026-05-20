@@ -22,9 +22,9 @@
 #include "mem.hpp"             // for stash
 #include "monideal.hpp"        // for MonomialIdeal, operator!=, Nmi_node
 #include "monoid.hpp"          // for Monoid
-#include "polyring.hpp"        // for PolynomialRing
+#include "rings/polyring.hpp"        // for PolynomialRing
 #include "relem.hpp"           // for RingElement
-#include "ring.hpp"            // for Ring
+#include "rings/ring.hpp"            // for Ring
 
 int partition_table::representative(int x)
 {

@@ -7,9 +7,9 @@
 
 #include "basic-rings/aring.hpp"
 #include "buffer.hpp"
-#include "ringelem.hpp"
+#include "rings/ringelem.hpp"
 #include "exceptions.hpp"
-#include "ZZ.hpp"
+#include "rings/ZZ.hpp"
 
 // The following needs to be included before any flint files are included.
 #include <M2/gc-include.h>

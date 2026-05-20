@@ -18,8 +18,8 @@
 #include "mat.hpp"
 #include "matrix.hpp"
 #include "relem.hpp"
-#include "ring.hpp"
-#include "ringelem.hpp"
+#include "rings/ring.hpp"
+#include "rings/ringelem.hpp"
 #include "util.hpp"
 
 MutableMatrix *IM2_MutableMatrix_identity(const Ring *R,
