@@ -12,25 +12,25 @@
 #include "exceptions.hpp"
 #include "dmat.hpp"
 
-#include "aring-RR.hpp"
-#include "aring-CC.hpp"
-#include "aring-RRR.hpp"
-#include "aring-CCC.hpp"
-#include "aring-zzp.hpp"
-#include "aring-m2-gf.hpp"
+#include "basic-rings/aring-RR.hpp"
+#include "basic-rings/aring-CC.hpp"
+#include "basic-rings/aring-RRR.hpp"
+#include "basic-rings/aring-CCC.hpp"
+#include "basic-rings/aring-ZZp.hpp"
+#include "basic-rings/aring-m2-GF.hpp"
 typedef DMat<M2::ARingZZp> DMatZZp;
 typedef DMat<M2::ARingGFM2> DMatGFM2;
 
-#include "aring-zzp-ffpack.hpp"
+#include "basic-rings/aring-ZZp-ffpack.hpp"
 typedef M2::ARingZZpFFPACK ZZpFFPACK;
 #define DMatZZpFFPACK DMat<ZZpFFPACK>
 
-#include "aring-zz-gmp.hpp"
-#include "aring-qq.hpp"
-#include "aring-zz-flint.hpp"
-#include "aring-zzp-flint.hpp"
-#include "aring-gf-flint-big.hpp"
-#include "aring-gf-flint.hpp"
+#include "basic-rings/aring-ZZ-gmp.hpp"
+#include "basic-rings/aring-QQ.hpp"
+#include "basic-rings/aring-ZZ-flint.hpp"
+#include "basic-rings/aring-ZZp-flint.hpp"
+#include "basic-rings/aring-GF-flint-big.hpp"
+#include "basic-rings/aring-GF-flint.hpp"
 
 typedef DMat<M2::ARingZZGMP> DMatZZGMP;
 typedef DMat<M2::ARingZZ> DMatZZ;  // flint

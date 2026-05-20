@@ -27,7 +27,6 @@ set(UNDETERMINED
   franzi-brp-test.cpp
   overflow-test.cpp
   test.dd
-  aring-wrap # both cpp and hpp
   points # both cpp and hpp
   )
 
@@ -291,7 +290,7 @@ set(SRCLIST
   bibasis/settings-manager
   )
 
-set(COEFFRING_SRCLIST
+set(BASICRING_SRCLIST
   aring-CC
   aring-CCC
   aring-RR
@@ -311,7 +310,7 @@ set(COEFFRING_SRCLIST
   aring-zzp
   aring
 )
-set(COEFFRING_HPPONLY
+set(BASICRING_HPPONLY
   aring-glue.hpp
   aring-qq.hpp
   aring-translate.hpp
@@ -345,14 +344,14 @@ set(RING_HPPONLY
   )
 
 # prepend subdirectory names
-list(TRANSFORM COEFFRING_SRCLIST PREPEND CoefficientRings/)
-list(TRANSFORM COEFFRING_HPPONLY PREPEND CoefficientRings/)
-list(TRANSFORM RING_SRCLIST      PREPEND Rings/)
-list(TRANSFORM RING_CPPONLY      PREPEND Rings/)
-list(TRANSFORM RING_HPPONLY      PREPEND Rings/)
+list(TRANSFORM BASICRING_SRCLIST PREPEND basic-rings/)
+list(TRANSFORM BASICRING_HPPONLY PREPEND basic-rings/)
+list(TRANSFORM RING_SRCLIST      PREPEND rings/)
+list(TRANSFORM RING_CPPONLY      PREPEND rings/)
+list(TRANSFORM RING_HPPONLY      PREPEND rings/)
 
 # merge the bare-name sub-lists into SRCLIST BEFORE the .cpp/.hpp transform
-list(APPEND SRCLIST ${COEFFRING_SRCLIST})
+list(APPEND SRCLIST ${BASICRING_SRCLIST})
 list(APPEND SRCLIST ${RING_SRCLIST})
 
 list(TRANSFORM SRCLIST APPEND .cpp OUTPUT_VARIABLE CPPFILES)
@@ -360,7 +359,7 @@ list(TRANSFORM SRCLIST APPEND .hpp OUTPUT_VARIABLE HPPFILES)
 
 # pre-suffixed extras go in AFTER the transform
 list(APPEND CPPFILES ${RING_CPPONLY})
-list(APPEND HPPFILES ${COEFFRING_HPPONLY})
+list(APPEND HPPFILES ${BASICRING_HPPONLY})
 list(APPEND HPPFILES ${RING_HPPONLY})
 
 set(SOURCES ${CPPONLYFILES} ${CPPFILES} ${CFILES})
