@@ -105,9 +105,9 @@ set(CPPONLYFILES
   engine.cpp # TODO: find a new home for the contents
   franzi-gb.cpp
   franzi-interface.cpp
-  matrix-kbasis.cpp
-  matrix-sort.cpp
-  matrix-symm.cpp
+  matrices/matrix-kbasis.cpp
+  matrices/matrix-sort.cpp
+  matrices/matrix-symm.cpp
   ntl-debugio.cpp
   ntl-internal.cpp
   res-a2-gb.cpp
@@ -158,7 +158,7 @@ set(SRCLIST
   BasicPolyList
   BasicPolyListParser
   myalloc
-  matrix-ncbasis
+  matrices/matrix-ncbasis
   M2FreeAlgebraQuotient
   M2FreeAlgebra
   NCAlgebras/Word
@@ -215,8 +215,8 @@ set(SRCLIST
   interrupted
   lapack
   mat
-  matrix-con
-  matrix-stream
+  matrices/matrix-con
+  matrices/matrix-stream
   matrix
   mem
   memory-status
@@ -250,9 +250,6 @@ set(SRCLIST
   Schur/schur
   Schur/schur2
   Schur/schurSn
-  skew
-  skewpoly
-  solvable
   spair
   text-io
   ExponentList
@@ -304,22 +301,22 @@ set(BASICRING_SRCLIST
   aring-RRR
   aring-RRi
   aring-CCi
-  aring-gf-flint-big
-  aring-gf-flint
-  aring-m2-gf
-  aring-qq-flint
-  aring-qq-gmp
+  aring-GF-flint-big
+  aring-GF-flint
+  aring-m2-GF
+  aring-QQ-flint
+  aring-QQ-gmp
   aring-tower
-  aring-zz-flint
-  aring-zz-gmp
-  aring-zzp-ffpack
-  aring-zzp-flint
-  aring-zzp
+  aring-ZZ-flint
+  aring-ZZ-gmp
+  aring-ZZp-ffpack
+  aring-ZZp-flint
+  aring-ZZp
   aring
 )
 set(BASICRING_HPPONLY
   aring-glue.hpp
-  aring-qq.hpp
+  aring-QQ.hpp
   aring-translate.hpp
 )
 set(RING_SRCLIST
@@ -332,9 +329,6 @@ set(RING_SRCLIST
   qring
   ring
   ringelem
-  schur
-  schur2
-  schurSn
   skew
   skewpoly
   solvable
@@ -346,18 +340,14 @@ set(RING_SRCLIST
 set(RING_CPPONLY
   ring-vecs.cpp
 )
-set(RING_HPPONLY
-  schur-poly-heap.hpp
-  )
 
 # prepend subdirectory names
 list(TRANSFORM BASICRING_SRCLIST PREPEND basic-rings/)
 list(TRANSFORM BASICRING_HPPONLY PREPEND basic-rings/)
-list(TRANSFORM RING_SRCLIST      PREPEND rings/)
-list(TRANSFORM RING_CPPONLY      PREPEND rings/)
-list(TRANSFORM RING_HPPONLY      PREPEND rings/)
+list(TRANSFORM RING_SRCLIST      PREPEND Rings/)
+list(TRANSFORM RING_CPPONLY      PREPEND Rings/)
 
-# merge the bare-name sub-lists into SRCLIST BEFORE the .cpp/.hpp transform
+# merge the path-stem sub-lists into SRCLIST BEFORE the .cpp/.hpp transform
 list(APPEND SRCLIST ${BASICRING_SRCLIST})
 list(APPEND SRCLIST ${RING_SRCLIST})
 
@@ -367,7 +357,6 @@ list(TRANSFORM SRCLIST APPEND .hpp OUTPUT_VARIABLE HPPFILES)
 # pre-suffixed extras go in AFTER the transform
 list(APPEND CPPFILES ${RING_CPPONLY})
 list(APPEND HPPFILES ${BASICRING_HPPONLY})
-list(APPEND HPPFILES ${RING_HPPONLY})
 
 set(SOURCES ${CPPONLYFILES} ${CPPFILES} ${CFILES})
 set(HEADERS ${HPPONLYFILES} ${HPPFILES} ${HFILES})
@@ -399,6 +388,7 @@ set_target_properties(M2-engine PROPERTIES PUBLIC_HEADER "${HEADERS}")
 target_include_directories(M2-engine PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/CoefficientRings>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/matrices>
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/Rings>
   $<INSTALL_INTERFACE:include/Macaulay2>)
 

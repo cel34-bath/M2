@@ -8,7 +8,7 @@ PRE.cc   = $(COMPILE.cc) -E
 
 include Makefile.files
 include Makefile.common
-CPPFLAGS := -I@srcdir@ $(CPPFLAGS) \
+CPPFLAGS := -I@srcdir@ -I@srcdir@/matrices $(CPPFLAGS) \
   -Wno-fatal-errors -Wno-unused-variable
 
 #  -I../d -I@srcdir@/../c -I@srcdir@/../d \
@@ -177,4 +177,3 @@ help:
 # Local Variables:
 # compile-command: "make -C $M2BUILDDIR/Macaulay2/e DEPENDS=no initialize && make -C $M2BUILDDIR/Macaulay2/e "
 # End:
-

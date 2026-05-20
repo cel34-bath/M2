@@ -13,7 +13,7 @@ INTERFACE = \
 	BasicPoly \
 	BasicPolyList \
 	BasicPolyListParser \
-	matrix-ncbasis \
+	matrices/matrix-ncbasis \
 	M2FreeAlgebraQuotient \
 	M2FreeAlgebra \
 	NCAlgebras/Word \
@@ -75,7 +75,7 @@ INTERFACE = \
 	ZZ \
 	ZZp \
 	reader \
-	matrix-stream \
+	matrices/matrix-stream \
 	cra \
 	basic-rings/aring-ZZ-gmp \
 	basic-rings/aring-QQ-gmp \
@@ -158,7 +158,7 @@ INTERFACE = \
 	hilb \
 	int-bag \
 	matrix \
-	matrix-con \
+	matrices/matrix-con \
 	mem \
 	monideal \
 	monoid \
@@ -183,9 +183,9 @@ COMMANDS = \
 	interface/m2-mem \
 	ntl-internal \
 	ntl-debugio \
-	matrix-kbasis \
-	matrix-symm \
-	matrix-sort \
+	matrices/matrix-kbasis \
+	matrices/matrix-symm \
+	matrices/matrix-sort \
 	ring-vecs \
 	res-a2-gb \
 	engine \
