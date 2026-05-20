@@ -3,7 +3,7 @@
 #include "interface/ring.h"
 #include "relem.hpp"
 #include "util.hpp"
-#include "weylalg.hpp"
+#include "rings/weylalg.hpp"
 #include "RingTest.hpp"
 #include "RingElem.hpp"
 #include "util-polyring-creation.hpp"

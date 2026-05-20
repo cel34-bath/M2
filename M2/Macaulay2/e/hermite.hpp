@@ -4,9 +4,9 @@
 
 #include "relem.hpp"
 #include "matrix.hpp"
-#include "polyring.hpp"
+#include "rings/polyring.hpp"
 #include "groebner-computations/comp-gb.hpp"
-#include "ZZ.hpp"
+#include "rings/ZZ.hpp"
 #include <vector>
 
 struct hm_elem : public our_new_delete

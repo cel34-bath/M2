@@ -5,7 +5,7 @@
 
 #include "basic-rings/aring.hpp"
 #include "basic-rings/aring-translate.hpp"
-#include "ring.hpp"
+#include "rings/ring.hpp"
 
 #include "mutablemat.hpp"
 

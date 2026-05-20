@@ -1,7 +1,7 @@
 #include "groebner-computations/reducedgb.hpp"
 
 #include "matrix-con.hpp"
-#include "polyring.hpp"
+#include "rings/polyring.hpp"
 #include "matrix.hpp"
 
 #include "groebner-computations/reducedgb-field.hpp"

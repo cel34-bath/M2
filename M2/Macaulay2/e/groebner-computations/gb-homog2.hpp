@@ -4,7 +4,7 @@
 
 #include "relem.hpp"
 #include "matrix.hpp"
-#include "polyring.hpp"
+#include "rings/polyring.hpp"
 
 #include "groebner-computations/comp-gb.hpp"
 

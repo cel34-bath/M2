@@ -3,7 +3,7 @@
 #include "util.hpp"
 #include "freemod.hpp"
 #include "comb.hpp"
-#include "polyring.hpp"
+#include "rings/polyring.hpp"
 #include "matrix.hpp"
 #include "matrix-con.hpp"
 #include "Eschreyer.hpp"

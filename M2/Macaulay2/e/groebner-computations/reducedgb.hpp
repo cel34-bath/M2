@@ -9,7 +9,7 @@
 #include "montable.hpp"
 #include "montableZZ.hpp"
 #include "groebner-computations/gbweight.hpp"
-#include "polyring.hpp"
+#include "rings/polyring.hpp"
 
 /**
     @ingroup reducedgb

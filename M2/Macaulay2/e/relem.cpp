@@ -3,9 +3,9 @@
 #include "relem.hpp"
 #include "monoid.hpp"
 #include "monomial.hpp"
-#include "frac.hpp"
-#include "localring.hpp"
-#include "polyring.hpp"
+#include "rings/frac.hpp"
+#include "rings/localring.hpp"
+#include "rings/polyring.hpp"
 #include "M2FreeAlgebra.hpp"
 
 #include "basic-rings/aring-glue.hpp"

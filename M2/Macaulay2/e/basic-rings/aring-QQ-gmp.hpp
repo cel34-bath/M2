@@ -8,12 +8,12 @@
 
 #include "basic-rings/aring.hpp"
 #include "buffer.hpp"
-#include "ringelem.hpp"
+#include "rings/ringelem.hpp"
 #include <iosfwd>
 #include "exceptions.hpp"
 
 // promote needs ring.hpp.  After moving promote out, remove it here!
-#include "ring.hpp"
+#include "rings/ring.hpp"
 
 namespace M2 {
 /**

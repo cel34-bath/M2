@@ -5,7 +5,7 @@
 
 #include <cassert>
 #include <memory>
-#include "ringelem.hpp"
+#include "rings/ringelem.hpp"
 #include "buffer.hpp"
 
 #ifdef HAVE_FLINT_RAND_INIT

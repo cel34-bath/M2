@@ -1,7 +1,7 @@
 #include "groebner-computations/gbweight.hpp"
 #include "freemod.hpp"
 #include "groebner-computations/gbring.hpp"
-#include "polyring.hpp"
+#include "rings/polyring.hpp"
 
 
 GBWeight::GBWeight(const FreeModule *F, M2_arrayint wts0) : F_(F)

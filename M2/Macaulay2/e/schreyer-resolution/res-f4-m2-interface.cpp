@@ -2,7 +2,7 @@
 
 #include "m2tbb.hpp" // Needs to occur earlier than ffpack.
 #include "schreyer-resolution/res-f4-m2-interface.hpp"
-#include "ZZ.hpp"                                         // for RingZZ
+#include "rings/ZZ.hpp"                                         // for RingZZ
 #include "basic-rings/aring-RRR.hpp"                                  // for ARingRRR
 #include "basic-rings/aring-ZZ-gmp.hpp"                               // for ARingZZGMP
 #include "basic-rings/aring-ZZp-ffpack.hpp"                           // for ARingZZpFFPACK
@@ -24,8 +24,8 @@
 #include "matrix.hpp"                                     // for Matrix
 #include "monoid.hpp"                                     // for Monoid
 #include "newdelete.hpp"                                  // for newarray
-#include "polyring.hpp"                                   // for PolynomialRing
-#include "ring.hpp"                                       // for Ring, globalZZ
+#include "rings/polyring.hpp"                                   // for PolynomialRing
+#include "rings/ring.hpp"                                       // for Ring, globalZZ
 #include "schreyer-resolution/res-f4-computation.hpp"     // for F4ResComput...
 #include "schreyer-resolution/res-moninfo.hpp"            // for ResMonoid
 #include "schreyer-resolution/res-monomial-types.hpp"     // for res_monomia...

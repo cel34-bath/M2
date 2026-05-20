@@ -2,7 +2,7 @@
 
 #include "util.hpp"
 #include "util-polyring-creation.hpp"
-#include "weylalg.hpp"
+#include "rings/weylalg.hpp"
 #include "interface/ring.h"
 #include "interface/aring.h"
 #include "BasicPoly.hpp"

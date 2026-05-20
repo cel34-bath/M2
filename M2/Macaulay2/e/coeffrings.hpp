@@ -5,8 +5,8 @@
 
 class Z_mod;
 #include "basic-rings/aring.hpp"
-#include "ringelem.hpp"
-#include "ZZ.hpp"
+#include "rings/ringelem.hpp"
+#include "rings/ZZ.hpp"
 
 /**
  * \ingroup coeffrings

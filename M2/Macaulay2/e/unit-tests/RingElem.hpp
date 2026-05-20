@@ -19,8 +19,8 @@
 #include <vector>
 
 #include "buffer.hpp"
-#include "ring.hpp"
-#include "polyring.hpp"
+#include "rings/ring.hpp"
+#include "rings/polyring.hpp"
 #include "monoid.hpp"
 #include "BasicPoly.hpp"
 

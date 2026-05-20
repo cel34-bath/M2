@@ -4,7 +4,7 @@
 #include "schorder.hpp"
 #include "matrix.hpp"
 #include "comb.hpp"
-#include "polyring.hpp"
+#include "rings/polyring.hpp"
 #include "Eschreyer.hpp"
 #include "finalize.hpp"
 
