@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../VectorArithmetic.hpp"
+#include "../basic-rings/vector-arithmetic.hpp"
 #include "../BasicPolyList.hpp"
 #include "MonomialHashTable.hpp"
 #include "MonomialTypes.hpp"

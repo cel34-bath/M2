@@ -17,7 +17,7 @@
 #include "rings/ringelem.hpp"            // for vec
 #include "text-io.hpp"             // for emit
 #include "util.hpp"                // for M2_arrayint_to_stdvector
-#include "VectorArithmetic.hpp"    // for VectorArithmetic, ElementArray
+#include "basic-rings/vector-arithmetic.hpp"    // for VectorArithmetic, ElementArray
 
 class Computation;
 class RingElement;

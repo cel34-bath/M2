@@ -3,7 +3,7 @@
 #ifndef _res_f4_hpp_
 #define _res_f4_hpp_
 
-#include "VectorArithmetic.hpp"
+#include "basic-rings/vector-arithmetic.hpp"
 #include "f4/monhashtable.hpp"
 #include "schreyer-resolutions/res-memblock.hpp"
 #include "schreyer-resolutions/res-poly-ring.hpp"

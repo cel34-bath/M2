@@ -11,7 +11,7 @@
 #include "NCAlgebras/WordTable.hpp"       // for Overlap, WordTable
 #include "NCAlgebras/SuffixTree.hpp"      // for experimental suffix tree code
 #include "NCAlgebras/FreeAlgebra.hpp"     // for FreeAlgebra
-#include "VectorArithmetic.hpp"           // for VectorArithmetic, ElementArray, etc
+#include "basic-rings/vector-arithmetic.hpp"           // for VectorArithmetic, ElementArray, etc
 #include "Polynomial.hpp"                 // for Monom, ConstPolyList, Poly
 #include "newdelete.hpp"                  // for VECTOR, our_new_delete
 

@@ -74,7 +74,7 @@ INTERFACE = \
 	rings/GF \
 	rings/ZZ \
 	rings/ZZp \
-	reader \
+	basic-rings/reader \
 	matrices/matrix-stream \
 	cra \
 	basic-rings/aring-ZZ-gmp \
@@ -97,7 +97,7 @@ INTERFACE = \
 	basic-rings/aring \
 	schur-rings/schurSn \
 	schur-rings/schur2 \
-	dpoly \
+	rings/dpoly \
 	rings/tower \
 	interreduce \
 	finalize \
@@ -214,7 +214,7 @@ NAMES_H = \
 	f4/f4-types \
 	f4/memblock \
 	ExponentVector \
-	VectorArithmetic \
+	basic-rings/vector-arithmetic \
 	MemoryBlock \
 	NCAlgebras/Range \
 	style \

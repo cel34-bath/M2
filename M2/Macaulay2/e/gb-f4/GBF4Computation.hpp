@@ -6,7 +6,7 @@
 #include "MonomialLookupTable.hpp"
 #include "PolynomialList.hpp"
 #include "SPairs.hpp"
-#include "../VectorArithmetic.hpp"
+#include "../basic-rings/vector-arithmetic.hpp"
 
 class FreeModule;
 

@@ -1,4 +1,4 @@
-#include "dpoly.hpp"
+#include "rings/dpoly.hpp"
 
 #include <cassert>
 #include <cctype>
