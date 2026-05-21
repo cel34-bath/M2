@@ -5,7 +5,7 @@
 #include <frobby.h> // TODO: move Frobby routines elsewhere?
 
 #include "ExponentList.hpp"
-#include "assprime.hpp"
+#include "computations/assprime.hpp"
 #include "buffer.hpp"
 #include "error.h"
 #include "exceptions.hpp"

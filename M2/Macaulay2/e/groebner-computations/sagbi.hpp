@@ -56,7 +56,7 @@ class sagbi
 
 #if 0
 // #include "matrices/matrix.hpp"
-// #include "comp.hpp"
+// #include "computations/comp.hpp"
 // #include "gb_comp.hpp"
 //
 //

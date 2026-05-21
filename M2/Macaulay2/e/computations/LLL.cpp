@@ -1,6 +1,6 @@
 // Copyright 1998  Michael E. Stillman
 
-#include "LLL.hpp"
+#include "computations/LLL.hpp"
 
 #include "relem.hpp"
 #include "matrices/matrix.hpp"
