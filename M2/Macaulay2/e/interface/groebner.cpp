@@ -9,7 +9,7 @@
 #include "Eschreyer.hpp"
 #include "hilb.hpp"
 #include "comp-gb.hpp"
-#include "comp-res.hpp"
+#include "resolution/comp-res.hpp"
 #include "comp-gb-declared.hpp"
 #include "text-io.hpp"
 #include "sagbi.hpp"

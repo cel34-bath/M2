@@ -180,14 +180,14 @@ set(SRCLIST
   NAG # TODO: move raw* functions to e/interface
   SLP
   assprime
-  betti
+  resolution/betti
   buffer
   coeffrings
   comb
   comp-gb-declared
   comp-gb-proxy
   comp-gb
-  comp-res
+  resolution/comp-res
   comp
   cra
   debug
