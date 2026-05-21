@@ -5,9 +5,9 @@
 
 #include "ExponentVector.hpp"                          // for ntuple
 #include "monoid.hpp"                                  // for Monoid
-#include "schreyer-resolution/res-moninfo.hpp"         // for ResMonoid
-#include "schreyer-resolution/res-schreyer-order.hpp"  // for ResSchreyerOrder
-#include "schreyer-resolution/res-monomial-types.hpp"  // for res_packed_mon...
+#include "schreyer-resolutions/res-moninfo.hpp"         // for ResMonoid
+#include "schreyer-resolutions/res-schreyer-order.hpp"  // for ResSchreyerOrder
+#include "schreyer-resolutions/res-monomial-types.hpp"  // for res_packed_mon...
 #include "style.hpp"                                   // for GT, LT
 
 #include <memtailor/Arena.h>                           // for Arena

@@ -7,7 +7,7 @@
 #include <memory>                     // for unique_ptr
 #include <vector>                     // for vector
 
-#include "schreyer-resolution/res-monomial-types.hpp"
+#include "schreyer-resolutions/res-monomial-types.hpp"
 #include "rings/skew.hpp"  // for SkewMultiplication
 
 // Format for monomials here:

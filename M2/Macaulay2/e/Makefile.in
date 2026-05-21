@@ -31,7 +31,7 @@ TAGS tags: @srcdir@/TAGS
 	@srcdir@/NCAlgebras/*.hpp @srcdir@/NCAlgebras/*.cpp \
 	@srcdir@/interface/*.h @srcdir@/interface/*.cpp \
 	@srcdir@/free-modules/*.hpp @srcdir@/free-modules/*.cpp \
-	@srcdir@/schreyer-resolution/*.hpp @srcdir@/schreyer-resolution/*.cpp \
+	@srcdir@/schreyer-resolutions/*.hpp @srcdir@/schreyer-resolutions/*.cpp \
 	@srcdir@/f4/*.hpp @srcdir@/f4/*.cpp \
 	@srcdir@/bibasis/*.hpp @srcdir@/bibasis/*.cpp \
 	@srcdir@/unit-tests/*.cpp
