@@ -239,7 +239,7 @@ set(SRCLIST
   groebner-computations/reducedgb-field
   groebner-computations/reducedgb-marked
   groebner-computations/reducedgb
-  relem
+  ring-elements/ring-element
   resolutions/res-a0-poly
   resolutions/res-a0
   resolutions/res-a1-poly

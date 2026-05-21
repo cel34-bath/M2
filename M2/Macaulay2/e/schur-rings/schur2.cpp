@@ -5,7 +5,7 @@
 #include <iostream>
 #include "text-io.hpp"
 #include "rings/ZZ.hpp"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 #include "monomial/monomial.hpp"
 #include "ringmap.hpp"
 #include "monoid.hpp"

@@ -15,7 +15,7 @@
 #include "groebner-computations/sagbi.hpp"
 #include "exceptions.hpp"
 #include "groebner-computations/gb-walk.hpp"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 #include "util.hpp"
 #include "matrices/matrix-ncbasis.hpp"
 

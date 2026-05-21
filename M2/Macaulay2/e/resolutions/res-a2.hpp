@@ -2,7 +2,7 @@
 #ifndef _gb2_hh_
 #define _gb2_hh_
 
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 #include "matrix.hpp"
 #include "rings/polyring.hpp"
 #include "comp-res.hpp"

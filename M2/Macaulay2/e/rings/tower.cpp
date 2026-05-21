@@ -415,7 +415,7 @@ ring_elem Tower::lowerP(const ring_elem f) const
 // top level tower gcd routines //
 //////////////////////////////////
 
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 
 const RingElement *towerGCD(const RingElement *F, const RingElement *G)
 {

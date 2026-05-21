@@ -7,7 +7,7 @@
 #include "matrices/matrix-con.hpp"
 #include "rings/polyring.hpp"
 #include "newdelete.hpp"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 #include "hilb.hpp"
 
 #include "groebner-computations/gbweight.hpp"

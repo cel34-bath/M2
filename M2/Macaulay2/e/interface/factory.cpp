@@ -27,7 +27,7 @@
 #include "monoid.hpp"
 #include "rings/poly.hpp"
 #include "rings/polyring.hpp"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 #include "rings/ring.hpp"
 #include "rings/ringelem.hpp"
 #include "text-io.hpp"
