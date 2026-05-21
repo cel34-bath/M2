@@ -14,7 +14,7 @@
 //   some functions in a namespace, otherwise global, that compute sat, quotient, radical, etc.
 //   MonomialIdeal: engine object which is interned, and the monomial ideal is deleted on finalization.
 // Memory layout for this data structure?
-#include "monideal.hpp"
+#include "monomial/monideal.hpp"
 
 #include <iostream>
 #include <algorithm>

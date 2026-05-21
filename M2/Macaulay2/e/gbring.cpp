@@ -8,7 +8,7 @@
 #include "rings/ZZp.hpp"
 #include "basic-rings/aring-glue.hpp"
 #include "coeffrings.hpp"
-#include "freemod.hpp"
+#include "free-modules/freemod.hpp"
 #include "mem.hpp"
 #include "rings/ring.hpp"
 #include "free-modules/schreyer-orders.hpp"

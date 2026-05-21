@@ -154,7 +154,7 @@ interface.o :						\
 	@srcdir@/../e/exceptions.hpp			\
 	@srcdir@/../e/rings/ZZ.hpp				\
 	@srcdir@/../e/coeffrings.hpp			\
-	@srcdir@/../e/monomial.hpp			\
+	@srcdir@/../e/monomial/monomial.hpp			\
 	@srcdir@/../e/exceptions.hpp			\
 	@srcdir@/../e/relem.hpp				\
 	@srcdir@/../e/engine.h				\
@@ -226,9 +226,9 @@ engine.o :						\
 	@srcdir@/../e/error.h				\
 	@srcdir@/../e/exceptions.hpp			\
 	@srcdir@/../e/hash.hpp				\
-	@srcdir@/../e/monomial.hpp			\
+	@srcdir@/../e/monomial/monomial.hpp			\
 	@srcdir@/../e/engine-includes.hpp		\
-	@srcdir@/../e/monomial.hpp			\
+	@srcdir@/../e/monomial/monomial.hpp			\
 	@srcdir@/../e/buffer.hpp			\
 	@srcdir@/../e/style.hpp				\
 	@srcdir@/../e/mem.hpp				\
@@ -245,7 +245,7 @@ engine.o :						\
 	@srcdir@/../e/interface/monomial-ordering.h	\
 	@srcdir@/../e/free-modules/freemod.hpp		\
 	@srcdir@/../e/free-modules/schreyer-orders.hpp		\
-	@srcdir@/../e/monideal.hpp			\
+	@srcdir@/../e/monomial/monideal.hpp			\
 	@srcdir@/../e/int-bag.hpp			\
 	@srcdir@/../e/rings/polyring.hpp			\
 	@srcdir@/../e/interface/computation.h		\

@@ -103,7 +103,7 @@ INTERFACE = \
 	finalize \
 	NAG \
 	SLP \
-	overflow \
+	monomial/overflow \
 	memory-status \
 	imonorder \
 	sagbi \

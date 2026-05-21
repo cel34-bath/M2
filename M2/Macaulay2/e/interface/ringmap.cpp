@@ -3,7 +3,7 @@
 #include "buffer.hpp"
 #include "error.h"
 #include "exceptions.hpp"
-#include "freemod.hpp"
+#include "free-modules/freemod.hpp"
 #include "basic-mutable-matrices/mat.hpp"
 #include "matrix.hpp"
 #include "ringmap.hpp"

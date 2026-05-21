@@ -8,7 +8,7 @@
 #ifndef _monideal_minprimes_h_
 #define _monideal_minprimes_h_
 
-#include "monideal.hpp"
+#include "monomial/monideal.hpp"
 
 class MinimalPrimes
 // A class which enables one to compute the codimension and

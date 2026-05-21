@@ -95,7 +95,7 @@ header "
     #include <exceptions.hpp>
     #include <newdelete.hpp>
     #include <hash.hpp>
-    #include <monomial.hpp>
+    #include <monomial/monomial.hpp>
     #include <relem.hpp>
     #include <matrix.hpp>
     #include <basic-mutable-matrices/mat.hpp>
