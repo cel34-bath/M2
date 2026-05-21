@@ -4,7 +4,7 @@
 #define _sagbi_hh_
 
 #include "matrix.hpp"
-#include "comp-gb.hpp"
+#include "groebner-computations/comp-gb.hpp"
 
 /**
 * A basic class that implements SAGBI bases (aka canonical subalgebra bases, or Khovanskii bases.)

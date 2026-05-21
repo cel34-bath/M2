@@ -7,7 +7,7 @@
 #include "matrix.hpp"
 #include "matrices/matrix-con.hpp"
 #include "Eschreyer.hpp"
-#include "gbring.hpp"
+#include "groebner-computations/gbring.hpp"
 
 //////////////////////////////////////////////
 //  Construction/Destruction routines ////////

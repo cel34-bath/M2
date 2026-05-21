@@ -3,7 +3,7 @@
 #ifndef _interreduce_h_
 #define _interreduce_h_
 
-#include "gbring.hpp"
+#include "groebner-computations/gbring.hpp"
 
 class Interreducer
 {

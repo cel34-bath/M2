@@ -5,10 +5,10 @@
 #include "relem.hpp"
 #include "matrix.hpp"
 #include "rings/polyring.hpp"
-#include "comp-gb.hpp"
-#include "reducedgb.hpp"
+#include "groebner-computations/comp-gb.hpp"
+#include "groebner-computations/reducedgb.hpp"
 
-#include "spair.hpp"
+#include "groebner-computations/spair.hpp"
 #include "matrices/matrix-con.hpp"
 class GBWeight;
 

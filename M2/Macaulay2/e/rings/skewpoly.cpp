@@ -1,7 +1,7 @@
 // Copyright 2003 Michael E. Stillman
 
 #include "rings/skewpoly.hpp"
-#include "gbring.hpp"
+#include "groebner-computations/gbring.hpp"
 #include "rings/skew.hpp"
 
 SkewPolynomialRing::~SkewPolynomialRing() {}

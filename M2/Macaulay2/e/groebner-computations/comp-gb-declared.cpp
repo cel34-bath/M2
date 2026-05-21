@@ -1,7 +1,7 @@
-#include "comp-gb-declared.hpp"
-#include "reducedgb-marked.hpp"
+#include "groebner-computations/comp-gb-declared.hpp"
+#include "groebner-computations/reducedgb-marked.hpp"
 #include "matrix.hpp"
-#include "reducedgb.hpp"
+#include "groebner-computations/reducedgb.hpp"
 #include "rings/polyring.hpp"
 
 GBDeclared::GBDeclared(const Matrix *m0,

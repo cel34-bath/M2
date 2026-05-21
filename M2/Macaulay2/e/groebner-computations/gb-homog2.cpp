@@ -15,7 +15,7 @@
 // link into the new interface for GB's
 // make quotient rings
 #include "style.hpp"
-#include "gb-homog2.hpp"
+#include "groebner-computations/gb-homog2.hpp"
 #include "hilb.hpp"
 #include "text-io.hpp"
 #include "matrices/matrix-con.hpp"

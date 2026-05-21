@@ -4,7 +4,7 @@
 
 #include "free-modules/freemod.hpp"
 #include "rings/polyring.hpp"
-#include "gbring.hpp"
+#include "groebner-computations/gbring.hpp"
 
 struct s_pair;
 

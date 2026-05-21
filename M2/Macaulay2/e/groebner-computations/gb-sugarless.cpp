@@ -1,10 +1,10 @@
 // Copyright 1996  Michael E. Stillman
 
 #include "style.hpp"
-#include "gb-sugarless.hpp"
+#include "groebner-computations/gb-sugarless.hpp"
 #include "text-io.hpp"
 #include "matrices/matrix-con.hpp"
-#include "gbweight.hpp"
+#include "groebner-computations/gbweight.hpp"
 #include "interrupted.hpp"
 
 // is_min field of gb_elem:

@@ -5,7 +5,7 @@
 #define _weylalg_hh_
 
 #include "rings/poly.hpp"
-#include "gbring.hpp"
+#include "groebner-computations/gbring.hpp"
 
 ///// Ring Hierarchy ///////////////////////////////////
 

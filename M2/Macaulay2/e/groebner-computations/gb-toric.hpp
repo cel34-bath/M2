@@ -4,7 +4,7 @@
 #ifndef _gbbinom_hh_
 #define _gbbinom_hh_
 
-#include "comp-gb.hpp"
+#include "groebner-computations/comp-gb.hpp"
 #include "matrix.hpp"
 
 /////////////////////

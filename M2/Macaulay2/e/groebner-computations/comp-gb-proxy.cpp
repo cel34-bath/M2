@@ -1,6 +1,6 @@
 // Copyright 2004 Michael E. Stillman.
 
-#include "comp-gb-proxy.hpp"
+#include "groebner-computations/comp-gb-proxy.hpp"
 
 GBProxy::~GBProxy()
 {

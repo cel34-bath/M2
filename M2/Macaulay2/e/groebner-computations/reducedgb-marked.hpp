@@ -3,7 +3,7 @@
 #ifndef _marked_gb_
 #define _marked_gb_
 
-#include "reducedgb.hpp"
+#include "groebner-computations/reducedgb.hpp"
 
 // Marked GB's: for now, they must be defined over a polynomial ring
 // with no quotient elements, and the base must be field.

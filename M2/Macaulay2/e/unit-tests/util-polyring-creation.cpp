@@ -10,7 +10,7 @@
 #include "monoid.hpp"
 #include "free-modules/freemod.hpp"
 #include "interface/groebner.h"
-#include "comp-gb.hpp"
+#include "groebner-computations/comp-gb.hpp"
 
 // Creation of ring type objects
 // coefficient rings
