@@ -13,7 +13,7 @@
 #include <iostream>
 
 #include "BasicPoly.hpp"
-#include "PolynomialStream.hpp"
+#include "unused/PolynomialStream.hpp"
 
 class FreeModule;
 class Matrix;

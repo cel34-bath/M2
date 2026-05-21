@@ -6,7 +6,7 @@
 #include <limits>
 #include <sstream>
 
-#include "Eschreyer.hpp"
+#include "computations/Eschreyer.hpp"
 #include "hilb.hpp"
 #include "groebner-computations/comp-gb.hpp"
 #include "comp-res.hpp"

@@ -1,6 +1,6 @@
 // (c) 1994 Michael E. Stillman
 
-#include "assprime.hpp"
+#include "computations/assprime.hpp"
 
 AssociatedPrimes::AssociatedPrimes(const MonomialIdeal *const &I)
     : state(do_codim),

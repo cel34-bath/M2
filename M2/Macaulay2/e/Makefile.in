@@ -30,6 +30,7 @@ TAGS tags: @srcdir@/TAGS
 @srcdir@/TAGS: Makefile.in @srcdir@/*.hpp @srcdir@/*.h @srcdir@/*.cpp @srcdir@/*.c \
 	@srcdir@/NCAlgebras/*.hpp @srcdir@/NCAlgebras/*.cpp \
 	@srcdir@/interface/*.h @srcdir@/interface/*.cpp \
+	@srcdir@/computations/*.hpp @srcdir@/computations/*.cpp \
 	@srcdir@/free-modules/*.hpp @srcdir@/free-modules/*.cpp \
 	@srcdir@/schreyer-resolutions/*.hpp @srcdir@/schreyer-resolutions/*.cpp \
 	@srcdir@/f4/*.hpp @srcdir@/f4/*.cpp \
