@@ -3,7 +3,7 @@
 #include "groebner-computations/gb-default.hpp"
 #include "text-io.hpp"
 
-#include "matrix.hpp"
+#include "matrices/matrix.hpp"
 #include "matrices/matrix-con.hpp"
 #include "rings/polyring.hpp"
 #include "newdelete.hpp"

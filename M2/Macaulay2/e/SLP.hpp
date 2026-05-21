@@ -11,7 +11,7 @@
 #include "mutable-matrices/mutablemat-imp.hpp"
 
 #include "buffer.hpp"
-#include "matrix.hpp"
+#include "matrices/matrix.hpp"
 #include "basic-rings/aring-glue.hpp"
 
 #endif

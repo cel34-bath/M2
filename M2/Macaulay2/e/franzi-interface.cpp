@@ -2,7 +2,7 @@
 
 #include "franzi-brp.hpp"
 #include "matrices/matrix-con.hpp"
-#include "matrix.hpp"
+#include "matrices/matrix.hpp"
 
 extern void testSPolynomial();
 extern void gb(IntermediateBasis &F, int n);

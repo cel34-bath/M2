@@ -218,7 +218,7 @@ set(SRCLIST
   basic-mutable-matrices/dmat
   matrices/matrix-con
   matrices/matrix-stream
-  matrix
+  matrices/matrix
   mem
   memory-status
   monomial/monideal-minprimes

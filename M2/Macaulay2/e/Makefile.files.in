@@ -157,7 +157,7 @@ INTERFACE = \
 	hermite \
 	hilb \
 	int-bag \
-	matrix \
+	matrices/matrix \
 	matrices/matrix-con \
 	mem \
 	monomial/monideal \

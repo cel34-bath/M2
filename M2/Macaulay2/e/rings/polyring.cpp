@@ -4,7 +4,7 @@
 #include "monoid.hpp"
 #include "rings/qring.hpp"
 #include "rings/polyquotient.hpp"
-#include "matrix.hpp"
+#include "matrices/matrix.hpp"
 #include "matrices/matrix-con.hpp"
 #include "geopoly.hpp"
 
