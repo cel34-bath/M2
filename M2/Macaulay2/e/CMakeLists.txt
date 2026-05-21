@@ -24,7 +24,7 @@ endif()
 # TODO: determine the fate of these files
 set(UNDETERMINED
   basic-mutable-matrices/dmat-ffpack.cpp
-  unused/franzi-brp-test.cpp
+  computations/BRP-test.cpp
   overflow-test.cpp
   unused/test.dd
   )
@@ -103,13 +103,13 @@ set(HPPONLYFILES
 # these files have .cpp file, but NOT .hpp file
 set(CPPONLYFILES
   engine.cpp # TODO: find a new home for the contents
-  unused/franzi-gb.cpp
-  unused/franzi-interface.cpp
+  computations/BRP-gb.cpp
+  computations/BRP-interface.cpp
   matrices/matrix-kbasis.cpp
   matrices/matrix-sort.cpp
   matrices/matrix-symm.cpp
-  ntl-debugio.cpp
-  ntl-internal.cpp
+  computations/ntl-debugio.cpp
+  computations/ntl-internal.cpp
   resolutions/res-a2-gb.cpp
   interface/aring.cpp
   interface/aring.h
@@ -175,11 +175,11 @@ set(SRCLIST
   NCResolutions/nc-res-computation
   Polynomial
   monomial/monomial-collection
-  Eschreyer
-  LLL
+  computations/Eschreyer
+  computations/LLL
   NAG # TODO: move raw* functions to e/interface
   SLP
-  assprime
+  computations/assprime
   betti
   buffer
   coeffrings
@@ -188,16 +188,16 @@ set(SRCLIST
   groebner-computations/comp-gb-proxy
   groebner-computations/comp-gb
   comp-res
-  comp
+  computations/comp
   cra
   debug
-  det
+  computations/det
   dpoly
   eigen
   finalize
   fplll-interface
   fractionfreeLU
-  unused/franzi-brp
+  computations/BRP
   free-modules/freemod
   gauss
   groebner-computations/gb-default
@@ -230,9 +230,9 @@ set(SRCLIST
   monomial/montable
   monomial/montableZZ
   mutablecomplex
-  ntl-interface
+  computations/ntl-interface
   monomial/overflow
-  pfaff
+  computations/pfaff
   reader
   groebner-computations/reducedgb-ZZ
   groebner-computations/reducedgb-field-local
