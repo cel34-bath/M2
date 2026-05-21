@@ -3,7 +3,7 @@
 #define _Eschreyer_hpp_
 
 #include "rings/polyring.hpp"
-#include "gbring.hpp"
+#include "groebner-computations/gbring.hpp"
 #include "free-modules/schreyer-orders.hpp"
 #include "matrix.hpp"
 #include "monoid.hpp"

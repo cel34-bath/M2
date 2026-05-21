@@ -106,7 +106,7 @@ INTERFACE = \
 	monomial/overflow \
 	memory-status \
 	imonorder \
-	sagbi \
+	groebner-computations/sagbi \
 	monomial/monideal-minprimes \
 	basic-mutable-matrices/lapack \
 	LLL \
@@ -117,26 +117,26 @@ INTERFACE = \
 	basic-mutable-matrices/dmat \
 	coeffrings \
 	Eschreyer \
-	gbweight \
+	groebner-computations/gbweight \
 	rings/qring \
 	rings/polyquotient \
 	rings/poly \
 	debug \
 	comp \
-	comp-gb \
-	comp-gb-proxy \
-	comp-gb-declared \
+	groebner-computations/comp-gb \
+	groebner-computations/comp-gb-proxy \
+	groebner-computations/comp-gb-declared \
 	comp-res \
 	res-a0 \
 	res-a0-poly \
 	res-a1 \
 	res-a1-poly \
 	res-a2 \
-	reducedgb \
-	reducedgb-field \
-	reducedgb-marked \
-	reducedgb-field-local \
-	reducedgb-ZZ \
+	groebner-computations/reducedgb \
+	groebner-computations/reducedgb-field \
+	groebner-computations/reducedgb-marked \
+	groebner-computations/reducedgb-field-local \
+	groebner-computations/reducedgb-ZZ \
 	monomial/montable \
 	monomial/montableZZ \
 	free-modules/schreyer-orders \
@@ -147,12 +147,12 @@ INTERFACE = \
 	rings/frac \
 	franzi-brp \
 	free-modules/freemod \
-	gb-default \
-	gb-homog2 \
-	gb-sugarless \
-	gb-toric \
-	gb-walk \
-	gbring \
+	groebner-computations/gb-default \
+	groebner-computations/gb-homog2 \
+	groebner-computations/gb-sugarless \
+	groebner-computations/gb-toric \
+	groebner-computations/gb-walk \
+	groebner-computations/gbring \
 	gauss \
 	hermite \
 	hilb \
@@ -173,7 +173,7 @@ INTERFACE = \
 	rings/skew \
 	rings/skewpoly \
 	rings/solvable \
-	spair \
+	groebner-computations/spair \
 	text-io \
 	ExponentList \
 	rings/weylalg

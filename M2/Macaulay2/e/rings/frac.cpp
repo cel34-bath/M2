@@ -6,7 +6,7 @@
 #include "text-io.hpp"
 #include "monoid.hpp"
 #include "ringmap.hpp"
-#include "gbring.hpp"
+#include "groebner-computations/gbring.hpp"
 #include "relem.hpp"
 #include "rings/polyring.hpp"
 #include "exceptions.hpp"

@@ -3,7 +3,7 @@
 #ifndef _F4Computation_h_
 #define _F4Computation_h_
 
-#include "comp-gb.hpp"              // for GBComputation
+#include "groebner-computations/comp-gb.hpp"              // for GBComputation
 #include "interface/m2-types.h"     // for M2_bool, M2_arrayint
 #include "f4/f4.hpp"                // for F4GB
 #include "interface/computation.h"  // for ComputationStatusCode

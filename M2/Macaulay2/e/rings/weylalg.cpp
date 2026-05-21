@@ -1,7 +1,7 @@
 // Copyright 1997 Michael E. Stillman
 
 #include "rings/weylalg.hpp"
-#include "gbring.hpp"
+#include "groebner-computations/gbring.hpp"
 
 #include "ExponentVector.hpp"
 #include "geopoly.hpp"

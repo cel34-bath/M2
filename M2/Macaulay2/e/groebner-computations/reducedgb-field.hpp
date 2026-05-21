@@ -3,7 +3,7 @@
 #ifndef _reducedgb_field_
 #define _reducedgb_field_
 
-#include "reducedgb.hpp"
+#include "groebner-computations/reducedgb.hpp"
 
 /**
     @ingroup reducedgb

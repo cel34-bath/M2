@@ -1,6 +1,6 @@
 // Copyright 1997 Michael E. Stillman
 
-#include "gb-toric.hpp"
+#include "groebner-computations/gb-toric.hpp"
 
 #include "ExponentVector.hpp"
 #include "text-io.hpp"

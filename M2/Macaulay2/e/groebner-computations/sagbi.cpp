@@ -1,7 +1,7 @@
 // Copyright 1997  Michael E. Stillman
 
 #include "rings/poly.hpp"
-#include "sagbi.hpp"
+#include "groebner-computations/sagbi.hpp"
 #include "matrices/matrix-con.hpp"
 
 ring_elem sagbi::subduct(int numslots,

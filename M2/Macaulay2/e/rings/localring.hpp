@@ -7,7 +7,7 @@
 #include "rings/ring.hpp"
 #include "rings/poly.hpp"
 #include "rings/polyring.hpp"
-#include "comp-gb.hpp"
+#include "groebner-computations/comp-gb.hpp"
 
 struct local_elem
 {

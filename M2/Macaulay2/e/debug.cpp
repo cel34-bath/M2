@@ -2,7 +2,7 @@
 #include "text-io.hpp"
 #include "matrix.hpp"
 #include "relem.hpp"
-#include "gbring.hpp"
+#include "groebner-computations/gbring.hpp"
 #include "res-a1-poly.hpp"
 #include "res-a0-poly.hpp"
 #include "hermite.hpp"

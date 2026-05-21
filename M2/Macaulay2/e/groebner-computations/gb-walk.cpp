@@ -1,15 +1,15 @@
 /* Copyright 2007, Michael E. Stillman */
 
-#include "gb-walk.hpp"
+#include "groebner-computations/gb-walk.hpp"
 
 #include <assert.h>
 
-#include "comp-gb-declared.hpp"
+#include "groebner-computations/comp-gb-declared.hpp"
 #include "error.h"
-#include "gbring.hpp"
+#include "groebner-computations/gbring.hpp"
 #include "interface/computation.h"
 #include "interface/monomial-ordering.h"
-#include "reducedgb-marked.hpp"
+#include "groebner-computations/reducedgb-marked.hpp"
 
 class Computation;
 class Matrix;

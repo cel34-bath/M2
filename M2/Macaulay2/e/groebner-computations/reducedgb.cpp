@@ -1,12 +1,12 @@
-#include "reducedgb.hpp"
+#include "groebner-computations/reducedgb.hpp"
 
 #include "matrices/matrix-con.hpp"
 #include "rings/polyring.hpp"
 #include "matrix.hpp"
 
-#include "reducedgb-field.hpp"
-#include "reducedgb-field-local.hpp"
-#include "reducedgb-ZZ.hpp"
+#include "groebner-computations/reducedgb-field.hpp"
+#include "groebner-computations/reducedgb-field-local.hpp"
+#include "groebner-computations/reducedgb-ZZ.hpp"
 
 ReducedGB *ReducedGB::create(
     const PolynomialRing *originalR0,

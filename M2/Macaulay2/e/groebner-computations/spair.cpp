@@ -1,6 +1,6 @@
 // Copyright 1996  Michael E. Stillman
 
-#include "spair.hpp"
+#include "groebner-computations/spair.hpp"
 #include <iostream>
 
 // The following is constant

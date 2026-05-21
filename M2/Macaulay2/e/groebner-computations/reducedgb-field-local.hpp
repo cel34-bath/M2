@@ -3,7 +3,7 @@
 #ifndef _reducedgb_field_local_
 #define _reducedgb_field_local_
 
-#include "reducedgb-field.hpp"
+#include "groebner-computations/reducedgb-field.hpp"
 class GBWeight;
 
 /**

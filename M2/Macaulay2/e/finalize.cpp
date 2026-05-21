@@ -6,7 +6,7 @@
 #include <atomic>
 
 #include "monomial/monideal.hpp"
-#include "comp-gb.hpp"
+#include "groebner-computations/comp-gb.hpp"
 #include "comp-res.hpp"
 #include "free-modules/schreyer-orders.hpp"
 #include "basic-mutable-matrices/mat.hpp"

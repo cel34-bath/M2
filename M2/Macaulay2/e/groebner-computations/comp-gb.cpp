@@ -1,15 +1,15 @@
 // Copyright 2004 Michael E. Stillman.
 
-#include "comp-gb.hpp"
+#include "groebner-computations/comp-gb.hpp"
 
-#include "gb-homog2.hpp"
-#include "gb-sugarless.hpp"
-#include "gb-toric.hpp"
+#include "groebner-computations/gb-homog2.hpp"
+#include "groebner-computations/gb-sugarless.hpp"
+#include "groebner-computations/gb-toric.hpp"
 #include "gauss.hpp"
 #include "hermite.hpp"
-#include "gb-default.hpp"
-#include "gbweight.hpp"
-#include "comp-gb-proxy.hpp"
+#include "groebner-computations/gb-default.hpp"
+#include "groebner-computations/gbweight.hpp"
+#include "groebner-computations/comp-gb-proxy.hpp"
 #include "text-io.hpp"
 #include "finalize.hpp"
 #include "util.hpp"

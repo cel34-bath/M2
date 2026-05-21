@@ -7,7 +7,7 @@
 #include "text-io.hpp"
 #include "ringmap.hpp"
 #include "monoid.hpp"
-#include "gbring.hpp"
+#include "groebner-computations/gbring.hpp"
 #include "relem.hpp"
 #include "debug.hpp"
 #include "matrix.hpp"

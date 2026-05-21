@@ -1,7 +1,7 @@
 // Copyright 2003 Michael E. Stillman
 
 #include "rings/solvable.hpp"
-#include "gbring.hpp"
+#include "groebner-computations/gbring.hpp"
 
 SolvableAlgebra::~SolvableAlgebra()
 {
