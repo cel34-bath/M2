@@ -200,7 +200,6 @@ void parseBasicPoly(const std::string_view& str, const IdentifierHash& idenHash,
           // advance past leading whitespace
           skipWhitespace(str, begin_loc, end_loc);
           char c = str[begin_loc];
-          std::printf("\"%c\"", c);
           if (c == '-' or c == '+')
             break; // on to the next term
           if (c == '*')
