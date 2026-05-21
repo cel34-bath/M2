@@ -16,7 +16,7 @@
 #include "interface/gmp-util.h"
 #include "interface/random.h"
 #include "basic-mutable-matrices/mat.hpp"
-#include "matrix.hpp"
+#include "matrices/matrix.hpp"
 #include "relem.hpp"
 #include "rings/ring.hpp"
 #include "rings/ringelem.hpp"

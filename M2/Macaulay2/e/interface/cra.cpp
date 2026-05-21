@@ -4,7 +4,7 @@
 #include "error.h"
 #include "matrices/matrix-con.hpp"
 #include "free-modules/freemod.hpp"
-#include "matrix.hpp"
+#include "matrices/matrix.hpp"
 #include "monoid.hpp"
 #include "rings/poly.hpp"
 #include "relem.hpp"

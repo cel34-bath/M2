@@ -1,6 +1,6 @@
 #include "debug.hpp"
 #include "text-io.hpp"
-#include "matrix.hpp"
+#include "matrices/matrix.hpp"
 #include "relem.hpp"
 #include "groebner-computations/gbring.hpp"
 #include "resolutions/res-a1-poly.hpp"

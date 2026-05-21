@@ -7,7 +7,7 @@
 #include "error.h"
 #include "interface/factory.h"
 #include "matrices/matrix-con.hpp"
-#include "matrix.hpp"
+#include "matrices/matrix.hpp"
 #include "monoid.hpp"
 #include "rings/polyring.hpp"
 #include "relem.hpp"
