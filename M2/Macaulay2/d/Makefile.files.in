@@ -239,7 +239,7 @@ engine.o :						\
 	@srcdir@/../e/rings/ringelem.hpp			\
 	@srcdir@/../e/interface/gmp-util.h		\
 	@srcdir@/../e/rings/ZZ.hpp				\
-	@srcdir@/../e/matrix.hpp			\
+	@srcdir@/../e/matrices/matrix.hpp			\
 	@srcdir@/../e/monoid.hpp			\
 	@srcdir@/../e/imonorder.hpp			\
 	@srcdir@/../e/interface/monomial-ordering.h	\
