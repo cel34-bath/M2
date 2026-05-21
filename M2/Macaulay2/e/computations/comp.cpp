@@ -1,6 +1,6 @@
 // Copyright 2004 Michael E. Stillman
 
-#include "comp.hpp"
+#include "computations/comp.hpp"
 
 #include <stdio.h>
 

@@ -4,7 +4,7 @@
 #include "../BasicPolyList.hpp"
 #include "MonomialHashTable.hpp"
 #include "MonomialTypes.hpp"
-#include "PolynomialStream.hpp"
+#include "../unused/PolynomialStream.hpp"
 
 namespace newf4 {
 

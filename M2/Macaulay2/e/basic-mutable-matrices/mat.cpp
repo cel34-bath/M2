@@ -9,7 +9,7 @@
 #include "coeffrings.hpp"
 
 #include "matrices/matrix-con.hpp"
-#include "matrix.hpp"
+#include "matrices/matrix.hpp"
 
 #include "basic-rings/aring-RRR.hpp"
 #include "basic-rings/aring-RR.hpp"

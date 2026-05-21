@@ -5,7 +5,7 @@
 #include "exceptions.hpp"
 #include "free-modules/freemod.hpp"
 #include "basic-mutable-matrices/mat.hpp"
-#include "matrix.hpp"
+#include "matrices/matrix.hpp"
 #include "ringmap.hpp"
 
 class Ring;

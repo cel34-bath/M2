@@ -3,7 +3,7 @@
 #define _gb_hh_
 
 #include "relem.hpp"
-#include "matrix.hpp"
+#include "matrices/matrix.hpp"
 #include "rings/polyring.hpp"
 
 #include "groebner-computations/comp-gb.hpp"

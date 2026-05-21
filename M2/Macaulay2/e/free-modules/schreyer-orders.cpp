@@ -2,10 +2,10 @@
 #include <iostream>
 
 #include "free-modules/schreyer-orders.hpp"
-#include "matrix.hpp"
+#include "matrices/matrix.hpp"
 #include "comb.hpp"
 #include "rings/polyring.hpp"
-#include "Eschreyer.hpp"
+#include "computations/Eschreyer.hpp"
 #include "finalize.hpp"
 
 SchreyerOrder *SchreyerOrder::create(const Monoid *M)

@@ -9,7 +9,7 @@
 #include "f4/f4.hpp"               // for F4GB
 #include "f4/moninfo.hpp"          // for MonomialInfo
 #include "matrices/matrix-con.hpp"          // for MatrixConstructor
-#include "matrix.hpp"              // for Matrix
+#include "matrices/matrix.hpp"              // for Matrix
 #include "mem.hpp"                 // for stash
 #include "monoid.hpp"              // for Monoid
 #include "rings/polyring.hpp"            // for PolynomialRing

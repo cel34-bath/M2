@@ -3,7 +3,7 @@
 #include "rings/ring.hpp"
 #include "text-io.hpp"
 #include <vector>
-#include "matrix.hpp"
+#include "matrices/matrix.hpp"
 #include "geovec.hpp"
 #include "ringmap.hpp"
 #include "rings/poly.hpp"

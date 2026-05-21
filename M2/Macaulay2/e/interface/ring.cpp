@@ -17,7 +17,7 @@
 #include "rings/weylalg.hpp"
 #include "rings/skewpoly.hpp"
 #include "rings/solvable.hpp"
-#include "matrix.hpp"
+#include "matrices/matrix.hpp"
 #include "exceptions.hpp"
 #include "finalize.hpp"
 #include "rings/tower.hpp"

@@ -3,7 +3,7 @@
 #ifndef _comp_res_hpp_
 #define _comp_res_hpp_
 
-#include "comp.hpp"
+#include "computations/comp.hpp"
 class buffer;
 
 /**

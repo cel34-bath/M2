@@ -4,9 +4,9 @@
 #include "free-modules/freemod.hpp"
 #include "comb.hpp"
 #include "rings/polyring.hpp"
-#include "matrix.hpp"
+#include "matrices/matrix.hpp"
 #include "matrices/matrix-con.hpp"
-#include "Eschreyer.hpp"
+#include "computations/Eschreyer.hpp"
 #include "groebner-computations/gbring.hpp"
 
 //////////////////////////////////////////////

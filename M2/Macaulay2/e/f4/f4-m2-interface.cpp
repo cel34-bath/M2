@@ -8,7 +8,7 @@
 #include "interface/mutable-matrix.h"  // for IM2_MutableMatrix_make
 #include "basic-mutable-matrices/mat.hpp"                     // for MutableMatrix
 #include "matrices/matrix-con.hpp"              // for MatrixConstructor
-#include "matrix.hpp"                  // for Matrix
+#include "matrices/matrix.hpp"                  // for Matrix
 #include "monoid.hpp"                  // for Monoid
 #include "newdelete.hpp"               // for newarray, newarray_atomic, del...
 #include "rings/polyring.hpp"                // for PolynomialRing

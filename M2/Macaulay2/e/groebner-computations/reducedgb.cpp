@@ -2,7 +2,7 @@
 
 #include "matrices/matrix-con.hpp"
 #include "rings/polyring.hpp"
-#include "matrix.hpp"
+#include "matrices/matrix.hpp"
 
 #include "groebner-computations/reducedgb-field.hpp"
 #include "groebner-computations/reducedgb-field-local.hpp"

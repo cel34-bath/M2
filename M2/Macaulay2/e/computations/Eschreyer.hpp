@@ -5,9 +5,9 @@
 #include "rings/polyring.hpp"
 #include "groebner-computations/gbring.hpp"
 #include "free-modules/schreyer-orders.hpp"
-#include "matrix.hpp"
+#include "matrices/matrix.hpp"
 #include "monoid.hpp"
-#include "comp.hpp"
+#include "computations/comp.hpp"
 
 struct GBMatrix : public our_new_delete
 {
