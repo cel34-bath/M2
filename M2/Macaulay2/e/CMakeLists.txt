@@ -191,7 +191,6 @@ set(SRCLIST
   computations/comp
   cra
   debug
-  det
   rings/dpoly
   computations/det
   eigen
