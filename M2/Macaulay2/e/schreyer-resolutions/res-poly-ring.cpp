@@ -1,7 +1,7 @@
 /* Copyright 2015-2021, Michael E. Stillman */
 
-#include "schreyer-resolution/res-poly-ring.hpp"
-#include "schreyer-resolution/res-monomial-sorter.hpp"  // for ResMonomialSorter
+#include "schreyer-resolutions/res-poly-ring.hpp"
+#include "schreyer-resolutions/res-monomial-sorter.hpp"  // for ResMonomialSorter
 struct ResSchreyerOrder;
 
 long ResPolynomial::npoly_destructor = 0;

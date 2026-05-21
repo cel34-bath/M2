@@ -24,7 +24,7 @@
 #include "exceptions.hpp"
 #include "interface/monoid.h"
 #include "monoid.hpp"
-#include "monomial/monomial.hpp"
+#include "monomials/monomial.hpp"
 #include "newdelete.hpp"
 #include "rings/poly.hpp"
 #include "rings/polyring.hpp"
