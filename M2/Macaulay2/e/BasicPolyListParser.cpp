@@ -3,7 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include "BasicPoly.hpp"
-#include "ringelem.hpp"
+#include "rings/ringelem.hpp"
 
 std::string readEntireFile(const std::string &fileName)
 {

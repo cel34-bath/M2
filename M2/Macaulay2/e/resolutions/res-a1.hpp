@@ -9,7 +9,7 @@
 #include "rings/polyring.hpp"
 #include "comp-res.hpp"
 
-#include "res-a1-poly.hpp"
+#include "resolutions/res-a1-poly.hpp"
 
 class res_pair;
 class res_degree;

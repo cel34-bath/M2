@@ -11,7 +11,7 @@
 #  include "hash.hpp"        // for MutableEngineObject
 #  include "monoid.hpp"
 #  include "newdelete.hpp"   // for our_new_delete
-#  include "ringelem.hpp"    // for ring_elem, vec, vecterm (ptr only), Nter...
+#  include "rings/ringelem.hpp"    // for ring_elem, vec, vecterm (ptr only), Nter...
 
 class ARing;
 class CCC;
