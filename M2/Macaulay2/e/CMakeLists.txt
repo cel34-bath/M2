@@ -92,9 +92,9 @@ set(HPPONLYFILES
   f4/varpower-monomial.hpp
   gb-f4/MonomialTypes.hpp
   PolynomialStream.hpp
-  schreyer-resolution/res-memblock.hpp
-  schreyer-resolution/res-monomial-types.hpp
-  schreyer-resolution/res-schreyer-order.hpp
+  schreyer-resolutions/res-memblock.hpp
+  schreyer-resolutions/res-monomial-types.hpp
+  schreyer-resolutions/res-schreyer-order.hpp
   basic-rings/aring-glue.hpp
   basic-rings/aring-QQ.hpp
   basic-rings/aring-translate.hpp
@@ -174,7 +174,7 @@ set(SRCLIST
   NCAlgebras/OverlapTable
   NCResolutions/nc-res-computation
   Polynomial
-  monomial/monomial-collection
+  monomials/monomial-collection
   Eschreyer
   LLL
   NAG # TODO: move raw* functions to e/interface
@@ -221,17 +221,17 @@ set(SRCLIST
   matrices/matrix
   mem
   memory-status
-  monomial/monideal-minprimes
-  monomial/monideal
+  monomials/monideal-minprimes
+  monomials/monideal
   monoid
-  monomial/monomial-sets
-  monomial/monomial
-  monomial/monsort
-  monomial/montable
-  monomial/montableZZ
+  monomials/monomial-sets
+  monomials/monomial
+  monomials/monsort
+  monomials/montable
+  monomials/montableZZ
   mutablecomplex
   ntl-interface
-  monomial/overflow
+  monomials/overflow
   pfaff
   reader
   groebner-computations/reducedgb-ZZ
@@ -273,17 +273,17 @@ set(SRCLIST
   f4/monhashtable
   f4/moninfo
   # Schreyer resolution a la Linear algebra (F4 Faugere style)
-  schreyer-resolution/res-f4-computation
-  schreyer-resolution/res-f4-m2-interface
-  schreyer-resolution/res-f4-monlookup
-  schreyer-resolution/res-f4
-  schreyer-resolution/res-moninfo-dense
-  schreyer-resolution/res-moninfo-sparse
-  schreyer-resolution/res-moninfo
-  schreyer-resolution/res-monomial-sorter
-  schreyer-resolution/res-poly-ring
-  schreyer-resolution/res-schreyer-frame
-  schreyer-resolution/res-dep-graph
+  schreyer-resolutions/res-f4-computation
+  schreyer-resolutions/res-f4-m2-interface
+  schreyer-resolutions/res-f4-monlookup
+  schreyer-resolutions/res-f4
+  schreyer-resolutions/res-moninfo-dense
+  schreyer-resolutions/res-moninfo-sparse
+  schreyer-resolutions/res-moninfo
+  schreyer-resolutions/res-monomial-sorter
+  schreyer-resolutions/res-poly-ring
+  schreyer-resolutions/res-schreyer-frame
+  schreyer-resolutions/res-dep-graph
   # Boolean Involutive Gröbner Bases
   bibasis/bibasis
   bibasis/allocator

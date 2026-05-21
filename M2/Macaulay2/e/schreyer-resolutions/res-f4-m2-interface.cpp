@@ -1,7 +1,7 @@
 // Copyright 2016 Michael E. Stillman
 
 #include "m2tbb.hpp" // Needs to occur earlier than ffpack.
-#include "schreyer-resolution/res-f4-m2-interface.hpp"
+#include "schreyer-resolutions/res-f4-m2-interface.hpp"
 #include "rings/ZZ.hpp"                                         // for RingZZ
 #include "basic-rings/aring-RRR.hpp"                                  // for ARingRRR
 #include "basic-rings/aring-ZZ-gmp.hpp"                               // for ARingZZGMP
@@ -26,12 +26,12 @@
 #include "newdelete.hpp"                                  // for newarray
 #include "rings/polyring.hpp"                                   // for PolynomialRing
 #include "rings/ring.hpp"                                       // for Ring, globalZZ
-#include "schreyer-resolution/res-f4-computation.hpp"     // for F4ResComput...
-#include "schreyer-resolution/res-moninfo.hpp"            // for ResMonoid
-#include "schreyer-resolution/res-monomial-types.hpp"     // for res_monomia...
-#include "schreyer-resolution/res-poly-ring.hpp"          // for ResPolynomialIterator
-#include "schreyer-resolution/res-schreyer-frame.hpp"     // for SchreyerFrame
-#include "schreyer-resolution/res-schreyer-order.hpp"     // for ResSchreyer...
+#include "schreyer-resolutions/res-f4-computation.hpp"     // for F4ResComput...
+#include "schreyer-resolutions/res-moninfo.hpp"            // for ResMonoid
+#include "schreyer-resolutions/res-monomial-types.hpp"     // for res_monomia...
+#include "schreyer-resolutions/res-poly-ring.hpp"          // for ResPolynomialIterator
+#include "schreyer-resolutions/res-schreyer-frame.hpp"     // for SchreyerFrame
+#include "schreyer-resolutions/res-schreyer-order.hpp"     // for ResSchreyer...
 #include "timing.hpp"                                     // for timer, seconds
 #include <cstdlib>                                        // for exit, size_t
 #include <chrono>                                         // for common_type...

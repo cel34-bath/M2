@@ -6,8 +6,8 @@
 #include "groebner-computations/comp-gb.hpp"
 
 #include "groebner-computations/gbring.hpp"
-#include "monomial/montable.hpp"
-#include "monomial/montableZZ.hpp"
+#include "monomials/montable.hpp"
+#include "monomials/montableZZ.hpp"
 #include "groebner-computations/reducedgb.hpp"
 
 class GBWeight;

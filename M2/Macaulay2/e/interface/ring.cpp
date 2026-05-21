@@ -3,7 +3,7 @@
 #include "interface/ring.h"
 
 #include "monoid.hpp"
-#include "monomial/monomial.hpp"
+#include "monomials/monomial.hpp"
 #include "relem.hpp"
 #include "rings/ZZp.hpp"
 #include "rings/ZZ.hpp"

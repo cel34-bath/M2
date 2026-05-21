@@ -6,7 +6,7 @@
 #include "text-io.hpp"
 #include "rings/ZZ.hpp"
 #include "relem.hpp"
-#include "monomial/monomial.hpp"
+#include "monomials/monomial.hpp"
 #include "ringmap.hpp"
 #include "monoid.hpp"
 
