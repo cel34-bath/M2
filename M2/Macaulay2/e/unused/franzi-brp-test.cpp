@@ -2,7 +2,7 @@
 
 #include "franzi-brp.hpp"
 #include <vector>
-// g++ franzi-brp.cpp franzi-brp-test.cpp -o franzi-brp-test
+// g++ unused/franzi-brp.cpp unused/franzi-brp-test.cpp -o franzi-brp-test
 
 void testEquality0()
 {

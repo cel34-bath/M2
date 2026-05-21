@@ -24,7 +24,7 @@ endif()
 # TODO: determine the fate of these files
 set(UNDETERMINED
   basic-mutable-matrices/dmat-ffpack.cpp
-  franzi-brp-test.cpp
+  unused/franzi-brp-test.cpp
   overflow-test.cpp
   unused/test.dd
   )
@@ -91,7 +91,7 @@ set(HPPONLYFILES
   f4/ntuple-monomial.hpp
   f4/varpower-monomial.hpp
   gb-f4/MonomialTypes.hpp
-  PolynomialStream.hpp
+  unused/PolynomialStream.hpp
   schreyer-resolution/res-memblock.hpp
   schreyer-resolution/res-monomial-types.hpp
   schreyer-resolution/res-schreyer-order.hpp
@@ -103,8 +103,8 @@ set(HPPONLYFILES
 # these files have .cpp file, but NOT .hpp file
 set(CPPONLYFILES
   engine.cpp # TODO: find a new home for the contents
-  franzi-gb.cpp
-  franzi-interface.cpp
+  unused/franzi-gb.cpp
+  unused/franzi-interface.cpp
   matrices/matrix-kbasis.cpp
   matrices/matrix-sort.cpp
   matrices/matrix-symm.cpp
@@ -197,7 +197,7 @@ set(SRCLIST
   finalize
   fplll-interface
   fractionfreeLU
-  franzi-brp
+  unused/franzi-brp
   free-modules/freemod
   gauss
   groebner-computations/gb-default

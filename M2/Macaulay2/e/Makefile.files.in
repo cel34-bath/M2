@@ -145,7 +145,7 @@ INTERFACE = \
 	comb \
 	det \
 	rings/frac \
-	franzi-brp \
+	unused/franzi-brp \
 	free-modules/freemod \
 	groebner-computations/gb-default \
 	groebner-computations/gb-homog2 \
@@ -206,8 +206,8 @@ COMMANDS = \
 	interface/ring \
 	interface/ringelement \
 	interface/ringmap \
-	franzi-gb \
-	franzi-interface
+	unused/franzi-gb \
+	unused/franzi-interface
 
 NAMES_H = \
 	m2tbb \
