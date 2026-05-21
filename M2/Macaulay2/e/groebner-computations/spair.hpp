@@ -2,7 +2,7 @@
 #ifndef _spair_hh_
 #define _spair_hh_
 
-#include "freemod.hpp"
+#include "free-modules/freemod.hpp"
 #include "rings/polyring.hpp"
 #include "groebner-computations/gbring.hpp"
 

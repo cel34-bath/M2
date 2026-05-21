@@ -3,7 +3,7 @@
 #include "res-a0-poly.hpp"
 #include "text-io.hpp"
 #include "rings/polyring.hpp"
-#include "freemod.hpp"
+#include "free-modules/freemod.hpp"
 #include "geovec.hpp"
 
 res2_poly::res2_poly(PolynomialRing *RR)

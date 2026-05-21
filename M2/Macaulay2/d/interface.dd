@@ -28,7 +28,7 @@ header "// TODO: remove the following headers
 #include <error.h>                          // for ERROR
 #include <rings/ZZp.hpp>                          // for Z_mod
 #include <exceptions.hpp>                   // for engine_error, CATCH, TRY
-#include <monomial.hpp>                     // for EngineMonomial
+#include <monomial/monomial.hpp>                     // for EngineMonomial
 #include <relem.hpp>                        // for RingElement";
 
 -- debugging:

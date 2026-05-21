@@ -1,7 +1,7 @@
 // Copyright 2005-2021 Michael E. Stillman
 
 #include "f4/f4.hpp"
-#include "freemod.hpp"                 // for FreeModule
+#include "free-modules/freemod.hpp"                 // for FreeModule
 #include "basic-mutable-matrices/mat.hpp"                     // for MutableMatrix
 #include "text-io.hpp"                 // for emit
 #include "buffer.hpp"                  // for buffer
