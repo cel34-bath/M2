@@ -26,7 +26,7 @@
 
 #include "rings/poly.hpp"
 #include "interrupted.hpp"
-#include "schreyer-resolution/res-f4-computation.hpp"
+#include "schreyer-resolutions/res-f4-computation.hpp"
 
 class FreeModule;
 struct MonomialOrdering;
