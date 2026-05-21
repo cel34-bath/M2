@@ -1,13 +1,13 @@
 // Copyright 2014-2016 Michael E. Stillman
 
-#include "schreyer-resolution/res-schreyer-frame.hpp"
+#include "schreyer-resolutions/res-schreyer-frame.hpp"
 
 #include "error.h"                                        // for ERROR
 #include "f4/moninfo.hpp"                                 // for monomial_word
 #include "interface/computation.h"                        // for StopConditions
-#include "schreyer-resolution/res-f4.hpp"                 // for F4Res
-#include "schreyer-resolution/res-f4-monlookup.hpp"       // for ResF4Monomi...
-#include "schreyer-resolution/res-monomial-types.hpp"     // for res_varpowe...
+#include "schreyer-resolutions/res-f4.hpp"                 // for F4Res
+#include "schreyer-resolutions/res-f4-monlookup.hpp"       // for ResF4Monomi...
+#include "schreyer-resolutions/res-monomial-types.hpp"     // for res_varpowe...
 #include "style.hpp"                                      // for LT, GT
 #include "timing.hpp"                                     // for timer, seconds
 

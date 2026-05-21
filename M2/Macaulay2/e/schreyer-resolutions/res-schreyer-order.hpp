@@ -3,7 +3,7 @@
 #ifndef _res_schreyer_order_hpp_
 #define _res_schreyer_order_hpp_
 
-#include "schreyer-resolution/res-monomial-types.hpp"  // for component_index
+#include "schreyer-resolutions/res-monomial-types.hpp"  // for component_index
 #include <vector>                                      // for vector
 
 struct ResSchreyerOrder

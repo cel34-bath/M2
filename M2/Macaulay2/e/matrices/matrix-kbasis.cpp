@@ -10,7 +10,7 @@
 #include "interrupted.hpp"      // for system_interrupted
 #include "matrix-con.hpp"       // for MatrixConstructor
 #include "matrix.hpp"           // for Matrix
-#include "monomial/monideal.hpp"         // for MonomialIdeal
+#include "monomials/monideal.hpp"         // for MonomialIdeal
 #include "monoid.hpp"           // for Monoid, ALLOCATE_EXPONENTS, EXPONENT_...
 #include "newdelete.hpp"        // for newarray_atomic, newarray_atomic_clear
 #include "rings/polyring.hpp"         // for PolynomialRing

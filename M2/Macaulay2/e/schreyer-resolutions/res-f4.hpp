@@ -5,9 +5,9 @@
 
 #include "VectorArithmetic.hpp"
 #include "f4/monhashtable.hpp"
-#include "schreyer-resolution/res-memblock.hpp"
-#include "schreyer-resolution/res-poly-ring.hpp"
-#include "monomial/monomial-sets.hpp"
+#include "schreyer-resolutions/res-memblock.hpp"
+#include "schreyer-resolutions/res-poly-ring.hpp"
+#include "monomials/monomial-sets.hpp"
 
 #include <cassert>
 

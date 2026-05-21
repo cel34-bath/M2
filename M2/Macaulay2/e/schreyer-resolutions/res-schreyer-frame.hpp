@@ -23,12 +23,12 @@
 #include "m2tbb.hpp"                                   // for TBB headers
 #include "betti.hpp"                                   // for BettiDisplay
 #include "interface/m2-types.h"                        // for M2_arrayint
-#include "schreyer-resolution/res-memblock.hpp"        // for ResMemoryBlock
-#include "schreyer-resolution/res-moninfo.hpp"         // for ResMonoid
-#include "schreyer-resolution/res-monomial-types.hpp"  // for component_index
-#include "schreyer-resolution/res-poly-ring.hpp"       // for ResPolyRing, ResPolynomial
-#include "schreyer-resolution/res-schreyer-order.hpp"  // for ResSchreyerOrder
-#include "schreyer-resolution/res-dep-graph.hpp"       // for DependencyGraph
+#include "schreyer-resolutions/res-memblock.hpp"        // for ResMemoryBlock
+#include "schreyer-resolutions/res-moninfo.hpp"         // for ResMonoid
+#include "schreyer-resolutions/res-monomial-types.hpp"  // for component_index
+#include "schreyer-resolutions/res-poly-ring.hpp"       // for ResPolyRing, ResPolynomial
+#include "schreyer-resolutions/res-schreyer-order.hpp"  // for ResSchreyerOrder
+#include "schreyer-resolutions/res-dep-graph.hpp"       // for DependencyGraph
 
 #include <utility>                                     // for pair
 #include <vector>                                      // for vector

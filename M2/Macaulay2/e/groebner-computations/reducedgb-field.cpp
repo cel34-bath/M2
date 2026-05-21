@@ -1,7 +1,7 @@
 // Copyright 2005, Michael E. Stillman
 
 #include "groebner-computations/reducedgb-field.hpp"
-#include "monomial/monideal.hpp"
+#include "monomials/monideal.hpp"
 #include <functional>
 #include <algorithm>
 

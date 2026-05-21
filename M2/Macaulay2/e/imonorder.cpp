@@ -11,7 +11,7 @@
 #endif
 
 #include "ExponentVector.hpp"
-#include "monomial/overflow.hpp"
+#include "monomials/overflow.hpp"
 
 std::vector<bool> laurentVariables(const MonomialOrder* mo)
 {

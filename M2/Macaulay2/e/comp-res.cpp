@@ -6,7 +6,7 @@
 #include "resolutions/res-a0.hpp"
 #include "resolutions/res-a2.hpp"
 #include "finalize.hpp"
-#include "schreyer-resolution/res-f4-computation.hpp"
+#include "schreyer-resolutions/res-f4-computation.hpp"
 #include "NCResolutions/nc-res-computation.hpp"
 
 #include <iostream>

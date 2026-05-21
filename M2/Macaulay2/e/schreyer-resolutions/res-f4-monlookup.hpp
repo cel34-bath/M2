@@ -4,8 +4,8 @@
 #define _f4monlookup_h_
 
 #include "newdelete.hpp"                               // for VECTOR, our_ne...
-#include "schreyer-resolution/res-moninfo.hpp"         // for ResMonoid
-#include "schreyer-resolution/res-monomial-types.hpp"  // for res_varpower_m...
+#include "schreyer-resolutions/res-moninfo.hpp"         // for ResMonoid
+#include "schreyer-resolutions/res-monomial-types.hpp"  // for res_varpower_m...
 class buffer;  // lines 13-13
 class stash;
 

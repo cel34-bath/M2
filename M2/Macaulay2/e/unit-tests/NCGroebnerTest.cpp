@@ -14,7 +14,7 @@
 #include "NCAlgebras/OverlapTable.hpp"
 #include "NCAlgebras/SuffixTree.hpp"
 #include "NCAlgebras/NCReduction.hpp"
-#include "monomial/monordering.hpp"
+#include "monomials/monordering.hpp"
 #include "monoid.hpp"
 
 #include "util-polyring-creation.hpp"
