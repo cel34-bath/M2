@@ -8,7 +8,7 @@
 #include <gtest/gtest.h>
 #include <mpfr.h>
 
-#include "NAG.hpp"
+#include "NAG/NAG.hpp"
 
 TEST(PointArray, constructor)
 {
