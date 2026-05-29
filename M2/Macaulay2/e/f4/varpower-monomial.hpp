@@ -1,7 +1,7 @@
 /* Copyright 2006 by Michael E. Stillman */
 #pragma once
 
-#include "ExponentList.hpp"
+#include "monomials/ExponentList.hpp"
 
 // Legacy specialization
 using varpower_monomials = ExponentList<long, false>;

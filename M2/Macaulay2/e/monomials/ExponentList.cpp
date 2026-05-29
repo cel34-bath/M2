@@ -6,7 +6,7 @@
 
 #include "buffer.hpp"    // for buffer
 #include "error.h"       // for ERROR
-#include "monomials/overflow.hpp"  // for add, mult
+#include "overflow.hpp"  // for add, mult
 
 #define MAX_VAR 2147483647
 #define MIN_EXP -2147483647

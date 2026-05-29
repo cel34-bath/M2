@@ -3,7 +3,7 @@
 #ifndef _res_monomial_sorter_hpp_
 #define _res_monomial_sorter_hpp_
 
-#include "ExponentVector.hpp"                          // for ntuple
+#include "monomials/ExponentVector.hpp"                          // for ntuple
 #include "monoid.hpp"                                  // for Monoid
 #include "schreyer-resolutions/res-moninfo.hpp"         // for ResMonoid
 #include "schreyer-resolutions/res-schreyer-order.hpp"  // for ResSchreyerOrder

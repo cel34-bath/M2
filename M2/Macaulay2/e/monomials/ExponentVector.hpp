@@ -6,7 +6,7 @@
 #include <type_traits>  // for make_unsigned
 #include <vector>       // for vector
 
-#include "monomials/overflow.hpp"  // for add, mult, sub, sub_pos
+#include "overflow.hpp"  // for add, mult, sub, sub_pos
 #include "style.hpp"     // for EQ, GT, LT
 #include "buffer.hpp"
 #include "util.hpp"

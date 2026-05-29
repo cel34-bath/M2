@@ -5,7 +5,7 @@
 
 #include "engine-includes.hpp"  // for M2_arrayint
 
-#include "ExponentVector.hpp"   // for const_exponents
+#include "monomials/ExponentVector.hpp"   // for const_exponents
 #include "monoid.hpp"           // for const_monomial
 #include "newdelete.hpp"        // for our_new_delete
 

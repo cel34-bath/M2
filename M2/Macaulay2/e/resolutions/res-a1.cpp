@@ -2,7 +2,7 @@
 
 #include "resolutions/res-a1.hpp"
 
-#include "ExponentVector.hpp"
+#include "monomials/ExponentVector.hpp"
 #include "res-a1-poly.hpp"
 #include "text-io.hpp"
 #include "interrupted.hpp"

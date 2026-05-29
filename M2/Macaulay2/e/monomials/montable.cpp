@@ -5,7 +5,7 @@
 #include <assert.h>
 #include <functional>
 
-#include "../ExponentVector.hpp"
+#include "ExponentVector.hpp"
 #include "montable.hpp"
 
 /********************/

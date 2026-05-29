@@ -3,7 +3,7 @@
 #include <assert.h>
 #include <stdio.h>
 
-#include "ExponentVector.hpp"
+#include "monomials/ExponentVector.hpp"
 #include "rings/ZZ.hpp"
 #include "rings/ZZp.hpp"
 #include "basic-rings/aring-glue.hpp"

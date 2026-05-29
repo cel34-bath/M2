@@ -80,7 +80,7 @@ set(HPPONLYFILES
   mutable-matrices/mutablemat-imp.hpp
   mutable-matrices/mutablemat.hpp
   newdelete.hpp
-  ExponentVector.hpp
+  monomials/ExponentVector.hpp
   resolutions/res-a0-pair.hpp
   schur-rings/schur-poly-heap.hpp
   basic-mutable-matrices/smat.hpp
@@ -253,7 +253,7 @@ set(SRCLIST
   schur-rings/schurSn
   groebner-computations/spair
   text-io
-  ExponentList
+  monomials/ExponentList
   # Faugère's F4 Algorithm
   gb-f4/Basis
   gb-f4/GBF4Computation

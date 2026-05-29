@@ -1,7 +1,7 @@
 #include <stddef.h>  // for NULL
 #include <vector>    // for vector
 
-#include "ExponentVector.hpp"   // for exponents, exponents_t
+#include "monomials/ExponentVector.hpp"   // for exponents, exponents_t
 #include "interface/m2-mem.h"              // for freemem
 #include "engine-includes.hpp"  // for M2_arrayint, M2_arrayint_struct
 #include "error.h"              // for ERROR

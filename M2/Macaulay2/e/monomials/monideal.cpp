@@ -19,8 +19,8 @@
 #include <iostream>
 #include <algorithm>
 
-#include "../ExponentList.hpp"
-#include "../ExponentVector.hpp"
+#include "ExponentList.hpp"
+#include "ExponentVector.hpp"
 #include "../debug.hpp"
 #include "../monoid.hpp"
 #include "../text-io.hpp"

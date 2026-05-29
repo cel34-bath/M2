@@ -9,7 +9,7 @@
 #include "interface/gmp-util.h"  // for mpz_reallocate_limbs
 #include "interface/random.h"
 
-#include "ExponentVector.hpp"
+#include "monomials/ExponentVector.hpp"
 #include "style.hpp"
 #include "text-io.hpp"
 #include "rings/ring.hpp"

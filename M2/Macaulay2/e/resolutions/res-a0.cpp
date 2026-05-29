@@ -2,7 +2,7 @@
 
 #include "res-a0.hpp"
 
-#include "ExponentVector.hpp"
+#include "monomials/ExponentVector.hpp"
 #include "res-a0-poly.hpp"
 #include "geobucket.hpp"
 #include "buffer.hpp"
