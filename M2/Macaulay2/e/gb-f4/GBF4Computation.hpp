@@ -1,12 +1,12 @@
 #pragma once
 
-#include "Basis.hpp"
-#include "MacaulayMatrix.hpp"
-#include "MonomialHashTable.hpp"
-#include "MonomialLookupTable.hpp"
-#include "PolynomialList.hpp"
-#include "SPairs.hpp"
-#include "../VectorArithmetic.hpp"
+#include "gb-f4/Basis.hpp"
+#include "gb-f4/MacaulayMatrix.hpp"
+#include "gb-f4/MonomialHashTable.hpp"
+#include "gb-f4/MonomialLookupTable.hpp"
+#include "gb-f4/PolynomialList.hpp"
+#include "gb-f4/SPairs.hpp"
+#include "VectorArithmetic.hpp"
 
 class FreeModule;
 

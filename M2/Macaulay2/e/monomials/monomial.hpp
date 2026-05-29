@@ -5,7 +5,7 @@
 
 #include <vector>
 
-#include "ExponentList.hpp"
+#include "monomials/ExponentList.hpp"
 #include "hash.hpp"
 #include "engine-includes.hpp"
 #include "buffer.hpp"

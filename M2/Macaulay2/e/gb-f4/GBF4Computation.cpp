@@ -1,5 +1,5 @@
-#include "GBF4Interface.hpp"
-#include "GBF4Computation.hpp"
+#include "gb-f4/GBF4Interface.hpp"
+#include "gb-f4/GBF4Computation.hpp"
 #include "matrices/matrix-stream.hpp"
 #include <iostream>
 

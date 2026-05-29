@@ -1,8 +1,8 @@
 // (c) 1995 Michael E. Stillman
 
-#include "monomial.hpp"
-#include "../error.h"
-#include "../monoid.hpp"
+#include "monomials/monomial.hpp"
+#include "error.h"
+#include "monoid.hpp"
 
 EngineMonomial::EngineMonomial()
 {

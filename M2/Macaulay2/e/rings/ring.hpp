@@ -625,7 +625,7 @@ class SumCollector : public our_new_delete
 
 #  define ZERO_RINGELEM (ring_elem(static_cast<Nterm *>(0)))
 
-#  include "ZZ.hpp"
+#  include "rings/ZZ.hpp"
 extern RingZZ *globalZZ;
 extern RingZZ *makeIntegerRing();
 

@@ -1,6 +1,6 @@
 // Copyright 1995-2004 Michael E. Stillman
 
-#include "matrix.hpp"
+#include "matrices/matrix.hpp"
 
 #include <algorithm>
 #include <iostream>

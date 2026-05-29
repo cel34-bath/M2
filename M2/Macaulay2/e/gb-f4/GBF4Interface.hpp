@@ -1,8 +1,8 @@
 #pragma once
 
 #include "BasicPolyList.hpp"
-#include "GBF4Computation.hpp"
-#include "PolynomialList.hpp"
+#include "gb-f4/GBF4Computation.hpp"
+#include "gb-f4/PolynomialList.hpp"
 #include "groebner-computations/comp-gb.hpp"
 #include "matrices/matrix-stream.hpp"
 

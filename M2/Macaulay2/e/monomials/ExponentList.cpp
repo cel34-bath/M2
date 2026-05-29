@@ -1,12 +1,12 @@
 // (c) 1995 Michael E. Stillman
 
-#include "ExponentList.hpp"
+#include "monomials/ExponentList.hpp"
 
 #include <assert.h>      // for assert
 
 #include "buffer.hpp"    // for buffer
 #include "error.h"       // for ERROR
-#include "overflow.hpp"  // for add, mult
+#include "monomials/overflow.hpp"  // for add, mult
 
 #define MAX_VAR 2147483647
 #define MIN_EXP -2147483647

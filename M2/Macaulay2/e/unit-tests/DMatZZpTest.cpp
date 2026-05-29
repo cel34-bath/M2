@@ -1,7 +1,7 @@
 #include <memory>
 #include <gtest/gtest.h>
 
-#include "DMatTest.hpp"
+#include "unit-tests/DMatTest.hpp"
 #include "basic-rings/aring-ZZp.hpp"
 #include "basic-rings/aring-glue.hpp"
 

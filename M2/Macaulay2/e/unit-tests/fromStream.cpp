@@ -3,7 +3,7 @@
 // 'i' is incremented to directly past the part read
 // an exception is raised on bad input?
 
-#include "RingTest.hpp"
+#include "unit-tests/RingTest.hpp"
 #include "basic-rings/aring-ZZp.hpp"
 #include "rings/ZZp.hpp"
 

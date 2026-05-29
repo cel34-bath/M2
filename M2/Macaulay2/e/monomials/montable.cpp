@@ -5,8 +5,8 @@
 #include <assert.h>
 #include <functional>
 
-#include "ExponentVector.hpp"
-#include "montable.hpp"
+#include "monomials/ExponentVector.hpp"
+#include "monomials/montable.hpp"
 
 /********************/
 /* Support routines */

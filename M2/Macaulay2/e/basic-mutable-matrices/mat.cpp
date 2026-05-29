@@ -1,9 +1,9 @@
 // Copyright 2005  Michael E. Stillman
 
 #include "util.hpp"
-#include "dmat.hpp"
-#include "smat.hpp"
-#include "mat.hpp"
+#include "basic-mutable-matrices/dmat.hpp"
+#include "basic-mutable-matrices/smat.hpp"
+#include "basic-mutable-matrices/mat.hpp"
 #include "mutable-matrices/mutablemat.hpp"
 
 #include "coeffrings.hpp"
@@ -24,7 +24,7 @@
 #include "basic-rings/aring-tower.hpp"
 #include "basic-rings/aring-QQ.hpp"
 
-#include "lapack.hpp"
+#include "basic-mutable-matrices/lapack.hpp"
 
 #include "rings/ZZp.hpp"
 #include "mutable-matrices/mutablemat.hpp"

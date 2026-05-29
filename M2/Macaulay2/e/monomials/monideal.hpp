@@ -3,8 +3,8 @@
 #ifndef _monideal_hh_
 #define _monideal_hh_
 
-#include "ExponentVector.hpp"
-#include "ExponentList.hpp"
+#include "monomials/ExponentVector.hpp"
+#include "monomials/ExponentList.hpp"
 #include "int-bag.hpp"
 #include "rings/ring.hpp"
 #include "rings/polyring.hpp"

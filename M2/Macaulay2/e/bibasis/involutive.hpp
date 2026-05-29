@@ -12,9 +12,9 @@
 
 #include <list>
 #include <algorithm>
-#include "pcomparator.hpp"
-#include "qset.hpp"
-#include "tset.hpp"
+#include "bibasis/pcomparator.hpp"
+#include "bibasis/qset.hpp"
+#include "bibasis/tset.hpp"
 #include "matrices/matrix.hpp"
 #include "matrices/matrix-con.hpp"
 

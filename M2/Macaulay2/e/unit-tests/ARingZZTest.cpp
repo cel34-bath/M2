@@ -9,7 +9,7 @@
 #include <mpfr.h>
 
 #include "basic-rings/aring-ZZ-flint.hpp"
-#include "ARingTest.hpp"
+#include "unit-tests/ARingTest.hpp"
 
 extern gmp_ZZ getRandomInteger();
 
