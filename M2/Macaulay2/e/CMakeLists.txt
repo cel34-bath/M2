@@ -364,13 +364,6 @@ set_target_properties(M2-engine PROPERTIES PUBLIC_HEADER "${HEADERS}")
 
 target_include_directories(M2-engine PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/basic-mutable-matrices>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/basic-rings>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/free-modules>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/matrices>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/mutable-matrices>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/rings>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/schur-rings>
   $<INSTALL_INTERFACE:include/Macaulay2>)
 
 # TODO: make engine independent of interpreter headers
