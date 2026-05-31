@@ -8,8 +8,8 @@
 #include <string>    // for string
 #include <vector>    // for vector
 
-#include "ExponentList.hpp"
-#include "ExponentVector.hpp"
+#include "monomials/ExponentList.hpp"
+#include "monomials/ExponentVector.hpp"
 #include "hash.hpp"
 #include "imonorder.hpp"
 #include "newdelete.hpp"

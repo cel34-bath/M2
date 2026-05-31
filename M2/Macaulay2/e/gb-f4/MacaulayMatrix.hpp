@@ -1,6 +1,6 @@
 #pragma once
 
-#include "MonomialHashTable.hpp"
+#include "gb-f4/MonomialHashTable.hpp"
 
 namespace newf4 {
 

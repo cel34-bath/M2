@@ -3,8 +3,8 @@
 #include "rings/weylalg.hpp"
 #include "groebner-computations/gbring.hpp"
 
-#include "ExponentVector.hpp"
-#include "geopoly.hpp"
+#include "monomials/ExponentVector.hpp"
+#include "rings/geopoly.hpp"
 #include "text-io.hpp"
 
 bool WeylAlgebra::initialize_weyl(M2_arrayint derivs,

@@ -1,4 +1,4 @@
-#include "FreeAlgebra.hpp"
+#include "NCAlgebras/FreeAlgebra.hpp"
 
 #include "NCAlgebras/FreeMonoid.hpp"  // for FreeMonoid
 #include "NCAlgebras/Word.hpp"        // for Word

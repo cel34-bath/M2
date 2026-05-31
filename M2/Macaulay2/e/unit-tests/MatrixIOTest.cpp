@@ -2,7 +2,7 @@
 #include <memory>
 #include <gtest/gtest.h>
 
-#include "util-polyring-creation.hpp"
+#include "unit-tests/util-polyring-creation.hpp"
 #include "matrices/matrix.hpp"
 #include "BasicPolyList.hpp"
 #include "BasicPolyListParser.hpp"

@@ -1,9 +1,9 @@
 #include "coeffrings.hpp"
-#include "lapack.hpp"
+#include "basic-mutable-matrices/lapack.hpp"
 #include <M2/config.h>
 #include <iostream>
 
-#include "mat-arith.hpp"
+#include "basic-mutable-matrices/mat-arith.hpp"
 
 // lapack arrays are all arrays of doubles, and are
 // placed in column-major order, as that is what lapack uses.

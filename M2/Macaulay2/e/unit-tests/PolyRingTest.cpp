@@ -16,7 +16,7 @@
 #include "interface/ring.h"
 #include "interface/aring.h"
 
-#include "util-polyring-creation.hpp"
+#include "unit-tests/util-polyring-creation.hpp"
 
 TEST(PolyRing, createDegreesRing)
 {

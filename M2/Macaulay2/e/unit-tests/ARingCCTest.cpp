@@ -10,7 +10,7 @@
 
 #include "basic-rings/aring-RR.hpp"
 #include "basic-rings/aring-CC.hpp"
-#include "ARingTest.hpp"
+#include "unit-tests/ARingTest.hpp"
 
 bool almostEqual(const M2::ARingCC& C,
                  unsigned long nbits,

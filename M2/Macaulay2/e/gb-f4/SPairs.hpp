@@ -1,8 +1,8 @@
 #pragma once
 
-#include "MonomialTypes.hpp"
-#include "MonomialView.hpp"
-#include "Basis.hpp"
+#include "gb-f4/MonomialTypes.hpp"
+#include "gb-f4/MonomialView.hpp"
+#include "gb-f4/Basis.hpp"
 
 #include <map>
 

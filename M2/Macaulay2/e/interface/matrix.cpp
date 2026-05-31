@@ -4,8 +4,8 @@
 
 #include <M2/math-include.h>
 
-#include "NAG.hpp" // TODO: can this be removed?
-#include "SLP-defs.hpp"
+#include "NAG/NAG.hpp" // TODO: can this be removed?
+#include "SLP/SLP-defs.hpp"
 #include "buffer.hpp"
 #include "basic-mutable-matrices/dmat.hpp"
 #include "error.h"
@@ -18,7 +18,7 @@
 #include "matrices/matrix-con.hpp"
 #include "matrices/matrix.hpp"
 #include "mutable-matrices/mutablemat-defs.hpp"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 #include "rings/ring.hpp"
 #include "rings/ringelem.hpp"
 #include "BasicPolyList.hpp"

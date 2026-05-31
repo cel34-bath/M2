@@ -12,7 +12,7 @@
 
 #include <list>
 #include <algorithm>
-#include "triple.hpp"
+#include "bibasis/triple.hpp"
 
 namespace BIBasis
 {

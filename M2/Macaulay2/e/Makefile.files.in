@@ -70,7 +70,7 @@ INTERFACE = \
 	f4/monhashtable \
 	monomials/monsort \
 	f4/moninfo \
-	betti \
+	resolution/betti \
 	rings/GF \
 	rings/ZZ \
 	rings/ZZp \
@@ -101,8 +101,8 @@ INTERFACE = \
 	rings/tower \
 	interreduce \
 	finalize \
-	NAG \
-	SLP \
+	NAG/NAG \
+	SLP/SLP \
 	monomials/overflow \
 	memory-status \
 	imonorder \
@@ -126,7 +126,7 @@ INTERFACE = \
 	groebner-computations/comp-gb \
 	groebner-computations/comp-gb-proxy \
 	groebner-computations/comp-gb-declared \
-	comp-res \
+	resolution/comp-res \
 	resolutions/res-a0 \
 	resolutions/res-a0-poly \
 	resolutions/res-a1 \
@@ -165,7 +165,7 @@ INTERFACE = \
 	monomials/monomial \
 	rings/polyring \
 	computations/pfaff \
-	relem \
+	ring-elements/ring-element \
 	rings/ring \
 	rings/ringelem \
 	ringmap \
@@ -175,7 +175,7 @@ INTERFACE = \
 	rings/solvable \
 	groebner-computations/spair \
 	text-io \
-	ExponentList \
+	monomials/ExponentList \
 	rings/weylalg
 
 COMMANDS = \
@@ -213,8 +213,8 @@ NAMES_H = \
 	m2tbb \
 	f4/f4-types \
 	f4/memblock \
-	ExponentVector \
 	basic-rings/vector-arithmetic \
+	monomials/ExponentVector \
 	MemoryBlock \
 	NCAlgebras/Range \
 	style \

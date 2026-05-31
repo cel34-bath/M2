@@ -21,7 +21,7 @@
 #include "matrices/matrix-con.hpp"
 #include "matrices/matrix.hpp"
 #include "rings/poly.hpp"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 
 class FreeModule;
 

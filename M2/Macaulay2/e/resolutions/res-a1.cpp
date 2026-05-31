@@ -2,8 +2,8 @@
 
 #include "resolutions/res-a1.hpp"
 
-#include "ExponentVector.hpp"
-#include "res-a1-poly.hpp"
+#include "monomials/ExponentVector.hpp"
+#include "resolutions/res-a1-poly.hpp"
 #include "text-io.hpp"
 #include "interrupted.hpp"
 

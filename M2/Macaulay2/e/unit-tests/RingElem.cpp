@@ -1,6 +1,6 @@
 // Copyright 2026, The Macaulay2 Authors.
 
-#include "RingElem.hpp"
+#include "unit-tests/RingElem.hpp"
 #include "BasicPoly.hpp"
 #include "rings/polyring.hpp"
 #include "monoid.hpp"

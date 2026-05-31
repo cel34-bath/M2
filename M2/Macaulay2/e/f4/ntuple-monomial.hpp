@@ -3,7 +3,7 @@
 #ifndef _ntuple_monomial_hpp_
 #define _ntuple_monomial_hpp_
 
-#include "ExponentVector.hpp"
+#include "monomials/ExponentVector.hpp"
 
 // CAVEAT: NO overflow checking is done with this class.
 // TODO: make this file obsolete

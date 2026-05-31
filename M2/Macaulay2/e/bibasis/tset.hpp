@@ -12,7 +12,7 @@
 
 #include <list>
 #include <algorithm>
-#include "janettree.hpp"
+#include "bibasis/janettree.hpp"
 
 namespace BIBasis
 {

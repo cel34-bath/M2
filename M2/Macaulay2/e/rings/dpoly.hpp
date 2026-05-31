@@ -12,7 +12,7 @@
 #include <sstream>
 #include <vector>
 
-#include "ExponentVector.hpp"
+#include "monomials/ExponentVector.hpp"
 #include "rings/ringelem.hpp"
 #include "buffer.hpp"
 

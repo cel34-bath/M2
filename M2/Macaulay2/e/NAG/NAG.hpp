@@ -21,7 +21,7 @@
 
 #include "interface/NAG.h"
 #include "matrices/matrix.hpp"
-#include "SLP.hpp"
+#include "SLP/SLP.hpp"
 #include "basic-rings/aring-CC.hpp"
 #include "basic-rings/aring-glue.hpp"
 #include "basic-rings/aring.hpp"
@@ -554,7 +554,7 @@ class StraightLineProgram : public SLP<ComplexField>
   Matrix* evaluate(const Matrix* vals);
 };
 
-// enum SolutionStatus { ... defined in SLP-imp.hpp ... };
+// enum SolutionStatus { ... defined in SLP/SLP-imp.hpp ... };
 struct Solution
 {
   int n;             /**< \brief number of coordinates */

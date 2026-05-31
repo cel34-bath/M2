@@ -12,7 +12,7 @@
 
 #include <set>
 #include <iostream>
-#include "allocator.hpp"
+#include "bibasis/allocator.hpp"
 
 namespace BIBasis
 {

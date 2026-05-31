@@ -53,8 +53,8 @@ set(HPPONLYFILES
   NCAlgebras/Range.hpp
   basic-rings/vector-arithmetic.hpp
   timing.hpp
-  SLP-defs.hpp
-  SLP-imp.hpp
+  SLP/SLP-defs.hpp
+  SLP/SLP-imp.hpp
   basic-mutable-matrices/dmat-gf-flint-big.hpp
   basic-mutable-matrices/dmat-gf-flint.hpp
   basic-mutable-matrices/dmat-lu-inplace.hpp
@@ -80,7 +80,7 @@ set(HPPONLYFILES
   mutable-matrices/mutablemat-imp.hpp
   mutable-matrices/mutablemat.hpp
   newdelete.hpp
-  ExponentVector.hpp
+  monomials/ExponentVector.hpp
   resolutions/res-a0-pair.hpp
   schur-rings/schur-poly-heap.hpp
   basic-mutable-matrices/smat.hpp
@@ -177,17 +177,17 @@ set(SRCLIST
   monomials/monomial-collection
   computations/Eschreyer
   computations/LLL
-  NAG # TODO: move raw* functions to e/interface
-  SLP
+  NAG/NAG # TODO: move raw* functions to e/interface
+  SLP/SLP
   computations/assprime
-  betti
+  resolution/betti
   buffer
   coeffrings
   comb
   groebner-computations/comp-gb-declared
   groebner-computations/comp-gb-proxy
   groebner-computations/comp-gb
-  comp-res
+  resolution/comp-res
   computations/comp
   cra
   debug
@@ -239,7 +239,7 @@ set(SRCLIST
   groebner-computations/reducedgb-field
   groebner-computations/reducedgb-marked
   groebner-computations/reducedgb
-  relem
+  ring-elements/ring-element
   resolutions/res-a0-poly
   resolutions/res-a0
   resolutions/res-a1-poly
@@ -253,7 +253,7 @@ set(SRCLIST
   schur-rings/schurSn
   groebner-computations/spair
   text-io
-  ExponentList
+  monomials/ExponentList
   # Faugère's F4 Algorithm
   gb-f4/Basis
   gb-f4/GBF4Computation
@@ -364,13 +364,6 @@ set_target_properties(M2-engine PROPERTIES PUBLIC_HEADER "${HEADERS}")
 
 target_include_directories(M2-engine PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/basic-mutable-matrices>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/basic-rings>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/free-modules>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/matrices>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/mutable-matrices>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/rings>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/schur-rings>
   $<INSTALL_INTERFACE:include/Macaulay2>)
 
 # TODO: make engine independent of interpreter headers
@@ -510,7 +503,7 @@ if(BUILD_TESTING)
   endif()
 
   target_compile_options(M2-unit-tests PRIVATE
-    -Wno-cast-qual # FIXME: caused by NAG.hpp:559:37 and NAG.hpp:603:37
+    -Wno-cast-qual # FIXME: caused by NAG/NAG.hpp:559:37 and NAG/NAG.hpp:603:37
     -Wno-sign-compare
     $<$<COMPILE_LANG_AND_ID:CXX,AppleClang,Clang>:-Wno-mismatched-tags> # FIXME
     )

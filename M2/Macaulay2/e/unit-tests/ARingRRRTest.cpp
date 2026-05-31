@@ -9,7 +9,7 @@
 #include <mpfr.h>
 
 #include "basic-rings/aring-RRR.hpp"
-#include "ARingTest.hpp"
+#include "unit-tests/ARingTest.hpp"
 
 bool almostEqual(const M2::ARingRRR& R,
                  int nbits,

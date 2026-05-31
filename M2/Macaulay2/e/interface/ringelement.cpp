@@ -7,7 +7,7 @@
 #include <utility>
 #include <vector>
 
-#include "ExponentList.hpp"
+#include "monomials/ExponentList.hpp"
 #include "M2FreeAlgebra.hpp"
 #include "M2FreeAlgebraQuotient.hpp"
 
@@ -28,7 +28,7 @@
 #include "newdelete.hpp"
 #include "rings/poly.hpp"
 #include "rings/polyring.hpp"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 #include "rings/ring.hpp"
 #include "rings/ringelem.hpp"
 #include "schur-rings/schur.hpp"

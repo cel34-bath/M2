@@ -4,7 +4,7 @@
 
 #include "monoid.hpp"
 #include "monomials/monomial.hpp"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 #include "rings/ZZp.hpp"
 #include "rings/ZZ.hpp"
 #include "rings/GF.hpp"

@@ -10,7 +10,7 @@
 #ifndef BIBASIS_JANETTREE_HPP
 #define BIBASIS_JANETTREE_HPP
 
-#include "triple.hpp"
+#include "bibasis/triple.hpp"
 
 namespace BIBasis
 {

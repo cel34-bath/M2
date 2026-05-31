@@ -96,7 +96,7 @@ header "
     #include <newdelete.hpp>
     #include <hash.hpp>
     #include <monomials/monomial.hpp>
-    #include <relem.hpp>
+    #include <ring-elements/ring-element.hpp>
     #include <matrices/matrix.hpp>
     #include <basic-mutable-matrices/mat.hpp>
 ";

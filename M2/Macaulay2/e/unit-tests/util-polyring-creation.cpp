@@ -1,7 +1,7 @@
 // Copyright 2026, The Macaulay2 Authors.
 
 #include "util.hpp"
-#include "util-polyring-creation.hpp"
+#include "unit-tests/util-polyring-creation.hpp"
 #include "rings/weylalg.hpp"
 #include "interface/ring.h"
 #include "interface/aring.h"

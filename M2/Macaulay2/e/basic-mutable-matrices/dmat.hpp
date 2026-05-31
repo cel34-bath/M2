@@ -4,7 +4,7 @@
 #define _dmat_hpp_
 
 #include "engine-includes.hpp"
-#include "mat-util.hpp"
+#include "basic-mutable-matrices/mat-util.hpp"
 
 #include <algorithm>
 #include <utility>
@@ -14,11 +14,11 @@ template <typename ACoeffRing>
 class DMat;
 
 // Special instantiations of DMat class
-#include "dmat-zz-flint.hpp"
-#include "dmat-qq-flint.hpp"
-#include "dmat-zzp-flint.hpp"
-#include "dmat-gf-flint-big.hpp"
-#include "dmat-gf-flint.hpp"
+#include "basic-mutable-matrices/dmat-zz-flint.hpp"
+#include "basic-mutable-matrices/dmat-qq-flint.hpp"
+#include "basic-mutable-matrices/dmat-zzp-flint.hpp"
+#include "basic-mutable-matrices/dmat-gf-flint-big.hpp"
+#include "basic-mutable-matrices/dmat-gf-flint.hpp"
 
 template <typename ACoeffRing>
 class DMat

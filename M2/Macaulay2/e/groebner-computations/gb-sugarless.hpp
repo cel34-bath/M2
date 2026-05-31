@@ -2,7 +2,7 @@
 #ifndef _gbinhom_hh_
 #define _gbinhom_hh_
 
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 #include "matrices/matrix.hpp"
 #include "rings/polyring.hpp"
 #include "groebner-computations/comp-gb.hpp"

@@ -10,7 +10,7 @@
 
 #include "basic-rings/aring-QQ-flint.hpp"
 
-#include "ARingTest.hpp"
+#include "unit-tests/ARingTest.hpp"
 
 extern gmp_ZZ getRandomInteger();
 

@@ -4,9 +4,9 @@
 #define _mutable_mat_hpp_
 
 #include "mutablemat-defs.hpp"
-#include "SLP-defs.hpp"
+#include "SLP/SLP-defs.hpp"
 #include "mutablemat-imp.hpp"
-#include "SLP-imp.hpp"
+#include "SLP/SLP-imp.hpp"
 #endif
 
 // Local Variables:

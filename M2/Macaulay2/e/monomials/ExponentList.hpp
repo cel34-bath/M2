@@ -6,7 +6,7 @@
 
 #include "engine-includes.hpp"  // for M2_arrayint, M2_ArrayString
 
-#include "ExponentVector.hpp"
+#include "monomials/ExponentVector.hpp"
 #include "buffer.hpp"
 
 class buffer;

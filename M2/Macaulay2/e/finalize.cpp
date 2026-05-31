@@ -7,7 +7,7 @@
 
 #include "monomials/monideal.hpp"
 #include "groebner-computations/comp-gb.hpp"
-#include "comp-res.hpp"
+#include "resolution/comp-res.hpp"
 #include "free-modules/schreyer-orders.hpp"
 #include "basic-mutable-matrices/mat.hpp"
 

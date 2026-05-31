@@ -5,7 +5,7 @@
 
 #include "exceptions.hpp"
 #include "hash.hpp"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 
 #include <iostream>
 

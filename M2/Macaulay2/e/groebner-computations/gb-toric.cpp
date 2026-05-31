@@ -2,7 +2,7 @@
 
 #include "groebner-computations/gb-toric.hpp"
 
-#include "ExponentVector.hpp"
+#include "monomials/ExponentVector.hpp"
 #include "text-io.hpp"
 
 #include "matrices/matrix-con.hpp"

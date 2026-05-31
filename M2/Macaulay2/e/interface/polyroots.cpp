@@ -13,7 +13,7 @@
 #include "error.h"
 #include "monoid.hpp"
 #include "rings/polyring.hpp"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 #include "rings/ring.hpp"
 #include "rings/ringelem.hpp"
 

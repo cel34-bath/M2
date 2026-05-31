@@ -5,7 +5,7 @@
 #include <vector>
 #include <string>
 
-#include "ExponentVector.hpp"
+#include "monomials/ExponentVector.hpp"
 #include "basic-rings/aring-ZZp-ffpack.hpp"
 #include "style.hpp"
 #include "basic-rings/aring.hpp"
