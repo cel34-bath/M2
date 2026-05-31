@@ -9,7 +9,7 @@
 #include "interface/matrix.h"
 #include "matrices/matrix-con.hpp"
 #include "matrices/matrix.hpp"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 
 #include <libnormaliz/cone.h>
 #include <vector>

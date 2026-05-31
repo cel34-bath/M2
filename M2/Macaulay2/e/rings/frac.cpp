@@ -7,7 +7,7 @@
 #include "monoid.hpp"
 #include "ringmap.hpp"
 #include "groebner-computations/gbring.hpp"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 #include "rings/polyring.hpp"
 #include "exceptions.hpp"
 

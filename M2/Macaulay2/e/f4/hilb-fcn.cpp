@@ -8,7 +8,7 @@
 #include "matrices/matrix-con.hpp"     // for MatrixConstructor
 #include "monoid.hpp"         // for Monoid, monomial
 #include "rings/polyring.hpp"       // for PolynomialRing
-#include "relem.hpp"          // for RingElement
+#include "ring-elements/ring-element.hpp"          // for RingElement
 #include "rings/ring.hpp"           // for Ring
 #include "style.hpp"          // for INTSIZE
 

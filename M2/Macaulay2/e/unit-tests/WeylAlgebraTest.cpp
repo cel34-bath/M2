@@ -1,7 +1,7 @@
 // Copyright 2026, The Macaulay2 Authors.
 
 #include "interface/ring.h"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 #include "util.hpp"
 #include "rings/weylalg.hpp"
 #include "unit-tests/RingTest.hpp"

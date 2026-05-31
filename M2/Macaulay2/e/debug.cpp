@@ -1,7 +1,7 @@
 #include "debug.hpp"
 #include "text-io.hpp"
 #include "matrices/matrix.hpp"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 #include "groebner-computations/gbring.hpp"
 #include "resolutions/res-a1-poly.hpp"
 #include "resolutions/res-a0-poly.hpp"

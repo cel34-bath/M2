@@ -4,7 +4,7 @@
 #include "matrices/matrix.hpp"
 #include "matrices/matrix-con.hpp"
 #include "rings/polyring.hpp"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 
 #include <iostream>
 RingMap::RingMap(const Matrix *m) : R(m->get_ring())

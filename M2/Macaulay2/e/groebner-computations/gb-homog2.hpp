@@ -2,7 +2,7 @@
 #ifndef _gb_hh_
 #define _gb_hh_
 
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 #include "matrices/matrix.hpp"
 #include "rings/polyring.hpp"
 

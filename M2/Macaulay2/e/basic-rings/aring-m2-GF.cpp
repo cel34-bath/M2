@@ -4,7 +4,7 @@
 #include <iostream>
 
 #include "interface/random.h"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 #include "rings/polyring.hpp"
 #include "basic-rings/aring-m2-GF.hpp"
 #include "ringmap.hpp"

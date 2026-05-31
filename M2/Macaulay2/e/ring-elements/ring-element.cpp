@@ -1,6 +1,6 @@
 // Copyright 1995 Michael E. Stillman
 
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 #include "monoid.hpp"
 #include "monomials/monomial.hpp"
 #include "rings/frac.hpp"

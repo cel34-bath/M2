@@ -4,7 +4,7 @@
 #define _LLL_hpp_
 
 #include "basic-mutable-matrices/mat.hpp"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 
 class LLLoperations
 {

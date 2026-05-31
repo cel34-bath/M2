@@ -17,7 +17,7 @@
 #include "rings/polyring.hpp"
 #include "monomials/monideal.hpp"
 #include "computations/assprime.hpp"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 #include "free-modules/freemod.hpp"
 #include "util.hpp"
 

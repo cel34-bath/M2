@@ -3,7 +3,7 @@
 #include "rings/ZZ.hpp"
 #include "text-io.hpp"
 #include "monoid.hpp"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 #include "ringmap.hpp"
 #include "groebner-computations/gbring.hpp"
 
