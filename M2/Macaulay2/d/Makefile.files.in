@@ -207,9 +207,9 @@ interface.o :						\
 	@srcdir@/../e/basic-mutable-matrices/dmat-lu-qq.hpp			\
 	@srcdir@/../e/basic-mutable-matrices/dmat-qq-interface-flint.hpp	\
 	@srcdir@/../e/eigen.hpp				\
-	@srcdir@/../e/SLP-defs.hpp			\
+	@srcdir@/../e/SLP/SLP-defs.hpp			\
 	@srcdir@/../e/mutable-matrices/mutablemat-imp.hpp		\
-	@srcdir@/../e/SLP-imp.hpp			\
+	@srcdir@/../e/SLP/SLP-imp.hpp			\
 	@srcdir@/../e/timing.hpp			\
 	@srcdir@/../e/basic-rings/aring-ZZp.hpp			\
 	@srcdir@/../e/memory-status.hpp

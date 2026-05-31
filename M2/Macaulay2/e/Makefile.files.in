@@ -101,8 +101,8 @@ INTERFACE = \
 	rings/tower \
 	interreduce \
 	finalize \
-	NAG \
-	SLP \
+	NAG/NAG \
+	SLP/SLP \
 	monomials/overflow \
 	memory-status \
 	imonorder \

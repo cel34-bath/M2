@@ -4,8 +4,8 @@
 
 #include <M2/math-include.h>
 
-#include "NAG.hpp" // TODO: can this be removed?
-#include "SLP-defs.hpp"
+#include "NAG/NAG.hpp" // TODO: can this be removed?
+#include "SLP/SLP-defs.hpp"
 #include "buffer.hpp"
 #include "basic-mutable-matrices/dmat.hpp"
 #include "error.h"

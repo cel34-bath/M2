@@ -53,8 +53,8 @@ set(HPPONLYFILES
   NCAlgebras/Range.hpp
   VectorArithmetic.hpp
   timing.hpp
-  SLP-defs.hpp
-  SLP-imp.hpp
+  SLP/SLP-defs.hpp
+  SLP/SLP-imp.hpp
   basic-mutable-matrices/dmat-gf-flint-big.hpp
   basic-mutable-matrices/dmat-gf-flint.hpp
   basic-mutable-matrices/dmat-lu-inplace.hpp
@@ -177,8 +177,8 @@ set(SRCLIST
   monomials/monomial-collection
   computations/Eschreyer
   computations/LLL
-  NAG # TODO: move raw* functions to e/interface
-  SLP
+  NAG/NAG # TODO: move raw* functions to e/interface
+  SLP/SLP
   computations/assprime
   resolution/betti
   buffer
@@ -503,7 +503,7 @@ if(BUILD_TESTING)
   endif()
 
   target_compile_options(M2-unit-tests PRIVATE
-    -Wno-cast-qual # FIXME: caused by NAG.hpp:559:37 and NAG.hpp:603:37
+    -Wno-cast-qual # FIXME: caused by NAG/NAG.hpp:559:37 and NAG/NAG.hpp:603:37
     -Wno-sign-compare
     $<$<COMPILE_LANG_AND_ID:CXX,AppleClang,Clang>:-Wno-mismatched-tags> # FIXME
     )
