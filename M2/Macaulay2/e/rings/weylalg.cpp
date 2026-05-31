@@ -3,7 +3,7 @@
 #include "rings/weylalg.hpp"
 #include "groebner-computations/gbring.hpp"
 
-#include "ExponentVector.hpp"
+#include "monomials/ExponentVector.hpp"
 #include "geopoly.hpp"
 #include "text-io.hpp"
 

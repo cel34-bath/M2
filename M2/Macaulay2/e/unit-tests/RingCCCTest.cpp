@@ -1,6 +1,6 @@
 // Copyright 2013 Michael E. Stillman
 
-#include "RingTest.hpp"
+#include "unit-tests/RingTest.hpp"
 
 #include "rings/ZZp.hpp"
 #include "basic-rings/aring-glue.hpp"

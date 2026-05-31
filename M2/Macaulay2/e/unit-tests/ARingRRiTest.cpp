@@ -9,7 +9,7 @@
 #include "basic-rings/aring-RRi.hpp"
 #include "basic-rings/aring-RRR.hpp"
 #include "basic-rings/aring-glue.hpp"
-#include "ARingTest.hpp"
+#include "unit-tests/ARingTest.hpp"
 
 // For debugging purposes, use
 //mpfr_printf("a=(%.20Rf,%.20Rf)\n",&(a.left), &(a.right));

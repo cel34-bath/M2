@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "ExponentVector.hpp"
+#include "monomials/ExponentVector.hpp"
 #include "rings/poly.hpp"
 #include "text-io.hpp"
 #include "monoid.hpp"

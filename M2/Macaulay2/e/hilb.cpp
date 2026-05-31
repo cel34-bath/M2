@@ -10,8 +10,8 @@
 #include <utility>    // for pair, make_pair
 #include <vector>     // for vector
 
-#include "ExponentList.hpp"    // for index_varpower, varpower, const_v...
-#include "ExponentVector.hpp"  // for exponents
+#include "monomials/ExponentList.hpp"    // for index_varpower, varpower, const_v...
+#include "monomials/ExponentVector.hpp"  // for exponents
 #include "interface/m2-mem.h"             // for freemem
 #include "buffer.hpp"          // for buffer
 #include "error.h"             // for ERROR

@@ -3,7 +3,7 @@
 #ifndef _res_f4_computation_hpp_
 #define _res_f4_computation_hpp_
 
-#include "res-poly-ring.hpp"
+#include "schreyer-resolutions/res-poly-ring.hpp"
 #include "rings/polyring.hpp"
 #include "comp-res.hpp"
 

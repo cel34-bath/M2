@@ -1,6 +1,6 @@
 /* Copyright 2010-2021, Michael E. Stillman */
 
-#include "hilb-fcn.hpp"
+#include "f4/hilb-fcn.hpp"
 
 #include "error.h"            // for error
 #include "free-modules/freemod.hpp"        // for FreeModule

@@ -1,6 +1,6 @@
 // Copyright 2005  Michael E. Stillman
 
-#include "monsort.hpp"
+#include "monomials/monsort.hpp"
 
 #if 0
 #include "moninfo.hpp"

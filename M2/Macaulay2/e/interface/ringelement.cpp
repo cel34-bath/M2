@@ -7,7 +7,7 @@
 #include <utility>
 #include <vector>
 
-#include "ExponentList.hpp"
+#include "monomials/ExponentList.hpp"
 #include "M2FreeAlgebra.hpp"
 #include "M2FreeAlgebraQuotient.hpp"
 

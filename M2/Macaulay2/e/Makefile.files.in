@@ -175,7 +175,7 @@ INTERFACE = \
 	rings/solvable \
 	groebner-computations/spair \
 	text-io \
-	ExponentList \
+	monomials/ExponentList \
 	rings/weylalg
 
 COMMANDS = \
@@ -213,7 +213,7 @@ NAMES_H = \
 	m2tbb \
 	f4/f4-types \
 	f4/memblock \
-	ExponentVector \
+	monomials/ExponentVector \
 	VectorArithmetic \
 	MemoryBlock \
 	NCAlgebras/Range \

@@ -170,7 +170,7 @@ Matrix *sagbi::subduct1(int numparts,
 #warning "sagbi code commented out"
 #endif
 #if 0
-// #include "sagbi.hpp"
+// #include "groebner-computations/sagbi.hpp"
 //
 // vec sagbi::subduct(const FreeModule *F,
 //                 vec f,

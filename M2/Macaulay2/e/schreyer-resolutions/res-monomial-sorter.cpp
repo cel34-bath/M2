@@ -1,6 +1,6 @@
 // Copyright 2018, Michael E. Stillman
 
-#include "res-monomial-sorter.hpp"
+#include "schreyer-resolutions/res-monomial-sorter.hpp"
 
 long MonomialSorterObject::mNumComparisons = 0;
 

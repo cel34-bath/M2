@@ -1,4 +1,4 @@
-#include "montableZZ.hpp"
+#include "monomials/montableZZ.hpp"
 #include <functional>
 #include <algorithm>
 #include <assert.h>

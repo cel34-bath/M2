@@ -10,7 +10,7 @@
 
 #include "util.hpp"
 #include "exceptions.hpp"
-#include "dmat.hpp"
+#include "basic-mutable-matrices/dmat.hpp"
 
 #include "basic-rings/aring-RR.hpp"
 #include "basic-rings/aring-CC.hpp"
@@ -45,10 +45,10 @@ typedef DMat<M2::ARingCCC> DMatCCC;
 typedef DMat<M2::ARingRR> DMatRR;
 typedef DMat<M2::ARingCC> DMatCC;
 
-#include "lapack.hpp"
-#include "mat-arith.hpp"
-#include "dmat-lu.hpp"
-#include "dmat-qq-interface-flint.hpp"
+#include "basic-mutable-matrices/lapack.hpp"
+#include "basic-mutable-matrices/mat-arith.hpp"
+#include "basic-mutable-matrices/dmat-lu.hpp"
+#include "basic-mutable-matrices/dmat-qq-interface-flint.hpp"
 
 #include "eigen.hpp"
 

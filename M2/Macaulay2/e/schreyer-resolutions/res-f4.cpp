@@ -4,7 +4,7 @@
 #include "schreyer-resolutions/res-schreyer-frame.hpp"
 #include "schreyer-resolutions/res-monomial-sorter.hpp"
 
-#include "ExponentVector.hpp"
+#include "monomials/ExponentVector.hpp"
 #include "monoid.hpp"
 #include "memtailor.h"
 #include "text-io.hpp"

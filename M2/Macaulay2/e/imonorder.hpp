@@ -10,7 +10,7 @@
 
 #include "interface/monomial-ordering.h"
 
-#include "ExponentVector.hpp"
+#include "monomials/ExponentVector.hpp"
 
 typedef int *monomial;
 

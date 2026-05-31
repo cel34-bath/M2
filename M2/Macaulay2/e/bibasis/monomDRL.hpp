@@ -11,8 +11,8 @@
 #define BIBASIS_MONOM_DRL_HPP
 
 #include <set>
-#include "allocator.hpp"
-#include "monom.hpp"
+#include "bibasis/allocator.hpp"
+#include "bibasis/monom.hpp"
 
 namespace BIBasis
 {

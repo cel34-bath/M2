@@ -11,7 +11,7 @@
 #define BIBASIS_POLYNOM_HPP
 
 #include <iostream>
-#include "allocator.hpp"
+#include "bibasis/allocator.hpp"
 
 namespace BIBasis
 {
