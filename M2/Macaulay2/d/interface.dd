@@ -29,7 +29,7 @@ header "// TODO: remove the following headers
 #include <rings/ZZp.hpp>                          // for Z_mod
 #include <exceptions.hpp>                   // for engine_error, CATCH, TRY
 #include <monomials/monomial.hpp>                     // for EngineMonomial
-#include <relem.hpp>                        // for RingElement";
+#include <ring-elements/ring-element.hpp>                        // for RingElement";
 
 -- debugging:
 export engineMemory(e:Expr):Expr := (

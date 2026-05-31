@@ -2,7 +2,7 @@
 #ifndef _tower_hpp_
 #define _tower_hpp_
 
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 
 class RingMap;
 

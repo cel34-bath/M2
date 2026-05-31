@@ -14,7 +14,7 @@
 #include "basic-rings/aring-ZZp.hpp"
 #include "exceptions.hpp"
 #include "rings/polyring.hpp"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 
 // include flint headers last to avoid #1674
 #include "basic-rings/aring-GF-flint-big.hpp"

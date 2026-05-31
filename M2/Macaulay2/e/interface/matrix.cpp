@@ -18,7 +18,7 @@
 #include "matrices/matrix-con.hpp"
 #include "matrices/matrix.hpp"
 #include "mutable-matrices/mutablemat-defs.hpp"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 #include "rings/ring.hpp"
 #include "rings/ringelem.hpp"
 #include "BasicPolyList.hpp"

@@ -23,7 +23,7 @@
 #include "monomials/monideal.hpp"        // for MonomialIdeal, operator!=, Nmi_node
 #include "monoid.hpp"          // for Monoid
 #include "rings/polyring.hpp"        // for PolynomialRing
-#include "relem.hpp"           // for RingElement
+#include "ring-elements/ring-element.hpp"           // for RingElement
 #include "rings/ring.hpp"            // for Ring
 
 int partition_table::representative(int x)

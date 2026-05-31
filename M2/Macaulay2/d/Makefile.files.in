@@ -156,7 +156,7 @@ interface.o :						\
 	@srcdir@/../e/coeffrings.hpp			\
 	@srcdir@/../e/monomials/monomial.hpp			\
 	@srcdir@/../e/exceptions.hpp			\
-	@srcdir@/../e/relem.hpp				\
+	@srcdir@/../e/ring-elements/ring-element.hpp				\
 	@srcdir@/../e/engine.h				\
 	@srcdir@/../e/basic-rings/aring-glue.hpp			\
 	@srcdir@/../e/basic-rings/aring-translate.hpp		\
@@ -183,7 +183,7 @@ interface.o :						\
 	@srcdir@/../e/mutable-matrices/mutablemat.hpp			\
 	@srcdir@/../e/mutable-matrices/mutablemat-defs.hpp		\
 	@srcdir@/../e/basic-mutable-matrices/mat.hpp				\
-	@srcdir@/../e/relem.hpp				\
+	@srcdir@/../e/ring-elements/ring-element.hpp				\
 	@srcdir@/../e/matrices/matrix-con.hpp			\
 	@srcdir@/../e/basic-mutable-matrices/dmat.hpp				\
 	@srcdir@/../e/basic-mutable-matrices/mat-util.hpp			\
@@ -233,7 +233,7 @@ engine.o :						\
 	@srcdir@/../e/style.hpp				\
 	@srcdir@/../e/mem.hpp				\
 	@srcdir@/../system/mutex.h			\
-	@srcdir@/../e/relem.hpp				\
+	@srcdir@/../e/ring-elements/ring-element.hpp				\
 	@srcdir@/../e/rings/ring.hpp				\
 	@srcdir@/../e/basic-rings/aring.hpp				\
 	@srcdir@/../e/rings/ringelem.hpp			\

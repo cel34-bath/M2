@@ -17,7 +17,7 @@
 #include "interface/random.h"
 #include "basic-mutable-matrices/mat.hpp"
 #include "matrices/matrix.hpp"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 #include "rings/ring.hpp"
 #include "rings/ringelem.hpp"
 #include "util.hpp"

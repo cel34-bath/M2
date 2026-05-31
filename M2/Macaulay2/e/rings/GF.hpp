@@ -2,7 +2,7 @@
 #ifndef _GF_hh_
 #define _GF_hh_
 
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 
 /**
     @ingroup rings

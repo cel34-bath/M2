@@ -8,7 +8,7 @@
 #include "ringmap.hpp"
 #include "monoid.hpp"
 #include "groebner-computations/gbring.hpp"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 #include "debug.hpp"
 #include "matrices/matrix.hpp"
 #include "matrices/matrix-con.hpp"

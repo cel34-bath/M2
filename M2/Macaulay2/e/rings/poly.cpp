@@ -14,7 +14,7 @@
 #include "geopoly.hpp"
 #include "rings/ZZ.hpp"
 #include "monomials/monomial.hpp"
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 
 #include "basic-rings/aring-glue.hpp"  // for globalQQ
 

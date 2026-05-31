@@ -2,7 +2,7 @@
 
 #include "computations/LLL.hpp"
 
-#include "relem.hpp"
+#include "ring-elements/ring-element.hpp"
 #include "matrices/matrix.hpp"
 #include "text-io.hpp"
 #include "interrupted.hpp"
