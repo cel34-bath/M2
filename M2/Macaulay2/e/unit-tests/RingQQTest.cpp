@@ -1,6 +1,6 @@
 // Copyright 2013 Michael E. Stillman
 
-#include "RingTest.hpp"
+#include "unit-tests/RingTest.hpp"
 
 static bool maxH_initialized = false;
 static mpz_t maxH;

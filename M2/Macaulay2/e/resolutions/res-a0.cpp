@@ -1,14 +1,14 @@
 // Copyright 1996.  Michael E. Stillman
 
-#include "res-a0.hpp"
+#include "resolutions/res-a0.hpp"
 
-#include "ExponentVector.hpp"
-#include "res-a0-poly.hpp"
+#include "monomials/ExponentVector.hpp"
+#include "resolutions/res-a0-poly.hpp"
 #include "geobucket.hpp"
 #include "buffer.hpp"
 #include "text-io.hpp"
 #include "interrupted.hpp"
-#include "betti.hpp"
+#include "resolution/betti.hpp"
 
 using respolyHeap = geobucket<const res2_poly, res2term *>;
 

@@ -9,7 +9,7 @@
 #include "basic-rings/aring-ZZp-flint.hpp"                            // for ARingZZpFlint
 #include "basic-rings/aring.hpp"                                      // for ring_RR
 #include "coeffrings.hpp"                                 // for Coefficient...
-#include "comp.hpp"                                       // for Computation
+#include "computations/comp.hpp"                          // for Computation
 #include "basic-mutable-matrices/mat-linalg.hpp"                                 // for DMatLinAlg
 #include "basic-mutable-matrices/dmat.hpp"                                       // for DMat
 #include "interface/m2-types.h"                           // for M2_arrayint

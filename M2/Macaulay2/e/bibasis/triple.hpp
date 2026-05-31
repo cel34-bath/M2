@@ -12,8 +12,8 @@
 
 #include <set>
 #include <string>
-#include "allocator.hpp"
-#include "polynom.hpp"
+#include "bibasis/allocator.hpp"
+#include "bibasis/polynom.hpp"
 #include "error.h"
 
 namespace BIBasis

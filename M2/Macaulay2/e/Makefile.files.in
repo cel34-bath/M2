@@ -70,7 +70,7 @@ INTERFACE = \
 	f4/monhashtable \
 	monomials/monsort \
 	f4/moninfo \
-	betti \
+	resolution/betti \
 	rings/GF \
 	rings/ZZ \
 	rings/ZZp \
@@ -109,24 +109,24 @@ INTERFACE = \
 	groebner-computations/sagbi \
 	monomials/monideal-minprimes \
 	basic-mutable-matrices/lapack \
-	LLL \
+	computations/LLL \
 	fractionfreeLU \
-	ntl-interface \
+	computations/ntl-interface \
 	fplll-interface \
 	basic-mutable-matrices/mat \
 	basic-mutable-matrices/dmat \
 	coeffrings \
-	Eschreyer \
+	computations/Eschreyer \
 	groebner-computations/gbweight \
 	rings/qring \
 	rings/polyquotient \
 	rings/poly \
 	debug \
-	comp \
+	computations/comp \
 	groebner-computations/comp-gb \
 	groebner-computations/comp-gb-proxy \
 	groebner-computations/comp-gb-declared \
-	comp-res \
+	resolution/comp-res \
 	resolutions/res-a0 \
 	resolutions/res-a0-poly \
 	resolutions/res-a1 \
@@ -140,12 +140,12 @@ INTERFACE = \
 	monomials/montable \
 	monomials/montableZZ \
 	free-modules/schreyer-orders \
-	assprime \
+	computations/assprime \
 	buffer \
 	comb \
-	det \
+	computations/det \
 	rings/frac \
-	franzi-brp \
+	computations/BRP \
 	free-modules/freemod \
 	groebner-computations/gb-default \
 	groebner-computations/gb-homog2 \
@@ -164,7 +164,7 @@ INTERFACE = \
 	monoid \
 	monomials/monomial \
 	rings/polyring \
-	pfaff \
+	computations/pfaff \
 	relem \
 	rings/ring \
 	rings/ringelem \
@@ -175,14 +175,14 @@ INTERFACE = \
 	rings/solvable \
 	groebner-computations/spair \
 	text-io \
-	ExponentList \
+	monomials/ExponentList \
 	rings/weylalg
 
 COMMANDS = \
 	interface/m2-types \
 	interface/m2-mem \
-	ntl-internal \
-	ntl-debugio \
+	computations/ntl-internal \
+	computations/ntl-debugio \
 	matrices/matrix-kbasis \
 	matrices/matrix-symm \
 	matrices/matrix-sort \
@@ -206,14 +206,14 @@ COMMANDS = \
 	interface/ring \
 	interface/ringelement \
 	interface/ringmap \
-	franzi-gb \
-	franzi-interface
+	computations/BRP-gb \
+	computations/BRP-interface
 
 NAMES_H = \
 	m2tbb \
 	f4/f4-types \
 	f4/memblock \
-	ExponentVector \
+	monomials/ExponentVector \
 	VectorArithmetic \
 	MemoryBlock \
 	NCAlgebras/Range \

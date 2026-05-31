@@ -1,6 +1,6 @@
 // Copyright 1995-2004 Michael E. Stillman
 
-#include "matrix.hpp"
+#include "matrices/matrix.hpp"
 
 #include <algorithm>
 #include <iostream>
@@ -9,14 +9,14 @@
 #include "interface/gmp-util.h"  // for mpz_reallocate_limbs
 #include "interface/random.h"
 
-#include "ExponentVector.hpp"
+#include "monomials/ExponentVector.hpp"
 #include "style.hpp"
 #include "text-io.hpp"
 #include "rings/ring.hpp"
 #include "comb.hpp"
 #include "rings/polyring.hpp"
-#include "assprime.hpp"
 #include "monomials/monideal.hpp"
+#include "computations/assprime.hpp"
 #include "relem.hpp"
 #include "free-modules/freemod.hpp"
 #include "util.hpp"

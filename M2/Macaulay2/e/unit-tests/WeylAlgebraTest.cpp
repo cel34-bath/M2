@@ -4,9 +4,9 @@
 #include "relem.hpp"
 #include "util.hpp"
 #include "rings/weylalg.hpp"
-#include "RingTest.hpp"
-#include "RingElem.hpp"
-#include "util-polyring-creation.hpp"
+#include "unit-tests/RingTest.hpp"
+#include "unit-tests/RingElem.hpp"
+#include "unit-tests/util-polyring-creation.hpp"
 
 class WeylAlgebraTestAccessor {
  public:

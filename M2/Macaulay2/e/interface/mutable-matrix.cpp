@@ -6,7 +6,7 @@
 #include <algorithm>
 #include <vector>
 
-#include "LLL.hpp"
+#include "computations/LLL.hpp"
 #include "basic-rings/aring-ZZp-ffpack.hpp"
 #include "buffer.hpp"
 #include "error.h"
@@ -600,7 +600,7 @@ M2_arrayintOrNull IM2_FF_LU(MutableMatrix *M)
 }
 
 #include <fplll-interface.hpp>
-#include "ntl-interface.hpp"
+#include "computations/ntl-interface.hpp"
 
 M2_bool rawLLL(MutableMatrix *M,
                MutableMatrix /* or null */ *U,

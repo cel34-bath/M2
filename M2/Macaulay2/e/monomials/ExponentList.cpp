@@ -1,6 +1,6 @@
 // (c) 1995 Michael E. Stillman
 
-#include "ExponentList.hpp"
+#include "monomials/ExponentList.hpp"
 
 #include <assert.h>      // for assert
 

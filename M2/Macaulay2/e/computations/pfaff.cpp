@@ -1,6 +1,6 @@
 // Copyright 1996 Michael E. Stillman.
 
-#include "pfaff.hpp"
+#include "computations/pfaff.hpp"
 #include "comb.hpp"
 #include "interrupted.hpp"
 

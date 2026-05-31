@@ -7,7 +7,7 @@
 #include "matrices/matrix.hpp"
 #include "monomials/monideal.hpp"
 #include "rings/poly.hpp"
-#include "comp-res.hpp"
+#include "resolution/comp-res.hpp"
 
 struct res2_pair;
 class res2_comp;

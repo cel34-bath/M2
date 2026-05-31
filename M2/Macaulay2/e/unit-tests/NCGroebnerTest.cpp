@@ -17,7 +17,7 @@
 #include "monomials/monordering.hpp"
 #include "monoid.hpp"
 
-#include "util-polyring-creation.hpp"
+#include "unit-tests/util-polyring-creation.hpp"
 
 /** MemoryBlock tests
  */

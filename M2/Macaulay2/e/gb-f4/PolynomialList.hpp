@@ -1,10 +1,10 @@
 #pragma once
 
-#include "../VectorArithmetic.hpp"
-#include "../BasicPolyList.hpp"
-#include "MonomialHashTable.hpp"
-#include "MonomialTypes.hpp"
-#include "PolynomialStream.hpp"
+#include "VectorArithmetic.hpp"
+#include "BasicPolyList.hpp"
+#include "gb-f4/MonomialHashTable.hpp"
+#include "gb-f4/MonomialTypes.hpp"
+#include "unused/PolynomialStream.hpp"
 
 namespace newf4 {
 

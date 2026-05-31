@@ -1,6 +1,6 @@
 // Copyright 1996 Michael E. Stillman.
 
-#include "det.hpp"
+#include "computations/det.hpp"
 #include "text-io.hpp"
 #include "interrupted.hpp"
 #include "comb.hpp"

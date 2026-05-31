@@ -6,10 +6,10 @@
 #include <limits>
 #include <sstream>
 
-#include "Eschreyer.hpp"
+#include "computations/Eschreyer.hpp"
 #include "hilb.hpp"
 #include "groebner-computations/comp-gb.hpp"
-#include "comp-res.hpp"
+#include "resolution/comp-res.hpp"
 #include "groebner-computations/comp-gb-declared.hpp"
 #include "text-io.hpp"
 #include "groebner-computations/sagbi.hpp"

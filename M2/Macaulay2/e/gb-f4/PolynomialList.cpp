@@ -1,4 +1,4 @@
-#include "PolynomialList.hpp"
+#include "gb-f4/PolynomialList.hpp"
 #include "matrices/matrix.hpp"
 #include "matrices/matrix-stream.hpp"
 

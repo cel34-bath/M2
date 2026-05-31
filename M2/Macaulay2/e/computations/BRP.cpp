@@ -1,6 +1,6 @@
 /* This code written by Franziska Hinkelmann is in the public domain */
 
-#include "franzi-brp.hpp"
+#include "computations/BRP.hpp"
 
 BRP::BRP(const monomials_set &other)
 {

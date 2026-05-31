@@ -1,6 +1,6 @@
-#include "res-dep-graph.hpp"
-#include "res-schreyer-frame.hpp"
-#include "res-f4.hpp"
+#include "schreyer-resolutions/res-dep-graph.hpp"
+#include "schreyer-resolutions/res-schreyer-frame.hpp"
+#include "schreyer-resolutions/res-f4.hpp"
 
 #ifdef WITH_TBB
 

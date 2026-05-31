@@ -1,8 +1,8 @@
 #pragma once
 
-#include "MonomialHashTable.hpp"
-#include "PolynomialList.hpp"
-#include "../VectorArithmetic.hpp"
+#include "gb-f4/MonomialHashTable.hpp"
+#include "gb-f4/PolynomialList.hpp"
+#include "VectorArithmetic.hpp"
 
 namespace newf4 {
 

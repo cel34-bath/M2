@@ -1,8 +1,8 @@
 /* This code written by Franziska Hinkelmann is in the public domain */
 
-#include "franzi-brp.hpp"
+#include "computations/BRP.hpp"
 #include <vector>
-// g++ franzi-brp.cpp franzi-brp-test.cpp -o franzi-brp-test
+// g++ -I. computations/BRP.cpp computations/BRP-test.cpp -o BRP-test
 
 void testEquality0()
 {

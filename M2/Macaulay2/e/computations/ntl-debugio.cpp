@@ -1,7 +1,7 @@
 // Copyright 2005, Michael Stillman
 
 #include <iostream>
-#include "ntl-interface.hpp"
+#include "computations/ntl-interface.hpp"
 
 void dntl_matZZ(const NTL::mat_ZZ *A) { std::cout << *A << std::endl; }
 void dntl_ZZ(const NTL::ZZ *f) { std::cout << *f << std::endl; }

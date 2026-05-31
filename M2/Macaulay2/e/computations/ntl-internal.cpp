@@ -7,7 +7,7 @@
 #include <M2/config.h>
 #include <M2/gc-include.h>
 #include <stddef.h>
-#include "ntl-interface.hpp"
+#include "computations/ntl-interface.hpp"
 
 void ntl_ZZ_to_mpz(mpz_t result, const NTL::ZZ &a)
 // Assumption: 'result' is already 'init'ed

@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <stddef.h>
 
-#include "ExponentVector.hpp"
+#include "monomials/ExponentVector.hpp"
 #include "buffer.hpp"
 #include "newdelete.hpp"
 #include "style.hpp"

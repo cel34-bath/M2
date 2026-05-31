@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../MemoryBlock.hpp"
-#include "MonomialTypes.hpp"
+#include "MemoryBlock.hpp"
+#include "gb-f4/MonomialTypes.hpp"
 #include <vector>
 #include <functional>
 #include <cstring> // For std::memcmp

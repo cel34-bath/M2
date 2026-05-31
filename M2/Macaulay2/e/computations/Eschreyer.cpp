@@ -1,6 +1,6 @@
 // Copyright 1999  Michael E. Stillman
 
-#include "Eschreyer.hpp"
+#include "computations/Eschreyer.hpp"
 #include "matrices/matrix.hpp"
 #include "monoid.hpp"
 #include "text-io.hpp"

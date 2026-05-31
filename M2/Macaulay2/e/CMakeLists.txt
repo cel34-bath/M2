@@ -24,7 +24,7 @@ endif()
 # TODO: determine the fate of these files
 set(UNDETERMINED
   basic-mutable-matrices/dmat-ffpack.cpp
-  franzi-brp-test.cpp
+  computations/BRP-test.cpp
   overflow-test.cpp
   unused/test.dd
   )
@@ -80,7 +80,7 @@ set(HPPONLYFILES
   mutable-matrices/mutablemat-imp.hpp
   mutable-matrices/mutablemat.hpp
   newdelete.hpp
-  ExponentVector.hpp
+  monomials/ExponentVector.hpp
   resolutions/res-a0-pair.hpp
   schur-rings/schur-poly-heap.hpp
   basic-mutable-matrices/smat.hpp
@@ -91,10 +91,10 @@ set(HPPONLYFILES
   f4/ntuple-monomial.hpp
   f4/varpower-monomial.hpp
   gb-f4/MonomialTypes.hpp
-  PolynomialStream.hpp
   schreyer-resolutions/res-memblock.hpp
   schreyer-resolutions/res-monomial-types.hpp
   schreyer-resolutions/res-schreyer-order.hpp
+  unused/PolynomialStream.hpp
   basic-rings/aring-glue.hpp
   basic-rings/aring-QQ.hpp
   basic-rings/aring-translate.hpp
@@ -103,13 +103,13 @@ set(HPPONLYFILES
 # these files have .cpp file, but NOT .hpp file
 set(CPPONLYFILES
   engine.cpp # TODO: find a new home for the contents
-  franzi-gb.cpp
-  franzi-interface.cpp
+  computations/BRP-gb.cpp
+  computations/BRP-interface.cpp
   matrices/matrix-kbasis.cpp
   matrices/matrix-sort.cpp
   matrices/matrix-symm.cpp
-  ntl-debugio.cpp
-  ntl-internal.cpp
+  computations/ntl-debugio.cpp
+  computations/ntl-internal.cpp
   resolutions/res-a2-gb.cpp
   interface/aring.cpp
   interface/aring.h
@@ -175,29 +175,29 @@ set(SRCLIST
   NCResolutions/nc-res-computation
   Polynomial
   monomials/monomial-collection
-  Eschreyer
-  LLL
+  computations/Eschreyer
+  computations/LLL
   NAG/NAG # TODO: move raw* functions to e/interface
   SLP/SLP
-  assprime
-  betti
+  computations/assprime
+  resolution/betti
   buffer
   coeffrings
   comb
   groebner-computations/comp-gb-declared
   groebner-computations/comp-gb-proxy
   groebner-computations/comp-gb
-  comp-res
-  comp
+  resolution/comp-res
+  computations/comp
   cra
   debug
-  det
+  computations/det
   dpoly
   eigen
   finalize
   fplll-interface
   fractionfreeLU
-  franzi-brp
+  computations/BRP
   free-modules/freemod
   gauss
   groebner-computations/gb-default
@@ -230,9 +230,9 @@ set(SRCLIST
   monomials/montable
   monomials/montableZZ
   mutablecomplex
-  ntl-interface
   monomials/overflow
-  pfaff
+  computations/ntl-interface
+  computations/pfaff
   reader
   groebner-computations/reducedgb-ZZ
   groebner-computations/reducedgb-field-local
@@ -253,7 +253,7 @@ set(SRCLIST
   schur-rings/schurSn
   groebner-computations/spair
   text-io
-  ExponentList
+  monomials/ExponentList
   # Faugère's F4 Algorithm
   gb-f4/Basis
   gb-f4/GBF4Computation
@@ -364,13 +364,6 @@ set_target_properties(M2-engine PROPERTIES PUBLIC_HEADER "${HEADERS}")
 
 target_include_directories(M2-engine PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/basic-mutable-matrices>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/basic-rings>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/free-modules>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/matrices>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/mutable-matrices>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/rings>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/schur-rings>
   $<INSTALL_INTERFACE:include/Macaulay2>)
 
 # TODO: make engine independent of interpreter headers

@@ -5,8 +5,8 @@
 #include <assert.h>
 #include <string.h>
 
-#include "ExponentList.hpp"
-#include "ExponentVector.hpp"
+#include "monomials/ExponentList.hpp"
+#include "monomials/ExponentVector.hpp"
 #include "buffer.hpp"
 #include "error.h"
 #include "exceptions.hpp"

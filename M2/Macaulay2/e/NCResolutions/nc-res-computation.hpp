@@ -3,7 +3,7 @@
 #ifndef _nc_res_computation_hpp_
 #define _nc_res_computation_hpp_
 
-#include "comp-res.hpp"
+#include "resolution/comp-res.hpp"
 #include "NCAlgebras/FreeAlgebraQuotient.hpp"
 #include "matrices/matrix.hpp"
 #include "matrices/matrix-con.hpp"

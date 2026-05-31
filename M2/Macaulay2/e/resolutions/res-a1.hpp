@@ -7,7 +7,7 @@
 #include "matrices/matrix.hpp"
 #include "monomials/monideal.hpp"
 #include "rings/polyring.hpp"
-#include "comp-res.hpp"
+#include "resolution/comp-res.hpp"
 
 #include "resolutions/res-a1-poly.hpp"
 

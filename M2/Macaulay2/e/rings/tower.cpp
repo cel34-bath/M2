@@ -2,7 +2,7 @@
 
 #include "rings/tower.hpp"
 
-#include "ExponentList.hpp"
+#include "monomials/ExponentList.hpp"
 #include "dpoly.hpp"
 #include "rings/ring.hpp"
 #include "ringmap.hpp"

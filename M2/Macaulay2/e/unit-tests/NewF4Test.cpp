@@ -7,7 +7,7 @@
 #include <gtest/gtest.h>
 
 #include "rings/polyring.hpp"
-#include "util-polyring-creation.hpp"
+#include "unit-tests/util-polyring-creation.hpp"
 #include "gb-f4/MonomialHashTable.hpp"
 #include "gb-f4/MonomialLookupTable.hpp"
 #include "VectorArithmetic.hpp"

@@ -2,9 +2,9 @@
 
 #pragma once
 
-#include "MonomialTypes.hpp"
-#include "../MemoryBlock.hpp"
-#include "MonomialView.hpp"
+#include "gb-f4/MonomialTypes.hpp"
+#include "MemoryBlock.hpp"
+#include "gb-f4/MonomialView.hpp"
 #include <vector>
 
 namespace newf4 {

@@ -10,7 +10,7 @@
 #ifndef BIBASIS_SETTINGS_MANAGER_HPP
 #define BIBASIS_SETTINGS_MANAGER_HPP
 
-#include "monom.hpp"
+#include "bibasis/monom.hpp"
 
 namespace BIBasis
 {

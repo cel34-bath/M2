@@ -1,6 +1,6 @@
 // Copyright 2016-2017  Michael E. Stillman
 
-#include "res-moninfo-sparse.hpp"
+#include "schreyer-resolutions/res-moninfo-sparse.hpp"
 #include <cstdio>                                      // for fprintf, stderr
 #include <cstdlib>                                     // for rand
 #include "interface/m2-types.h"                            // for M2_gbTrace

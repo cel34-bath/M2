@@ -7,7 +7,7 @@
 #include "free-modules/schreyer-orders.hpp"
 #include "matrices/matrix.hpp"
 #include "monoid.hpp"
-#include "comp.hpp"
+#include "computations/comp.hpp"
 
 struct GBMatrix : public our_new_delete
 {

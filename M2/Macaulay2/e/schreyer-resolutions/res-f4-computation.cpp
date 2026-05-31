@@ -3,9 +3,9 @@
 #include <iostream>
 
 #include "interface/monomial-ordering.h"
-#include "res-f4-m2-interface.hpp"
-#include "res-f4-computation.hpp"
-#include "res-schreyer-frame.hpp"
+#include "schreyer-resolutions/res-f4-m2-interface.hpp"
+#include "schreyer-resolutions/res-f4-computation.hpp"
+#include "schreyer-resolutions/res-schreyer-frame.hpp"
 
 #include "matrices/matrix.hpp"
 #include "exceptions.hpp"
