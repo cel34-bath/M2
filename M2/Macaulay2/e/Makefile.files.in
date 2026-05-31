@@ -165,7 +165,6 @@ INTERFACE = \
 	monomials/monomial \
 	rings/polyring \
 	computations/pfaff \
-	relem \
 	rings/ring \
 	rings/ringelem \
 	ringmap \
