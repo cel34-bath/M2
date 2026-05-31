@@ -9,13 +9,6 @@ PRE.cc   = $(COMPILE.cc) -E
 include Makefile.files
 include Makefile.common
   CPPFLAGS := -I@srcdir@ \
-    -I@srcdir@/basic-mutable-matrices \
-    -I@srcdir@/basic-rings \
-    -I@srcdir@/free-modules \
-    -I@srcdir@/matrices \
-    -I@srcdir@/mutable-matrices \
-    -I@srcdir@/rings \
-    -I@srcdir@/schur-rings \
     $(CPPFLAGS) \
     -Wno-fatal-errors -Wno-unused-variable
 
