@@ -180,14 +180,14 @@ set(SRCLIST
   NAG # TODO: move raw* functions to e/interface
   SLP
   computations/assprime
-  betti
+  resolution/betti
   buffer
   coeffrings
   comb
   groebner-computations/comp-gb-declared
   groebner-computations/comp-gb-proxy
   groebner-computations/comp-gb
-  comp-res
+  resolution/comp-res
   computations/comp
   cra
   debug

@@ -5,7 +5,7 @@
 
 #include "schreyer-resolutions/res-poly-ring.hpp"
 #include "rings/polyring.hpp"
-#include "comp-res.hpp"
+#include "resolution/comp-res.hpp"
 
 #include <memory>  // For std::unique_ptr
 

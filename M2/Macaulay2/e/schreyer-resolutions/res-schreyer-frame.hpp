@@ -21,7 +21,7 @@
 #define _res_schreyer_frame_hpp_
 
 #include "m2tbb.hpp"                                   // for TBB headers
-#include "betti.hpp"                                   // for BettiDisplay
+#include "resolution/betti.hpp"                                   // for BettiDisplay
 #include "interface/m2-types.h"                        // for M2_arrayint
 #include "schreyer-resolutions/res-memblock.hpp"        // for ResMemoryBlock
 #include "schreyer-resolutions/res-moninfo.hpp"         // for ResMonoid

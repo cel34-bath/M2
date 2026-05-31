@@ -5,7 +5,7 @@
 #include "relem.hpp"
 #include "matrices/matrix.hpp"
 #include "rings/polyring.hpp"
-#include "comp-res.hpp"
+#include "resolution/comp-res.hpp"
 #include "hilb.hpp"
 #include "groebner-computations/spair.hpp"
 

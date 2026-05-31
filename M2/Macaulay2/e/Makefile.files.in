@@ -70,7 +70,7 @@ INTERFACE = \
 	f4/monhashtable \
 	monomials/monsort \
 	f4/moninfo \
-	betti \
+	resolution/betti \
 	rings/GF \
 	rings/ZZ \
 	rings/ZZp \
@@ -126,7 +126,7 @@ INTERFACE = \
 	groebner-computations/comp-gb \
 	groebner-computations/comp-gb-proxy \
 	groebner-computations/comp-gb-declared \
-	comp-res \
+	resolution/comp-res \
 	resolutions/res-a0 \
 	resolutions/res-a0-poly \
 	resolutions/res-a1 \

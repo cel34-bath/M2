@@ -8,7 +8,7 @@
 #include "buffer.hpp"
 #include "text-io.hpp"
 #include "interrupted.hpp"
-#include "betti.hpp"
+#include "resolution/betti.hpp"
 
 using respolyHeap = geobucket<const res2_poly, res2term *>;
 
