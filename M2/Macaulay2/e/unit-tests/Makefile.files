@@ -34,7 +34,8 @@ UNITTEST_CCFILES := \
     QuotientRingTest \
     RingRRRTest \
     RingCCCTest \
-	OverflowTest \
+    OverflowTest \
+    BRPTest
 
 #    ARingGFTest \
 
