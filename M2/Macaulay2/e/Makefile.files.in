@@ -9,49 +9,83 @@ INTERFACE2 = interrupted
 #  NCAlgebras/SuffixTree \
 
 INTERFACE = \
-	myalloc \
 	BasicPoly \
 	BasicPolyList \
 	BasicPolyListParser \
-	matrices/matrix-ncbasis \
-	M2FreeAlgebraQuotient \
 	M2FreeAlgebra \
-	NCAlgebras/Word \
-	NCAlgebras/NCReduction \
-	NCAlgebras/FreeAlgebraQuotient \
+	M2FreeAlgebraQuotient \
+	NAG/NAG \
 	NCAlgebras/FreeAlgebra \
+	NCAlgebras/FreeAlgebraQuotient \
 	NCAlgebras/FreeMonoid \
-	NCAlgebras/WordTable \
-	NCAlgebras/SuffixTree \
-	NCAlgebras/NCGroebner \
 	NCAlgebras/NCF4 \
+	NCAlgebras/NCGroebner \
+	NCAlgebras/NCReduction \
 	NCAlgebras/OverlapTable \
+	NCAlgebras/SuffixTree \
+	NCAlgebras/Word \
+	NCAlgebras/WordTable \
 	NCResolutions/nc-res-computation \
 	Polynomial \
-	monomials/monomial-collection \
-	eigen \
-	monomials/monomial-sets \
-	mutablecomplex \
-	rings/localring \
-	bibasis/bibasis \
+	SLP/SLP \
+	basic-mutable-matrices/dmat \
+	basic-mutable-matrices/lapack \
+	basic-mutable-matrices/mat \
+	basic-rings/aring \
+	basic-rings/aring-CC \
+	basic-rings/aring-CCC \
+	basic-rings/aring-CCi \
+	basic-rings/aring-GF-flint \
+	basic-rings/aring-GF-flint-big \
+	basic-rings/aring-QQ-flint \
+	basic-rings/aring-QQ-gmp \
+	basic-rings/aring-RR \
+	basic-rings/aring-RRR \
+	basic-rings/aring-RRi \
+	basic-rings/aring-ZZ-flint \
+	basic-rings/aring-ZZ-gmp \
+	basic-rings/aring-ZZp \
+	basic-rings/aring-ZZp-ffpack \
+	basic-rings/aring-ZZp-flint \
+	basic-rings/aring-m2-GF \
+	basic-rings/aring-tower \
+  basic-rings/reader
 	bibasis/allocator \
+	bibasis/bibasis \
 	bibasis/launcher \
 	bibasis/monom \
 	bibasis/monomDL \
 	bibasis/monomDRL \
 	bibasis/monomLex \
 	bibasis/settings-manager \
-	schreyer-resolutions/res-monomial-sorter \
-	schreyer-resolutions/res-f4-monlookup \
-	schreyer-resolutions/res-moninfo-dense \
-	schreyer-resolutions/res-moninfo-sparse \
-	schreyer-resolutions/res-moninfo \
-	schreyer-resolutions/res-poly-ring \
-	schreyer-resolutions/res-f4-m2-interface \
-	schreyer-resolutions/res-schreyer-frame \
-	schreyer-resolutions/res-dep-graph \
-	schreyer-resolutions/res-f4 \
-	schreyer-resolutions/res-f4-computation \
+	buffer \
+	coeffrings \
+	comb \
+	computations/BRP \
+	computations/Eschreyer \
+	computations/LLL \
+	computations/assprime \
+	computations/comp \
+	computations/det \
+	computations/ntl-interface \
+	computations/pfaff \
+	cra \
+	debug \
+	eigen \
+	f4/f4 \
+	f4/f4-computation \
+	f4/f4-m2-interface \
+	f4/f4-monlookup \
+	f4/f4-spairs \
+	f4/hilb-fcn \
+	f4/monhashtable \
+	f4/moninfo \
+	finalize \
+	fplll-interface \
+	fractionfreeLU \
+	free-modules/freemod \
+	free-modules/schreyer-orders \
+	gauss \
 	gb-f4/Basis \
 	gb-f4/GBF4Computation \
 	gb-f4/GBF4Interface \
@@ -61,141 +95,104 @@ INTERFACE = \
 	gb-f4/MonomialView \
 	gb-f4/PolynomialList \
 	gb-f4/SPairs \
-	f4/f4 \
-	f4/f4-monlookup \
-	f4/f4-computation \
-	f4/f4-spairs \
-	f4/f4-m2-interface \
-	f4/hilb-fcn \
-	f4/monhashtable \
-	monomials/monsort \
-	f4/moninfo \
-	resolution/betti \
-	rings/GF \
-	rings/ZZ \
-	rings/ZZp \
-	basic-rings/reader \
-	matrices/matrix-stream \
-	cra \
-	basic-rings/aring-ZZ-gmp \
-	basic-rings/aring-QQ-gmp \
-	basic-rings/aring-ZZ-flint \
-	basic-rings/aring-QQ-flint \
-	basic-rings/aring-ZZp-flint \
-	basic-rings/aring-RR \
-	basic-rings/aring-CC \
-	basic-rings/aring-RRR \
-	basic-rings/aring-CCC \
-	basic-rings/aring-RRi \
-	basic-rings/aring-CCi \
-	basic-rings/aring-tower \
-	basic-rings/aring-GF-flint-big \
-	basic-rings/aring-GF-flint \
-	basic-rings/aring-m2-GF \
-	basic-rings/aring-ZZp \
-	basic-rings/aring-ZZp-ffpack \
-	basic-rings/aring \
-	schur-rings/schurSn \
-	schur-rings/schur2 \
-	rings/dpoly \
-	rings/tower \
-	interreduce \
-	finalize \
-	NAG/NAG \
-	SLP/SLP \
-	monomials/overflow \
-	memory-status \
-	imonorder \
-	groebner-computations/sagbi \
-	monomials/monideal-minprimes \
-	basic-mutable-matrices/lapack \
-	computations/LLL \
-	fractionfreeLU \
-	computations/ntl-interface \
-	fplll-interface \
-	basic-mutable-matrices/mat \
-	basic-mutable-matrices/dmat \
-	coeffrings \
-	computations/Eschreyer \
-	groebner-computations/gbweight \
-	rings/qring \
-	rings/polyquotient \
-	rings/poly \
-	debug \
-	computations/comp \
 	groebner-computations/comp-gb \
-	groebner-computations/comp-gb-proxy \
 	groebner-computations/comp-gb-declared \
-	resolution/comp-res \
-	resolutions/res-a0 \
-	resolutions/res-a0-poly \
-	resolutions/res-a1 \
-	resolutions/res-a1-poly \
-	resolutions/res-a2 \
-	groebner-computations/reducedgb \
-	groebner-computations/reducedgb-field \
-	groebner-computations/reducedgb-marked \
-	groebner-computations/reducedgb-field-local \
-	groebner-computations/reducedgb-ZZ \
-	monomials/montable \
-	monomials/montableZZ \
-	free-modules/schreyer-orders \
-	computations/assprime \
-	buffer \
-	comb \
-	computations/det \
-	rings/frac \
-	computations/BRP \
-	free-modules/freemod \
+	groebner-computations/comp-gb-proxy \
 	groebner-computations/gb-default \
 	groebner-computations/gb-homog2 \
 	groebner-computations/gb-sugarless \
 	groebner-computations/gb-toric \
 	groebner-computations/gb-walk \
 	groebner-computations/gbring \
-	gauss \
+	groebner-computations/gbweight \
+	groebner-computations/reducedgb \
+	groebner-computations/reducedgb-ZZ \
+	groebner-computations/reducedgb-field \
+	groebner-computations/reducedgb-field-local \
+	groebner-computations/reducedgb-marked \
+	groebner-computations/sagbi \
+	groebner-computations/spair \
 	hermite \
 	hilb \
+	imonorder \
 	int-bag \
+	interreduce \
 	matrices/matrix \
 	matrices/matrix-con \
+	matrices/matrix-ncbasis \
+	matrices/matrix-stream \
 	mem \
-	monomials/monideal \
+	memory-status \
 	monoid \
+	monomials/ExponentList \
+	monomials/monideal \
+	monomials/monideal-minprimes \
 	monomials/monomial \
+	monomials/monomial-collection \
+	monomials/monomial-sets \
+	monomials/monsort \
+	monomials/montable \
+	monomials/montableZZ \
+	monomials/overflow \
+	mutablecomplex \
+	myalloc \
+	resolution/betti \
+	resolution/comp-res \
+	resolutions/res-a0 \
+	resolutions/res-a0-poly \
+	resolutions/res-a1 \
+	resolutions/res-a1-poly \
+	resolutions/res-a2 \
+	ring-elements/ring-element \
+	ringmap \
+	rings/GF \
+	rings/ZZ \
+	rings/ZZp \
+  rings/dpoly \
+	rings/frac \
+	rings/localring \
+	rings/poly \
+	rings/polyquotient \
 	rings/polyring \
-	computations/pfaff \
-	rings/ring-element \
+	rings/qring \
 	rings/ring \
 	rings/ringelem \
-	ringmap \
-	schur-rings/schur \
 	rings/skew \
 	rings/skewpoly \
 	rings/solvable \
-	groebner-computations/spair \
-	text-io \
-	monomials/ExponentList \
-	rings/weylalg
+	rings/tower \
+	rings/weylalg \
+	schreyer-resolutions/res-dep-graph \
+	schreyer-resolutions/res-f4 \
+	schreyer-resolutions/res-f4-computation \
+	schreyer-resolutions/res-f4-m2-interface \
+	schreyer-resolutions/res-f4-monlookup \
+	schreyer-resolutions/res-moninfo \
+	schreyer-resolutions/res-moninfo-dense \
+	schreyer-resolutions/res-moninfo-sparse \
+	schreyer-resolutions/res-monomial-sorter \
+	schreyer-resolutions/res-poly-ring \
+	schreyer-resolutions/res-schreyer-frame \
+	schur-rings/schur \
+	schur-rings/schur2 \
+	schur-rings/schurSn \
+	text-io
 
 COMMANDS = \
-	interface/m2-types \
-	interface/m2-mem \
-	computations/ntl-internal \
+	computations/BRP-gb \
+	computations/BRP-interface \
 	computations/ntl-debugio \
-	matrices/matrix-kbasis \
-	matrices/matrix-symm \
-	matrices/matrix-sort \
-	rings/ring-vecs \
-	resolutions/res-a2-gb \
+	computations/ntl-internal \
 	engine \
 	interface/aring \
-	interface/cra \
 	interface/cone \
+	interface/cra \
 	interface/factory \
 	interface/flint \
 	interface/freemodule \
 	interface/groebner \
+	interface/m2-mem \
+	interface/m2-types \
 	interface/matrix \
 	interface/monoid \
 	interface/monomial-ideal \
@@ -206,23 +203,27 @@ COMMANDS = \
 	interface/ring \
 	interface/ringelement \
 	interface/ringmap \
-	computations/BRP-gb \
-	computations/BRP-interface
+	matrices/matrix-kbasis \
+	matrices/matrix-sort \
+	matrices/matrix-symm \
+	resolutions/res-a2-gb \
+	rings/ring-vecs
 
 NAMES_H = \
-	m2tbb \
-	f4/f4-types \
-	f4/memblock \
-	basic-rings/vector-arithmetic \
-	monomials/ExponentVector \
 	MemoryBlock \
 	NCAlgebras/Range \
-	style \
-	util \
-	hash \
+	VectorArithmetic \
+  basic-rings/vector-arithmetic \
+	f4/f4-types \
+	f4/memblock \
 	f4/ntuple-monomial \
 	f4/varpower-monomial \
-	resolutions/res-a0-pair
+	hash \
+	m2tbb \
+	monomials/ExponentVector \
+	resolutions/res-a0-pair \
+	style \
+	util
 
 C_FILES = error table exptable # interface/m2-types interface/m2-mem
 
