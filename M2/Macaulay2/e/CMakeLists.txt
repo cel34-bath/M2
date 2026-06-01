@@ -486,7 +486,7 @@ if(BUILD_TESTING)
 
     unit-tests/OverflowTest.cpp
     unit-tests/BasicPolyListParserTest.cpp
-    unit-tests/BRPTest.cpp
+    unit-tests/BRP-test.cpp
     )
 
   if(BDWGC_FOUND)
