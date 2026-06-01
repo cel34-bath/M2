@@ -4,7 +4,7 @@
 #include "groebner-computations/gbring.hpp"
 
 #include "monomials/ExponentVector.hpp"
-#include "geopoly.hpp"
+#include "rings/geopoly.hpp"
 #include "text-io.hpp"
 
 bool WeylAlgebra::initialize_weyl(M2_arrayint derivs,

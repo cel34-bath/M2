@@ -8,7 +8,7 @@
 #include <gtest/gtest.h>
 #include <mpfr.h>
 
-#include "reader.hpp"
+#include "basic-rings/reader.hpp"
 #include "rings/ZZp.hpp"
 #include "basic-rings/aring-ZZp-ffpack.hpp"
 #include "basic-rings/aring-ZZp.hpp"

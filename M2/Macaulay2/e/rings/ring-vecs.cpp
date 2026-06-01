@@ -4,7 +4,7 @@
 #include "text-io.hpp"
 #include <vector>
 #include "matrices/matrix.hpp"
-#include "geovec.hpp"
+#include "rings/geovec.hpp"
 #include "ringmap.hpp"
 #include "rings/poly.hpp"
 //  Notes: ring_elem's are treated as immutable objects: they are not changed,

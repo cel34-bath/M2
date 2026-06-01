@@ -8,8 +8,9 @@ PRE.cc   = $(COMPILE.cc) -E
 
 include Makefile.files
 include Makefile.common
-CPPFLAGS := -I@srcdir@ -I@srcdir@/matrices $(CPPFLAGS) \
-  -Wno-fatal-errors -Wno-unused-variable
+  CPPFLAGS := -I@srcdir@ \
+    $(CPPFLAGS) \
+    -Wno-fatal-errors -Wno-unused-variable
 
 #  -I../d -I@srcdir@/../c -I@srcdir@/../d \
 

@@ -11,7 +11,7 @@
 #include "rings/ZZ.hpp"
 #include "groebner-computations/gbring.hpp"
 #include "rings/frac.hpp"
-#include "geopoly.hpp"
+#include "rings/geopoly.hpp"
 #include "rings/ZZ.hpp"
 #include "monomials/monomial.hpp"
 #include "ring-elements/ring-element.hpp"
@@ -2413,7 +2413,7 @@ vec PolyRing::vec_top_coefficient(const vec v, int &x, int &e) const
 ///////////////////////////////////
 // translation gbvector <--> vec //
 ///////////////////////////////////
-#include "geovec.hpp"
+#include "rings/geovec.hpp"
 
 void PolyRing::determine_common_denominator_QQ(ring_elem f,
                                                mpz_ptr denom_so_far) const

@@ -14,7 +14,7 @@
 #include "rings/polyring.hpp"                // for PolynomialRing
 #include "rings/ring.hpp"                    // for Ring
 #include "style.hpp"                   // for INTSIZE
-#include "VectorArithmetic.hpp"
+#include "basic-rings/vector-arithmetic.hpp"
 
 void F4toM2Interface::from_M2_vec(const VectorArithmetic* VA,
                                   const MonomialInfo *MI,

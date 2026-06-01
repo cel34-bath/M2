@@ -6,7 +6,7 @@
 #include "gb-f4/MonomialLookupTable.hpp"
 #include "gb-f4/PolynomialList.hpp"
 #include "gb-f4/SPairs.hpp"
-#include "VectorArithmetic.hpp"
+#include "basic-rings/vector-arithmetic.hpp"
 
 class FreeModule;
 

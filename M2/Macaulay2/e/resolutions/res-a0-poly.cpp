@@ -4,7 +4,7 @@
 #include "text-io.hpp"
 #include "rings/polyring.hpp"
 #include "free-modules/freemod.hpp"
-#include "geovec.hpp"
+#include "rings/geovec.hpp"
 
 res2_poly::res2_poly(PolynomialRing *RR)
     : R(RR), M(R->getMonoid()), K(R->getCoefficientRing())

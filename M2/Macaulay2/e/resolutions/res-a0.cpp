@@ -4,7 +4,7 @@
 
 #include "monomials/ExponentVector.hpp"
 #include "resolutions/res-a0-poly.hpp"
-#include "geobucket.hpp"
+#include "rings/geobucket.hpp"
 #include "buffer.hpp"
 #include "text-io.hpp"
 #include "interrupted.hpp"

@@ -2,7 +2,7 @@
 
 #include "gb-f4/MonomialHashTable.hpp"
 #include "gb-f4/PolynomialList.hpp"
-#include "VectorArithmetic.hpp"
+#include "basic-rings/vector-arithmetic.hpp"
 
 namespace newf4 {
 

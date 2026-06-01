@@ -3,7 +3,7 @@
 #ifndef _res_poly_ring_hpp_
 #define _res_poly_ring_hpp_
 
-#include "VectorArithmetic.hpp"                        // for VectorArithmetic
+#include "basic-rings/vector-arithmetic.hpp"                        // for VectorArithmetic
 #include "newdelete.hpp"                               // for our_new_delete
 #include "schreyer-resolutions/res-moninfo.hpp"         // for ResMonoid
 #include "schreyer-resolutions/res-monomial-types.hpp"  // for res_monomial_word

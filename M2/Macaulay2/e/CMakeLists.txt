@@ -51,7 +51,7 @@ set(HFILES
 set(HPPONLYFILES
   MemoryBlock.hpp
   NCAlgebras/Range.hpp
-  VectorArithmetic.hpp
+  basic-rings/vector-arithmetic.hpp
   timing.hpp
   SLP/SLP-defs.hpp
   SLP/SLP-imp.hpp
@@ -68,9 +68,9 @@ set(HPPONLYFILES
   basic-mutable-matrices/dmat-zzp-flint.hpp
   engine-includes.hpp
   exceptions.hpp
-  geobucket.hpp
-  geopoly.hpp
-  geovec.hpp
+  rings/geobucket.hpp
+  rings/geopoly.hpp
+  rings/geovec.hpp
   hash.hpp
   basic-mutable-matrices/mat-arith.hpp
   basic-mutable-matrices/mat-elem-ops.hpp
@@ -191,8 +191,8 @@ set(SRCLIST
   computations/comp
   cra
   debug
+  rings/dpoly
   computations/det
-  dpoly
   eigen
   finalize
   fplll-interface
@@ -233,7 +233,7 @@ set(SRCLIST
   monomials/overflow
   computations/ntl-interface
   computations/pfaff
-  reader
+  basic-rings/reader
   groebner-computations/reducedgb-ZZ
   groebner-computations/reducedgb-field-local
   groebner-computations/reducedgb-field

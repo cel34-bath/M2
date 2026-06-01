@@ -5,7 +5,7 @@
 
 
 #include <climits>                   // for INT_MIN
-#include "VectorArithmetic.hpp"      // for ElementArray
+#include "basic-rings/vector-arithmetic.hpp"      // for ElementArray
 #include "f4/f4-monlookup.hpp"       // for F4MonomialLookupTableT
 #include "f4/moninfo.hpp"            // for MonomialInfo, monomial_word, pac...
 #include "f4/varpower-monomial.hpp"  // for varpower_monomials, varpower_mon...

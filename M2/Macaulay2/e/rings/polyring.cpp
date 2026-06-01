@@ -6,7 +6,7 @@
 #include "rings/polyquotient.hpp"
 #include "matrices/matrix.hpp"
 #include "matrices/matrix-con.hpp"
-#include "geopoly.hpp"
+#include "rings/geopoly.hpp"
 
 PolynomialRing::~PolynomialRing() {}
 void PolynomialRing::setQuotientInfo(QRingInfo *qinfo0)
