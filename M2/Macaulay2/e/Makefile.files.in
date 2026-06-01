@@ -49,7 +49,7 @@ INTERFACE = \
 	basic-rings/aring-ZZp-flint \
 	basic-rings/aring-m2-GF \
 	basic-rings/aring-tower \
-  basic-rings/reader
+	basic-rings/reader \
 	bibasis/allocator \
 	bibasis/bibasis \
 	bibasis/launcher \
@@ -148,7 +148,7 @@ INTERFACE = \
 	rings/GF \
 	rings/ZZ \
 	rings/ZZp \
-  rings/dpoly \
+	rings/dpoly \
 	rings/frac \
 	rings/localring \
 	rings/poly \
@@ -213,7 +213,7 @@ NAMES_H = \
 	MemoryBlock \
 	NCAlgebras/Range \
 	VectorArithmetic \
-  basic-rings/vector-arithmetic \
+	basic-rings/vector-arithmetic \
 	f4/f4-types \
 	f4/memblock \
 	f4/ntuple-monomial \
