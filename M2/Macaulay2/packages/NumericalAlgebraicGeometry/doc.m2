@@ -1516,57 +1516,57 @@ doc ///
 	(segmentHomotopy,List,List)    		
     Headline
         a segment homotopy
-    Usage 
-    	H = segmentHomotopy(S,T)
+    Usage
+        H = segmentHomotopy(S,T)
     Inputs
         S:System
-	  start system (could be GateSystem, PolySystem, or list of polynomials)
-	T:System
-	  target system  (could be GateSystem, PolySystem, or list of polynomials)
-    Outputs 
-    	H:GateHomotopy
+          start system (could be GateSystem, PolySystem, or list of polynomials)
+        T:System
+          target system  (could be GateSystem, PolySystem, or list of polynomials)
+    Outputs
+        H:GateHomotopy
     Description
-        Text 
-	  This method produces a @TO Homotopy@ @TEX "(1-t) S+ t \\gamma T, t\\in[0,1]"@.
-	Example
-	  R = QQ[x,y]
-	  T = {random(3,R)-1, random(2,R)-2}
-	  (S,solsS) = totalDegreeStartSystem T
-	  H = segmentHomotopy(S,T,gamma=>1+ii)
-	  evaluateH(H,transpose matrix first solsS,0)
-///	 
+        Text
+          This method produces a @TO Homotopy@ @TEX "(1-t) S+ t \\gamma T, t\\in[0,1]"@.
+        Example
+          R = QQ[x,y]
+          T = {random(3,R)-1, random(2,R)-2}
+          (S,solsS) = totalDegreeStartSystem T
+          H = segmentHomotopy(S,T,gamma=>1+ii)
+          evaluateH(H,transpose matrix first solsS,0)
+///
 
 doc ///
     Key
         parametricSegmentHomotopy
-	(parametricSegmentHomotopy,GateSystem)
-	(parametricSegmentHomotopy,PolySystem)    		
+        (parametricSegmentHomotopy,GateSystem)
+        (parametricSegmentHomotopy,PolySystem)
     Headline
         creates an ansatz for a segment homotopy
-    Usage 
-    	PH = parametricSegmentHomotopy F
+    Usage
+        PH = parametricSegmentHomotopy F
     Inputs
         F:System
-	  either a @TO GateSystem@ or a @TO PolySystem@
-    Outputs 
-    	PH:GateParameterHomotopy	
+          either a @TO GateSystem@ or a @TO PolySystem@
+    Outputs
+        PH:GateParameterHomotopy
     Description
-        Text 
-	  This method returns a homotopy that after specialization of parameters is akin 
-	  to the output of @TO segmentHomotopy@. There are {\bf 2 m} parameters in{\tt PH} 
-	  where {\bf m} is the number of parameters in {\tt F}. 
-	  The first {\bf m} parameters correspond to the starting point A in the parameter space.
-	  The last {\bf m} parameters correspond to the end point B in the parameter space.
-	Example
-	  variables = declareVariable \ {x,y}
-	  params = declareVariable \ {a,b} 
-	  F = gateSystem(matrix{params}, matrix{variables}, matrix{{a*x*y-1},{x^3+y^2-b}})
-	  PH = parametricSegmentHomotopy F;
-	  parameters PH
-	  (a0,b0) = (1,2); startSolution = point{{1,1}};
-    	  (a1,b1) = (2,1);	  
-	  H01 = specialize(PH, matrix{{a0,b0,a1,b1}});
-	  targetSolution = first trackHomotopy(H01,{startSolution})
-	  assert(norm evaluate(F,matrix{{a1,b1}},matrix targetSolution) < 0.0001)    		  
-///	 
+        Text
+          This method returns a homotopy that after specialization of parameters is akin
+          to the output of @TO segmentHomotopy@. There are {\bf 2 m} parameters in{\tt PH}
+          where {\bf m} is the number of parameters in {\tt F}.
+          The first {\bf m} parameters correspond to the starting point A in the parameter space.
+          The last {\bf m} parameters correspond to the end point B in the parameter space.
+        Example
+          variables = declareVariable \ {x,y}
+          params = declareVariable \ {a,b}
+          F = gateSystem(matrix{params}, matrix{variables}, matrix{{a*x*y-1},{x^3+y^2-b}})
+          PH = parametricSegmentHomotopy F;
+          parameters PH
+          (a0,b0) = (1,2); startSolution = point{{1,1}};
+          (a1,b1) = (2,1);
+          H01 = specialize(PH, matrix{{a0,b0,a1,b1}});
+          targetSolution = first trackHomotopy(H01,{startSolution})
+          assert(norm evaluate(F,matrix{{a1,b1}},matrix targetSolution) < 0.0001)
+///
 
