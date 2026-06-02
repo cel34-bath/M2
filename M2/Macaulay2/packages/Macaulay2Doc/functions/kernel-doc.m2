@@ -25,10 +25,8 @@ Usage
   kernel f
   kernel a
 Inputs
-  f:Matrix
-    a map of modules $M \to N$
-  a:RingElement
-    interpreted as a $1 \times 1$ matrix
+  f:{Matrix,RingElement}
+    a map of modules $M \to N$, or a ring element interpreted as a $1 \times 1$ matrix
 Outputs
   :Module
     the kernel of the map, as a submodule of $M$
