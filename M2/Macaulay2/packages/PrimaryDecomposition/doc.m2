@@ -120,18 +120,13 @@ Node
     Text
       This function has one optional input @TT "Strategy"@, which accepts three
       possible values used to determine the algorithm for finding embedded components.
-      @UL {
-        {TT("Res"), " - This strategy is closest to the original Eisenbud-Huneke-Vasconcelos method."},
-        {TT "Hom"},
-        {TT "Sat"},
-      }@
-
+    Text
+      The available values are @TT "Res"@, which is closest to the original
+      Eisenbud-Huneke-Vasconcelos method, together with @TT "Hom"@ and @TT "Sat"@.
+    Text
       If you want to specify the @TT "Strategy"@ to be used by @TO localize@ as well,
-      this can be specified by passing a @TT "Hybrid"@ Strategy in the form
-
-      @UL {
-        {TT "Hybrid{primaryDecompisition.Strategy, localize.Strategy}"}
-      }@
+      this can be specified by passing a @TT "Hybrid"@ Strategy in the form:
+      @TT "Hybrid{primaryDecomposition.Strategy, localize.Strategy}"@.
     Example
       kk = ZZ/3
       R = kk[a,b]
@@ -245,13 +240,11 @@ Node
 
       This function has one optional input @TT "Strategy"@, which accepts three
       possible values that determine the algorithm for finding embedded components.
-
-      @UL {
-        {TT("Hybrid{Res}"), " - This strategy is closest to the original Eisenbud-Huneke-Vasconcelos method."},
-        {TT "Hybrid{Hom}"},
-        {TT "Hybrid{Sat}"},
-      }@
-
+    Text
+      The available values are @TT "Hybrid{Res}"@, which is closest to the original
+      Eisenbud-Huneke-Vasconcelos method, together with @TT "Hybrid{Hom}"@ and
+      @TT "Hybrid{Sat}"@.
+    Text
       While the default (and typically fastest) strategy is @TT "Sat"@, it is recommended to try different
       @TT "Strategy"@ values if the computation of a particular embedded component is taking too long.
       One can start the computation with one strategy, and interrupt and resume with a different strategy
