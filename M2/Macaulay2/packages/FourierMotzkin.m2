@@ -265,7 +265,7 @@ document {
 	PARA{}, "Here are some examples illustrating some uses of this
 	package.",
 	EXAMPLE {
-	     "R = matrix(QQ, {{1,0},{0,1}})",
+	     "R = matrix(QQ, {{1,0},{-2,1}})",
 	     "H = fourierMotzkin R",
 	     "H#0",
 	     "fourierMotzkin H"

@@ -9,7 +9,7 @@ Node
     Text
       -- TODO: move this somewhere else
       -- To get a good idea of what you will be able to do with Macaulay2,
-      -- see @TO2("BeginningMacaulay2::BeginningMacaulay2", "Beginning Macaulay2")@.
+      -- see @TO2("Tutorials::Tutorial: Beginning Macaulay2", "Beginning Macaulay2")@.
       Macaulay2 is available from our web page @HREF{"https://Macaulay2.com", "Macaulay2.com"}@.
       There you will find installation instructions for MacOSX and several Linux distributions,
       as well as precompiled versions for various other systems.

@@ -1,7 +1,7 @@
 doc ///
 Key
+     wedgeProduct
      (wedgeProduct, ZZ, ZZ, Module)
-     wedgeProduct     
 Headline
      the exterior multiplication map
 Usage

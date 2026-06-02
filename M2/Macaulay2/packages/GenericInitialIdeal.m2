@@ -174,8 +174,6 @@ document {
 --These are documented in the above node.
 undocumented { "AttemptCount", "Modular", "Multigraded" }
 
---document { Key => {(gin,Ideal)}, }
---document { Key => {(gin,QuotientRing)}, }
 
 document {
      Key => {lexgin},

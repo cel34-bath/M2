@@ -15,21 +15,29 @@ Node
     syz
 ///
 
-document {
-  Key => {(kernel,Matrix),
-  (kernel, RingElement)},
-  Headline => "kernel of a map of modules",
-  Usage => "kernel f, kernel a",
-  Inputs => {
-    "f" => {"a map of modules ", TT "M --> N"}
-  },
-  Outputs => {
-    Module => {"the kernel of f, a submodule of M"}
-  },
-  PARA{},
-  "The kernel is the submodule of M of all elements mapping to zero under ", TT "f", ".",
-  "If f is a RingElement it is interpreted as a 1 by 1 matrix",".",
-  EXAMPLE lines ///
+doc ///
+Key
+  (kernel,Matrix)
+  (kernel, RingElement)
+Headline
+  kernel of a map of modules
+Usage
+  kernel f
+  kernel a
+Inputs
+  f:Matrix
+    a map of modules $M \to N$
+  a:RingElement
+    interpreted as a $1 \times 1$ matrix
+Outputs
+  :Module
+    the kernel of the map, as a submodule of $M$
+Description
+  Text
+    The kernel is the submodule of $M$ consisting of all elements that map to zero.
+  Text
+    Over polynomial rings this is computed using a Groebner basis computation.
+  Example
     R = ZZ/32003[a,b]/(ideal(a,b))^3
     M = R^1/(ideal a^2)
     mat = matrix{{a^2,b^2},{b,a}}
@@ -38,15 +46,13 @@ document {
     syz mat
     f = map(M++M, M++M, mat)
     ker f
-  ///,
-  SeeAlso => {
-    syz,
-    cokernel,
-    image,
-    map,
-    matrix
-  }
-}
+SeeAlso
+  syz
+  cokernel
+  image
+  map
+  matrix
+///
 
 doc ///
 Key

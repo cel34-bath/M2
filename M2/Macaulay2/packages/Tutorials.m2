@@ -1,8 +1,14 @@
 newPackage ("Tutorials",
     Version => version#"VERSION",
+    Date => "June 2, 2026",
     Headline => "tutorials and teaching materials for Macaulay2",
     HomePage => "https://macaulay2.com/",
-    Authors => { -* see the contributors listed on the main page *- },
+    Authors => {
+        {Name => "Ayah Almousa",
+            Email => "aalmousa@uky.edu",
+            HomePage => "http://sites.google.com/view/ayah-almousa",
+            Maintainer => true}
+    },
     Keywords => { "Documentation" },
     InfoDirSection => "Macaulay2 and its packages",
     AuxiliaryFiles => true
@@ -26,8 +32,11 @@ Node
       front page and the subject-area pages in @TO "Macaulay2Doc::commutative algebra"@
       and @TO "Macaulay2Doc::algebraic geometry"@ also link to the individual tutorials
       most relevant to each area.
+    Text
+      This collection is maintained by Ayah Almousa and was last updated in June 2026.
     Tree
       :Foundational tutorials
+        > "Tutorial: Beginning Macaulay2"
         > "Tutorial: Modules in Macaulay2"
         > "Tutorial: Elementary uses of Gröbner bases"
         > "Beginner tutorial: Shidoku"
@@ -38,10 +47,13 @@ Node
         > "Tutorial: Fano varieties"
       :Numerical tutorial
         > "Tutorial: Numerical algebraic geometry"
+  Contributors
+    Kisun Lee and Joel Dodge contributed tutorial and documentation updates to this package.
 ///
 
 ld := fn -> tutorial get (currentFileDirectory|"Tutorials/"|fn)
 
+doc get (currentFileDirectory|"Tutorials/tu_beginning.m2")
 load "./Tutorials/tu_modules.m2"
 document {
      Key => "Tutorial: Elementary uses of Gröbner bases",

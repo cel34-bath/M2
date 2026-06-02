@@ -299,5 +299,5 @@ Node
       To exit your first session, you can type @KBD "exit"@ or @KBD "quit"@.
   SeeAlso
     "reading the documentation"
-    "BeginningMacaulay2::BeginningMacaulay2"
+    "Tutorials::Tutorial: Beginning Macaulay2"
 ///

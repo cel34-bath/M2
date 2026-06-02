@@ -137,10 +137,6 @@ doc ///
             If Strategy is set to @TT "Determinantal"@, isVirtual will check whether the given chain complex
             is a virtual resolution by checking the depth of the saturation of the ideals of maximal rank
             from the boundary maps. See Theorem 1.3 of [Loper, @arXiv "1904.05994"@].
-        Example
-            R = ZZ/101[s,t];
-            C = res ideal(t);
-            isVirtual(ideal(s,t), C, Strategy=>"Determinantal")
     SeeAlso
         isVirtual
 ///

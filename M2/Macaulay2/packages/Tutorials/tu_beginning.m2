@@ -1,11 +1,11 @@
 -- -*- Mode: M2; mode: auto-fill; coding: utf-8; fill-column: 100 -*-
 Key
-     "BeginningMacaulay2"
+     "Tutorial: Beginning Macaulay2"
 Headline
      introductory tutorial for new Macaulay2 users
 Description
      Text
-	  This tutorial is a first stop for new users. We assume you've
+	  This tutorial was originally written by David Eisenbud and Mike Stillman. It is a first stop for new users. We assume you've
 	  installed {\em Macaulay2} and can type
      Code
           EXAMPLE { PRE ///M2/// }
@@ -315,7 +315,7 @@ Description
 	  A great deal of subtle information about a module is visible using
 	  free resolutions. For an example, we begin
 	  by turning $R/I$ into a module. Here the code @ TT "R^1" @ produces the free module of
-	  rank 1 over $R$, and @ TO2 {"Complexes :: resolution(Module)", "res"} @ computes a free resolution:
+	  rank 1 over $R$, and @ TO2 {"OldChainComplexes :: resolution(Module)", "res"} @ computes a free resolution:
      Example
 	  M=R^1/I
 	  Mres = res M
@@ -671,6 +671,7 @@ Description
 	  lines in $\PP^3$:
      Example
 	  HH^1 (sheaf (S^{-2}**(S^1/IX)))
+
 -- Local Variables:
--- compile-command: "make -C /Users/de/src/M2/Macaulay2/packages PACKAGES=BeginningMacaulay2 RemakeAllDocumentation=true IgnoreExampleErrors=false"
+-- compile-command: "make -C $M2BUILDDIR/Macaulay2/packages PACKAGES=Tutorials RemakeAllDocumentation=true IgnoreExampleErrors=false"
 -- End:
