@@ -20,13 +20,10 @@ export {
     "picture",
     "displayBlocks",
     "extractBlocks",
-
     "mapComponents",
--*
     "hasMinimalMult",
     "isGolodAInf",
     "burkeDifferential",
-*-
     --symbols
     "Check",
     "ShowRanks"
