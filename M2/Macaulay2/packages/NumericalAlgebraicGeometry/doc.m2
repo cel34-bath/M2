@@ -974,55 +974,55 @@ doc ///
 
         For a @TO ParameterHomotopy@, parameter values must also be supplied.
 
-    Example
-      variables = declareVariable \ {x,y}
-      T = inputGate symbol T
+      Example
+        variables = declareVariable \ {x,y}
+        T = inputGate symbol T
 
-      F = matrix{{x^2+y^2-1},{x*y}}
-      G = matrix{{x^2-y-1},{x+y-1}}
+        F = matrix{{x^2+y^2-1},{x*y}}
+        G = matrix{{x^2-y-1},{x+y-1}}
 
-      H = gateHomotopy((1-T)*F + T*G, matrix{{x,y}}, T)
+        H = gateHomotopy((1-T)*F + T*G, matrix{{x,y}}, T)
 
-      X0 = matrix{{.2},{0}}
+        X0 = matrix{{.2},{0}}
 
-      evaluateH(H,X0,0.5)
-      evaluateHx(H,X0,0.5)
-      evaluateHt(H,X0,0.5)
-    Text
-        For a @TO ParameterHomotopy@, parameter values must also be supplied.
+        evaluateH(H,X0,0.5)
+        evaluateHx(H,X0,0.5)
+        evaluateHt(H,X0,0.5)
+      Text
+          For a @TO ParameterHomotopy@, parameter values must also be supplied.
 
-    Example
-      variables = declareVariable \ {x,y}
-      params = declareVariable \ {a,b}
+      Example
+        variables = declareVariable \ {x,y}
+        params = declareVariable \ {a,b}
 
-      F = gateSystem(
-            matrix{params},
-            matrix{variables},
-            matrix{{a*x*y-1},{x^3+y^2-b}}
-          )
+        F = gateSystem(
+              matrix{params},
+              matrix{variables},
+              matrix{{a*x*y-1},{x^3+y^2-b}}
+            )
 
-      PH = parametricSegmentHomotopy F
+        PH = parametricSegmentHomotopy F
 
-      pStart = matrix{{1,2}}
-      pTarget = matrix{{2,1}}
+        pStart = matrix{{1,2}}
+        pTarget = matrix{{2,1}}
 
-      pars = transpose(pStart | pTarget)
+        pars = transpose(pStart | pTarget)
 
-      X0 = matrix{{.5},{1}}
+        X0 = matrix{{.5},{1}}
 
-      evaluateH(PH,pars,X0,0.5)
-      evaluateHx(PH,pars,X0,0.5)
-      evaluateHt(PH,pars,X0,0.5)
-    Text
-        After the parameter homotopy is specialized using @TO specialize@,
+        evaluateH(PH,pars,X0,0.5)
+        evaluateHx(PH,pars,X0,0.5)
+        evaluateHt(PH,pars,X0,0.5)
+      Text
+          After the parameter homotopy is specialized using @TO specialize@,
 	For a @TO ParameterHomotopy@, parameter values must also be supplied.
 
-    Example
-      H01 = specialize(PH, pars)
+      Example
+        H01 = specialize(PH, pars)
 
-      evaluateH(H01,X0,0.5)
-      evaluateHx(H01,X0,0.5)
-      evaluateHt(H01,X0,0.5)
+        evaluateH(H01,X0,0.5)
+        evaluateHx(H01,X0,0.5)
+        evaluateHt(H01,X0,0.5)
 ///
 
 document {
