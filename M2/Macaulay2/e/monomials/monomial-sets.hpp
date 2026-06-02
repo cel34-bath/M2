@@ -1,7 +1,7 @@
 // Copyright 2018  Michael E. Stillman
 
-#ifndef _monomial_sets_hpp_
-#define _monomial_sets_hpp_
+#ifndef M2_MONOMIALS__MONOMIAL_SETS_HPP_
+#define M2_MONOMIALS__MONOMIAL_SETS_HPP_
 
 // This file contains classes for keeping sets of monomials.
 // There are two types of monomials:

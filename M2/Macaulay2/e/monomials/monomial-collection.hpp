@@ -16,8 +16,8 @@
 //   consider looking at: https://github.com/skarupke/flat_hash_map
 //     it is under boost license, it might be (not sure) well-written.
 
-#ifndef _monomial_collection_hpp_
-#define _monomial_collection_hpp_
+#ifndef M2_MONOMIALS__MONOMIAL_COLLECTION_HPP_
+#define M2_MONOMIALS__MONOMIAL_COLLECTION_HPP_
 
 #include "Polynomial.hpp"     // for ModuleMonom, monomToModuleMonom, Monom
 #include "style.hpp"          // for EQ

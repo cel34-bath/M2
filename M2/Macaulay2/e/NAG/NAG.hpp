@@ -2,8 +2,8 @@
 
 // Anton Leykin's code in this file is in the public domain.
 
-#ifndef _nag_
-#define _nag_
+#ifndef M2_NAG_NAG_HH
+#define M2_NAG_NAG_HH
 
 #include "engine-includes.hpp"
 

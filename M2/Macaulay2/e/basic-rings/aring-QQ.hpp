@@ -1,7 +1,7 @@
 // Copyright 2013 Michael E. Stillman.
 
-#ifndef _aring_qq_hpp_
-#define _aring_qq_hpp_
+#ifndef M2_BASIC_RINGS_ARING_QQ_HPP_
+#define M2_BASIC_RINGS_ARING_QQ_HPP_
 
 #include "basic-rings/aring-QQ-flint.hpp"
 #include "basic-rings/aring-QQ-gmp.hpp"

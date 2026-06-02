@@ -1,7 +1,7 @@
 // Copyright 2005-2012  Michael E. Stillman
 
-#ifndef _mutable_mat_hpp_
-#define _mutable_mat_hpp_
+#ifndef M2_MUTMAT_MUTABLE_MAT_HPP_
+#define M2_MUTMAT_MUTABLE_MAT_HPP_
 
 #include "mutablemat-defs.hpp"
 #include "SLP/SLP-defs.hpp"

@@ -1,5 +1,5 @@
-#ifndef _m2_free_algebra_hpp_
-#define _m2_free_algebra_hpp_
+#ifndef M2_M2_FREE_ALGEBRA_HPP_
+#define M2_M2_FREE_ALGEBRA_HPP_
 
 #include <M2/math-include.h>
 #include "engine-includes.hpp"

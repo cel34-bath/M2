@@ -1,6 +1,6 @@
 // Copyright 2010 Michael E. Stillman.
-#ifndef _tower_hpp_
-#define _tower_hpp_
+#ifndef M2_RINGS_TOWER_HPP_
+#define M2_RINGS_TOWER_HPP_
 
 #include "ring-elements/ring-element.hpp"
 

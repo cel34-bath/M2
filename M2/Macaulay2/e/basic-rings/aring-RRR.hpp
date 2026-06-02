@@ -1,7 +1,7 @@
 // Copyright 2012 Michael E. Stillman
 
-#ifndef _aring_RRR_hpp_
-#define _aring_RRR_hpp_
+#ifndef M2_BASIC_RINGS_ARING_RRR_HPP_
+#define M2_BASIC_RINGS_ARING_RRR_HPP_
 
 #include "interface/gmp-util.h"  // for moveTo_gmpRR
 #include "interface/random.h"    // for randomMpfr

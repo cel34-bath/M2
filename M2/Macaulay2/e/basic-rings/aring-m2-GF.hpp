@@ -1,7 +1,7 @@
 // Copyright 2012 Michael E. Stillman
 
-#ifndef _aring_gf_m2_hpp_
-#define _aring_gf_m2_hpp_
+#ifndef M2_BASIC_RINGS_ARING_GF_M2_HPP_
+#define M2_BASIC_RINGS_ARING_GF_M2_HPP_
 
 #include "interface/random.h"
 #include "basic-rings/aring.hpp"

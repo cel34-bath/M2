@@ -1,7 +1,7 @@
 // Copyright 1994-2016  Michael E. Stillman
 
-#ifndef _f4monlookup_h_
-#define _f4monlookup_h_
+#ifndef M2_SCHRRES_F4MONLOOKUP_H_
+#define M2_SCHRRES_F4MONLOOKUP_H_
 
 #include "newdelete.hpp"                               // for VECTOR, our_ne...
 #include "schreyer-resolutions/res-moninfo.hpp"         // for ResMonoid

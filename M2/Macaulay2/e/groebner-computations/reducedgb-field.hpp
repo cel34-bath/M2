@@ -1,7 +1,7 @@
 // Copyright 2005, Michael E. Stillman
 
-#ifndef _reducedgb_field_
-#define _reducedgb_field_
+#ifndef M2_GROEBNER_COMPUTATIONS_REDUCEDGB_FIELD_
+#define M2_GROEBNER_COMPUTATIONS_REDUCEDGB_FIELD_
 
 #include "groebner-computations/reducedgb.hpp"
 

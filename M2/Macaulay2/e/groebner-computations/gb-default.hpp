@@ -1,7 +1,7 @@
 /* Copyright 2003, Michael E. Stillman */
 
-#ifndef _gbA_h_
-#define _gbA_h_
+#ifndef M2_GROEBNER_COMPUTATIONS_GBA_H_
+#define M2_GROEBNER_COMPUTATIONS_GBA_H_
 
 #include "groebner-computations/comp-gb.hpp"
 

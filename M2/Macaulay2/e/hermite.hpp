@@ -1,6 +1,6 @@
 // Copyright 1996  Michael E. Stillman
-#ifndef _hermite_hh_
-#define _hermite_hh_
+#ifndef M2_HERMITE_HH_
+#define M2_HERMITE_HH_
 
 #include "ring-elements/ring-element.hpp"
 #include "matrices/matrix.hpp"

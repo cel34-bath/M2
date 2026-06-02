@@ -1,7 +1,7 @@
 // (c) 1994 Michael E. Stillman
 
-#ifndef _monomial_hh_
-#define _monomial_hh_
+#ifndef M2_MONOMIALS__MONOMIAL_HH_
+#define M2_MONOMIALS__MONOMIAL_HH_
 
 #include <vector>
 

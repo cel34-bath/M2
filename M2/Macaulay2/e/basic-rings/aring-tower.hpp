@@ -1,6 +1,6 @@
 // Copyright 2010-2012 Michael E. Stillman.
-#ifndef _aring_tower_hpp_
-#define _aring_tower_hpp_
+#ifndef M2_BASIC_RINGS_ARING_TOWER_HPP_
+#define M2_BASIC_RINGS_ARING_TOWER_HPP_
 
 #include <vector>
 #include <string>

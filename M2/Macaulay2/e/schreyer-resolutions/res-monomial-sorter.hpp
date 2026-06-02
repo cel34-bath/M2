@@ -1,7 +1,7 @@
 /* Copyright 2018, Michael E. Stillman */
 
-#ifndef _res_monomial_sorter_hpp_
-#define _res_monomial_sorter_hpp_
+#ifndef M2_SCHRRES_RES_MONOMIAL_SORTER_HPP_
+#define M2_SCHRRES_RES_MONOMIAL_SORTER_HPP_
 
 #include "monomials/ExponentVector.hpp"                          // for ntuple
 #include "monoid.hpp"                                  // for Monoid

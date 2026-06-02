@@ -1,7 +1,7 @@
 // Copyright 2004 Michael E. Stillman
 
-#ifndef _polyquotient_hpp_
-#define _polyquotient_hpp_
+#ifndef M2_RINGS_POLYQUOTIENT_HPP_
+#define M2_RINGS_POLYQUOTIENT_HPP_
 
 #include "engine-includes.hpp"
 

@@ -1,7 +1,7 @@
 // Copyright 2003 Michael E. Stillman
 
-#ifndef _solvable_hh_
-#define _solvable_hh_
+#ifndef M2_RINGS_SOLVABLE_HH_
+#define M2_RINGS_SOLVABLE_HH_
 
 #include "rings/poly.hpp"
 

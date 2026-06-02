@@ -1,7 +1,7 @@
 // Copyright 2014  Michael E. Stillman
 
-#ifndef _dmat_gf_flint_big_hpp_
-#define _dmat_gf_flint_big_hpp_
+#ifndef M2_BASIC_MUTMAT_DMAT_GF_FLINT_BIG_HPP_
+#define M2_BASIC_MUTMAT_DMAT_GF_FLINT_BIG_HPP_
 
 #include <utility>                 // for swap
 #include "basic-rings/aring-GF-flint-big.hpp"  // for ARingGFFlintBig

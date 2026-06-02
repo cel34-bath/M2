@@ -1,5 +1,5 @@
-#ifndef __vector_arithmetic_hpp__
-#define __vector_arithmetic_hpp__
+#ifndef M2_BASIC_RINGS__VECTOR_ARITHMETIC_HPP__
+#define M2_BASIC_RINGS__VECTOR_ARITHMETIC_HPP__
 
 // #include <utility>                  // for swap
 // #include <assert.h>                 // for assert

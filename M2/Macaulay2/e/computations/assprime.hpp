@@ -5,8 +5,8 @@
 */
 
 // (c) 1994 Michael E. Stillman
-#ifndef _assprime_hh
-#define _assprime_hh
+#ifndef M2_COMPUTATIONS_ASSPRIME_HH
+#define M2_COMPUTATIONS_ASSPRIME_HH
 
 #include "monomials/monideal.hpp"
 

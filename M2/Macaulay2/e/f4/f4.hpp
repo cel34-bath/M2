@@ -1,7 +1,7 @@
 // Copyright 2005 Michael E. Stillman
 
-#ifndef __f4gb_h_
-#define __f4gb_h_
+#ifndef M2_F4__F4GB_H_
+#define M2_F4__F4GB_H_
 
 // My implementation of Faugere's linear algebra GB routines.  Also includes
 // free resolution code.

@@ -1,7 +1,7 @@
 // Copyright 2005, Michael E. Stillman
 
-#ifndef _qring_hpp_
-#define _qring_hpp_
+#ifndef M2_QRINGS_QRING_HPP_
+#define M2_QRINGS_QRING_HPP_
 
 #include "style.hpp"
 #include "rings/ringelem.hpp"

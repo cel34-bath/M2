@@ -1,6 +1,6 @@
 // Copyright 1995 Michael E. Stillman.
-#ifndef _GF_hh_
-#define _GF_hh_
+#ifndef M2_RINGS_GF_HH_
+#define M2_RINGS_GF_HH_
 
 #include "ring-elements/ring-element.hpp"
 

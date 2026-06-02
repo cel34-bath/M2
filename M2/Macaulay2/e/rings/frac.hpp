@@ -1,6 +1,6 @@
 // Copyright 1996 Michael E. Stillman.
-#ifndef _frac_hh_
-#define _frac_hh_
+#ifndef M2_RINGS_FRAC_HH_
+#define M2_RINGS_FRAC_HH_
 
 #include "monoid.hpp"
 #include "rings/ring.hpp"

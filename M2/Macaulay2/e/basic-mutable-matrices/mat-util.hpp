@@ -1,7 +1,7 @@
 // Copyright 2013  Michael E. Stillman
 
-#ifndef _mat_util_hpp_
-#define _mat_util_hpp_
+#ifndef M2_BASIC_MUTMAT_MAT_UTIL_HPP_
+#define M2_BASIC_MUTMAT_MAT_UTIL_HPP_
 
 // Functions for all mutable matrices, or that don't fit in
 // mat-elem-ops, mat-arith, or mat-linalg

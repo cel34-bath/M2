@@ -1,5 +1,5 @@
-#ifndef _m2_free_algebra_quotient_hpp_
-#define _m2_free_algebra_quotient_hpp_
+#ifndef M2_M2_FREE_ALGEBRA_QUOTIENT_HPP_
+#define M2_M2_FREE_ALGEBRA_QUOTIENT_HPP_
 
 #include "engine-includes.hpp"
 

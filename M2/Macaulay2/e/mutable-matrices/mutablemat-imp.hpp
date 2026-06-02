@@ -2,8 +2,8 @@
 
 // Anton Leykin's code in this file is in the public domain.
 
-#ifndef _mutable_mat_imp_hpp_
-#define _mutable_mat_imp_hpp_
+#ifndef M2_MUTMAT_MUTABLE_MAT_IMP_HPP_
+#define M2_MUTMAT_MUTABLE_MAT_IMP_HPP_
 
 template <typename Mat>
 M2SLEvaluator* MutableMat<Mat>::createSLEvaluator(M2SLProgram* P,

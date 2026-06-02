@@ -1,7 +1,7 @@
 // Copyright 1996-2011 Michael E. Stillman
 
-#ifndef _schur_poly_heap_hpp_
-#define _schur_poly_heap_hpp_
+#ifndef M2_UNITTESTS_SCHUR_POLY_HEAP_HPP_
+#define M2_UNITTESTS_SCHUR_POLY_HEAP_HPP_
 
 class schur_poly_heap : public our_new_delete
 {

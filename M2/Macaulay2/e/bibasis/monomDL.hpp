@@ -7,8 +7,8 @@
  *   version 2 of the License, or any later version.                         *
  *****************************************************************************/
 
-#ifndef BIBASIS_MONOM_DL_HPP
-#define BIBASIS_MONOM_DL_HPP
+#ifndef M2_BIBASIS_MONOM_DL_HPP
+#define M2_BIBASIS_MONOM_DL_HPP
 
 #include <set>
 #include "bibasis/allocator.hpp"

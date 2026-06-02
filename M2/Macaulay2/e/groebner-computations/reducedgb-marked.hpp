@@ -1,7 +1,7 @@
 // Copyright 2005, Michael E. Stillman
 
-#ifndef _marked_gb_
-#define _marked_gb_
+#ifndef M2_GROEBNER_COMPUTATIONS_MARKED_GB_
+#define M2_GROEBNER_COMPUTATIONS_MARKED_GB_
 
 #include "groebner-computations/reducedgb.hpp"
 

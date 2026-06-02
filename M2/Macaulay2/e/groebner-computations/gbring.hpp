@@ -1,5 +1,5 @@
-#ifndef __gbring_hpp_
-#define __gbring_hpp_
+#ifndef M2_GROEBNER_COMPUTATIONS__GBRING_HPP_
+#define M2_GROEBNER_COMPUTATIONS__GBRING_HPP_
 
 // Problems to solve:
 //  a. F,Fsyz

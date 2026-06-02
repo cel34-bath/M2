@@ -1,7 +1,7 @@
 // Copyright 2004 Michael E. Stillman.
 
-#ifndef _comp_res_hpp_
-#define _comp_res_hpp_
+#ifndef M2_RESOLUTIONS_COMP_RES_HPP_
+#define M2_RESOLUTIONS_COMP_RES_HPP_
 
 #include "computations/comp.hpp"
 class buffer;

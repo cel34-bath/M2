@@ -1,7 +1,7 @@
 // Copyright 2016  Michael E. Stillman
 
-#ifndef _res_monomial_types_hpp_
-#define _res_monomial_types_hpp_
+#ifndef M2_SCHRRES_RES_MONOMIAL_TYPES_HPP_
+#define M2_SCHRRES_RES_MONOMIAL_TYPES_HPP_
 
 #include <cstdint>
 

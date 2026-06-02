@@ -1,7 +1,7 @@
 // Copyright 1995 Michael E. Stillman.
 
-#ifndef _ZZ_hh_
-#define _ZZ_hh_
+#ifndef M2_RINGS_ZZ_HH_
+#define M2_RINGS_ZZ_HH_
 
 #include "error.h"
 #include "rings/ring.hpp"

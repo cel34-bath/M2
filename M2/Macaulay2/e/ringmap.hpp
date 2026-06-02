@@ -1,6 +1,6 @@
 // Copyright 1996  Michael E. Stillman
-#ifndef _ringmap_hh_
-#define _ringmap_hh_
+#ifndef M2_RINGMAP_HH_
+#define M2_RINGMAP_HH_
 
 #include "rings/ring.hpp"
 

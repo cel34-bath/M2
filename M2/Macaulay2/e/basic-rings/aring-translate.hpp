@@ -1,7 +1,7 @@
 // Copyright 2013 Michael E. Stillman
 
-#ifndef _aring_translate_hpp_
-#define _aring_translate_hpp_
+#ifndef M2_BASIC_RINGS_ARING_TRANSLATE_HPP_
+#define M2_BASIC_RINGS_ARING_TRANSLATE_HPP_
 
 ///////////////////////////////////////////////////////
 // Contains functions which are "ring translational" //

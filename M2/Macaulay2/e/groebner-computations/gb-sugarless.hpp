@@ -1,6 +1,6 @@
 // Copyright 1996  Michael E. Stillman
-#ifndef _gbinhom_hh_
-#define _gbinhom_hh_
+#ifndef M2_GROEBNER_COMPUTATIONS_GBINHOM_HH_
+#define M2_GROEBNER_COMPUTATIONS_GBINHOM_HH_
 
 #include "ring-elements/ring-element.hpp"
 #include "matrices/matrix.hpp"

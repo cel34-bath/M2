@@ -1,7 +1,7 @@
 // Copyright 2013  Michael E. Stillman
 
-#ifndef _mat_elementary_ops_hpp_
-#define _mat_elementary_ops_hpp_
+#ifndef M2_BASIC_MUTMAT_MAT_ELEMENTARY_OPS_HPP_
+#define M2_BASIC_MUTMAT_MAT_ELEMENTARY_OPS_HPP_
 
 #include <memory>
 

@@ -1,7 +1,7 @@
 // Copyright 2005, Michael E. Stillman
 
-#ifndef _reducedgb_ZZ_hpp_
-#define _reducedgb_ZZ_hpp_
+#ifndef M2_GROEBNER_COMPUTATIONS_REDUCEDGB_ZZ_HPP_
+#define M2_GROEBNER_COMPUTATIONS_REDUCEDGB_ZZ_HPP_
 
 #include "groebner-computations/reducedgb.hpp"
 

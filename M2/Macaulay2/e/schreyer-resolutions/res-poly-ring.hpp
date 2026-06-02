@@ -1,7 +1,7 @@
 /* Copyright 2015-2016, Michael E. Stillman */
 
-#ifndef _res_poly_ring_hpp_
-#define _res_poly_ring_hpp_
+#ifndef M2_SCHRRES_RES_POLY_RING_HPP_
+#define M2_SCHRRES_RES_POLY_RING_HPP_
 
 #include "basic-rings/vector-arithmetic.hpp"                        // for VectorArithmetic
 #include "newdelete.hpp"                               // for our_new_delete

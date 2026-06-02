@@ -1,7 +1,7 @@
 // Copyright 2012 Michael E. Stillman
 
-#ifndef _aring_RRi_hpp_
-#define _aring_RRi_hpp_
+#ifndef M2_BASIC_RINGS_ARING_RRI_HPP_
+#define M2_BASIC_RINGS_ARING_RRI_HPP_
 
 #include <iostream>
 

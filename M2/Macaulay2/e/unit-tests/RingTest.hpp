@@ -1,7 +1,7 @@
 // Copyright 2013 Michael E. Stillman
 
-#ifndef __ring_test_hpp__
-#define __ring_test_hpp__
+#ifndef M2_UNITTESTS__RING_TEST_HPP__
+#define M2_UNITTESTS__RING_TEST_HPP__
 
 #include <cstdio>
 #include <string>

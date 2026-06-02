@@ -1,7 +1,7 @@
 // Copyright 2004 Michael E. Stillman
 
-#ifndef _comp_hpp_
-#define _comp_hpp_
+#ifndef M2_COMPUTATIONS_COMP_HPP_
+#define M2_COMPUTATIONS_COMP_HPP_
 
 #include "interface/computation.h"
 #include "hash.hpp"

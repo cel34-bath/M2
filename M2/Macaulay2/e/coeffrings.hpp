@@ -1,7 +1,7 @@
 // Copyright 2005  Michael E. Stillman
 
-#ifndef _coeffrings_hpp_
-#define _coeffrings_hpp_
+#ifndef M2_COEFFRINGS_HPP_
+#define M2_COEFFRINGS_HPP_
 
 class Z_mod;
 #include "basic-rings/aring.hpp"

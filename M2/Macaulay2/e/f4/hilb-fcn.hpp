@@ -1,7 +1,7 @@
 /* Copyright 2010-2021, Michael E. Stillman */
 
-#ifndef _hilb_fcn_h_
-#define _hilb_fcn_h_
+#ifndef M2_F4_HILB_FCN_H_
+#define M2_F4_HILB_FCN_H_
 
 #include "newdelete.hpp"  // for VECTOR
 #include "rings/ringelem.hpp"   // for vec

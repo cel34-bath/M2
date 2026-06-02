@@ -1,7 +1,7 @@
 // Copyright 2014  Michael E. Stillman
 
-#ifndef _flintqq_mat_hpp_
-#define _flintqq_mat_hpp_
+#ifndef M2_BASIC_MUTMAT_FLINTQQ_MAT_HPP_
+#define M2_BASIC_MUTMAT_FLINTQQ_MAT_HPP_
 
 // This class is designed to use DMat<M2::ARingQQ>, which stores elements as gmp
 // ints

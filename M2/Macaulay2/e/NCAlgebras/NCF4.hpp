@@ -1,5 +1,5 @@
-#ifndef __nc_f4_hpp__
-#define __nc_f4_hpp__
+#ifndef M2_NCALGEBRAS__NC_F4_HPP__
+#define M2_NCALGEBRAS__NC_F4_HPP__
 
 #include "m2tbb.hpp"                      // for tbb interface
 

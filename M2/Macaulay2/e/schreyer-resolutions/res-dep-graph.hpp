@@ -1,5 +1,5 @@
-#ifndef _res_dep_graph_hpp_
-#define _res_dep_graph_hpp_
+#ifndef M2_SCHRRES_RES_DEP_GRAPH_HPP_
+#define M2_SCHRRES_RES_DEP_GRAPH_HPP_
 
 #include "m2tbb.hpp"
 

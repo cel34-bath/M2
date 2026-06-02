@@ -1,7 +1,7 @@
 // Copyright 1996.  Michael E. Stillman
 
-#ifndef _res2_hh_
-#define _res2_hh_
+#ifndef M2_RESOLUTIONS_RES2_HH_
+#define M2_RESOLUTIONS_RES2_HH_
 
 #include "style.hpp"
 #include "matrices/matrix.hpp"

@@ -1,7 +1,7 @@
 // Copyright 1996.  Michael E. Stillman
 
-#ifndef _respoly2_hh_
-#define _respoly2_hh_
+#ifndef M2_RESOLUTIONS_RESPOLY2_HH_
+#define M2_RESOLUTIONS_RESPOLY2_HH_
 
 #include "monomials/monideal.hpp"
 #include "resolutions/res-a0-pair.hpp"

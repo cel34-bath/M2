@@ -1,7 +1,7 @@
 // Copyright 2005  Michael E. Stillman
 
-#ifndef _mat_hpp_
-#define _mat_hpp_
+#ifndef M2_BASIC_MUTMAT_MAT_HPP_
+#define M2_BASIC_MUTMAT_MAT_HPP_
 
 #include "exceptions.hpp"
 #include "hash.hpp"

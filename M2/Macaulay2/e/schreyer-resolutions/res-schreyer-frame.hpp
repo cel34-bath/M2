@@ -17,8 +17,8 @@
 // res-f4-types.hpp
 //   . has lots of junk (most already commented out)
 
-#ifndef _res_schreyer_frame_hpp_
-#define _res_schreyer_frame_hpp_
+#ifndef M2_SCHRRES_RES_SCHREYER_FRAME_HPP_
+#define M2_SCHRRES_RES_SCHREYER_FRAME_HPP_
 
 #include "m2tbb.hpp"                                   // for TBB headers
 #include "resolution/betti.hpp"                                   // for BettiDisplay

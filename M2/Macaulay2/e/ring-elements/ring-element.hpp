@@ -1,7 +1,7 @@
 // Copyright 1995 Michael E. Stillman
 
-#ifndef _ring_elem_hh_
-#define _ring_elem_hh_
+#ifndef M2_RING_ELEMENT_RING_ELEM_HH_
+#define M2_RING_ELEMENT_RING_ELEM_HH_
 
 #include "rings/ring.hpp"
 

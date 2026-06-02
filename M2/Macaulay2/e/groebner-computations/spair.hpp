@@ -1,6 +1,6 @@
 // Copyright 1996  Michael E. Stillman
-#ifndef _spair_hh_
-#define _spair_hh_
+#ifndef M2_GROEBNER_COMPUTATIONS_SPAIR_HH_
+#define M2_GROEBNER_COMPUTATIONS_SPAIR_HH_
 
 #include "free-modules/freemod.hpp"
 #include "rings/polyring.hpp"

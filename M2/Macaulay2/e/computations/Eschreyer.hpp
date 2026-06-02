@@ -1,6 +1,6 @@
 // Copyright 1999  Michael E. Stillman
-#ifndef _Eschreyer_hpp_
-#define _Eschreyer_hpp_
+#ifndef M2_COMPUTATIONS_ESCHREYER_HPP_
+#define M2_COMPUTATIONS_ESCHREYER_HPP_
 
 #include "rings/polyring.hpp"
 #include "groebner-computations/gbring.hpp"

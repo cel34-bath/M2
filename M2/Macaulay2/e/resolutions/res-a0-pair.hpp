@@ -1,7 +1,7 @@
 // Copyright 1996.  Michael E. Stillman
 
-#ifndef _respair_hh_
-#define _respair_hh_
+#ifndef M2_RESOLUTIONS_RESPAIR_HH_
+#define M2_RESOLUTIONS_RESPAIR_HH_
 
 #include <newdelete.hpp>
 #include <monomials/monideal.hpp>

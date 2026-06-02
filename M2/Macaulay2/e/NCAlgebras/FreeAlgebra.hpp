@@ -1,5 +1,5 @@
-#ifndef _free_algebra_hpp_
-#define _free_algebra_hpp_
+#ifndef M2_NCALGEBRAS_FREE_ALGEBRA_HPP_
+#define M2_NCALGEBRAS_FREE_ALGEBRA_HPP_
 
 #include "Polynomial.hpp"             // for Poly, Monom
 #include "NCAlgebras/FreeMonoid.hpp"  // for FreeMonoid

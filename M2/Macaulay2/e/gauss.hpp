@@ -1,6 +1,6 @@
 // Copyright 1996-2005  Michael E. Stillman
-#ifndef _gauss_hh_
-#define _gauss_hh_
+#ifndef M2_GAUSS_HH_
+#define M2_GAUSS_HH_
 
 #include "ring-elements/ring-element.hpp"
 #include "matrices/matrix.hpp"

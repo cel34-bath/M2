@@ -1,7 +1,7 @@
 // Copyright 2010 Michael E. Stillman
 
-#ifndef _skew_hpp_
-#define _skew_hpp_
+#ifndef M2_RINGS_SKEW_HPP_
+#define M2_RINGS_SKEW_HPP_
 
 class SkewMultiplication
 {

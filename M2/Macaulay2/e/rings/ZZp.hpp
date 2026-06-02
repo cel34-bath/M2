@@ -1,6 +1,6 @@
 // Copyright 1995 Michael E. Stillman.
-#ifndef _z_mod_p_hh_
-#define _z_mod_p_hh_
+#ifndef M2_RINGS_Z_MOD_P_HH_
+#define M2_RINGS_Z_MOD_P_HH_
 
 #include "rings/ring.hpp"
 #include "coeffrings.hpp"

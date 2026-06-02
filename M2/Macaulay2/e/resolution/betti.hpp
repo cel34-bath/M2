@@ -1,7 +1,7 @@
 // Copyright 2014 Michael E. Stillman.
 
-#ifndef _betti_hpp_
-#define _betti_hpp_
+#ifndef M2_RESOLUTION_BETTI_HPP_
+#define M2_RESOLUTION_BETTI_HPP_
 
 #include "buffer.hpp"
 

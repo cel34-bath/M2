@@ -1,7 +1,7 @@
 // Copyright 2002  Michael E. Stillman
 
-#ifndef _schreyer_orders_hpp_
-#define _schreyer_orders_hpp_
+#ifndef M2_FREE_MODULES_SCHREYER_ORDERS_HPP_
+#define M2_FREE_MODULES_SCHREYER_ORDERS_HPP_
 
 #include "buffer.hpp"
 #include "monoid.hpp"

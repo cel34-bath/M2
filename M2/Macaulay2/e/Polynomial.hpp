@@ -1,5 +1,5 @@
-#ifndef _polynomial_hpp_
-#define _polynomial_hpp_
+#ifndef M2_POLYNOMIAL_HPP_
+#define M2_POLYNOMIAL_HPP_
 
 #include "newdelete.hpp"  // for our_new_delete
 #include "rings/ringelem.hpp"   // for ring_elem

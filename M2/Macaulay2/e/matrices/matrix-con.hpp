@@ -1,5 +1,5 @@
-#ifndef matrixcon_hpp_
-#define matrixcon_hpp_
+#ifndef M2_MATRICES_MATRIXCON_HPP_
+#define M2_MATRICES_MATRIXCON_HPP_
 
 #include <vector>
 #include "rings/ring.hpp"

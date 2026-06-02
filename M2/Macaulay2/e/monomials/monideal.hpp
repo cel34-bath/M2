@@ -1,7 +1,7 @@
 // Copyright 1994-2021  Michael E. Stillman
 
-#ifndef _monideal_hh_
-#define _monideal_hh_
+#ifndef M2_MONOMIALS__MONIDEAL_HH_
+#define M2_MONOMIALS__MONIDEAL_HH_
 
 #include "monomials/ExponentVector.hpp"
 #include "monomials/ExponentList.hpp"

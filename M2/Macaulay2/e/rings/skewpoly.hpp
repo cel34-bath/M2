@@ -1,7 +1,7 @@
 // Copyright 2003 Michael E. Stillman
 
-#ifndef _skewpoly_hh_
-#define _skewpoly_hh_
+#ifndef M2_RINGS_SKEWPOLY_HH_
+#define M2_RINGS_SKEWPOLY_HH_
 
 #include "rings/poly.hpp"
 

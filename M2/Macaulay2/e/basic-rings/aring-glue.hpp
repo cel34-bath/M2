@@ -1,7 +1,7 @@
 // Copyright 2011 Michael E. Stillman
 
-#ifndef _ring_glue_hh_
-#define _ring_glue_hh_
+#ifndef M2_BASIC_RINGS_RING_GLUE_HH_
+#define M2_BASIC_RINGS_RING_GLUE_HH_
 
 #include "basic-rings/aring.hpp"
 #include "basic-rings/aring-translate.hpp"

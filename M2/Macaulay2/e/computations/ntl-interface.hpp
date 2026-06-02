@@ -1,5 +1,5 @@
-#ifndef _ntl_interface_hpp_
-#define _ntl_interface_hpp_
+#ifndef M2_COMPUTATIONS_NTL_INTERFACE_HPP_
+#define M2_COMPUTATIONS_NTL_INTERFACE_HPP_
 
 #include <stddef.h>
 #include <M2/math-include.h>

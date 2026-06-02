@@ -1,7 +1,7 @@
 // Copyright 2016 Michael E. Stillman
 
-#ifndef _res_schreyer_order_hpp_
-#define _res_schreyer_order_hpp_
+#ifndef M2_SCHRRES_RES_SCHREYER_ORDER_HPP_
+#define M2_SCHRRES_RES_SCHREYER_ORDER_HPP_
 
 #include "schreyer-resolutions/res-monomial-types.hpp"  // for component_index
 #include <vector>                                      // for vector

@@ -1,5 +1,5 @@
-#ifndef _free_monoid_hpp_
-#define _free_monoid_hpp_
+#ifndef M2_NCALGEBRAS_FREE_MONOID_HPP_
+#define M2_NCALGEBRAS_FREE_MONOID_HPP_
 
 #include "Polynomial.hpp"      // for Monom
 #include "newdelete.hpp"       // for our_new_delete

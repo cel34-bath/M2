@@ -1,7 +1,7 @@
 // Copyright 1996-2011 Michael E. Stillman
 
-#ifndef _Schurring_hh_
-#define _Schurring_hh_
+#ifndef M2_UNITTESTS_SCHURRING_HH_
+#define M2_UNITTESTS_SCHURRING_HH_
 
 #include <vector>
 #include "rings/poly.hpp"

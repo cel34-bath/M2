@@ -1,7 +1,7 @@
 // Copyright 2004 Michael E. Stillman
 
-#ifndef _polyring_hpp_
-#define _polyring_hpp_
+#ifndef M2_RINGS_POLYRING_HPP_
+#define M2_RINGS_POLYRING_HPP_
 
 #include "rings/ringelem.hpp"
 
