@@ -1,5 +1,5 @@
 #ifndef M2_INTERFACE_RING_H_
-#  define M2_INTERFACE_RING_H_
+#define M2_INTERFACE_RING_H_
 
 #  include "engine-includes.hpp"
 

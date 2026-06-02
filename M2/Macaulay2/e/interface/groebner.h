@@ -6,7 +6,7 @@
 // but the declarations in engine.h don't seem to match
 
 #ifndef M2_INTERFACE_GROEBNER_H_
-#  define M2_INTERFACE_GROEBNER_H_
+#define M2_INTERFACE_GROEBNER_H_
 
 #  include "engine-includes.hpp"
 #  include "interface/computation.h"
