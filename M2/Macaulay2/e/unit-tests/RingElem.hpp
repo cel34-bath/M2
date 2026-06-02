@@ -11,7 +11,8 @@
 //
 //   auto f = RingElem::fromString(R, "x^2+3*x*y-1");
 
-#pragma once
+#ifndef M2_UNIT_TESTS_RINGELEM_HPP
+#define M2_UNIT_TESTS_RINGELEM_HPP
 
 #include <cassert>
 #include <iostream>
@@ -118,3 +119,5 @@ class RingElem
     return os << f.toString();
   }
 };
+
+#endif

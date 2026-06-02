@@ -1,4 +1,5 @@
-#pragma once
+#ifndef M2_UNUSED_POLYNOMIALSTREAM_HPP
+#define M2_UNUSED_POLYNOMIALSTREAM_HPP
 
 namespace newf4
 {
@@ -33,6 +34,7 @@ concept PolynomialStream = requires (T str,
   
 } // end namespace newf4
 
+#endif
 // Local Variables:
 // indent-tabs-mode: nil
 // End:

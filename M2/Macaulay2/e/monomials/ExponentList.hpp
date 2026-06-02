@@ -1,5 +1,6 @@
 /* Copyright 2006 by Michael E. Stillman */
-#pragma once
+#ifndef M2_MONOMIALS_EXPONENTLIST_HPP
+#define M2_MONOMIALS_EXPONENTLIST_HPP
 
 #include <cstdio>  // for FILE
 #include <vector>  // for vector
@@ -223,6 +224,7 @@ class ExponentListIterator
   Exponent exponent() { return loc[1]; }
 };
 
+#endif
 // Local Variables:
 // compile-command: "make -C $M2BUILDDIR/Macaulay2/e "
 // indent-tabs-mode: nil
