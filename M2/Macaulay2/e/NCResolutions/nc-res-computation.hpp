@@ -1,7 +1,7 @@
 /* Copyright 2014-2021, Michael E. Stillman */
 
-#ifndef _nc_res_computation_hpp_
-#define _nc_res_computation_hpp_
+#ifndef M2_NCRESOLUTION_NC_RES_COMPUTATION_HPP_
+#define M2_NCRESOLUTION_NC_RES_COMPUTATION_HPP_
 
 #include "resolution/comp-res.hpp"
 #include "NCAlgebras/FreeAlgebraQuotient.hpp"

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef M2_UNIT_TESTS_UTIL_POLYRING_CREATION_HPP
+#define M2_UNIT_TESTS_UTIL_POLYRING_CREATION_HPP
 
 #include <iostream>
 #include <memory>
@@ -49,6 +50,7 @@ const Matrix* computeGB(const Matrix* M);
 const Ring* simpleQuotientRing(const PolynomialRing* R,
                                const std::vector<std::string>& generators);
 
+#endif
 // Local Variables:
 // indent-tabs-mode: nil
 // End:

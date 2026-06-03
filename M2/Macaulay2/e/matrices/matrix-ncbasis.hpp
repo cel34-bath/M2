@@ -1,7 +1,7 @@
 // TODO: should this be in the interface?
 
-#ifndef matrix_ncbasis_hpp_
-#define matrix_ncbasis_hpp_
+#ifndef M2_MATRICES_MATRIX_NCBASIS_HPP_
+#define M2_MATRICES_MATRIX_NCBASIS_HPP_
 
 #include <vector>
 

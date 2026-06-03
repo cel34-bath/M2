@@ -1,7 +1,7 @@
 // TODO: move this file: these are interface routines
 
-#ifndef __monordering_hpp_
-#define __monordering_hpp_
+#ifndef M2_MONOMIALS___MONORDERING_HPP_
+#define M2_MONOMIALS___MONORDERING_HPP_
 
 #include <string>
 #include <vector>

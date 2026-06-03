@@ -1,7 +1,7 @@
 // Copyright 1995 Michael E. Stillman
 
-#ifndef _ring_hh_
-#  define _ring_hh_
+#ifndef M2_RINGS_RING_HH_
+#define M2_RINGS_RING_HH_
 
 #  include <utility>  // for pair
 

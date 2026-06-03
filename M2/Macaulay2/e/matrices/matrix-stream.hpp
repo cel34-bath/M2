@@ -1,7 +1,7 @@
 // Copyright 2013 Michael E. Stillman
 
-#ifndef __matrix_stream_hhp__
-#define __matrix_stream_hhp__
+#ifndef M2_MATRICES__MATRIX_STREAM_HHP__
+#define M2_MATRICES__MATRIX_STREAM_HHP__
 
 #include "rings/poly.hpp"
 #include "matrices/matrix.hpp"

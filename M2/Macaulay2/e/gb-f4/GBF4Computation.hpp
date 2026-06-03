@@ -1,4 +1,5 @@
-#pragma once
+#ifndef M2_GB_F4_GBF4COMPUTATION_HPP
+#define M2_GB_F4_GBF4COMPUTATION_HPP
 
 #include "gb-f4/Basis.hpp"
 #include "gb-f4/MacaulayMatrix.hpp"
@@ -67,6 +68,7 @@ public:
 
 } // end newf4 namespace
 
+#endif
 // Local Variables:
 // indent-tabs-mode: nil
 // End:

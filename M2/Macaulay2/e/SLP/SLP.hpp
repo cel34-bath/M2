@@ -2,8 +2,8 @@
 
 // Anton Leykin's code in this file is in the public domain.
 
-#ifndef _slp_hpp_
-#define _slp_hpp_
+#ifndef M2_SLP_SLP_HPP_
+#define M2_SLP_SLP_HPP_
 
 #include "mutable-matrices/mutablemat-defs.hpp"
 #include "SLP-defs.hpp"

@@ -1,5 +1,5 @@
-#ifndef __montableZZ_h
-#define __montableZZ_h
+#ifndef M2_MONOMIALS___MONTABLEZZ_H
+#define M2_MONOMIALS___MONTABLEZZ_H
 
 #include <vector>
 #include <memory>

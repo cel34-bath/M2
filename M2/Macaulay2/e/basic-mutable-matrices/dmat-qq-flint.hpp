@@ -1,7 +1,7 @@
 // Copyright 2013  Michael E. Stillman
 
-#ifndef _dmat_qq_flint_hpp_
-#define _dmat_qq_flint_hpp_
+#ifndef M2_BASIC_MUTMAT_DMAT_QQ_FLINT_HPP_
+#define M2_BASIC_MUTMAT_DMAT_QQ_FLINT_HPP_
 
 #include <assert.h>            // for assert
 #include <utility>             // for swap

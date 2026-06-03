@@ -1,7 +1,7 @@
 // Copyright 2004.  Michael E. Stillman
 
-#ifndef _gbweight_hpp_
-#define _gbweight_hpp_
+#ifndef M2_GROEBNER_COMPUTATIONS_GBWEIGHT_HPP_
+#define M2_GROEBNER_COMPUTATIONS_GBWEIGHT_HPP_
 
 #include "engine-includes.hpp"  // for M2_arrayint
 

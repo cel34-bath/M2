@@ -1,7 +1,7 @@
 // Copyright 2005  Michael E. Stillman
 
-#ifndef _monsort_h_
-#define _monsort_h_
+#ifndef M2_MONOMIALS__MONSORT_H_
+#define M2_MONOMIALS__MONSORT_H_
 
 #include <cstdio>
 #include <cstdlib>

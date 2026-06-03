@@ -1,7 +1,7 @@
 // Copyright 2005-2021  Michael E. Stillman
 
-#ifndef _monhashtable_h_
-#define _monhashtable_h_
+#ifndef M2_F4_MONHASHTABLE_H_
+#define M2_F4_MONHASHTABLE_H_
 
 #include <memory>                                      // for unique_ptr
 #include "f4/moninfo.hpp"                              // for MonomialInfo

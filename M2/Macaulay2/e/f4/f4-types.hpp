@@ -1,7 +1,7 @@
 /* Copyright 2005-2021, Michael E. Stillman */
 
-#ifndef _F4types_h_
-#define _F4types_h_
+#ifndef M2_F4_F4TYPES_H_
+#define M2_F4_F4TYPES_H_
 
 
 #include <climits>                   // for INT_MIN

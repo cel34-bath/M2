@@ -1,7 +1,7 @@
 // Copyright 2011 Michael E. Stillman
 
-#ifndef _aring_ffpack_hpp_
-#define _aring_ffpack_hpp_
+#ifndef M2_BASIC_RINGS_ARING_FFPACK_HPP_
+#define M2_BASIC_RINGS_ARING_FFPACK_HPP_
 
 #include "basic-rings/aring.hpp"
 #include "buffer.hpp"

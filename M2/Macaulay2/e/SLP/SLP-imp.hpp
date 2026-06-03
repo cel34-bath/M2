@@ -2,8 +2,8 @@
 
 // Anton Leykin's code in this file is in the public domain.
 
-#ifndef _slp_imp_hpp_
-#define _slp_imp_hpp_
+#ifndef M2_SLP_SLP_IMP_HPP_
+#define M2_SLP_SLP_IMP_HPP_
 
 #include <cstdlib>
 #include <algorithm>

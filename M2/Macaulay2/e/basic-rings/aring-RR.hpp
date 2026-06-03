@@ -1,7 +1,7 @@
 // Copyright 2012 Michael E. Stillman
 
-#ifndef _aring_RR_hpp_
-#define _aring_RR_hpp_
+#ifndef M2_BASIC_RINGS_ARING_RR_HPP_
+#define M2_BASIC_RINGS_ARING_RR_HPP_
 
 #include "interface/random.h"
 #include "exceptions.hpp"

@@ -7,8 +7,8 @@
  *   version 2 of the License, or any later version.                         *
  *****************************************************************************/
 
-#ifndef BIBASIS_INVOLUTIVE_HPP
-#define BIBASIS_INVOLUTIVE_HPP
+#ifndef M2_BIBASIS_INVOLUTIVE_HPP
+#define M2_BIBASIS_INVOLUTIVE_HPP
 
 #include <list>
 #include <algorithm>

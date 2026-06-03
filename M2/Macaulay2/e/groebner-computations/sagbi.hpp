@@ -1,7 +1,7 @@
 // Copyright 1997  Michael E. Stillman
 
-#ifndef _sagbi_hh_
-#define _sagbi_hh_
+#ifndef M2_GROEBNER_COMPUTATIONS_SAGBI_HH_
+#define M2_GROEBNER_COMPUTATIONS_SAGBI_HH_
 
 #include "matrices/matrix.hpp"
 #include "groebner-computations/comp-gb.hpp"

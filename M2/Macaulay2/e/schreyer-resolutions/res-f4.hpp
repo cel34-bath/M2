@@ -1,7 +1,7 @@
 // Copyright 2014-2016 Michael E. Stillman
 
-#ifndef _res_f4_hpp_
-#define _res_f4_hpp_
+#ifndef M2_SCHRRES_RES_F4_HPP_
+#define M2_SCHRRES_RES_F4_HPP_
 
 #include "basic-rings/vector-arithmetic.hpp"
 #include "f4/monhashtable.hpp"

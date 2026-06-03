@@ -1,7 +1,7 @@
 // Copyright 2011 Michael E. Stillman
 
-#ifndef _schurSn_hh_
-#define _schurSn_hh_
+#ifndef M2_UNITTESTS_SCHURSN_HH_
+#define M2_UNITTESTS_SCHURSN_HH_
 
 #include "schur-rings/schur2.hpp"
 

@@ -2,7 +2,8 @@
 * This class implements parsing of polynomials from a string or file
 * as well as Msolve format.
 */
-#pragma once
+#ifndef M2_BASICPOLYLISTPARSER_HPP
+#define M2_BASICPOLYLISTPARSER_HPP
 
 #include <string>
 #include <vector>
@@ -31,6 +32,7 @@ BasicPolyList parseMsolveFile(std::string filename);
 */
 BasicPolyList parseBasicPolyListFromString(std::string contents, std::vector<std::string> varnames);
 
+#endif
 // Local Variables:
 // indent-tabs-mode: nil
 // End:

@@ -1,7 +1,7 @@
 /* Copyright 2005 - 2021, Michael E. Stillman */
 
-#ifndef _F4Computation_h_
-#define _F4Computation_h_
+#ifndef M2_F4_F4COMPUTATION_H_
+#define M2_F4_F4COMPUTATION_H_
 
 #include "groebner-computations/comp-gb.hpp"              // for GBComputation
 #include "interface/m2-types.h"     // for M2_bool, M2_arrayint

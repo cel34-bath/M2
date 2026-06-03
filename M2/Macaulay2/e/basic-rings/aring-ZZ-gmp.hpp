@@ -1,7 +1,7 @@
 // Copyright 2013 Michael E. Stillman
 
-#ifndef _aring_zz_gmp_hpp_
-#define _aring_zz_gmp_hpp_
+#ifndef M2_BASIC_RINGS_ARING_ZZ_GMP_HPP_
+#define M2_BASIC_RINGS_ARING_ZZ_GMP_HPP_
 
 #include "interface/gmp-util.h"  // for mpz_reallocate_limbs
 #include "interface/random.h"    // for rawRandomInteger

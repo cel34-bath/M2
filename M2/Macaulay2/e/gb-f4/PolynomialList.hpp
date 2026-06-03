@@ -1,4 +1,5 @@
-#pragma once
+#ifndef M2_GB_F4_POLYNOMIALLIST_HPP
+#define M2_GB_F4_POLYNOMIALLIST_HPP
 
 #include "basic-rings/vector-arithmetic.hpp"
 #include "BasicPolyList.hpp"
@@ -289,6 +290,7 @@ void toStream(const PolynomialList& Fs, S &str)
 
 } // end namespace newf4
 
+#endif
 // Local Variables:
 // indent-tabs-mode: nil
 // End:

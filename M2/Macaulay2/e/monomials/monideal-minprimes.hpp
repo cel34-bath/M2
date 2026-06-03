@@ -5,8 +5,8 @@
 */
 
 // (c) 1994-2005 Michael E. Stillman
-#ifndef _monideal_minprimes_h_
-#define _monideal_minprimes_h_
+#ifndef M2_MONOMIALS__MONIDEAL_MINPRIMES_H_
+#define M2_MONOMIALS__MONIDEAL_MINPRIMES_H_
 
 #include "monomials/monideal.hpp"
 

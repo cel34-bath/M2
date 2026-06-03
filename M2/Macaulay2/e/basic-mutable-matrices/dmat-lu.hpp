@@ -1,7 +1,7 @@
 // Copyright 2013  Michael E. Stillman
 
-#ifndef _dmat_lu_hpp_
-#define _dmat_lu_hpp_
+#ifndef M2_BASIC_MUTMAT_DMAT_LU_HPP_
+#define M2_BASIC_MUTMAT_DMAT_LU_HPP_
 
 #include "basic-mutable-matrices/dmat.hpp"
 #include "basic-mutable-matrices/mat-elem-ops.hpp"

@@ -1,7 +1,7 @@
 // Copyright 1996 by Michael E. Stillman.
 
-#ifndef _det_hh_
-#  define _det_hh_
+#ifndef M2_COMPUTATIONS_DET_HH_
+#define M2_COMPUTATIONS_DET_HH_
 
 #  include "matrices/matrix.hpp"
 #  include "matrices/matrix-con.hpp"

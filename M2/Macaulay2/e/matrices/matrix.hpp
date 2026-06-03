@@ -1,7 +1,7 @@
 // Copyright 1995  Michael E. Stillman
 
-#ifndef _matrix_hh_
-#define _matrix_hh_
+#ifndef M2_MATRICES_MATRIX_HH_
+#define M2_MATRICES_MATRIX_HH_
 
 #include "monoid.hpp"
 #include "monomials/monideal.hpp"

@@ -1,5 +1,5 @@
-#ifndef __ncreduction_hpp__
-#define __ncreduction_hpp__
+#ifndef M2_NCALGEBRAS__NCREDUCTION_HPP__
+#define M2_NCALGEBRAS__NCREDUCTION_HPP__
 
 #include "Polynomial.hpp"  // for Poly, Monom (ptr only)
 #include "rings/ringelem.hpp"    // for ring_elem

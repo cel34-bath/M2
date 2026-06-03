@@ -1,8 +1,8 @@
 // Copyright 1997 Michael E. Stillman
 // TODO: utilize ExponentVector instead of int *
 
-#ifndef _weylalg_hh_
-#define _weylalg_hh_
+#ifndef M2_RINGS_WEYLALG_HH_
+#define M2_RINGS_WEYLALG_HH_
 
 #include "rings/poly.hpp"
 #include "groebner-computations/gbring.hpp"

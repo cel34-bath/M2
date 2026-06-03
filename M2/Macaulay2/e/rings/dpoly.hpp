@@ -1,5 +1,5 @@
-#ifndef __dpoly_h_
-#define __dpoly_h_
+#ifndef M2_RINGS__DPOLY_H_
+#define M2_RINGS__DPOLY_H_
 // Code for univariate polynomials over algebraic extensions of QQ
 // and over finite fields
 

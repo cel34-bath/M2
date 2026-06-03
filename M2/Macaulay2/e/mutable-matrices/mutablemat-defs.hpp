@@ -1,7 +1,7 @@
 // Copyright 2005-2012  Michael E. Stillman
 
-#ifndef _mutable_mat_defs_hpp_
-#define _mutable_mat_defs_hpp_
+#ifndef M2_MUTMAT_MUTABLE_MAT_DEFS_HPP_
+#define M2_MUTMAT_MUTABLE_MAT_DEFS_HPP_
 
 #include <iostream>
 #include "basic-mutable-matrices/mat.hpp"

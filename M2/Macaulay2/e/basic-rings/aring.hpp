@@ -1,7 +1,7 @@
 // Copyright 2011 Michael E. Stillman
 
-#ifndef _aring_hpp_
-#define _aring_hpp_
+#ifndef M2_BASIC_RINGS_ARING_HPP_
+#define M2_BASIC_RINGS_ARING_HPP_
 
 #include <cassert>
 #include <memory>

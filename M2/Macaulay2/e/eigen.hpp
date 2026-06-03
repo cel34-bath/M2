@@ -1,5 +1,5 @@
-#ifndef __eigen_hpp_
-#define __eigen_hpp_
+#ifndef M2__EIGEN_HPP_
+#define M2__EIGEN_HPP_
 
 #include "basic-mutable-matrices/dmat.hpp"
 #include "basic-rings/aring-RR.hpp"

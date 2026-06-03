@@ -1,5 +1,6 @@
 // Copyright 2004.  Michael E. Stillman
-#pragma once
+#ifndef M2_MONOID_HPP
+#define M2_MONOID_HPP
 
 #ifdef HAVE_ALLOCA_H
 #include <alloca.h>  // for alloca
@@ -285,6 +286,7 @@ inline void Monoid::divide(const_monomial m,
   for (int i = monomial_size_; i > 0; i--) *result++ = *m++ - *n++;
 }
 
+#endif
 // Local Variables:
 // compile-command: "make -C $M2BUILDDIR/Macaulay2/e "
 // indent-tabs-mode: nil

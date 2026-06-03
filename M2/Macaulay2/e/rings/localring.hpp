@@ -1,8 +1,8 @@
 /* Copyright 2017 Mahrud Sayrafi and Michael E. Stillman
    Mahrud Sayrafi's code in this file is in the public domain. */
 
-#ifndef _localring_hh_
-#define _localring_hh_
+#ifndef M2_RINGS_LOCALRING_HH_
+#define M2_RINGS_LOCALRING_HH_
 
 #include "rings/ring.hpp"
 #include "rings/poly.hpp"

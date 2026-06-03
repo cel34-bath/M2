@@ -1,5 +1,6 @@
 // Copyright 1997 Michael E. Stillman
-#pragma once
+#ifndef M2_MONOMIALS_EXPONENTVECTOR_HPP
+#define M2_MONOMIALS_EXPONENTVECTOR_HPP
 
 #include <assert.h>     // for assert
 #include <string.h>     // for memcpy
@@ -290,6 +291,7 @@ inline exponents::HashExponent exponents::mask(int nvars, ConstExponents exp)
   return result;
 }
 
+#endif
 // Local Variables:
 // compile-command: "make -C $M2BUILDDIR/Macaulay2/e "
 // indent-tabs-mode: nil

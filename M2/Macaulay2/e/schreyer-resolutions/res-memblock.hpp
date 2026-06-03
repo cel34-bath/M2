@@ -1,6 +1,6 @@
 // Copyright 2004-2016 Michael E. Stillman
-#ifndef __res_memblock_hpp_
-#define __res_memblock_hpp_
+#ifndef M2_SCHRRES__RES_MEMBLOCK_HPP_
+#define M2_SCHRRES__RES_MEMBLOCK_HPP_
 
 template <typename T, long int NSLAB = 4092>
 class ResMemoryBlock

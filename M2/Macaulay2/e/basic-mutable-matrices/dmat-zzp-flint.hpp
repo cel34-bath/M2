@@ -1,7 +1,7 @@
 // Copyright 2013  Michael E. Stillman
 
-#ifndef _dmat_zzp_flint_hpp_
-#define _dmat_zzp_flint_hpp_
+#ifndef M2_BASIC_MUTMAT_DMAT_ZZP_FLINT_HPP_
+#define M2_BASIC_MUTMAT_DMAT_ZZP_FLINT_HPP_
 
 #include <utility>              // for swap
 #include "basic-rings/aring-ZZp-flint.hpp"  // for ARingZZpFlint

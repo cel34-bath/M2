@@ -2,8 +2,8 @@
 * Functions for detecting arithmetic overflows.
 * Functions throw `exc:overflow_exception` in the event of an overflow.
 */
-#ifndef _overflow_h_
-#define _overflow_h_
+#ifndef M2_MONOMIALS_OVERFLOW_H_
+#define M2_MONOMIALS_OVERFLOW_H_
 
 #ifdef SIGNAL_ERROR
 #error SIGNAL_ERROR

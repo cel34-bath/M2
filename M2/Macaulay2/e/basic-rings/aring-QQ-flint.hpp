@@ -1,7 +1,7 @@
 // Copyright 2013 Michael E. Stillman
 
-#ifndef _aring_QQ_flint_hpp_
-#define _aring_QQ_flint_hpp_
+#ifndef M2_BASIC_RINGS_ARING_QQ_FLINT_HPP_
+#define M2_BASIC_RINGS_ARING_QQ_FLINT_HPP_
 
 #include "interface/gmp-util.h"  // for mpz_reallocate_limbs
 

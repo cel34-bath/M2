@@ -1,7 +1,7 @@
 // Copyright 2004 Michael E. Stillman.
 
-#ifndef _comp_gb_declared_hpp_
-#define _comp_gb_declared_hpp_
+#ifndef M2_GROEBNER_COMPUTATIONS_COMP_GB_DECLARED_HPP_
+#define M2_GROEBNER_COMPUTATIONS_COMP_GB_DECLARED_HPP_
 
 #include "groebner-computations/comp-gb.hpp"
 #include "groebner-computations/reducedgb.hpp"

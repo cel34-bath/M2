@@ -1,7 +1,7 @@
 // Copyright 2012 Michael E. Stillman
 
-#ifndef _aring_CCC_hpp_
-#define _aring_CCC_hpp_
+#ifndef M2_BASIC_RINGS_ARING_CCC_HPP_
+#define M2_BASIC_RINGS_ARING_CCC_HPP_
 
 #include "interface/gmp-util.h"  // for mpfr_reallocate_limbs, moveTo_gmpCC
 #include "interface/random.h"    // for randomMpfr

@@ -1,7 +1,7 @@
 // Copyright 1995  Michael E. Stillman
 
-#ifndef _FreeModule_hh_
-#define _FreeModule_hh_
+#ifndef M2_FREE_MODULES_FREEMODULE_HH_
+#define M2_FREE_MODULES_FREEMODULE_HH_
 
 #include "rings/ring.hpp"
 #include "free-modules/schreyer-orders.hpp"

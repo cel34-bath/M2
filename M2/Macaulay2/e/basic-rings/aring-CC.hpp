@@ -1,7 +1,7 @@
 // Copyright 2012 Michael E. Stillman
 
-#ifndef _aring_CC_hpp_
-#define _aring_CC_hpp_
+#ifndef M2_BASIC_RINGS_ARING_CC_HPP_
+#define M2_BASIC_RINGS_ARING_CC_HPP_
 
 #include "interface/gmp-util.h"  // for moveTo_gmpCC
 #include "interface/random.h"    // for randomDouble

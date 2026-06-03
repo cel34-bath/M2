@@ -1,7 +1,7 @@
 // Copyright 2016-2017  Michael E. Stillman
 
-#ifndef _res_moninfo_sparse_hpp_
-#define _res_moninfo_sparse_hpp_
+#ifndef M2_SCHRRES_RES_MONINFO_SPARSE_HPP_
+#define M2_SCHRRES_RES_MONINFO_SPARSE_HPP_
 
 #include <iostream>                   // for ostream
 #include <memory>                     // for unique_ptr

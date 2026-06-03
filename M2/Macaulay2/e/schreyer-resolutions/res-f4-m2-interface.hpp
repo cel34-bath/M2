@@ -1,5 +1,5 @@
-#ifndef __res_f4_to_m2_interface_hpp_
-#define __res_f4_to_m2_interface_hpp_
+#ifndef M2_SCHRRES__RES_F4_TO_M2_INTERFACE_HPP_
+#define M2_SCHRRES__RES_F4_TO_M2_INTERFACE_HPP_
 
 #include "rings/ringelem.hpp"  // for vec
 #include <utility>       // for pair

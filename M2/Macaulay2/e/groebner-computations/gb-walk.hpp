@@ -1,7 +1,7 @@
 /* Copyright 2007, Michael E. Stillman */
 
-#ifndef _gb_walk_
-#define _gb_walk_
+#ifndef M2_GROEBNER_COMPUTATIONS_GB_WALK_
+#define M2_GROEBNER_COMPUTATIONS_GB_WALK_
 
 #include "groebner-computations/comp-gb.hpp"
 #include "engine-includes.hpp"

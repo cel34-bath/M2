@@ -1,5 +1,5 @@
-#ifndef __lapack_h_
-#define __lapack_h_
+#ifndef M2_BASIC_MUTMAT__LAPACK_H_
+#define M2_BASIC_MUTMAT__LAPACK_H_
 
 #include "basic-rings/aring-RR.hpp"
 #include "basic-rings/aring-CC.hpp"

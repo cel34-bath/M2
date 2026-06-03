@@ -2,7 +2,8 @@
 // Created by Frank Moore on 7/5/23.
 //
 
-#pragma once
+#ifndef M2_GB_F4_MONOMIALLOOKUPTABLE_HPP
+#define M2_GB_F4_MONOMIALLOOKUPTABLE_HPP
 
 #include "gb-f4/MonomialTypes.hpp"
 #include "gb-f4/MonomialView.hpp"
@@ -109,3 +110,4 @@ class MonomialLookupTable
 };
 
 }  // namespace newf4
+#endif

@@ -1,7 +1,7 @@
 // Copyright 2016  Michael E. Stillman
 
-#ifndef _res_moninfo_dense_hpp_
-#define _res_moninfo_dense_hpp_
+#ifndef M2_SCHRRES_RES_MONINFO_DENSE_HPP_
+#define M2_SCHRRES_RES_MONINFO_DENSE_HPP_
 
 #include <iostream>                   // for ostream
 #include <memory>                     // for unique_ptr

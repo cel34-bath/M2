@@ -1,7 +1,7 @@
 /* Copyright 2002 by Michael E. Stillman */
 
-#ifndef _engine_h_
-#define _engine_h_
+#ifndef M2_ENGINE_H_
+#define M2_ENGINE_H_
 
 /**
    \mainpage Hi, this is my main documentation page.

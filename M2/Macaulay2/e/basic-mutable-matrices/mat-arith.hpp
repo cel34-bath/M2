@@ -1,7 +1,7 @@
 // Copyright 2013  Michael E. Stillman
 
-#ifndef _mat_arith_hpp_
-#define _mat_arith_hpp_
+#ifndef M2_BASIC_MUTMAT_MAT_ARITH_HPP_
+#define M2_BASIC_MUTMAT_MAT_ARITH_HPP_
 
 template <typename MT>
 class MatElementaryOps;

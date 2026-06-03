@@ -1,7 +1,7 @@
 // Copyright 1998  Michael E. Stillman
 
-#ifndef _LLL_hpp_
-#define _LLL_hpp_
+#ifndef M2_COMPUTATIONS_LLL_HPP_
+#define M2_COMPUTATIONS_LLL_HPP_
 
 #include "basic-mutable-matrices/mat.hpp"
 #include "ring-elements/ring-element.hpp"

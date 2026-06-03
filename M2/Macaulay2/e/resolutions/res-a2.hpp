@@ -1,6 +1,6 @@
 // Copyright 1997-2006  Michael E. Stillman
-#ifndef _gb2_hh_
-#define _gb2_hh_
+#ifndef M2_RESOLUTIONS_GB2_HH_
+#define M2_RESOLUTIONS_GB2_HH_
 
 #include "ring-elements/ring-element.hpp"
 #include "matrices/matrix.hpp"

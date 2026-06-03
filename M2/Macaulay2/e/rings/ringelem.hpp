@@ -1,7 +1,7 @@
 // Copyright 1995  Michael E. Stillman
 
-#ifndef _ringelem_hh_
-#define _ringelem_hh_
+#ifndef M2_RINGS_RINGELEM_HH_
+#define M2_RINGS_RINGELEM_HH_
 
 #include "M2/math-include.h"  // for mpfi_srcptr, mpfr_srcptr, mpq_srcptr
 #include "monoid.hpp"         // for monomial

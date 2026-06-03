@@ -1,5 +1,5 @@
-#ifndef _reader_hpp_
-#define _reader_hpp_
+#ifndef M2_BASIC_RINGS_READER_HPP_
+#define M2_BASIC_RINGS_READER_HPP_
 
 #include "basic-rings/aring-ZZp.hpp"
 #include <cstddef>

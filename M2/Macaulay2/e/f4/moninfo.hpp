@@ -1,7 +1,7 @@
 // Copyright 2005-2021  Michael E. Stillman
 
-#ifndef _moninfo_hpp_
-#define _moninfo_hpp_
+#ifndef M2_F4_MONINFO_HPP_
+#define M2_F4_MONINFO_HPP_
 
 #include "interface/m2-types.h"           // for M2_arrayint, M2_arrayint_st...
 #include "f4/ntuple-monomial.hpp"         // for ntuple_word, const_ntuple_m...

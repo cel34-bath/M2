@@ -1,7 +1,7 @@
 /* Copyright 2010, Michael E. Stillman */
 
-#ifndef _interreduce_h_
-#define _interreduce_h_
+#ifndef M2_INTERREDUCE_H_
+#define M2_INTERREDUCE_H_
 
 #include "groebner-computations/gbring.hpp"
 

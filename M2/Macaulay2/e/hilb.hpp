@@ -1,7 +1,7 @@
 // Copyright 1996 Michael E. Stillman
 
-#ifndef _hilb_hh_
-#define _hilb_hh_
+#ifndef M2_HILB_HH_
+#define M2_HILB_HH_
 
 // Computation of Hilbert functions via Bigatti's (et al) algorithm.
 

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef M2_GB_F4_MACAULAYMATRIX_HPP
+#define M2_GB_F4_MACAULAYMATRIX_HPP
 
 #include "gb-f4/MonomialHashTable.hpp"
 
@@ -20,6 +21,7 @@ struct Row
 
 } // end namespace newf4
 
+#endif
 // Local Variables:
 // indent-tabs-mode: nil
 // End:

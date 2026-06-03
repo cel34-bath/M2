@@ -1,8 +1,8 @@
 // Copyright 1997  Michael E. Stillman
 // TODO: determine the monomial type of (int *)'s in this file
 
-#ifndef _gbbinom_hh_
-#define _gbbinom_hh_
+#ifndef M2_GROEBNER_COMPUTATIONS_GBBINOM_HH_
+#define M2_GROEBNER_COMPUTATIONS_GBBINOM_HH_
 
 #include "groebner-computations/comp-gb.hpp"
 #include "matrices/matrix.hpp"

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef M2_GB_F4_BASIS_HPP
+#define M2_GB_F4_BASIS_HPP
 
 #include "gb-f4/MonomialHashTable.hpp"
 #include "gb-f4/PolynomialList.hpp"
@@ -51,6 +52,7 @@ public:
 
 }
 
+#endif
 // Local Variables:
 // compile-command: "make -C $M2BUILDDIR/Macaulay2/e "
 // indent-tabs-mode: nil

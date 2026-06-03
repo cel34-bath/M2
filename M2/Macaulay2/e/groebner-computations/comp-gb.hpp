@@ -1,7 +1,7 @@
 // Copyright 2004 Michael E. Stillman.
 
-#ifndef _comp_gb_hpp_
-#define _comp_gb_hpp_
+#ifndef M2_GROEBNER_COMPUTATIONS_COMP_GB_HPP_
+#define M2_GROEBNER_COMPUTATIONS_COMP_GB_HPP_
 
 #include "computations/comp.hpp"
 class buffer;

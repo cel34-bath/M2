@@ -1,7 +1,7 @@
 // Copyright 2004 Michael E. Stillman.
 
-#ifndef _comp_gb_proxy_hpp_
-#define _comp_gb_proxy_hpp_
+#ifndef M2_GROEBNER_COMPUTATIONS_COMP_GB_PROXY_HPP_
+#define M2_GROEBNER_COMPUTATIONS_COMP_GB_PROXY_HPP_
 
 #include "groebner-computations/comp-gb.hpp"
 

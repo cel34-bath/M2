@@ -1,5 +1,5 @@
-#ifndef __dmat_test_hpp__
-#define __dmat_test_hpp__
+#ifndef M2_UNITTESTS__DMAT_TEST_HPP__
+#define M2_UNITTESTS__DMAT_TEST_HPP__
 
 #include "basic-mutable-matrices/dmat.hpp"
 

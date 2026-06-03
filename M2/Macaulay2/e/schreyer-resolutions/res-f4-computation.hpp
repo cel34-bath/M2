@@ -1,7 +1,7 @@
 /* Copyright 2014-2021, Michael E. Stillman */
 
-#ifndef _res_f4_computation_hpp_
-#define _res_f4_computation_hpp_
+#ifndef M2_SCHRRES_RES_F4_COMPUTATION_HPP_
+#define M2_SCHRRES_RES_F4_COMPUTATION_HPP_
 
 #include "schreyer-resolutions/res-poly-ring.hpp"
 #include "rings/polyring.hpp"

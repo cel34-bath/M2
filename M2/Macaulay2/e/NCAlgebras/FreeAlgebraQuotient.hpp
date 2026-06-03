@@ -1,5 +1,5 @@
-#ifndef _free_algebra_quotient_hpp_
-#define _free_algebra_quotient_hpp_
+#ifndef M2_NCALGEBRAS_FREE_ALGEBRA_QUOTIENT_HPP_
+#define M2_NCALGEBRAS_FREE_ALGEBRA_QUOTIENT_HPP_
 
 #include "NCAlgebras/FreeAlgebra.hpp" // for FreeAlgebra
 #include "NCAlgebras/FreeMonoid.hpp"  // for FreeMonoid

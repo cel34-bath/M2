@@ -1,7 +1,7 @@
 // Copyright 2005, Michael E. Stillman
 
-#ifndef _reducedgb_field_local_
-#define _reducedgb_field_local_
+#ifndef M2_GROEBNER_COMPUTATIONS_REDUCEDGB_FIELD_LOCAL_
+#define M2_GROEBNER_COMPUTATIONS_REDUCEDGB_FIELD_LOCAL_
 
 #include "groebner-computations/reducedgb-field.hpp"
 class GBWeight;

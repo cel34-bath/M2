@@ -1,7 +1,7 @@
 // Copyright 1996 Michael E. Stillman.
 
-#ifndef _pfaff_hh_
-#define _pfaff_hh_
+#ifndef M2_COMPUTATIONS_PFAFF_HH_
+#define M2_COMPUTATIONS_PFAFF_HH_
 
 #include "matrices/matrix.hpp"
 #include "matrices/matrix-con.hpp"

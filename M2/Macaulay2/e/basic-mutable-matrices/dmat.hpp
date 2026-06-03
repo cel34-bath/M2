@@ -1,7 +1,7 @@
 // Copyright 2005-2012  Michael E. Stillman
 
-#ifndef _dmat_hpp_
-#define _dmat_hpp_
+#ifndef M2_BASIC_MUTMAT_DMAT_HPP_
+#define M2_BASIC_MUTMAT_DMAT_HPP_
 
 #include "engine-includes.hpp"
 #include "basic-mutable-matrices/mat-util.hpp"

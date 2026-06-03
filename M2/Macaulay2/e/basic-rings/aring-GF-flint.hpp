@@ -1,7 +1,7 @@
 // Copyright 2014 Michael E. Stillman
 
-#ifndef _aring_gf_flint_hpp_
-#define _aring_gf_flint_hpp_
+#ifndef M2_BASIC_RINGS_ARING_GF_FLINT_HPP_
+#define M2_BASIC_RINGS_ARING_GF_FLINT_HPP_
 
 #include <vector>
 

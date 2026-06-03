@@ -1,7 +1,7 @@
 // Copyright 2005  Michael E. Stillman
 
-#ifndef _smat_hpp_
-#define _smat_hpp_
+#ifndef M2_BASIC_MUTMAT_SMAT_HPP_
+#define M2_BASIC_MUTMAT_SMAT_HPP_
 
 union ring_elem;
 #include "rings/ZZp.hpp"
