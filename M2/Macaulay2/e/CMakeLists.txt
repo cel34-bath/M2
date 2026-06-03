@@ -24,7 +24,6 @@ endif()
 # TODO: determine the fate of these files
 set(UNDETERMINED
   basic-mutable-matrices/dmat-ffpack.cpp
-  computations/BRP-test.cpp
   overflow-test.cpp
   unused/test.dd
   )
@@ -487,6 +486,7 @@ if(BUILD_TESTING)
 
     unit-tests/OverflowTest.cpp
     unit-tests/BasicPolyListParserTest.cpp
+    unit-tests/BRP-test.cpp
     )
 
   if(BDWGC_FOUND)
