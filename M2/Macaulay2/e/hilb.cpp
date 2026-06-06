@@ -10,21 +10,21 @@
 #include <utility>    // for pair, make_pair
 #include <vector>     // for vector
 
-#include "ExponentList.hpp"    // for index_varpower, varpower, const_v...
-#include "ExponentVector.hpp"  // for exponents
+#include "monomials/ExponentList.hpp"    // for index_varpower, varpower, const_v...
+#include "monomials/ExponentVector.hpp"  // for exponents
 #include "interface/m2-mem.h"             // for freemem
 #include "buffer.hpp"          // for buffer
 #include "error.h"             // for ERROR
-#include "freemod.hpp"         // for FreeModule
+#include "free-modules/freemod.hpp"         // for FreeModule
 #include "int-bag.hpp"         // for Bag, int_bag
 #include "interrupted.hpp"     // for system_interrupted
-#include "matrix.hpp"          // for Matrix
+#include "matrices/matrix.hpp"          // for Matrix
 #include "mem.hpp"             // for stash
-#include "monideal.hpp"        // for MonomialIdeal, operator!=, Nmi_node
+#include "monomials/monideal.hpp"        // for MonomialIdeal, operator!=, Nmi_node
 #include "monoid.hpp"          // for Monoid
-#include "polyring.hpp"        // for PolynomialRing
-#include "relem.hpp"           // for RingElement
-#include "ring.hpp"            // for Ring
+#include "rings/polyring.hpp"        // for PolynomialRing
+#include "ring-elements/ring-element.hpp"           // for RingElement
+#include "rings/ring.hpp"            // for Ring
 
 int partition_table::representative(int x)
 {
