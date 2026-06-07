@@ -22,11 +22,11 @@ export {
     "extractBlocks",
 
     "mapComponents",
--*
+
     "hasMinimalMult",
     "isGolodAInf",
     "burkeDifferential",
-*-
+
     --symbols
     "Check",
     "ShowRanks"
@@ -1850,6 +1850,7 @@ end--
 
 ///
 restart
+loadPackage "AInfinity"
 uninstallPackage "AInfinity"
 restart
 installPackage "AInfinity"
