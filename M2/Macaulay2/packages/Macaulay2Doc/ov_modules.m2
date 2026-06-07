@@ -5,15 +5,7 @@ document {
      Submodules and quotients of free modules are perhaps the most common and important
      modules, and subquotients form the smallest class of modules that naturally includes these cases.",
      PARA{},
-     "See ", TO "Tutorials::Tutorial: Modules in Macaulay2", " for an overview tutorial on modules.",
-     PARA{},
-     "Common module tasks usually start with one of the following pages or commands.",
-     UL {
-	  {"To create free modules, submodules, quotients, and subquotients, see ", TO "free modules", ", ", TO module, ", ", TO "submodules and quotients", ", and ", TO "subquotient modules", "."},
-	  {"To move between matrices and modules, use ", TO "matrices to and from modules", ", ", TO kernel, ", ", TO image, ", ", TO cokernel, ", ", TO generators, ", ", TO relations, ", and ", TO presentation, "."},
-	  {"To construct or inspect maps between modules, start with ", TO "module homomorphisms", ", ", TO "maps between modules", ", ", TO "constructing maps between modules", ", ", TO source, ", ", TO target, ", and ", TO isWellDefined, "."},
-	  {"To compute syzygies, resolutions, and graded invariants, see ", TO "computing syzygies", ", ", TO syz, ", ", TO "OldChainComplexes :: resolution", ", ", TO betti, ", and ", TO "Hilbert functions and free resolutions", "."}
-	  },
+     "See ", TO "Tutorial: Modules in Macaulay2", " for an overview tutorial on modules.",
      PARA{},
      "For additional common operations and a comprehensive list of all routines
      in Macaulay2 which return or use modules, see ", TO Module, ".",
@@ -21,21 +13,22 @@ document {
 	TO Module,
 	TO module,
 	TO isModule,
-	  "creating modules",
+	  "construction of modules",
 	  TO "free modules",
+	  TO "matrices to and from modules",
 	  TO "making modules from matrices",
 	  TO "submodules and quotients",
 	  TO "subquotient modules",
 
-	  "matrices, kernels, images, and presentations",
-	  TO "matrices to and from modules",
-	  TO "kernel, cokernel and image of a map of modules",
+	  "properties of modules",
 	  TO "manipulating modules",
+	  TO "computing syzygies",
 	  TO "extracting elements",
 	  TO "minimal presentations and generators",
 	  TO "equality and containment of modules",
 
-	  "maps between modules",
+	  "homomorphisms (maps) between modules",
+	  -- TODO: combine these
 	  TO "module homomorphisms",
 	  TO "maps between modules",
 	  TO "information about a map of modules",
@@ -50,8 +43,7 @@ document {
 	  -- Mike wanted this: TO "annihilators and submodule quotients",
 	  TO "Saturation :: module quotients, saturation, and annihilator",
 
-	  "syzygies, resolutions, and graded invariants",
-	  TO "computing syzygies",
+	  "graded modules",
 	  TO gradedModule,
 	  TO "Hilbert functions and free resolutions",
 	  -- Mike wanted this: TO "degrees of elements and free modules",
@@ -282,140 +274,114 @@ document {
          },
      }
 
-doc ///
-     Key
-          "subquotient modules"
-     Headline
-          the way Macaulay2 represents modules
-     Description
-          Text
-               Not all modules arise naturally as submodules or quotients of free modules.  As an example,
-               consider the module $M = I/I^2$ in the example below.
-          Example
-               R = QQ[x, y, z];
-               I = ideal(x*y, x*z, y*z)
-               M = I/I^2
-          Text
-               In Macaulay2 each module is represented at - least conceptually -
-               as a subquotient module. A subquotient module is a @BOLD
-               "submodule"@ of a @BOLD "quotient"@ of a free module. A
-               subquotient module can be specified by giving two matrices $f :
-               R^m \rightarrow{} R^n$ and $g : R^p \rightarrow{} R^n$.  In this
-               case, the {\em subquotient module} with generators $f$ and
-               relations $g$ is by definition the module $M = (\text{image } f +
-               \text{image } g)/\text{image } g$.
-
-               One may create a subquotient module directly from matrices f and
-               g having the same target free module.
-          Example
-               f = matrix{{x, y}}
-               g = matrix{{x^2, x*y, y^2, z^4}}
-               assert(target f == target g)
-               M = subquotient(f, g)
-          Text
-               If $f$ is the identity map, then $M = \text{coker } g$, and if $g = 0$, then $M = \text{image } f$.
-               In fact, the class of subquotient modules is the smallest class containing free modules, which is closed
-               under taking submodules and quotients.
-          Example
-               F = target f
-               prune subquotient(id_F, g) -- this is only isomorphic to coker g
-               subquotient(f, 0 * id_F)
-          Text
-               We can recover $f$ and $g$ from $M$ with the routines @TO
-               (generators,Module)@ and @TO (relations,Module)@.
-          Example
-               generators M
-               relations M
-          Text
-               The same module can be constructed directly via
-          Example
-               N = (image f)/(image g)
-          Text
-               Notice that Macaulay2 allows one to write @TT"(image  f)/(image
-               g)"@.  Mathematically this is the same as @TT "(image f + image
-               g)/image g"@ but there is a subtle difference in Macaulay2.
-          Example
-               N' = (image f + image g)/(image g)
-          Text
-               Modules in Macaulay2 always come with an ordered set of
-               generators, and $N'$ has 4 more generators than $N$. This is enough to make $N'$ and $N$ different
-               modules even though they are isomorphic.  The
-               fact that their difference consists of a collection of generators
-               that are all zero in $N$ doesn't matter!
-          Example
-               assert(N =!= N')
-          Text
-               The modules M and N are identical.
-          Example
-               assert(M === N)
-          Text
-               You can form submodules and quotients of subquotients as you would expect.
-          Example
-               N'' = R*M_0 + I*M
-               M/N''
-               prune(M/N'')
-          Text
-               @BOLD "Some modules associated to a subquotient"@
-          Text
-               Given a subquotient module M, there are several useful modules associated to M.
-               The free module of which M is a subquotient is obtained using @TO (ambient, Module)@.
-          Example
-               ambient M
-          Text
-               This is the same as the common target of the matrices of generators and relations.
-          Example
-               ambient M === target relations M
-               ambient M === target generators M
-          Text
-               M is a submodule of the module $R^n/(\text{image } g)$.  The routine TO (super,Module) returns this quotient module.
-          Example
-               super M
-          Text
-               This can also be obtained directly as the cokernel of the matrix of relations.
-          Example
-               super M === cokernel relations M
-          Text
-               Often the given representation of a module has superfluous
-               generators or relations or is otherwise more complicated than you
-               would like.
-
-               You can use @TO (trim,Module)@ to change the generators and
-               relations to be minimal (in the non-local or non-graded case,
-               they may be only improved but not minimal) while keeping the
-               module as a subquotient of the same ambient free module.
-          Example
-               M + M
-               trim (M + M)
-          Text
-               Use @TO (minimalPresentation,Module)@ to also allow the ambient free
-               module to be improved.  This currently returns a quotient of a free
-               module, but in the future it might not.
-          Example
-               minimalPresentation M
-          Text
-               You can use @TT "prune"@ as a synonym for @TT "minimalPresentation"@.
-          Example
-               prune M
-          Text
-               For maps between modules, including between subquotient modules, see @TO "module homomorphisms"@.
-     SeeAlso
-          (ambient, Module)
-          (super, Module)
-          (generators, Module)
-          (relations, Module)
-          (trim, Module)
-          (minimalPresentation, Module)
-    Subnodes
-          @TO "subquotient"@
-///
+document {
+     Key => "subquotient modules",
+     Headline => "the way Macaulay2 represents modules",
+     "Not all modules arise naturally as submodules or quotients of free modules.  As an example,
+     consider the module ", TEX "$M = I/I^2$", " in the example below.",
+     EXAMPLE {
+	  "R = QQ[x,y,z];",
+	  "I = ideal(x*y,x*z,y*z)",
+	  "M = I/I^2"
+	  },
+     TEX "Macaulay2 represents each module (at least conceptually) as a subquotient module, that is, a submodule of 
+     a quotient of an ambient free module.  A subquotient module is determined by two
+     matrices $f : R^m \\rightarrow{} R^n$ and $g : R^p \\rightarrow{} R^n$.
+     The {\\em subquotient module} with generators $f$ and relations $g$ is by definition the module
+     $M = ((image f) + (image g))/(image g)$.",
+     PARA{},
+     TEX "If $f$ is the identity map, $M = coker g$, and if $g = 0$, then $M = image f$.  
+     The class of subquotient modules is the smallest class containing free modules, which is closed
+     under taking submodules and quotients.",
+     PARA{},
+     "One may create a subquotient module directly from matrices f and g having the same target free module.",
+     EXAMPLE {
+	  "f = matrix{{x,y}}",
+	  "g = matrix{{x^2,x*y,y^2,z^4}}",
+	  "M = subquotient(f,g)"
+	  },
+     "The same module can be constructed in the following manner.",
+     EXAMPLE {
+	  "N = (image f)/(image g)",
+ 	  "N1 = (image f + image g)/(image g)",
+	  "M === N"
+	  },
+     "Notice that Macaulay2 allows one to write (image f)/(image g), even though 
+     mathematically this really means: (image f + image g)/(image g).  There is an important
+     difference however.  Modules in Macaulay2 always come with an ordered set of generators,
+     and N1 has 4 more generators (all zero in the module!) than N.  The 
+     modules M and N though are identical.",
+     PARA{},
+     "The two matrices f and g mentioned above are recovered using the
+     routines ", TO (generators,Module), " and ", TO (relations,Module), ".",
+     EXAMPLE {
+	  "generators M",
+	  "relations M"
+	  },
+     PARA{},
+     "Submodules and quotients of free modules work as one would imagine.",
+     EXAMPLE {
+	  "N2 = R*M_0 + I*M",
+	  "M/N2",
+	  "prune(M/N2)"
+	  },
+     PARA{},
+     "Given a subquotient module M, there are several useful modules associated to M.",
+     "The free module of which M is a subquotient is obtained using ", TO (ambient,Module), ".",
+     EXAMPLE {
+	  "ambient M"
+	  },
+     "This is the same as the common target of the matrices of generators and
+     relations.",
+     EXAMPLE {
+	  "ambient M === target relations M",
+	  "ambient M === target generators M"
+	  },
+     "M is a submodule of the module R^n/(image g).  The routine ", TO (super,Module),
+     " returns this quotient module.",
+     EXAMPLE {
+	  "super M"
+	  },
+     "This may be obtained directly as the cokernel of the matrix of relations.",
+     EXAMPLE {
+	  "super M === cokernel relations M"
+	  },
+     "Often the given representation of a module is not very efficient.
+     Use ", TO (trim,Module), " to keep the module as a subquotient of the 
+     same ambient free module,
+     but change the generators and relations to be minimal, or in the nonlocal or
+     non-graded case, at least more efficient.",
+     EXAMPLE {
+	  "M + M",
+	  "trim (M+M)"
+	  },
+     "Use ", TO (minimalPresentation,Module), " to also allow the ambient free
+     module to be improved.  This currently returns a quotient of a free
+     module, but in the future it might not.",
+     EXAMPLE {
+	  "minimalPresentation M"
+	  },
+     TT "prune", " is a synonym for ", TT "minimalPresentation", ".",
+     EXAMPLE {
+	  "prune M"
+	  },
+     "For maps between modules, including between subquotient modules, see ", 
+     TO "module homomorphisms", ".",
+     SeeAlso => {
+	  (ambient,Module),
+	  (super,Module),
+	  (generators,Module),
+	  (relations,Module),
+	  (trim,Module),
+	  (minimalPresentation,Module)
+	  },
+    Subnodes => {
+	TO subquotient,
+        },
+     }
 
 document {
      Key => "module homomorphisms",
-     "Start here when you have two modules and want to describe a homomorphism
-     between them.  The basic command is ", TO map, "; after construction use
-     ", TO source, ", ", TO target, ", ", TO matrix, ", and ", TO isWellDefined,
-     " to inspect the result.",
-     PARA{},
      "A homomorphism ", TT "f : M --> N", " is represented as a matrix
      from the generators of M to the generators of N.",
      EXAMPLE {
@@ -505,16 +471,21 @@ document {
 document {
      -- old??
      Key => "constructing maps between modules",
-     "There are three common ways to construct maps between modules.  For maps
-     specified by images of generators, use ", TO "module homomorphisms", " and
-     the command ", TO map, ".  For projection and inclusion maps coming from
-     selected basis elements, see ", TO "maps between modules", ".  For natural
-     maps induced by inclusions, quotients, kernels, images, or cokernels, use
-     ", TO inducedMap, ".",
-     PARA{},
-     "Matrices are viewed as linear transformations, but the target and source
-     matter.  Use ", TO source, ", ", TO target, ", and ", TO isWellDefined,
-     " when checking that a matrix really defines the module map you intend.",
+	"Let's start with a free module.",
+	EXAMPLE {
+		"R = ZZ/5[x,y,z];",
+		"F = R^3"
+		},
+	"A list of indices can be used to produce homomorphisms corresponding to the corresponding basis vectors.",
+	EXAMPLE {
+		"F_{0,1,2}",
+		"F_{0,1}",
+		"F_{1,2}"
+		},
+	"Matrices are viewed as linear transformations.",
+	EXAMPLE {
+		"f = matrix{{x,y,z}}"
+		},
 --     "The standard way to define a map from an R-module M to an 
 --     R-module N is to give a matrix whose columns are the image vectors
 --     of the generators of M.",
@@ -779,29 +750,12 @@ document {
      "usual information: source, target, ring.",
      }
 
+-- no links to this node
+-* -- Mike wanted this: 
 document {
      Key => "kernel, cokernel and image of a map of modules",
-     "For a map of modules, the most common associated modules are its ",
-     TO kernel, ", ", TO image, ", and ", TO cokernel, ".  These commands
-     measure, respectively, the relations killed by the map, the submodule
-     reached by the map, and the quotient of the target by that image.",
-     PARA{},
-     "Use ", TO source, " and ", TO target, " to check the direction of the
-     map before interpreting these modules.  The predicates ", TO isInjective,
-     " and ", TO isSurjective, " test whether the kernel or cokernel is zero,
-     and ", TO isWellDefined, " checks that the proposed matrix actually gives
-     a well-defined map between the requested modules.",
-     SeeAlso => {
-	  (kernel, Matrix),
-	  (image, Matrix),
-	  (cokernel, Matrix),
-	  source,
-	  target,
-	  isInjective,
-	  isSurjective,
-	  isWellDefined
-	  }
      }
+*-
 
 -* -- Mike wanted this: 
 
@@ -913,11 +867,9 @@ document {
 
 document {
     Key => "maps between modules",			    -- map
-    "Use this page as a command index for maps between modules.  Maps between
-    free modules are usually specified as matrices, as described in the section
-    on ", TO "matrices", ".  For maps between submodules, quotients, and
-    subquotients, start with ", TO "module homomorphisms", " or ", TO inducedMap,
-    ".",
+    "Maps between free modules are usually specified as matrices, as
+    described in the section on ", TO "matrices", ".  In this section 
+    we cover a few other techniques.",
     PARA{},
     "Let's set up a ring, a matrix, and a free module.",
     EXAMPLE {
@@ -945,9 +897,8 @@ document {
     Key => "computing syzygies",
     "A syzygy among the columns of a matrix is, by definition, an
     element of the kernel of the corresponding map between free modules,
-    and the easiest way to compute the syzygies is often to apply the
-    function ", TO "kernel", ".  Use ", TO "syz", " when you want the
-    syzygy command directly or need its computation options.",
+    and the easiest way to compute the syzygies applying the 
+    function ", TO "kernel", ".",
     EXAMPLE {
 	"R = QQ[x..z];",
 	"f = vars R",

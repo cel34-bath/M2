@@ -2406,7 +2406,7 @@ document {
 		    LI { "packages newly included:",
 			 UL {
 			      TO "NumericalAlgebraicGeometry::NumericalAlgebraicGeometry",
-			      TO2("Tutorials::Tutorial: Beginning Macaulay2", "BeginningMacaulay2")
+			      TO "BeginningMacaulay2::BeginningMacaulay2"
 			      }
 			 }
 		    }

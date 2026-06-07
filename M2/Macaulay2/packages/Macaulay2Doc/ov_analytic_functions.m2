@@ -17,27 +17,6 @@ doc ///
 Node
   Key
     "analytic functions"
-  Description
-    Text
-      Analytic functions in Macaulay2 include symbolic constants, special
-      functions, trigonometric functions, and numerical evaluations over the
-      standard inexact number types.
-    Text
-      Selected packages include @TO2("EllipticIntegrals :: EllipticIntegrals", "EllipticIntegrals")@,
-      @TO2("FormalGroupLaws :: FormalGroupLaws", "FormalGroupLaws")@,
-      @TO2("EllipticCurves :: EllipticCurves", "EllipticCurves")@, and
-      @TO2("NumericalAlgebraicGeometry :: NumericalAlgebraicGeometry", "NumericalAlgebraicGeometry")@.
-      For a broader catalog, see
-      @TO2("packages provided with Macaulay2", "packages provided with Macaulay2")@.
-    Text
-      Core topics include @TO "Constant"@, @TO "Gamma"@, @TO "zeta"@,
-      @TO "sin"@, @TO "cos"@, and @TO "atan2"@.
-  SeeAlso
-    "packages provided with Macaulay2"
-    "EllipticIntegrals :: EllipticIntegrals"
-    "FormalGroupLaws :: FormalGroupLaws"
-    "EllipticCurves :: EllipticCurves"
-    "NumericalAlgebraicGeometry :: NumericalAlgebraicGeometry"
   Subnodes
     Constant -- the class of constants
     :Special functions
@@ -98,7 +77,6 @@ Node
 
 document {
      Key => Constant,
-     Headline => "the class of constants",
      PARA {
 	  "A constant is a symbolic entity that can be approximated by a real or complex
 	  number to any desired accuracy.  It is converted to a numeric value of the
