@@ -1,7 +1,7 @@
 newPackage(
     "NumericalSemigroups",
     Version => "1.0",
-    Date => "March 12, 2024",
+    Date => "June 8, 2026",
     Headline => "Compute the Apery set and invariants of a numerical semigroup ring",
     Authors => {{ Name => "David Eisenbud",
 	         Email => "de@berkeley.edu",
@@ -766,7 +766,7 @@ apery List := HashTable => o -> L ->(
     a := 0; -- number of keys already filled in A
     S := set L + set{0}; -- S will hold all the semigroup elmeents found, including 0
 
-    --now look for new Apery set elememts and semigroup elements until
+    --now look for new Apery set elements and semigroup elements until
     --all the keys have been filled.
     s := m;
     while a < m-1 do(
@@ -2415,7 +2415,7 @@ Inputs
  g:ZZ
   genus
  m:ZZ
-  mutiplicity
+  multiplicity
  c:ZZ
   conductor
 Outputs

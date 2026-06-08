@@ -1,7 +1,7 @@
 newPackage(
 	"RandomCurves1",
-    	Version => "0.5",
-    	Date => "March 1, 2011",
+    	Version => "1.0",
+    	Date => "March 1, 2011, updated and combined on June 8, 2026 by D Eisenbud",
     	Authors => {
 	        {Name => "Hans-Christian Graf v. Bothmer",
 	         Email => "hcvbothmer@gmail.com",
@@ -9,14 +9,14 @@ newPackage(
 
 		{Name=> "Florian Geiss",
 		 Email=> "fg@math.uni-sb.de",
-		 HomePage=>"https://www.math.uni-sb.de/ag/schreyer/"},
+		 HomePage=>"http://www.math.uni-sb.de/ag/schreyer/"},
 
 	        {Name => "Frank-Olaf Schreyer",
 		 Email => "schreyer@math.uni-sb.de",
-		 HomePage => "https://www.math.uni-sb.de/ag/schreyer/"}
+		 HomePage => "http://www.math.uni-sb.de/ag/schreyer/"}
                    },
     	Headline => "random smooth curves up to genus 14",
-	Keywords => {"Projective Algebraic Geometry"}
+	Keywords => {"Projective Algebraic Geometry"},
 	PackageImports => {"Complexes"},
 	PackageExports => {"RandomObjects","Examples and Random Objects"},
     	DebuggingMode => false,
