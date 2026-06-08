@@ -9,9 +9,8 @@ Each subdirectory documents a particular integration:
 
 * [`emacs/README.md`](emacs/README.md): running and editing Macaulay2 in GNU
   Emacs, including the bundled support files.
-* [`vim/README_linux`](vim/README_linux) and
-  [`vim/README_macos`](vim/README_macos): running Macaulay2 inside Vim on
-  GNU/Linux and macOS.
+* [`vim/README.md`](vim/README.md): running Macaulay2 inside Vim, including
+  the current setup notes for GNU/Linux and macOS.
 * [`prism/README.md`](prism/README.md): generating and using the Prism grammar
   used for syntax highlighting the HTML documentation.
 * [`pygments/README.md`](pygments/README.md): generating and using the Pygments
