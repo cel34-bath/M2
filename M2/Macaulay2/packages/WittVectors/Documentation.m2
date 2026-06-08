@@ -19,9 +19,6 @@ doc ///
 ///
 
 
-undocumented { overringMap, WittRing, wittSub, wittGenerators, truncation, WittOverring, makeCoefficientFieldPrime }
-
-
 doc ///
     Key
 	explicit
