@@ -9,11 +9,11 @@ newPackage(
 
 		{Name=> "Florian Geiss",
 		 Email=> "fg@math.uni-sb.de",
-		 HomePage=>"http://www.math.uni-sb.de/ag/schreyer/"},
+		 HomePage=>"https://www.math.uni-sb.de/ag/schreyer/"},
 
 	        {Name => "Frank-Olaf Schreyer",
 		 Email => "schreyer@math.uni-sb.de",
-		 HomePage => "http://www.math.uni-sb.de/ag/schreyer/"}
+		 HomePage => "https://www.math.uni-sb.de/ag/schreyer/"}
                    },
     	Headline => "random smooth curves up to genus 14",
 	Keywords => {"Projective Algebraic Geometry"}
