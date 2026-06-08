@@ -353,10 +353,7 @@ doc ///
       g#2
     Text
       If the S-polynomial of g#"i" and g#"j" produces a non-zero remainder in Buchberger's algorithm,
-      that remainder is added to the hashtable g with key (i-j), as in the following example.
-    Example
-      g#(1,2)
-    Text
+      that remainder is added to the hashtable g with a sequence key recording the corresponding lineage.
       As the algorithm continues, keys are concatenated, so that for example the remainder of S(0,S(1,2)) will
       have lineage (0,(1,2)), and so on.   For more complicated lineage examples, see @TO tgb@.
 
@@ -428,9 +425,9 @@ doc ///
       For this reason, we say that the key communicates the "lineage" of the resulting polynomial.
       (See @TO ThreadedGB@.)
 
-      Note that the keys in the hash table are strings, and the keys of input polynomials are 0..#L, as in the following example.
+      Note that the keys of input polynomials are the integers 0..#L-1, while later lineages are represented by sequences.
     Example
-      H#(0,1)
+      H#0
     Text
       Some may be curious  how tgb works.
 

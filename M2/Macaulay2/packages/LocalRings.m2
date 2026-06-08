@@ -49,7 +49,7 @@ exportFrom_Core { "LocalRing" }
 export {
     "localRing",
     "liftUp",
---    "presentationComplex", -- TODO: what was this for?
+    "presentationComplex", -- TODO: what was this for?
     "hilbertSamuelFunction",
     -- Legacy
     "setMaxIdeal",
@@ -62,8 +62,6 @@ export {
     "residueMap", -- not documented
     "maxIdeal" -- not documented
     }
-
-protect presentationComplex
 -- << "--------------------------------------------------------------------------------------" << endl;
 -- << "-- The LocalRings package is experimental, but old methods are still available.     --" << endl;
 -- << "-- See the documentation and comments in the package to learn more.                 --" << endl;
