@@ -198,7 +198,7 @@ doc ///
 			ring
 	Description
 		Text
-			Compute the equivariant cohomology of certain clases of spaces with
+			Compute the equivariant cohomology of certain classes of spaces with
 			torus actions: normal toric varieties and  moment-angle complex.
 			The equivariant cohomology is computed as a module over
 			polynomial ring in which the coefficients are dependent
@@ -392,7 +392,7 @@ doc ///
 			This method computes the Betti numbers of a toric space (a space
 			with a torus action, ie, small cover, quasitoric manifold,
 			moment-angle complex and normal toric variety).  For small-covers,
-			the forumula of Suciu-Trevisan (https://arxiv.org/abs/1302.2342) is
+			the formula of Suciu-Trevisan (https://arxiv.org/abs/1302.2342) is
 			used.  For quasitoric manifolds, the classical formula of
 			Davis-Januszkiewicz
 			(http://dx.doi.org/10.1215/S0012-7094-91-06217-4) is used. For
