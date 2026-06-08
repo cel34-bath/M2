@@ -141,8 +141,7 @@ doc ///
     "elimination of variables"
     monomialCurveIdeal
   Subnodes
-    kernel
-    "kernel(...,SubringLimit=>...)"
-    "kernel(...,DegreeLimit=>...)"
-    "kernel(...,Strategy=>...)"
+    [kernel, SubringLimit]
+    [kernel, DegreeLimit]
+    [kernel, Strategy]
 ///
