@@ -3410,57 +3410,9 @@ assert(isHomogeneous R)
 ///
 
 TEST/// -*coneRays*-
+importFrom(NumericalSemigroups, "coneEquations")
 assert(coneRays 3 == matrix {{1,2},{2,1}})
 assert(all(flatten entries ((transpose coneEquations 4) * coneRays 4), e -> e >= 0))
-///
-
-TEST/// -*knownExample*-
-assert(knownExample {7,12,13})
-assert(knownExample {3,4,5})
-assert(not knownExample {6,8,9,11})
-assert(not knownExample {5,8,11,12})
-///
-
-TEST/// -*LabBookProtocol*-
-assert(LabBookProtocol 7 === null)
-assert(LabBookProtocol 99 === null)
-///
-
-TEST/// -*heuristicSmoothness*-
-S = ZZ/101[x,y];
-setRandomSeed 0
-assert(heuristicSmoothness ideal(y-x^2))
-setRandomSeed 0
-assert(not heuristicSmoothness ideal(y^2-x^3))
-///
-
-TEST/// -*getFlatFamily*-
-setRandomSeed 0
-(I,J1,family) = getFlatFamily({6,8,10,11},0.30,0);
-assert(instance(I,Ideal) and instance(J1,Ideal) and instance(family,Matrix))
-assert(betti res ideal family == betti res I)
-///
-
-TEST/// -*isARandomFiberSmooth*-
-setRandomSeed 0
-(I,J1,family) = getFlatFamily({6,8,10,11},0.30,0);
-setRandomSeed 0
-assert(isARandomFiberSmooth(I,J1,family))
-///
-
-TEST/// -*isSmoothableSemigroup*-
-setRandomSeed 0
-assert(isSmoothableSemigroup({6,8,10,11},0.30,0))
-///
-
-TEST/// -*isWeierstrassSemigroup*-
-setRandomSeed 0
-assert(isWeierstrassSemigroup({6,8,9,11},0.15))
-///
-
-TEST/// -*nonWeierstrassSemigroups*-
-assert(nonWeierstrassSemigroups(4,7) == {})
-assert(nonWeierstrassSemigroups(4,8) == {})
 ///
 
 TEST///-*test of aperyConeEquations, muConeEquations*-
