@@ -292,3 +292,7 @@ EliminationTemplates
 WittVectors
 Padic
 WeierstrassSemigroups
+EuclideanDistanceDegree
+NeuralIdeals
+TestAudit
+LanguageServer
