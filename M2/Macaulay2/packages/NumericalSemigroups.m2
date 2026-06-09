@@ -1488,7 +1488,6 @@ Headline => "Invariants of numerical semigroups",
    The conductor is 1 plus the largest element not in S. We generally specify a semigroup by giving
    a list of positive integers L with gcd = 1, representing the semigroup of all sums of
    elements of L.",
-
    PARA{},
 
      SUBSECTION "Combinatorics of Semigroups",
@@ -1528,9 +1527,7 @@ Headline => "Invariants of numerical semigroups",
 	TO type,
 	TO genus,
 	TO kunzRing,
-	TO buchweitzCriterion,
 	TO kunzPoset,
-	TO kunzRing,
 	TO syzFormat,
 	TO reduceByList,
         },
@@ -1543,7 +1540,7 @@ Headline => "Invariants of numerical semigroups",
 	TO infinitelyNearSemigroups,
 	TO infinitelyNearModules,
 	TO isMinimalMultiplicity,
-      },
+      }
 }
 
 
