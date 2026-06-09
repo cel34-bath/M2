@@ -1847,6 +1847,7 @@ end--
 
 ///
 restart
+loadPackage "AInfinity"
 uninstallPackage "AInfinity"
 restart
 installPackage "AInfinity"
