@@ -16,7 +16,7 @@ newPackage(
 		 HomePage => "https://www.math.uni-sb.de/ag/schreyer/"}
                    },
     	Headline => "random smooth curves up to genus 14",
-	Keywords => {"Projective Algebraic Geometry"},
+	Keywords => {"Projective Algebraic Geometry", "Examples and Random Objects"},
 	PackageImports => {"Complexes"},
 	PackageExports => {"RandomObjects"},
     	DebuggingMode => false,
