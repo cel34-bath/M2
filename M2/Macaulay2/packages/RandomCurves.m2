@@ -1,5 +1,5 @@
 newPackage(
-	"RandomCurves1",
+	"RandomCurves",
     	Version => "1.0",
     	Date => "March 1, 2011, updated and combined on June 8, 2026 by D Eisenbud",
     	Authors => {
@@ -18,7 +18,7 @@ newPackage(
     	Headline => "random smooth curves up to genus 14",
 	Keywords => {"Projective Algebraic Geometry"},
 	PackageImports => {"Complexes"},
-	PackageExports => {"RandomObjects","Examples and Random Objects"},
+	PackageExports => {"RandomObjects"},
     	DebuggingMode => false,
         )
 
@@ -841,7 +841,7 @@ beginDocumentation()
 
 doc ///
  Key
-   RandomCurves1
+   RandomCurves
  Headline
    constructing random curves in various ways
  Description
