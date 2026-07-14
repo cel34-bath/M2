@@ -15,6 +15,26 @@ loadedPackages = {}
 rawKey   = "raw documentation"
 rawKeyDB = "raw documentation database"
 
+-- warnings or errors to issue for deprecated packages
+-- TODO: also add package deprecation warnings for OldPolyhedra, etc?
+renamedPackage := (oldpkg, newpkg) -> (
+    oldpkg => () -> (
+        printerr("warning: the '", oldpkg, "' package has been renamed as '", newpkg, "'.");
+        newpkg))
+mergedPackage := (oldpkg, newpkg) -> (
+    oldpkg => () -> (
+        printerr("warning: the '", oldpkg, "' package has been merged into '", newpkg, "'.");
+        newpkg))
+deprecatedPackageWarnings = new HashTable from {
+    renamedPackage("Divisor", "WeilDivisors"),
+    renamedPackage("CodepthThree", "TorAlgebra"),
+    renamedPackage("LieTypes", "LieAlgebraRepresentations"),
+    mergedPackage("RandomCanonicalCurves", "RandomCurves"),
+    mergedPackage("RandomGenus14Curves", "RandomCurves"),
+    mergedPackage("RandomPlaneCurves", "RandomCurves"),
+    mergedPackage("RandomSpaceCurves", "RandomCurves"),
+}
+
 -----------------------------------------------------------------------------
 -- Local variables
 -----------------------------------------------------------------------------
@@ -91,13 +111,24 @@ checkShadow := () -> (
 
 isOptionList := opts -> instance(opts, List) and all(opts, opt -> instance(opt, Option) and #opt == 2)
 
-isPackageLoaded := pkgname -> PackageDictionary#?pkgname and instance(value PackageDictionary#pkgname, Package)
+isPackageLoaded = pkgname -> PackageDictionary#?pkgname and instance(value PackageDictionary#pkgname, Package)
 
--- TODO: make this local
-checkPackageName = title -> (
-    if not match("^[[:alnum:]]+$", title) then error("package title not alphanumeric: ", format title))
+checkPackageName = (title, checkdeprecated) -> (
+    if not match("^[[:alnum:]]+$", title)
+    then error("package title not alphanumeric: ", format title);
+    if checkdeprecated and deprecatedPackageWarnings#?title
+    then (deprecatedPackageWarnings#title)() else title)
 
 closePackage = pkg -> if pkg#?rawKeyDB then (db -> if isOpen db then close db) pkg#rawKeyDB
+
+detectPackagePrefix = pkgdir -> (
+    -- Try to detect whether we are loading the package from an installed version.
+    -- A better test would be to see if the raw documentation database is there...
+    m := regex("(/|^)" | Layout#2#"packages" | "$", pkgdir);
+    if m#?1 then substring(pkgdir, 0, m#1#0 + m#1#1) else (
+	m = regex("(/|^)" | Layout#1#"packages" | "$", pkgdir);
+	-- this can be useful when running from the source tree, but this is a kludge
+	if m#?1 then substring(pkgdir, 0, m#1#0 + m#1#1) else prefixDirectory))
 
 -----------------------------------------------------------------------------
 -- Package type declarations and basic constructors
@@ -114,7 +145,7 @@ net      Package :=
 toString Package := pkg -> if pkg#?"pkgname" then pkg#"pkgname" else "-*package*-"
 texMath  Package := pkg -> texMath toString pkg
 options  Package := pkg -> pkg.Options
-methods  Package := memoize(pkg -> select(methods(), m -> package m === pkg))
+methods  Package := pkg -> select(methods(), m -> package' m === pkg)
 hypertext Package := SAMPc "constant"
 
 -- TODO: should this go elsewhere?
@@ -141,7 +172,7 @@ dismiss Package := pkg     -> (
 readPackage = method(TypicalValue => OptionTable, Options => { FileName => null })
 readPackage Package := opts -> pkg     -> options pkg
 readPackage String  := opts -> pkgname -> (
-    if pkgname === "Core" then return newPackageOptions#"Core";
+    if isMember(pkgname, {"Core","User"}) then return newPackageOptions#pkgname;
     remove(newPackageOptions, pkgname);
     filename := if opts.FileName === null then pkgname | ".m2" else opts.FileName;
     loadPackageOptions#pkgname = new OptionTable from { HeaderOnly => true };
@@ -163,11 +194,13 @@ loadPackage Package := opts -> pkg     -> loadPackage(toString pkg, opts ++ { Re
 loadPackage String  := opts -> pkgname -> (
     if not isOptionList opts.Configuration then error("expected Configuration option to be a list of options");
     -- package name must be alphanumeric
-    checkPackageName pkgname;
+    pkgname = checkPackageName(pkgname, true);
     -- dismiss the loaded package before reloading
     if opts.Reload === true then (
 	dismiss pkgname;
 	if isPackageLoaded pkgname then (
+	    printerr("warning: reloading ", pkgname,
+		"; recreate instances of types from this package");
 	    closePackage value PackageDictionary#pkgname;
 	    -- clear out the value of the symbol
 	    PackageDictionary#pkgname <- PackageDictionary#pkgname));
@@ -186,12 +219,17 @@ loadPackage String  := opts -> pkgname -> (
 
 needsPackage = method(TypicalValue => Package, Options => options loadPackage)
 needsPackage String  := opts -> pkgname -> (
+    -- package name must be alphanumeric
+    pkgname = checkPackageName(pkgname, true);
     if PackageDictionary#?pkgname
     and instance(pkg := value PackageDictionary#pkgname, Package)
     and (opts.FileName === null or
 	realpath opts.FileName == realpath pkg#"source file")
     and pkg.PackageIsLoaded
-    then use value PackageDictionary#pkgname
+    then (
+	if any(packageFiles pkg, file -> fileTime file > filesLoaded#file)
+	then loadPackage(pkgname, opts ++ {Reload => true})
+	else use pkg)
     else loadPackage(pkgname, opts))
 
 -- used as the default loadOptions in newPackage
@@ -199,12 +237,16 @@ loadPackageOptions#"default" = new MutableHashTable from options loadPackage
 
 getpkg       = pkgname -> if isPackageLoaded pkgname then value PackageDictionary#pkgname else dismiss needsPackage pkgname
 getpkgNoLoad = pkgname -> if isPackageLoaded pkgname then value PackageDictionary#pkgname
+getpkgsrcdir = pkgname -> (
+    if (pkg := getpkgNoLoad pkgname ?? getPackageInfo pkgname) =!= null
+    then pkg#"source directory" else error "package not loaded or preinstalled")
 
 -----------------------------------------------------------------------------
 -- newPackage
 -----------------------------------------------------------------------------
 
 newPackage = method(
+    Dispatch => Thing,
     Options => {
 	Authors                   => {},
 	AuxiliaryFiles            => false,
@@ -224,9 +266,10 @@ newPackage = method(
 	UseCachedExampleOutput    => null,
 	Version                   => "0.0"
 	})
+newPackage Sequence := opts -> x -> newPackage splice(nonnull x, opts) -- to allow null entries
 newPackage String := opts -> pkgname -> (
     -- package name must be alphanumeric
-    checkPackageName pkgname;
+    checkPackageName(pkgname, false);
     -- required package values
     scan({
 	    (Authors,        List),
@@ -241,23 +284,23 @@ newPackage String := opts -> pkgname -> (
     -- TODO: add a general type checking mechanism
     scan({Certification, Configuration}, name -> if opts#name =!= null and not isOptionList opts#name then
 	error("newPackage: expected ", toString name, " option to be a list of options"));
+    opts = first override(opts, ( Authors => nonnull opts.Authors ));
     if opts.Authors =!= null and any(opts.Authors, author -> not isOptionList author)
     then error("newPackage: expected Authors option to be a list of zero or more lists of options");
     if opts.Authors =!= null and any(opts.Authors, author -> (
 	    author = new OptionTable from author;
 	    author.?Name and match_{"(C|c)ontribut", "(M|m)aintain", "(A|a)uthor", "(T|t)hank"} author.Name))
-    then warning("newPackage: use the Contributors or Acknowledgement keywords to acknowledge contributors in the package documentation");
+    then error("newPackage: use the Contributors or Acknowledgement keywords to acknowledge contributors of " | pkgname);
     -- optional package values
     scan({
+	    (Keywords, List),
 	    (Date,     String),
 	    (Headline, String),
 	    (HomePage, String)}, (name, type) -> if opts#name =!= null and not instance(opts#name, type) then
 	error("newPackage: expected ", toString name, " option of class ", toString type));
-    if opts.?Keywords then (
-	 if class opts.Keywords =!= List then error "expected Keywords value to be a list";
-	 if not all(opts.Keywords, k -> class k === String) then error "expected Keywords value to be a list of strings";
-	 );
-    -- TODO: if #opts.Headline > 100 then error "newPackage: Headline is capped at 100 characters";
+    if opts.Keywords =!= null and any(opts.Keywords,
+	keyword -> not instance(keyword, String)) then error "newPackage: expected Keywords to be a list of strings";
+    if opts.Headline =!= null and #opts.Headline > 100 then error "newPackage: expected Headline to be less than 100 characters";
     -- the options coming from loadPackage are stored here
     loadOptions := if loadPackageOptions#?pkgname then loadPackageOptions#pkgname else loadPackageOptions#"default";
     -- the options are stored for readPackage
@@ -317,17 +360,7 @@ newPackage String := opts -> pkgname -> (
     if opts.OptionalComponentsPresent === null  then opts = opts ++ {OptionalComponentsPresent => opts.CacheExampleOutput =!= true};
     if opts.UseCachedExampleOutput === null     then opts = opts ++ {UseCachedExampleOutput => not opts.OptionalComponentsPresent};
     --
-    packagePrefix := (
-	-- Try to detect whether we are loading the package from an installed version.
-	-- A better test would be to see if the raw documentation database is there...
-	m := regex("(/|^)" | Layout#2#"packages" | "$", currentFileDirectory);
-	if m#?1 then substring(currentFileDirectory, 0, m#1#0 + m#1#1) else (
-	    m = regex("(/|^)" | Layout#1#"packages" | "$", currentFileDirectory);
-	    -- this can be useful when running from the source tree, but this is a kludge
-	    if m#?1 then substring(currentFileDirectory, 0, m#1#0 + m#1#1) else prefixDirectory));
-    packageLayout := detectCurrentLayout packagePrefix;
-    --
-    newpkg := new Package from nonnull {
+    newpkg := new Package from {
 	"pkgname"                  => pkgname,
 	symbol Options             => opts,
 	symbol Dictionary          => new Dictionary, -- this is the global one
@@ -338,11 +371,9 @@ newPackage String := opts -> pkgname -> (
 	"previous currentPackage"  => currentPackage,
 	"previous dictionaries"    => dictionaryPath,
 	"previous packages"        => loadedPackages,
-	"test number"              => 0,
-	"test inputs"              => new MutableHashTable,
+	"test inputs"              => new MutableList,
 	"raw documentation"        => new MutableHashTable, -- deposited here by 'document'
 	"processed documentation"  => new MutableHashTable, -- the output from 'documentation', look here first
-	"undocumented keys"        => new MutableHashTable,
 	"example inputs"           => new MutableHashTable,
 	"example data files"       => new MutableHashTable,
 	"example results"          => new MutableHashTable,
@@ -352,18 +383,13 @@ newPackage String := opts -> pkgname -> (
 	"auxiliary files"          => toAbsolutePath currentFileDirectory | pkgname | "/",
 	"source directory"         => toAbsolutePath currentFileDirectory,
 	"source file"              => toAbsolutePath currentFileName,
-	if packagePrefix =!= null then
-	"package prefix"           => packagePrefix
 	};
     newpkg.PackageIsLoaded = false;
     --
-    if packageLayout =!= null then (
-	rawdbname := databaseFilename(Layout#packageLayout, packagePrefix, pkgname);
-	if fileExists rawdbname then (
-	    newpkg#rawKeyDB = rawdb := openDatabase rawdbname;
-	    addEndFunction(() -> if isOpen rawdb then close rawdb))
-	else if notify then printerr("database not present: ", minimizeFilename rawdbname))
-    else if notify then printerr("package prefix null, not opening database for package ", format pkgname);
+    packagePrefix := detectPackagePrefix(currentFileDirectory);
+    packageDatabase := openPackageDatabase(packagePrefix, pkgname);
+    if packagePrefix   =!= null then newpkg#"package prefix" = packagePrefix;
+    if packageDatabase =!= null then newpkg#rawKeyDB         = packageDatabase;
     --
     pkgsym := (
 	if PackageDictionary#?pkgname then getGlobalSymbol(PackageDictionary, pkgname)
@@ -411,7 +437,7 @@ export List   := v -> (
 		if class sym#1 =!= String then error("expected a string: ", nam);
 		sym = getGlobalSymbol(pd, sym#1))
 	    else if instance(sym, String) then (
-		if match("^[[:alpha:]]$", sym) then error ("cannot export single-letter symbol ", getGlobalSymbol(pd, sym));
+		if match("^[[:alpha:]]$", sym) then error ("cannot export single-letter symbol '", sym, "'");
 		nam = sym;
 		sym = if pd#?nam then pd#nam else getGlobalSymbol(pd, nam))
 	    else error ("'export' expected a string or an option but was given ", sym, ", of class ", class sym);
@@ -433,7 +459,9 @@ symbolFrom = (pkgname, name) -> value (getpkg pkgname)#"private dictionary"#name
 
 importFrom = method()
 importFrom(String,  List) := (P, x) -> importFrom(getpkg P, x)
-importFrom(Package, List) := (P, x) -> apply(nonnull x, s -> if not currentPackage#"private dictionary"#?s then currentPackage#"private dictionary"#s = P#"private dictionary"#s)
+importFrom(Package, List) := (P, x) -> apply(nonnull x, s ->
+    try currentPackage#"private dictionary"#s = P#"private dictionary"#s
+    else warning("importFrom: failed to import symbol ", s))
 importFrom(String,  String) :=
 importFrom(Package, String) := (P, x) -> importFrom(P, {x})
 
@@ -442,22 +470,6 @@ exportFrom(String,  List) := (P, x) -> exportFrom(getpkg P, x)
 exportFrom(Package, List) := (P, x) -> export \\ toString \ importFrom(P, x)
 exportFrom(String,  String) :=
 exportFrom(Package, String) := (P, x) -> exportFrom(P, {x})
-
----------------------------------------------------------------------
--- Here is where Core officially becomes a package
--- TODO: is this line necessary? when does it ever run?
-addStartFunction( () -> if prefixDirectory =!= null then Core#"package prefix" = prefixDirectory )
-newPackage("Core",
-     Authors => {
-	  {Name => "Daniel R. Grayson", Email => "dan@math.uiuc.edu", HomePage => "http://www.math.uiuc.edu/~dan/"},
-	  {Name => "Michael E. Stillman", Email => "mike@math.cornell.edu", HomePage => "http://www.math.cornell.edu/People/Faculty/stillman.html"}
-	  },
-     DebuggingMode => debuggingMode,
-     Reload => true,
-     HomePage => "http://www.math.uiuc.edu/Macaulay2/",
-     Version => version#"VERSION",
-     Headline => "A computer algebra system designed to support algebraic geometry")
-Core#"pre-installed packages" = lines get (currentFileDirectory | "installedpackages")
 
 protect PackageIsLoaded
 
@@ -500,7 +512,6 @@ endPackage String := title -> (
 	  b = last \ sort apply(b, s -> (hash s, s));
 	  error splice ("mutable unexported unset symbol(s) in package ", pkg#"pkgname", ": ", toSequence between_", " b);
 	  );
-     -- TODO: check for hadDocumentationWarning and Error here?
      pkg.PackageIsLoaded = true;
      pkg)
 
@@ -516,31 +527,33 @@ beginDocumentation = () -> (
 
 ---------------------------------------------------------------------
 
+implicitlyLoadedPackages = () -> nonnull unique apply(keys PackageDictionary, getpkgNoLoad)
+implicitlyLoadedDictionaries = () -> unique join(dictionaryPath,
+    apply(implicitlyLoadedPackages(), pkg -> pkg.Dictionary))
+
 package = method (Dispatch => Thing, TypicalValue => Package)
 package Package  := identity
 package Nothing  := x -> null
 package Option   := o -> youngest(package \ toSequence o)
 package Array    :=
-package Sequence := s -> if (d := fetchAnyRawDocumentation makeDocumentTag s) =!= null then package d.DocumentTag
+-- FIXME: if a package (other than Core) defines (degreeLength, ZZ), we wouldn't detect it!
+package Sequence := s -> if (d := fetchAnyRawDocumentation makeDocumentTag s) =!= null then (
+    if toString(pkg := package d.DocumentTag) === "Macaulay2Doc" then Core else pkg)   else youngest(package \ splice s)
 package String   := s -> if (d := fetchAnyRawDocumentation                 s) =!= null then package d.DocumentTag
 package Thing    := x -> if (d := dictionary x)                               =!= null then package d
-package Symbol   := s -> (
-    if instance(value s, Package) then return value s;
-    n := toString s;
-    r := scan(values PackageDictionary, pkg ->
-	if (pkg = value pkg).?Dictionary and pkg.Dictionary#?n and pkg.Dictionary#n === s then break pkg);
-    if r =!= null then return r;
-    scan(dictionaryPath, d -> if d#?n and d#n === s then if package d =!= null then break package d))
+-- TODO: oo belongs in Core, but where do o1, etc. belong to?
+package Symbol   := s -> if instance(obj := value s, Package) then obj else
+    scan(implicitlyLoadedDictionaries(),
+	dict -> try if value dict#(toString s) === obj then break package dict)
 package Function   :=
 package HashTable  := x -> if hasAttribute(x, ReverseDictionary) then package getAttribute(x, ReverseDictionary)
+-- TODO: where do OutputDictionary and PackageDictionary belong to?
 package Dictionary := d -> (
-    if currentPackage =!= null
-    and (  currentPackage.?Dictionary
-	and currentPackage.Dictionary === d
-	or currentPackage#?"private dictionary"
-	and currentPackage#"private dictionary" === d) then currentPackage
-    else scan(values PackageDictionary, pkg ->
-	if (pkg = value pkg).?Dictionary and pkg.Dictionary === d then break pkg))
+    scan(unique prepend_currentPackage implicitlyLoadedPackages(),
+	pkg -> if pkg.Dictionary === d or pkg#"private dictionary" === d then break pkg))
+
+-- speeds up documentation generation by orders of magnitude
+package' = memoize package
 
 -- TODO: should this reset the values of exported mutable symbols?
 use Package := pkg -> (
@@ -551,10 +564,27 @@ use Package := pkg -> (
     if pkg.?use then pkg.use pkg else pkg)
 
 debug ZZ      := i   -> debugWarningHashcode = i
-debug Package := pkg -> (
-    dict := pkg#"private dictionary";
+debug String  := file -> debug fileDictionaries#(relativizeFilename file)
+debug Package := pkg  -> debug pkg#"private dictionary"
+-- TODO: debug(Function) for accessing the local dictionary of a function closure
+debug LocalDictionary  := dict -> (
+    -- FIXME: this works, but the original location of the symbols is lost
+    apply(pairs dict, (str, symb) -> globalAssign(getSymbol str, value symb));
+    checkShadow())
+debug GlobalDictionary := dict -> (
     if not isMember(dict, dictionaryPath) then dictionaryPath = prepend(dict, dictionaryPath);
     checkShadow())
+
+packageFiles = pkg -> (
+    srcfile := realpath pkg#"source file";
+    if not fileExists srcfile then {}
+    else prepend(srcfile,
+	if not pkg#?"auxiliary files" then {}
+	else select(values loadedFiles, match_(pkg#"auxiliary files"))))
+
+locate Package := pkg -> NumberedVerticalList (
+    -- TODO: somehow keep track of the number of lines of each file
+    apply(packageFiles pkg, file -> new FilePosition from (file, 0, 0)))
 
 -----------------------------------------------------------------------------
 -- evaluateWithPackage
@@ -568,8 +598,11 @@ popDictionary  := (d, s) -> (dictionaryPath =    drop(dictionaryPath, 1); s)
 -- Probably only necessary because Text documents Hypertext objects.
 -- Is there an alternative way? Is is used by document.m2 and installPackage.m2
 evaluateWithPackage = (pkg, object, func) -> (
-    if isMember(pkg.Dictionary, dictionaryPath) then return func object;
-    popDictionary(pushDictionary pkg.Dictionary, func object))
+    -- add a temporary mutable dictionary to catch stray symbols
+    -- before they end up in User#"private dictionary" (cf. #4290)
+    popDictionary(pushDictionary new Dictionary,
+	if isMember(pkg.Dictionary, dictionaryPath) then  func object
+	else popDictionary(pushDictionary pkg.Dictionary, func object)))
 
 -- Local Variables:
 -- compile-command: "make -C $M2BUILDDIR/Macaulay2/m2 "

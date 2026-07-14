@@ -26,6 +26,9 @@ Hom(Module, Ideal)  := Module => opts -> (M, N) -> Hom(module M, module N, opts)
 Hom(Module, Module) := Module => opts -> (M, N) -> (
     -- TODO: take advantage of cached results with higher e
     e := opts.DegreeLimit;
+    if e === {} then e = null;
+    if e === 0  then e = degree 0_M;
+    opts = opts ++ { DegreeLimit => e };
     -- M.cache is a hashless (hence ageless) CacheTable, but
     -- M.cache.cache is a MutableHashTable, hence has an age.
     Y := youngest(M.cache.cache, N.cache.cache);
@@ -46,7 +49,6 @@ addHook((Hom, Module, Module), Strategy => Syzygies, (opts, M, N) -> (
     e := opts.DegreeLimit;
     -- TODO: any other cases which should be excluded?
     if e === null then return null;
-    if e === 0 then e = degree 0_M;
     A := presentation M; (G, F) := (target A, source A); -- M <-- G <-- F
     B := presentation N; (L, K) := (target B, source B); -- N <-- L <-- K
     piN := inducedMap(N, L, generators N);
@@ -62,7 +64,7 @@ Hom(Matrix, Matrix) := Matrix => o -> (f, g) -> Hom(source f, g, o) * Hom(f, sou
 -----------------------------------------------------------------------------
 
 -- TODO: compare speed with Hom(M, R^1)
-dual Module := Module => {} >> o -> F -> if F.cache.?dual then F.cache.dual else F.cache.dual = (
+dual Module := Module => {} >> o -> F -> F.cache.dual ??= (
      if not isFreeModule F then kernel transpose presentation F
      else new Module from (ring F,rawDual raw F))
 
@@ -89,13 +91,11 @@ adjoint (Matrix, Module, Module) := Matrix => opts -> (m, F, G) -> (
 -----------------------------------------------------------------------------
 
 homomorphism = method()
-homomorphism Matrix := Matrix => f -> (
-    -- from a map R^1 -> Hom(M,N) produce a map M --> N
-    H := target f;
-    if not H.cache.?homomorphism then error "expected target of map to be of the form 'Hom(M,N)'";
-    if not isFreeModule source f
-    or not rank source f === 1 then error "expected source of map to be free of rank 1";
-    H.cache.homomorphism f)
+homomorphism Matrix := m -> homomorphism vector m
+homomorphism Vector := v -> (
+    -- from an element v in Hom(M, N) produce a map f:M --> N
+    if (H := module v).cache.?homomorphism then H.cache.homomorphism matrix v
+    else error "homomorphism: expected the input to be an element of a module of the form 'Hom(M,N)'")
 
 homomorphism' = method(Options => options Hom)
 homomorphism' Matrix := Matrix => opts -> f -> (

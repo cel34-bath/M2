@@ -2,13 +2,13 @@
 #include <memory>
 #include <gtest/gtest.h>
 
-#include "util-polyring-creation.hpp"
-#include "matrix.hpp"
+#include "unit-tests/util-polyring-creation.hpp"
+#include "matrices/matrix.hpp"
 #include "BasicPolyList.hpp"
 #include "BasicPolyListParser.hpp"
 #include "gb-f4/PolynomialList.hpp"
 #include "gb-f4/GBF4Interface.hpp"
-#include "VectorArithmetic.hpp"
+#include "basic-rings/vector-arithmetic.hpp"
 // These are more benchmark examples, and the files to be read are quite large
 // So we can't run these by default.
 
@@ -71,10 +71,13 @@ TEST(MatrixIO, readPolynomialErrors)
 TEST(MatrixIO, readMsolve)
 {
   std::string filename { EXAMPLE_DIR"eg2-gb.ms" };
-  std::string contents = R"(#Reduced Groebner basis for input in characteristic 1235952427
-#for variable order x, y, z
-#w.r.t. grevlex monomial ordering
-#consisting of 4 elements:
+  std::string contents = R"(#Reduced Groebner basis data
+#---
+#field characteristic: 1235952427
+#variable order:       x, y, z
+#monomial order:       graded reverse lexicographical
+#length of basis:      4 elements sorted by increasing leading monomials
+#---
 [1*x^1+2*y^1+2*z^1+1235952426,
 1*y^1*z^1+494380972*z^2+370785728*y^1+247190485*z^1,
 1*y^2+988761941*z^2+741571456*y^1+494380971*z^1,

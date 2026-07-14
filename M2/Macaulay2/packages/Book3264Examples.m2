@@ -64,7 +64,7 @@ placeholderToSchubertBasis(RingElement,FlagBundle) := (c,G) -> (
      (k,q) := toSequence(G.BundleRanks);
      P := diagrams(q,k);
      M := apply(P, i-> placeholderSchubertCycle(i,G));
-     E := flatten entries basis(R);
+     E := flatten entries basis(R, Variables => 0 .. numgens R - 1);
      local T';
      if R.cache.?htoschubert then T' = R.cache.htoschubert else (
 	  T := transpose matrix apply (M, i -> apply(E, j-> coefficient(j,i))); --matrix converting from schu-basis 
@@ -817,4 +817,26 @@ doc ///
                            -- the coefficient of H_(2,i) is the coefficient of sigma_1^i
       sigma_1 = chern(1,G13.Bundles#1)
       1 + sum(1..4, i -> coefficient(chern(i,P5.Bundles#1),TG) * ((sigma_1)^i))
+///
+
+
+--test exported functions work
+TEST ///
+    -- grassmannian
+    G = grassmannian(1, 3)
+    assert(instance(G, FlagBundle))
+
+    -- diagram
+    d = diagrams(1,1)
+    assert(instance(d, List))
+
+    -- placeholderSchubertCycle
+    s = placeholderSchubertCycle({1}, G)
+    assert(instance(s, RingElement))
+
+    -- placeholderToSchubertBasis
+    R = intersectionRing G
+    f = R_0   -- grab any ring element to convert
+    b = placeholderToSchubertBasis(f, G)
+    assert(instance(b, RingElement))
 ///

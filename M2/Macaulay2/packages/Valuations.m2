@@ -9,11 +9,11 @@ newPackage("Valuations",
             {Name => "Ethan Partida", Email => "ethan_partida@brown.edu", HomePage => "https://ethanpartida.github.io/"},
             {Name => "Shelby Cox", Email => "spcox@umich.edu"},
             {Name => "Courtney George", Email => "courtney.george@uky.edu"},
-            {Name => "Oliver Clarke", Email => "oliver.clarke@ed.ac.uk", HomePage => "oliverclarkemath.com"}},
-        DebuggingMode => true,
+            {Name => "Oliver Clarke", Email => "oliver.clarke@ed.ac.uk", HomePage => "https://www.oliverclarkemath.com/"}},
         HomePage => "https://github.com/Macaulay2/Workshop-2023-Minneapolis/tree/valuations",
         Configuration => {},
-        PackageExports => {"LocalRings", "SubalgebraBases", "InvariantRing", "gfanInterface", "Binomials"})
+        PackageExports => {"LocalRings", "SubalgebraBases", "InvariantRing", "gfanInterface", "Binomials"},
+	Keywords => {"Commutative Algebra"})
 
 ----- Eventually move to other packages
 ring Subring := A -> ambient A
@@ -22,6 +22,7 @@ ring LocalRing := A -> A
 ambient LocalRing := A -> A
 
 export{"valuation",
+       "Valuation",
        "trivialValuation",
        "padicValuation",
        "leadTermValuation",
@@ -36,6 +37,8 @@ export{"valuation",
        "OrderedQQn",
        "OrderedQQVector",
        "orderedQQn"}
+
+importFrom(Core, "isPromotable")
 
 OrderedQQn = new Type of Module
 OrderedQQVector = new Type of Vector
@@ -56,7 +59,7 @@ valuation Function := v -> (
     internalValuation(v, null, null)
 )
 
-ourSources := {Ring,Subring,LocalRing,RingOfInvariants}
+ourSources := {Ring,Subring,LocalRing,RingOfInvariants,RingFamily}
 ourTargets := {Ring,Subring,LocalRing,RingOfInvariants,OrderedQQn}
 
 -- Create different valuation functions for various inputs
@@ -88,16 +91,15 @@ ourInputs := {Number, RingElement, Constant}
 -- Other inputs will need to be added to that list, if needed
 for i in ourInputs do (
     Valuation i := (v,t) -> (
-        num := try numerator t then numerator t else t;
-        den := try denominator t then denominator t else 1_(ring t);
-        if (v#source === null) or (ring t) === v#source then
-            v#"function" t
-        else if (isMember(ring t, v#source.baseRings)) then
-            v#"function" promote(t, v#source)
-        else if (ring t) === v#source then
-            v#"function" num - v#"function" den
-        else if (isMember(ring num, v#source.baseRings)) then
-            v#"function" promote(num, v#source) - v#"function" promote(den, v#source)
+	(f, R) := (v#"function", v#source);
+	if R === null then f t
+	else (
+	    if not isPromotable(ring t, R)
+	    then error("expected an element of ", R);
+	    if lookup(numerator, class t) =!= null then (
+		(num, den) := (numerator t, denominator t);
+		f num - f den)
+	    else f t)
     )
 )
 
@@ -119,7 +121,7 @@ net Valuation := v -> (
 --------------------------- Ordered QQ-module Types ----------------------------
 --------------------------------------------------------------------------------
 
--- Ordered Module based on the monomial order of a polyomial ring
+-- Ordered Module based on the monomial order of a polynomial ring
 --
 -- given two elements a, b in QQ^n they are compared by using the
 -- the monomial order of the polynomial ring:
@@ -144,7 +146,7 @@ orderedQQn(ZZ, List) := (n, monOrder) -> (
     ordMod
 )
 
--- Two ordered modules are equal iff their cached rings are identitcal
+-- Two ordered modules are equal iff their cached rings are identical
 OrderedQQn == OrderedQQn := (N, M) -> (
     N.cache.Ring === M.cache.Ring
 )
@@ -221,16 +223,14 @@ countPrimeFactor (ZZ, ZZ) := (p, x) -> (
 )
 
 -- p-adic Valuation valuation construction
--- Allows for inputs to be rationals and computes difference of the
--- valuations for the numerator and denominator
 padicValuation = method()
 padicValuation ZZ := p -> (
     if not isPrime p then error "expected a prime integer";
     func := x -> (
         if x == 0 then infinity
-        else countPrimeFactor(p, numerator x_QQ) - countPrimeFactor(p, denominator x_QQ)
+        else countPrimeFactor(p, x)
     );
-    valuation(func,QQ,QQ)
+    valuation(func,QQ,ZZ)
 )
 
 -- Leading Term Valuation,
@@ -278,7 +278,7 @@ localRingValuation LocalRing := R -> (
         if x == 0 then infinity
         else getMExponent(m, sub(x, S))
     );
-    valuation(func, R, ZZ)
+    valuation(func, frac R, ZZ)
 )
 
 --------------------------------------------------------------------------------
@@ -538,7 +538,7 @@ doc ///
             the lowest term valuation
      Description
        Text
-           This function construst a valuation which returns the exponent vector of the
+           This function builds a valuation which returns the exponent vector of the
            lead term of a polynomial with respect to the ring's term order.
            The valuation returns vectors in an @TT "ordered $\\QQ$-module"@,
            which respects the monomial order of the

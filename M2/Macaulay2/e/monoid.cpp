@@ -5,13 +5,13 @@
 #include <assert.h>
 #include <string.h>
 
-#include "ExponentList.hpp"
-#include "ExponentVector.hpp"
+#include "monomials/ExponentList.hpp"
+#include "monomials/ExponentVector.hpp"
 #include "buffer.hpp"
 #include "error.h"
 #include "exceptions.hpp"
-#include "overflow.hpp"
-#include "polyring.hpp"
+#include "monomials/overflow.hpp"
+#include "rings/polyring.hpp"
 #include "util.hpp"
 
 // TODO: remove this
@@ -188,7 +188,7 @@ void Monoid::set_degrees()
     }
 
   auto degrk = mDegreeMonoid->n_vars();
-  auto *iter = &mDegrees.front();
+  auto *iter = mDegrees.data();
 
   if (mHeftVector.size() != degrk)
     {
@@ -209,9 +209,7 @@ void Monoid::set_degrees()
       }
   else
     {
-      // TODO: what is iter in this case?!
       auto m = mDegreeMonoid->make_one();
-      mDegreeMonoid->from_expvector(iter, m);
       mDegreeOfVar.assign(mVariableCount, m);
       mHeftDegrees.assign(mVariableCount, 1);
     }
@@ -463,6 +461,7 @@ monomial Monoid::make_one() const
 }
 void Monoid::remove(monomial d) const
 {
+  (void) d;
 #if 0
 //   freemem(d);
 #endif

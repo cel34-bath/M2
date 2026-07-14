@@ -1,6 +1,7 @@
 --		Copyright 1996-2006 by Daniel R. Grayson and Michael E. Stillman
 
 needs "enginering.m2"
+needs "polyrings.m2"
 needs "matrix1.m2"
 
 -----------------------------------------------------------------------------
@@ -14,7 +15,8 @@ isQuotientRing = method(TypicalValue => Boolean)
 isQuotientRing Ring := R -> false
 isQuotientRing QuotientRing := R -> true
 
-isFinitePrimeField = F -> isQuotientRing F and ambient F === ZZ and F.?char
+isFinitePrimeField = method(TypicalValue => Boolean)
+isFinitePrimeField Ring := F -> isQuotientRing F and ambient F === ZZ and F.?char
 
 isQuotientOf = method(TypicalValue => Boolean)
 isQuotientOf(Ring,Ring) := (R,S) -> false
@@ -36,7 +38,6 @@ degreesMonoid QuotientRing := (cacheValue degreesMonoid) (S -> degreesMonoid amb
 degreeLength QuotientRing := S -> degreeLength ambient S
 degreeGroup  QuotientRing := S -> degreeGroup  ambient S
 
-vars QuotientRing := (cacheValue vars) (S -> map(S^1,, table (1, numgens S, (i,j) -> S_j)))
 degrees QuotientRing := R -> degrees ambient R
 
 precision QuotientRing := precision @@ ambient
@@ -54,7 +55,6 @@ expression QuotientRing := S -> (
     if hasAttribute(S, ReverseDictionary)
     then expression getAttribute(S, ReverseDictionary)
     else new Divide from { unhold expression ambient S, unhold expression printRels S })
-toExternalString QuotientRing := toString @@ describe
 -- TODO: add AfterPrint for QuotientRing
 
 -----------------------------------------------------------------------------
@@ -80,14 +80,15 @@ ZZp Ideal := opts -> (I) -> (
      else if savedQuotients#?(typ, n) then
          savedQuotients#(typ, n)
      else (
-	  if not isPrime n
-	  then error ("ZZ/n not implemented yet for composite n = ", toString n);
+	  if not isPrime n or n > 2^64
+	  then return ZZ[DegreeRank => 0]/n;
 	  S := new QuotientRing from 
       if typ === "Ffpack" then rawARingGaloisField(n,1)  
         else if typ === "Flint" then rawARingZZpFlint n
         else if typ === "Aring" then rawARingZZp n
         else if typ === "Old" then rawZZp n
-        else error("unknown implementation choice: "|typ|///. Choices are "Flint" (default), "Ffpack", "Aring", "Old"///);
+        else error("unknown implementation choice: ", typ, ". ", newline,
+	    ///Choices are "Flint" (default), "Ffpack", "Aring", "Old"///);
 	  S.cache = new CacheTable;
 	  S.isBasic = true;
 	  S.ideal = I;
@@ -102,6 +103,7 @@ ZZp Ideal := opts -> (I) -> (
 	  expression S := x -> expression rawToInteger raw x;
 	  fraction(S,S) := S / S := (x,y) -> if y === 0_S then error "division by zero" else x//y;
 	  S.frac = S;		  -- ZZ/n with n PRIME!
+	  sqrt S := x -> promote(tonelliShanks(lift(x, ZZ), n), S);
       savedQuotients#(typ, n) = S;
       lift(S,QQ) := opts -> liftZZmodQQ;
 	  S))
@@ -230,9 +232,15 @@ Ring / List := Ring / Sequence := QuotientRing => (R,f) -> R / promote(ideal f, 
 
 -----------------------------------------------------------------------------
 
-presentation PolynomialRing := Matrix => R -> map(R^1, R^0, 0)
-presentation QuotientRing   := Matrix => R -> (
-     if R.?presentation then R.presentation else R.presentation = (
+ZZ.presentation =
+QQ.presentation = R -> presentation module R
+presentation Ring := Matrix => R -> (
+    if R.?presentation then R.presentation R
+    else notImplemented "presentation for this ring")
+presentation InexactFieldFamily := Matrix => R -> presentation default R
+presentation PolynomialRing :=
+presentation InexactField   := Matrix => R -> presentation module R
+presentation QuotientRing   := Matrix => R -> R.cache.presentation ??= (
 	  S := ambient R;
 	  f := generators ideal R;
 	  while class S === QuotientRing do (		    -- untested code
@@ -240,8 +248,7 @@ presentation QuotientRing   := Matrix => R -> (
 	       S = ambient S;
 	       );
 	  f
-	  )
-     )
+    )
 
 presentation(QuotientRing,   QuotientRing)   :=
 presentation(QuotientRing,   PolynomialRing) :=
@@ -276,11 +283,11 @@ char QuotientRing := (stashValue symbol char) ((S) -> (
      if isPrime p or isMember(QQ,S.baseRings) then return if S == 0 then 1 else p;
      relns := presentation S;
      if relns == 0 then return char ring relns;
-     if coefficientRing S =!= ZZ then notImplemented();
+     if ultimate(coefficientRing, S) =!= ZZ then notImplemented();
      g := generators gb relns;
      if g == 0 then return char ring g;
      m := g_(0,0);
-     if liftable(m,ZZ) then lift(m,ZZ) else 0))
+     lift(m,ZZ,Verify=>false) ?? 0))
 
 singularLocus = method()
 singularLocus(Ring) := QuotientRing => (R) -> (
@@ -352,6 +359,11 @@ getPrimeWithRootOfUnity(ZZ,ZZ) := opt-> (n,r1) -> (
          );
      (p,r2)
      );
+
+-- the "midpoint" of a polynomial in a quotient ring isn't well-defined
+-- what if it's R/I, but I has generators with intervals as coefficients?
+midpoint QuotientRing := R -> (
+    if isFinitePrimeField R then R else error "not well-defined")
 
 -- Local Variables:
 -- compile-command: "make -C $M2BUILDDIR/Macaulay2/m2 "

@@ -58,6 +58,14 @@ TEST ///
   assert isWellDefined Fn
   assert(prune HH Fn == complex M) -- only guaranteed to be isomorphic?
   assert(B1 =!= betti Fn) -- Fn is non minimal in this example
+
+  -- this is meant to be the GB of the above I.
+  I = ideal matrix {{a*b-c*d, b*c*d-c*d^2, a^3-c^3, a*c*d^2-c^2*d^2, b*c^3-a^2*c*d}}
+  Fn = freeResolution(I, Strategy => NonminimalWithGB)
+  assert isWellDefined Fn
+  assert(prune HH Fn == complex M) -- only guaranteed to be isomorphic?
+  assert(B1 =!= betti Fn) -- Fn is non minimal in this example
+  
 ///
 
 TEST ///
@@ -142,6 +150,13 @@ TEST ///
   C = freeResolution(I, LengthLimit => 3, Strategy => Nonminimal)
   assert isWellDefined C  
   assert(length C == 3)
+
+  I = ideal gens gb ideal I_*
+  C = freeResolution(I, LengthLimit => 4, Strategy => NonminimalWithGB)
+  assert isWellDefined C
+  assert(length C == 4)
+
+  C = freeResolution(I, LengthLimit => 4, Strategy => Nonminimal)
 ///
 
 TEST ///
@@ -201,21 +216,21 @@ TEST ///
   assert(betti C0 == betti C3)
 
   I = ideal I_*
-  (usedtime, C) = toSequence timing freeResolution(I, LengthLimit => 6, Strategy => 0)
+  (usedtime, C) = toSequence elapsedTiming freeResolution(I, LengthLimit => 6, Strategy => 0)
   assert isWellDefined C
   assert(length C == 6)
   
-  (usedtime1, C1) = toSequence timing freeResolution(I, LengthLimit => 6, Strategy => 1) -- no recomputation
+  (usedtime1, C1) = toSequence elapsedTiming freeResolution(I, LengthLimit => 6, Strategy => 1) -- no recomputation
   assert isWellDefined C1
   assert(length C1 == 6)
   assert(usedtime1 < usedtime/5) -- this /5 is a heuristic, just to check that essentially no computation is happening for usedtime1
 
-  (usedtime2, C2) = toSequence timing freeResolution(I, LengthLimit => 7, Strategy => 1)
+  (usedtime2, C2) = toSequence elapsedTiming freeResolution(I, LengthLimit => 7, Strategy => 1)
   assert isWellDefined C2
   assert(length C2 == 7)
   assert(usedtime1 < usedtime2/2)
   
-  (usedtime3, C3) = toSequence timing freeResolution(I, LengthLimit => 5, Strategy => 0) -- does change length, no recomputation
+  (usedtime3, C3) = toSequence elapsedTiming freeResolution(I, LengthLimit => 5, Strategy => 0) -- does change length, no recomputation
   assert isWellDefined C3
   assert(length C3 == 5)
   assert(usedtime3 < usedtime2/2)
@@ -718,17 +733,17 @@ TEST ///
   I = ideal"abc-de2, abd-c2d, ac2-bd2, abcde"
   gbTrace=2
 
-  (usedtime1, C) = toSequence timing freeResolution(I, Strategy => Nonminimal)
+  (usedtime1, C) = toSequence elapsedTiming freeResolution(I, Strategy => Nonminimal)
   assert isWellDefined C
 
-  (usedtime2, C2) = toSequence timing freeResolution(I, Strategy => Nonminimal)
-  assert(usedtime2 < usedtime1/10)
+  (usedtime2, C2) = toSequence elapsedTiming freeResolution(I, Strategy => Nonminimal)
+  assert BinaryOperation(symbol <, usedtime2, usedtime1/10)
 
-  (usedtime3, C3) = toSequence timing freeResolution I
-  assert(usedtime3 >  5*usedtime2)
+  (usedtime3, C3) = toSequence elapsedTiming freeResolution I
+  assert BinaryOperation(symbol >, usedtime3, 5*usedtime2)
 
-  (usedtime4, C4) = toSequence timing freeResolution(I, Strategy => Engine)
-  assert(usedtime4 < usedtime3/2)
+  (usedtime4, C4) = toSequence elapsedTiming freeResolution(I, Strategy => Engine)
+  assert BinaryOperation(symbol <, usedtime4, usedtime3/2)
 
   freeResolution(I, Strategy => 0) -- not recomputing
   freeResolution(I, Strategy => 1) -- not recomputing
@@ -791,6 +806,7 @@ TEST ///
 
 TEST ///
   -- of length limits and free resolutions
+  debug needsPackage "Complexes"
   R = ZZ/32003[a..d]/(a^2-b*c)
   M = coker vars R;
   C1 = freeResolution(M, LengthLimit => 4);
@@ -832,6 +848,7 @@ TEST ///
 ///
 
 TEST ///
+  debug needsPackage "Complexes"
   R = ZZ/101[a..d]
   M = R^0
   C = freeResolution M
@@ -849,13 +866,11 @@ TEST ///
   assert(C2 == 0)
 ///
 
-
-TEST ///
--- XXX
 -*
 restart
 needsPackage "Complexes"
 *-
+TEST ///
   needsPackage "InverseSystems"
   R = ZZ/101[a..e]
   F = a^4 + b^4 + c^4 +d^4 + e^4 + (a+b+c+d+e)^4
@@ -865,14 +880,15 @@ needsPackage "Complexes"
   assert(bt1 == bt2)
 ///
 
+-*  
+  restart
+  needsPackage("Complexes")
+*-
 ///
   -- code to test control-c during a computation.
   -- We don't know how to make this into a proper test.
   -- TODO (possibly): allow snapshot of a partially computed resolution.
--*  
-  restart
   debug needsPackage("Complexes")
-*-
   gbTrace=1
   S = ZZ/101[vars(0..20)]
   I = ideal for i from 1 to numgens S list S_(i-1)^i
@@ -885,4 +901,31 @@ needsPackage "Complexes"
   F = freeResolution(M, Strategy => Engine, LengthLimit => 4) -- This one works.
   assert isWellDefined F
   F2 = freeResolution(M, LengthLimit => 2)
+///
+
+TEST ///
+  R = QQ[x, Degrees => {{}}]
+  M = image x
+  F = freeResolution M
+  assert(isWellDefined F)
+  epsilon = augmentationMap F
+  assert isWellDefined epsilon
+  assert(M === (target epsilon)_0)
+///
+
+TEST ///
+  -- errorDepth = 0
+  A = ZZ/103[x,y,z];
+  J = ideal(x^3,y^4,z^5);
+  B = A/J;
+  f = matrix {{27*x^2-19*z^2, 38*x^2*y+47*z^3},
+      { -5*x^2+z^2, -37*x^2*y+51*x*y^2-36*y^3+11*y*z^2+8*z^3},
+      {x^2-x*y, z^3}};
+  M = cokernel f;
+  N = B^1/(x^2 + z^2,y^3 - 2*z^3);
+  time E = Ext(M,N); -- used 3.32 seconds in version 0.9.92
+  t = tally degrees target presentation E
+  u = new Tally from {{-3, -7} => 7, {-3, -6} => 7, {0, 1} => 3, {0, 2} => 4, {-4, -9} => 4, {-4, -8} => 1, {-4, -7} => 1, {-1, -2} => 4, {-2, -5} => 3,
+        {-2, -4} => 8}
+  assert ( t === u )
 ///

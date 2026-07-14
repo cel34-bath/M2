@@ -7,9 +7,9 @@ needs "polyrings.m2"
 GaloisField = new Type of EngineRing
 GaloisField.synonym = "Galois field"
 
-toExternalString GaloisField := k -> toString describe k
-toString GaloisField := toString @@ expression
-net GaloisField := net @@ expression
+isField GaloisField := F -> true
+isFinitePrimeField GaloisField := F -> F.degree == 1
+
 expression GaloisField := F -> if hasAttribute(F,ReverseDictionary) then expression getAttribute(F,ReverseDictionary) else (expression GF) (expression F.order)
 describe GaloisField := F -> Describe (expression GF) (expression F.order)
 
@@ -225,13 +225,16 @@ GF(Ring) := GaloisField => opts -> (S) -> (
 	  );
      F.use = F -> var <- F_0;
      F.use F;
+     F.cache = new CacheTable;
      F / F := (x,y) -> if y == 0 then error "division by zero" else x // y;
      F % F := (x,y) -> if y == 0 then x else 0_F;
+     sqrt F := x -> promote(tonelliShanks(lift(x, ZZ), F.order), F);
      F)
 
 random GaloisField := opts -> F -> (
-     i := random F.order;
-     if i === 0 then 0_F else F_0^i
+     p := char F;
+     t := F_0;
+     sum(F.degree, i -> random p * t^i)
      )
 
 dim GaloisField := ZZ => R -> 0
@@ -240,8 +243,16 @@ isField Ring := Boolean => R -> R.?isField and R.isField
 
 isAffineRing = method(TypicalValue => Boolean)
 isAffineRing Ring := isField
-isAffineRing PolynomialRing := R -> isCommutative R and not (options R).Inverses and isAffineRing coefficientRing R
-isAffineRing QuotientRing := R -> isField R or isAffineRing ambient R
+isAffineRing PolynomialRing := R -> R.cache.isAffineRing ??= isCommutative R and not (options R).Inverses and isAffineRing coefficientRing R
+isAffineRing QuotientRing := R -> R.cache.isAffineRing ??= isField R or isAffineRing ambient R
+
+isSkewAffineRing = method(TypicalValue => Boolean)
+isSkewAffineRing Ring := (R) -> false
+isSkewAffineRing PolynomialRing := R -> R.cache.isSkewAffineRing ??= (
+    coeffs := coefficientRing R;
+    isSkewCommutative R and (isSkewAffineRing coeffs or isAffineRing coeffs)
+)
+isSkewAffineRing QuotientRing := R -> R.cache.isSkewAffineRing ??= isSkewAffineRing ambient R
 
 -- Local Variables:
 -- compile-command: "make -C $M2BUILDDIR/Macaulay2/m2 "

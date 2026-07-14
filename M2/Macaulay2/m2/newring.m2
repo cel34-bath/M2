@@ -16,7 +16,7 @@ nothing := symbol nothing
 newRing = method( Options => applyValues(monoidDefaults, x -> nothing), TypicalValue => Ring )
 newRing PolynomialRing := opts -> (R) -> (
      opts = new MutableHashTable from select(new HashTable from opts, v -> v =!= nothing);
-     nullify := k -> if not opts#?k then opts#k = monoidDefaults#k;
+    nullify := k -> opts#k ??= monoidDefaults#k;
     if opts.?DegreeRank  then nullify \ {Heft, Degrees,    DegreeGroup};
     if opts.?Degrees     then nullify \ {Heft, DegreeRank, DegreeGroup};
     if opts.?DegreeGroup then nullify \ {Heft, DegreeRank};
@@ -77,7 +77,15 @@ tensor(QuotientRing,   QuotientRing) := monoidTensorDefaults >> optns -> (R, S) 
      fg := substitute(f,(vars AB)_{0 .. m-1}) | substitute(g,(vars AB)_{m .. m+n-1});
      -- forceGB fg;  -- if the monomial order chosen doesn't restrict, then this
                      -- is an error!! MES
-     AB/image fg)
+     RS := AB/image fg;
+     setupPromote map(RS,R,(vars AB)_{0 .. m-1});
+     setupLift map(R,RS,generators A | toList(n:0));
+     if S =!= R then (
+	 setupPromote map(RS,S,(vars AB)_{m .. m+n-1});
+	 setupLift map(S,RS,toList(m:0) | generators B);
+	 );
+     RS
+     )
 
 -------------------------
 -- Graph of a ring map --
@@ -97,8 +105,8 @@ graphIdeal RingMap := Ideal => opts -> (cacheValue (symbol graphIdeal => opts)) 
      k := coefficientRing R;
      if not isCommutative S then error "expected source of ring map to be a commutative ring";
      if S === k then return ideal map(R^1,R^0,0);
-     if not isAffineRing R then error "expected an affine ring";
-     if not isAffineRing S then error "expected an affine ring";
+     if not isAffineRing R and not isSkewAffineRing R then error "expected an affine ring";
+     if not isAffineRing S and not isSkewAffineRing S then error "expected an affine ring";
      if not ( k === coefficientRing S ) then error "expected polynomial rings over the same ring";
      gensk := generators(k, CoefficientRing => ZZ);
      if not all(gensk, x -> promote(x,R) == f promote(x,S)) then error "expected ring map to be identity on coefficient ring";

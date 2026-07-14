@@ -1,9 +1,9 @@
-#include "FreeAlgebra.hpp"
+#include "NCAlgebras/FreeAlgebra.hpp"
 
 #include "NCAlgebras/FreeMonoid.hpp"  // for FreeMonoid
 #include "NCAlgebras/Word.hpp"        // for Word
 #include "Polynomial.hpp"             // for Poly, Polynomial<>::const_iterator
-#include "ZZ.hpp"                     // for RingZZ
+#include "rings/ZZ.hpp"                     // for RingZZ
 #include "buffer.hpp"                 // for buffer
 #include "error.h"                    // for ERROR
 #include "monoid.hpp"                 // for Monoid
@@ -750,7 +750,7 @@ ring_elem FreeAlgebra::eval(const RingMap *map,
   for (auto i = f.cbegin(); i != f.cend(); ++i)
     {
       vp.clear();
-      monoid().getMonomial(i.monom(), vp);
+      monoid().getMonomialReversed(i.monom(), vp);
       ring_elem g = map->eval_term(coefficientRing(), i.coeff(), vp.data(), first_var, numVars());
       H->add(g);
     }
