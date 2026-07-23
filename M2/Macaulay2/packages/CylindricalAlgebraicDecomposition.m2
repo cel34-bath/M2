@@ -113,7 +113,7 @@ projectionPhase(List) := (L) -> (
     (S, ordering)
     )
 
--- Given a nonempty list of univariate polynomials, samplePoints prduces sample points for the cells (seperating the roots)
+-- Given a nonempty list of univariate polynomials, samplePoints prduces sample points for the cells (separating the roots)
 samplePoints = method()
 samplePoints(List) := (L) -> (
     if L=={} then error "expected non-empty list";
